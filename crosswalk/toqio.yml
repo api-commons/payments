@@ -3,6 +3,17 @@ apis_io: https://apis.io/providers/toqio/
 context: payments
 generated: '2026-11-10'
 concepts:
+  payment_method:
+    path_segment:
+    - cards
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/toqio-card-management-api-openapi.yml#DELETE /customers/{customerId}/cards/{cardId}
+    - openapi/_original/toqio-card-management-api-openapi.yml#GET /customers/{customerId}/cards/{cardId}
+    - openapi/_original/toqio-card-management-api-openapi.yml#POST /customers/{customerId}/cards
+    - openapi/_original/toqio-cards-openapi.yml#DELETE /api/customers/{customerId}/cards/{cardId}
+    - openapi/_original/toqio-cards-openapi.yml#GET /api/customers/{customerId}/cards/{cardId}
   customer:
     path_segment:
     - customers

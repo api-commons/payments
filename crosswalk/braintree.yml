@@ -21,6 +21,7 @@ concepts:
     - payment_methods
     properties:
       created_at: created_at
+      customer_id: customer_id
       updated_at: updated_at
     core_coverage: 0.0
     evidence:

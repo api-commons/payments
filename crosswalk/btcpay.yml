@@ -40,7 +40,6 @@ concepts:
     - payment-methods
     properties:
       id: paymentMethodId
-      metadata: additionalData
     core_coverage: 0.5
     evidence:
     - openapi/_original/btcpay-openapi.json#DELETE /api/v1/stores/{storeId}/payment-methods/{paymentMethodId}

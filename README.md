@@ -19,7 +19,7 @@ below is a count of providers.
 | payment | 281 | 264 | id 74%, status 68%, amount 62%, created_at 50% | payments 184, charges 44, payment 42, charge 28 |
 | checkout_session | 82 | 74 | id 73%, status 58% | checkout 29, checkouts 23, sessions 22, payment-links 16 |
 | refund | 213 | 200 | id 74%, amount 70%, status 62%, created_at 50% | refund 121, refunds 110, credits 15, reversals 12 |
-| payment_method | 86 | 83 | id 68%, type 55% | payment-methods 40, payment_methods 24, paymentmethods 13, sources 7 |
+| payment_method | 101 | 97 | id 68%, type 50% | payment-methods 40, payment_methods 24, cards 19, paymentmethods 13 |
 | customer | 167 | 159 | id 84%, name 68%, email 66%, created_at 57% | customers 134, customer 31, buyers 8, payers 8 |
 | payout | 121 | 109 | id 66%, status 66%, amount 59%, created_at 50% | payouts 69, settlements 29, payout 17, settlement 11 |
 | dispute | 77 | 71 | status 68%, created_at 65%, id 65%, reason 65% | disputes 48, chargebacks 20, dispute 13, chargeback 7 |
@@ -64,9 +64,14 @@ These are calls, not measurements, recorded so they can be revisited as the meth
   FastSpring, Klarna, Komoju, Plug, Satispay, Versapay, Zuora); sixteen are login, 3-D
   Secure, KYC, school-term or event sessions and are excluded with the reason in
   [concepts.yml](concepts.yml).
-- **An issued card is not a payment method.** 104 providers matched only through `/cards`
-  or `/tokens` return `cvv`, `card_number` and an account -- card issuing, not a stored way to
-  pay. Those segments are dropped and card issuing is registered as its own context.
+- **A card is a payment method only when it is saved on a customer.** The first build
+  dropped `/cards` entirely, because 104 providers matched only through it returned `cvv`,
+  `card_number` and a status -- issued cards. Building card issuing showed that was half
+  right: a card under a customer (`/customers/{id}/cards`: Stripe, Square, Omise, PAY.JP,
+  Pin, Shift4) is a stored way to pay. The segment is now qualified --
+  `cards@customers|...` here, `cards!customers|...` in
+  [card issuing](https://github.com/api-commons/card-issuing) -- and payment methods went
+  from 86 providers to 101. `/tokens` is still not used.
 - **`/transactions` is not a payment.** In this cohort it is as often a bank-ledger line or a
   card-programme feed, and the path alone cannot tell them apart.
 - **A standard counts once.** Twenty-five UK banks republish the UK Open Banking

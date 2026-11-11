@@ -50,6 +50,8 @@ concepts:
       id: id
       type: type
       created_at: created_at
+      brand: brand
+      last4: last_four
     core_coverage: 1.0
     evidence:
     - openapi/_original/revolut-business-openapi.yaml#PATCH /counterparties/{counterparty_id}/payment-methods/{payment_method_id}

@@ -65,6 +65,22 @@ concepts:
     - openapi/_original/square-openapi.yml#GET /v2/terminals/refunds/{terminal_refund_id}
     - openapi/_original/square-openapi.yml#POST /v2/refunds
     - openapi/_original/square-openapi.yml#POST /v2/terminals/refunds
+  payment_method:
+    path_segment:
+    - cards
+    properties:
+      id:
+      - id
+      - reference_id
+      brand:
+      - card_brand
+      - card_type
+      customer_id: customer_id
+      last4: last_4
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/square-openapi.yml#DELETE /v2/customers/{customer_id}/cards/{card_id}
+    - openapi/_original/square-openapi.yml#POST /v2/customers/{customer_id}/cards
   customer:
     path_segment:
     - customers

@@ -291,6 +291,7 @@ adopters:
   - customer
   - dispute
   - payment
+  - payment_method
   - payout
   - refund
 - provider: blockchain.com
@@ -1084,6 +1085,7 @@ adopters:
   crosswalk: crosswalk/helcim.yml
   concepts:
   - customer
+  - payment_method
   - refund
 - provider: hevn-inc
   apis_io: https://apis.io/providers/hevn-inc/
@@ -1213,6 +1215,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
   - refund
 - provider: jobox-ai
   apis_io: https://apis.io/providers/jobox-ai/
@@ -1405,6 +1408,7 @@ adopters:
   - checkout_session
   - dispute
   - payment
+  - payment_method
   - payout
   - refund
 - provider: marqeta
@@ -1606,6 +1610,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
 - provider: now-payments
   apis_io: https://apis.io/providers/now-payments/
   crosswalk: crosswalk/now-payments.yml
@@ -1645,6 +1650,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
   - payout
   - refund
 - provider: openpayments-io
@@ -1680,6 +1686,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
   - payout
 - provider: overflow
   apis_io: https://apis.io/providers/overflow/
@@ -1710,6 +1717,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
 - provider: pagbank
   apis_io: https://apis.io/providers/pagbank/
   crosswalk: crosswalk/pagbank.yml
@@ -1777,6 +1785,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
   - refund
 - provider: payments-canada
   apis_io: https://apis.io/providers/payments-canada/
@@ -1856,6 +1865,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
   - refund
 - provider: pinch-payments
   apis_io: https://apis.io/providers/pinch-payments/
@@ -1871,6 +1881,7 @@ adopters:
   crosswalk: crosswalk/pismo.yml
   concepts:
   - payment
+  - payment_method
 - provider: plug
   apis_io: https://apis.io/providers/plug/
   crosswalk: crosswalk/plug.yml
@@ -1878,6 +1889,7 @@ adopters:
   - checkout_session
   - customer
   - payment
+  - payment_method
 - provider: pluggy
   apis_io: https://apis.io/providers/pluggy/
   crosswalk: crosswalk/pluggy.yml
@@ -2184,6 +2196,7 @@ adopters:
   concepts:
   - customer
   - payment
+  - payment_method
 - provider: skyfire
   apis_io: https://apis.io/providers/skyfire/
   crosswalk: crosswalk/skyfire.yml
@@ -2249,6 +2262,7 @@ adopters:
   - customer
   - dispute
   - payment
+  - payment_method
   - payout
   - refund
 - provider: stark-bank
@@ -2443,6 +2457,7 @@ adopters:
   crosswalk: crosswalk/toqio.yml
   concepts:
   - customer
+  - payment_method
 - provider: toss-payments
   apis_io: https://apis.io/providers/toss-payments/
   crosswalk: crosswalk/toss-payments.yml

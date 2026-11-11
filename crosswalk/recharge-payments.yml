@@ -27,6 +27,7 @@ concepts:
     - payment_methods
     properties:
       id: id
+      customer_id: customer_id
     core_coverage: 0.5
     evidence:
     - openapi/_original/recharge-payments-openapi.yml#GET /payment_methods

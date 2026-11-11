@@ -37,7 +37,8 @@ concepts:
   payment_method:
     path_segment:
     - payment-methods
-    properties: {}
+    properties:
+      customer_id: customerId
     core_coverage: 0.0
     evidence:
     - openapi/_original/dojo-api.json#DELETE /customers/public/{customerId}/payment-methods/{paymentMethodId}

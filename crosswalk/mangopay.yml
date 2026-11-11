@@ -36,6 +36,16 @@ concepts:
     - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/refunds/{RefundId}
     - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/repudiations/{RepudiationId}/refunds
     - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/transfers/{TransferId}/refunds
+  payment_method:
+    path_segment:
+    - cards
+    properties:
+      id: Id
+      created_at: CreationDate
+      brand: CardType
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/cards
   payout:
     path_segment:
     - settlements

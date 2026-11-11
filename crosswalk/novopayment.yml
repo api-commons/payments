@@ -13,6 +13,19 @@ concepts:
     - openapi/_original/novopayment-merchant-presented-qr.yaml#POST /notifications/payment
     - openapi/_original/novopayment-onboarding-openapi.yml#POST /payment
     - openapi/_original/novopayment-onboarding.yaml#POST /payment
+  payment_method:
+    path_segment:
+    - cards
+    properties:
+      created_at: createdDate
+      customer_id: customerId
+      last4: maskedNumber
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/novopayment-accounts-openapi.yml#GET /customers/{customerId}/cards/{cardId}
+    - openapi/_original/novopayment-accounts-openapi.yml#POST /customers/{customerId}/cards
+    - openapi/_original/novopayment-accounts.yaml#GET /customers/{customerId}/cards/{cardId}
+    - openapi/_original/novopayment-accounts.yaml#POST /customers/{customerId}/cards
   customer:
     path_segment:
     - customers

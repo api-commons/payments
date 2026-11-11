@@ -22,8 +22,8 @@ concepts:
       status:
       - state
       - status
+      brand: card_type
       updated_at: updated_at
-      metadata: metadata
     core_coverage: 0.5
     evidence:
     - openapi/_original/spreedly-api-v1.json#GET /payment_methods

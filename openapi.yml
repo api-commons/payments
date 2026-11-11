@@ -245,7 +245,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: core
-      x-commons-share: 0.872
+      x-commons-share: 0.861
       responses:
         '200':
           description: OK
@@ -269,8 +269,8 @@ paths:
       summary: Create a payment method
       tags:
       - Payment Methods
-      x-commons-tier: extended
-      x-commons-share: 0.453
+      x-commons-tier: core
+      x-commons-share: 0.505
       responses:
         '200':
           description: OK
@@ -291,7 +291,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: extended
-      x-commons-share: 0.407
+      x-commons-share: 0.416
       responses:
         '200':
           description: OK
@@ -304,31 +304,13 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: extended
-      x-commons-share: 0.314
+      x-commons-share: 0.396
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema: *id004
-    patch:
-      operationId: updatePaymentMethod
-      summary: Update a payment method
-      tags:
-      - Payment Methods
-      x-commons-tier: extended
-      x-commons-share: 0.209
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema: *id004
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: *id004
   /customers/{customer_id}:
     parameters:
     - $ref: '#/components/parameters/customer_id'

@@ -18,6 +18,17 @@ concepts:
     - openapi/_original/helcim-api.json#POST /devices/{code}/payment/refund
     - openapi/_original/helcim-api.json#POST /payment/refund
     - openapi/_original/helcim-api.json#PUT /ach/transactions/{transactionId}/refund
+  payment_method:
+    path_segment:
+    - cards
+    properties:
+      id: id
+      created_at: dateCreated
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/helcim-api.json#DELETE /customers/{customerId}/cards/{cardId}
+    - openapi/_original/helcim-api.json#GET /customers/{customerId}/cards
+    - openapi/_original/helcim-api.json#GET /customers/{customerId}/cards/{cardId}
   customer:
     path_segment:
     - customers

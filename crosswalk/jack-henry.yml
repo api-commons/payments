@@ -26,6 +26,17 @@ concepts:
     core_coverage: 0.75
     evidence:
     - openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/ach/credits
+  payment_method:
+    path_segment:
+    - cards
+    properties:
+      id: id
+      status: status
+      brand: cardType
+      last4: last4
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}/cards
   customer:
     path_segment:
     - customers

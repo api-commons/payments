@@ -43,7 +43,6 @@ concepts:
       created_at: created_at
       status: status
       updated_at: updated_at
-      metadata: metadata
     core_coverage: 0.5
     evidence:
     - openapi/_original/rainforest-payments-openapi.yaml#GET /v1/payment_methods

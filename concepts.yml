@@ -56,10 +56,12 @@ concepts:
       payment_id: [charge, charge_id, payment, transaction, original_transaction_id, parent_id, sale_id, capture_id]
       reason: [refund_reason, reason_code, comment]
   payment_method:
-    # "cards" and "tokens" are not segments: 104 providers matched only through them, and
-    # what they return (cvv, card_number, account_id, status) is an ISSUED card or an auth
-    # token, not a stored way to pay. Card issuing is its own context (contexts.yml).
-    segments: [payment_methods, payment-methods, paymentmethods, payment_sources, sources, instruments, payment_instruments, stored_payment_methods]
+    # A card saved ON A CUSTOMER (/customers/{id}/cards: Stripe, Square, Omise, PAY.JP, Pin,
+    # Shift4...) is a payment method. A bare /cards is an ISSUED card (cvv, card_number,
+    # status) and belongs to the card-issuing context; "tokens" is not used at all.
+    segments: [payment_methods, payment-methods, paymentmethods, payment_sources, sources, instruments,
+               payment_instruments, stored_payment_methods,
+               "cards@customers|customer|payers|payer|shoppers|users|user|buyers"]
     aliases:
       type: [method, payment_method_type, kind, brand_type, scheme]
       customer_id: [customer, owner_id, payer_id, shopper_reference]

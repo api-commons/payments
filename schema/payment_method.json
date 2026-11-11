@@ -2,20 +2,20 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/payment_method.json",
   "title": "Payment Method",
-  "description": "The common payment_method in Payments, distilled from 83 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common payment_method in Payments, distilled from 97 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.675,
-      "x-commons-providers": 56,
+      "x-commons-share": 0.68,
+      "x-commons-providers": 66,
       "x-commons-spellings": [
         "id",
         "paymentMethodId",
+        "reference_id",
         "payment_method_id",
         "Id",
-        "reference_id",
         "uuid",
         "paymentMethodID",
         "_id"
@@ -24,8 +24,8 @@
     "type": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.554,
-      "x-commons-providers": 46,
+      "x-commons-share": 0.505,
+      "x-commons-providers": 49,
       "x-commons-spellings": [
         "type",
         "payment_method_type",
@@ -37,51 +37,85 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.386,
-      "x-commons-providers": 32,
+      "x-commons-share": 0.433,
+      "x-commons-providers": 42,
       "x-commons-spellings": [
         "created_at",
         "createdAt",
-        "created_date",
         "created",
-        "created_time",
+        "created_date",
         "date_created",
-        "createdOn"
+        "dateCreated",
+        "created_time",
+        "CreationDate"
       ],
       "format": "date-time"
     },
     "status": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.289,
-      "x-commons-providers": 24,
+      "x-commons-share": 0.278,
+      "x-commons-providers": 27,
       "x-commons-spellings": [
         "status",
         "state"
       ]
     },
+    "brand": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.247,
+      "x-commons-providers": 24,
+      "x-commons-spellings": [
+        "brand",
+        "card_type",
+        "card_brand",
+        "network",
+        "cardType",
+        "cardBrand",
+        "CardType"
+      ]
+    },
+    "customer_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.216,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "customer_id",
+        "customerId",
+        "shopperReference",
+        "owner_id",
+        "customer"
+      ]
+    },
+    "last4": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.216,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "last4",
+        "last_four",
+        "last_4",
+        "last_digits",
+        "masked_number",
+        "lastFour",
+        "maskedNumber"
+      ]
+    },
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.229,
-      "x-commons-providers": 19,
+      "x-commons-share": 0.206,
+      "x-commons-providers": 20,
       "x-commons-spellings": [
         "updated_at",
         "updatedAt",
-        "modifiedAt"
+        "modifiedAt",
+        "updated"
       ],
       "format": "date-time"
-    },
-    "metadata": {
-      "type": "object",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.205,
-      "x-commons-providers": 17,
-      "x-commons-spellings": [
-        "metadata",
-        "attributes",
-        "additionalData"
-      ]
     }
   },
   "required": [
@@ -90,7 +124,7 @@
   "x-commons": {
     "context": "payments",
     "concept": "payment_method",
-    "providers": 83,
+    "providers": 97,
     "generated": "2026-11-10",
     "version": "0.1.0-draft.20261110",
     "status": "draft"

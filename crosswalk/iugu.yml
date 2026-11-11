@@ -29,7 +29,13 @@ concepts:
   payment_method:
     path_segment:
     - payment_methods
-    properties: {}
+    properties:
+      brand:
+      - brand
+      - card_type
+      last4:
+      - last_digits
+      - masked_number
     core_coverage: 0.0
     evidence:
     - openapi/_original/iugu-formas-de-pagamento-do-cliente-openapi.yml#DELETE /customers/{customer_id}/payment_methods/{id}

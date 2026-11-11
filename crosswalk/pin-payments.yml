@@ -29,6 +29,15 @@ concepts:
     - openapi/_original/pin-payments-openapi.yaml#GET /refunds
     - openapi/_original/pin-payments-openapi.yaml#GET /refunds/{refund_token}
     - openapi/_original/pin-payments-openapi.yaml#POST /charges/{charge_token}/refunds
+  payment_method:
+    path_segment:
+    - cards
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pin-payments-openapi.yaml#DELETE /customers/{customer_token}/cards/{card_token}
+    - openapi/_original/pin-payments-openapi.yaml#GET /customers/{customer_token}/cards
+    - openapi/_original/pin-payments-openapi.yaml#POST /customers/{customer_token}/cards
   customer:
     path_segment:
     - customers

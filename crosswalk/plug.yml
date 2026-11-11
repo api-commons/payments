@@ -48,6 +48,14 @@ concepts:
     - openapi/_original/plug-openapi-original.yml#GET /v1/sessions/{id}
     - openapi/_original/plug-openapi-original.yml#PATCH /v1/sessions/{id}
     - openapi/_original/plug-openapi-original.yml#POST /v1/sessions
+  payment_method:
+    path_segment:
+    - cards
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/plug-openapi-original.yml#GET /v1/customers/{customer_id}/cards
+    - openapi/_original/plug-openapi-original.yml#POST /v1/customers/{customer_id}/cards
   customer:
     path_segment:
     - customers

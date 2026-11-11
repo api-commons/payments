@@ -31,6 +31,21 @@ concepts:
     core_coverage: 0.75
     evidence:
     - openapi/_original/payjp-openapi.yml#POST /charges/{id}/refund
+  payment_method:
+    path_segment:
+    - cards
+    properties:
+      id: id
+      created_at: created
+      brand: brand
+      last4: last4
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/payjp-openapi.yml#DELETE /customers/{id}/cards/{card_id}
+    - openapi/_original/payjp-openapi.yml#GET /customers/{id}/cards
+    - openapi/_original/payjp-openapi.yml#GET /customers/{id}/cards/{card_id}
+    - openapi/_original/payjp-openapi.yml#POST /customers/{id}/cards
+    - openapi/_original/payjp-openapi.yml#POST /customers/{id}/cards/{card_id}
   customer:
     path_segment:
     - customers

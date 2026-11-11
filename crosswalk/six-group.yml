@@ -12,6 +12,17 @@ concepts:
     - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /cards/{cardToken}/authorizations
     - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /digitalcards/{dpan}/authorizations
     - openapi/_original/six-group-debix-bank-api-v2-bank-to-six-openapi.yml#POST /digitalcards/{dpan}/authorizations
+  payment_method:
+    path_segment:
+    - cards
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#DELETE /click-to-pay/visa/customers/{customerId}/cards/{cardToken}
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /click-to-pay/visa/customers/{customerId}/cards
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#PUT /click-to-pay/visa/customers/{customerId}/cards
+    - openapi/_original/six-group-debix-bank-api-v2-bank-to-six-openapi.yml#POST /click-to-pay/visa/customers/{customerId}/cards
+    - openapi/_original/six-group-debix-bank-api-v2-bank-to-six-openapi.yml#PUT /click-to-pay/visa/customers/{customerId}/cards
   customer:
     path_segment:
     - customers

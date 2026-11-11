@@ -9,6 +9,8 @@ concepts:
     - payment_methods
     properties:
       id: id
+      brand: brand
+      last4: last4
     core_coverage: 0.5
     evidence:
     - openapi/_original/weave-openapi.yml#GET /v1/finance/account/payment_methods

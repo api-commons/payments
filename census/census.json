@@ -22082,6 +22082,46 @@
      "openapi/_original/blackbaud-communication-preference-api-openapi.yml#GET /v1/consent/sources"
     ]
    },
+   "block": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "card_brand": "string",
+     "last_4": "string",
+     "exp_month": "integer",
+     "exp_year": "integer",
+     "cardholder_name": "string",
+     "billing_address": "object",
+     "fingerprint": "string",
+     "customer_id": "string",
+     "merchant_id": "string",
+     "reference_id": "string",
+     "enabled": "boolean",
+     "card_type": "string",
+     "prepaid_type": "string",
+     "bin": "string",
+     "created_at": "string",
+     "disabled_at": "string",
+     "version": "integer",
+     "card_co_brand": "string",
+     "issuer_alert": "string",
+     "issuer_alert_at": "string",
+     "hsa_fsa": "boolean",
+     "card_nonce": "string",
+     "verification_token": "string",
+     "errors": "array"
+    },
+    "evidence": [
+     "openapi/_original/block-openapi.json#DELETE /v2/customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/block-openapi.json#POST /v2/customers/{customer_id}/cards"
+    ]
+   },
    "blockchain.com": {
     "segments": [
      "payment-methods"
@@ -23091,6 +23131,31 @@
      "openapi/_original/gr4vy-openapi.json#GET /buyers/payment-methods"
     ]
    },
+   "helcim": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item"
+    ],
+    "properties": {
+     "id": "integer",
+     "cardToken": "string",
+     "dateCreated": "string",
+     "dateUpdated": "string",
+     "cardHolderName": "string",
+     "cardF6L4": "string",
+     "cardExpiry": "string",
+     "cardCVV": "string"
+    },
+    "evidence": [
+     "openapi/_original/helcim-api.json#DELETE /customers/{customerId}/cards/{cardId}",
+     "openapi/_original/helcim-api.json#GET /customers/{customerId}/cards",
+     "openapi/_original/helcim-api.json#GET /customers/{customerId}/cards/{cardId}"
+    ]
+   },
    "hevn-inc": {
     "segments": [
      "payment_methods"
@@ -23219,6 +23284,25 @@
      "openapi/_original/iugu-formas-de-pagamento-do-cliente-openapi.yml#PUT /customers/{customer_id}/payment_methods/{id}"
     ]
    },
+   "jack-henry": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "GET collection"
+    ],
+    "properties": {
+     "id": "string",
+     "last4": "string",
+     "cardType": "string",
+     "status": "string",
+     "expirationDate": "string",
+     "nameOnCard": "string"
+    },
+    "evidence": [
+     "openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}/cards"
+    ]
+   },
    "justifi": {
     "segments": [
      "payment_methods"
@@ -23325,12 +23409,43 @@
      "openapi/_original/lightspeed-k-series-openapi.yml#GET /f/finance/{businessLocationId}/paymentMethods"
     ]
    },
-   "mercado-pago": {
+   "mangopay": {
     "segments": [
-     "payment_methods"
+     "cards"
     ],
     "operations": [
      "GET collection"
+    ],
+    "properties": {
+     "ExpirationDate": "string",
+     "Alias": "string",
+     "CardType": "string",
+     "CardProvider": "string",
+     "Country": "string",
+     "BankCode": "string",
+     "Active": "boolean",
+     "Currency": "string",
+     "Validity": "string",
+     "UserId": "string",
+     "Id": "string",
+     "Tag": "string",
+     "CreationDate": "integer",
+     "Fingerprint": "string"
+    },
+    "evidence": [
+     "openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/cards"
+    ]
+   },
+   "mercado-pago": {
+    "segments": [
+     "cards",
+     "payment_methods"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "POST collection"
     ],
     "properties": {
      "id": "string",
@@ -23340,10 +23455,26 @@
      "secure_thumbnail": "string",
      "thumbnail": "string",
      "deferred_capture": "string",
-     "settings": "array"
+     "settings": "array",
+     "customer_id": "string",
+     "expiration_month": "integer",
+     "expiration_year": "integer",
+     "first_six_digits": "string",
+     "last_four_digits": "string",
+     "payment_method": "object",
+     "security_code": "object",
+     "issuer": "object",
+     "cardholder": "object",
+     "date_created": "string",
+     "date_last_updated": "string",
+     "token": "string"
     },
     "evidence": [
-     "openapi/_original/mercado-pago-openapi.yml#GET /v1/payment_methods"
+     "openapi/_original/mercado-pago-openapi.yml#DELETE /v1/customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/mercado-pago-openapi.yml#GET /v1/customers/{customer_id}/cards",
+     "openapi/_original/mercado-pago-openapi.yml#GET /v1/customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/mercado-pago-openapi.yml#GET /v1/payment_methods",
+     "openapi/_original/mercado-pago-openapi.yml#POST /v1/customers/{customer_id}/cards"
     ]
    },
    "mercoa": {
@@ -23778,12 +23909,46 @@
      "openapi/_original/northmill-flo-api-swagger.json#GET /v2/stores/{externalStoreId}/online/paymentmethods"
     ]
    },
-   "omise": {
+   "novopayment": {
     "segments": [
-     "sources"
+     "cards"
     ],
     "operations": [
      "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "account": "object",
+     "card": "object",
+     "cardId": "string",
+     "cardStatus": "integer",
+     "maskedNumber": "string",
+     "cardNumber": "string",
+     "createdDate": "string",
+     "expirationDate": "string",
+     "embossedInfo": "object",
+     "cardProgram": "object",
+     "customerId": "string",
+     "accountId": "string",
+     "isAssociated": "boolean"
+    },
+    "evidence": [
+     "openapi/_original/novopayment-accounts-openapi.yml#GET /customers/{customerId}/cards/{cardId}",
+     "openapi/_original/novopayment-accounts-openapi.yml#POST /customers/{customerId}/cards",
+     "openapi/_original/novopayment-accounts.yaml#GET /customers/{customerId}/cards/{cardId}",
+     "openapi/_original/novopayment-accounts.yaml#POST /customers/{customerId}/cards"
+    ]
+   },
+   "omise": {
+    "segments": [
+     "cards",
+     "sources"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "PATCH item",
      "POST collection"
     ],
     "properties": {
@@ -23797,11 +23962,63 @@
      "charge_status": "string",
      "created_at": "string",
      "installment_term": "integer",
-     "zero_interest_installments": "boolean"
+     "zero_interest_installments": "boolean",
+     "data": "array",
+     "limit": "integer",
+     "offset": "integer",
+     "total": "integer",
+     "order": "string",
+     "location": "string",
+     "brand": "string",
+     "last_digits": "string",
+     "first_digits": "string",
+     "name": "string",
+     "bank": "string",
+     "fingerprint": "string",
+     "expiration_month": "integer",
+     "expiration_year": "integer",
+     "security_code_check": "boolean",
+     "deleted": "boolean"
     },
     "evidence": [
+     "openapi/_original/omise-openapi.yml#DELETE /customers/{id}/cards/{card_id}",
+     "openapi/_original/omise-openapi.yml#GET /customers/{id}/cards",
+     "openapi/_original/omise-openapi.yml#GET /customers/{id}/cards/{card_id}",
      "openapi/_original/omise-openapi.yml#GET /sources/{id}",
+     "openapi/_original/omise-openapi.yml#PATCH /customers/{id}/cards/{card_id}",
      "openapi/_original/omise-openapi.yml#POST /sources"
+    ]
+   },
+   "openpay": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "type": "string",
+     "brand": "string",
+     "card_number": "string",
+     "holder_name": "string",
+     "expiration_year": "string",
+     "expiration_month": "string",
+     "bank_name": "string",
+     "bank_code": "string",
+     "creation_date": "string",
+     "cvv2": "string",
+     "device_session_id": "string",
+     "token_id": "string"
+    },
+    "evidence": [
+     "openapi/_original/openpay-openapi.yml#DELETE /{merchant_id}/customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/openpay-openapi.yml#GET /{merchant_id}/customers/{customer_id}/cards",
+     "openapi/_original/openpay-openapi.yml#GET /{merchant_id}/customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/openpay-openapi.yml#POST /{merchant_id}/customers/{customer_id}/cards"
     ]
    },
    "ordway": {
@@ -23829,6 +24046,37 @@
      "openapi/_original/ordway-rest-api-openapi.yml#GET /customers/{id}/payment_methods"
     ]
    },
+   "outdoorsy": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "PATCH item",
+     "POST collection"
+    ],
+    "properties": {
+     "brand": "string",
+     "created": "string",
+     "default": "boolean",
+     "exp_month": "integer",
+     "exp_year": "integer",
+     "id": "integer",
+     "last_four": "string",
+     "latest_setup_intent_id": "string",
+     "owner_id": "integer",
+     "payment_processor": "object",
+     "stripe_token": "string",
+     "updated": "string"
+    },
+    "evidence": [
+     "openapi/_original/outdoorsy-openapi-original.json#DELETE /users/{user_id}/cards/{card_id}",
+     "openapi/_original/outdoorsy-openapi-original.json#GET /users/{user_id}/cards",
+     "openapi/_original/outdoorsy-openapi-original.json#PATCH /users/{user_id}/cards/{card_id}",
+     "openapi/_original/outdoorsy-openapi-original.json#POST /users/{user_id}/cards"
+    ]
+   },
    "overflow": {
     "segments": [
      "payment-methods"
@@ -23847,6 +24095,39 @@
     },
     "evidence": [
      "openapi/_original/overflow-openapi-original.json#GET /api/v3/payment-methods/{donorId}"
+    ]
+   },
+   "pagarme": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "first_six_digits": "string",
+     "last_four_digits": "string",
+     "brand": "string",
+     "holder_name": "string",
+     "exp_month": "integer",
+     "exp_year": "integer",
+     "status": "string",
+     "type": "string",
+     "created_at": "string",
+     "number": "string",
+     "cvv": "string",
+     "token": "string",
+     "billing_address": "object"
+    },
+    "evidence": [
+     "openapi/_original/pagarme-openapi.yml#DELETE /customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/pagarme-openapi.yml#GET /customers/{customer_id}/cards",
+     "openapi/_original/pagarme-openapi.yml#GET /customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/pagarme-openapi.yml#POST /customers/{customer_id}/cards"
     ]
    },
    "paid": {
@@ -23875,6 +24156,38 @@
      "openapi/_original/paid-v1.json#POST /customers/external/{externalId}/payment-methods"
     ]
    },
+   "payjp": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "POST collection",
+     "POST item"
+    ],
+    "properties": {
+     "id": "string",
+     "object": "string",
+     "livemode": "boolean",
+     "created": "integer",
+     "brand": "string",
+     "last4": "string",
+     "exp_month": "integer",
+     "exp_year": "integer",
+     "name": "string",
+     "three_d_secure_status": "string",
+     "deleted": "boolean"
+    },
+    "evidence": [
+     "openapi/_original/payjp-openapi.yml#DELETE /customers/{id}/cards/{card_id}",
+     "openapi/_original/payjp-openapi.yml#GET /customers/{id}/cards",
+     "openapi/_original/payjp-openapi.yml#GET /customers/{id}/cards/{card_id}",
+     "openapi/_original/payjp-openapi.yml#POST /customers/{id}/cards",
+     "openapi/_original/payjp-openapi.yml#POST /customers/{id}/cards/{card_id}"
+    ]
+   },
    "paymentsense": {
     "segments": [
      "payment-methods"
@@ -23888,6 +24201,22 @@
     },
     "evidence": [
      "openapi/_original/paymentsense-connect-e-v0.json#GET /v1/payment-methods"
+    ]
+   },
+   "pin-payments": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "POST collection"
+    ],
+    "properties": {},
+    "evidence": [
+     "openapi/_original/pin-payments-openapi.yaml#DELETE /customers/{customer_token}/cards/{card_token}",
+     "openapi/_original/pin-payments-openapi.yaml#GET /customers/{customer_token}/cards",
+     "openapi/_original/pin-payments-openapi.yaml#POST /customers/{customer_token}/cards"
     ]
    },
    "pinch-payments": {
@@ -23917,6 +24246,44 @@
     "evidence": [
      "openapi/_original/pinch-payments-payers.yml#DELETE /payers/{id}/sources/{sourceId}",
      "openapi/_original/pinch-payments-payers.yml#POST /payers/{id}/sources"
+    ]
+   },
+   "pismo": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "GET collection"
+    ],
+    "properties": {
+     "id": "integer",
+     "account_id": "integer",
+     "type": "string",
+     "status": "string",
+     "printed_name": "string",
+     "last_four_digits": "string",
+     "created_at": "string"
+    },
+    "evidence": [
+     "openapi/_original/pismo-openapi.yml#GET /wallet/v1/customers/{customerId}/accounts/{accountId}/cards"
+    ]
+   },
+   "plug": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "GET collection",
+     "POST collection"
+    ],
+    "properties": {
+     "meta": "object",
+     "items": "array",
+     "cardId": "string"
+    },
+    "evidence": [
+     "openapi/_original/plug-openapi-original.yml#GET /v1/customers/{customer_id}/cards",
+     "openapi/_original/plug-openapi-original.yml#POST /v1/customers/{customer_id}/cards"
     ]
    },
    "rainforest": {
@@ -24114,35 +24481,84 @@
    },
    "shift4-payments": {
     "segments": [
+     "cards",
      "payment-methods"
     ],
     "operations": [
+     "DELETE item",
      "GET collection",
      "GET item",
-     "POST collection"
+     "POST collection",
+     "POST item"
     ],
     "properties": {
      "list": "array",
      "hasMore": "boolean",
      "totalCount": "integer",
      "id": "string",
-     "customerId": "string",
-     "clientObjectId": "string",
      "created": "integer",
-     "type": "string",
-     "status": "string",
      "deleted": "boolean",
+     "first6": "string",
+     "last4": "string",
+     "fingerprint": "string",
+     "expMonth": "string",
+     "expYear": "string",
+     "cardholderName": "string",
+     "customerId": "string",
+     "brand": "string",
+     "type": "string",
+     "country": "string",
+     "addressLine1": "string",
+     "addressLine2": "string",
+     "addressCity": "string",
+     "addressState": "string",
+     "addressZip": "string",
+     "addressCountry": "string",
+     "issuer": "string",
+     "merchantAccountId": "string",
+     "number": "string",
+     "cvc": "string",
+     "clientObjectId": "string",
+     "status": "string",
      "billing": "object",
      "applePay": "object",
      "googlePay": "object",
      "threeDSecure": "object",
-     "merchantAccountId": "string",
      "metadata": "object"
     },
     "evidence": [
+     "openapi/_original/shift4-api-openapi.yml#DELETE /customers/{customerId}/cards/{cardId}",
+     "openapi/_original/shift4-api-openapi.yml#GET /customers/{customerId}/cards",
+     "openapi/_original/shift4-api-openapi.yml#GET /customers/{customerId}/cards/{cardId}",
      "openapi/_original/shift4-api-openapi.yml#GET /payment-methods",
      "openapi/_original/shift4-api-openapi.yml#GET /payment-methods/{paymentMethodId}",
+     "openapi/_original/shift4-api-openapi.yml#POST /customers/{customerId}/cards",
+     "openapi/_original/shift4-api-openapi.yml#POST /customers/{customerId}/cards/{cardId}",
      "openapi/_original/shift4-api-openapi.yml#POST /payment-methods"
+    ]
+   },
+   "six-group": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "POST collection",
+     "PUT collection"
+    ],
+    "properties": {
+     "nameOnCard": "string",
+     "billingAddress": "object",
+     "cardToken": "string",
+     "expiration": "object",
+     "shortCardId": "object"
+    },
+    "evidence": [
+     "openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#DELETE /click-to-pay/visa/customers/{customerId}/cards/{cardToken}",
+     "openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /click-to-pay/visa/customers/{customerId}/cards",
+     "openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#PUT /click-to-pay/visa/customers/{customerId}/cards",
+     "openapi/_original/six-group-debix-bank-api-v2-bank-to-six-openapi.yml#POST /click-to-pay/visa/customers/{customerId}/cards",
+     "openapi/_original/six-group-debix-bank-api-v2-bank-to-six-openapi.yml#PUT /click-to-pay/visa/customers/{customerId}/cards"
     ]
    },
    "slope": {
@@ -24308,9 +24724,45 @@
      "openapi/_original/spreedly-api-v1.json#PUT /payment_methods/{payment_method_token}"
     ]
    },
+   "square": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "card_brand": "string",
+     "last_4": "string",
+     "exp_month": "integer",
+     "exp_year": "integer",
+     "cardholder_name": "string",
+     "billing_address": "object",
+     "fingerprint": "string",
+     "customer_id": "string",
+     "merchant_id": "string",
+     "reference_id": "string",
+     "enabled": "boolean",
+     "card_type": "string",
+     "prepaid_type": "string",
+     "bin": "string",
+     "version": "integer",
+     "card_co_brand": "string",
+     "card_nonce": "string",
+     "verification_token": "string",
+     "errors": "array"
+    },
+    "evidence": [
+     "openapi/_original/square-openapi.yml#DELETE /v2/customers/{customer_id}/cards/{card_id}",
+     "openapi/_original/square-openapi.yml#POST /v2/customers/{customer_id}/cards"
+    ]
+   },
    "stripe": {
     "segments": [
      "payment_methods",
+     "cards",
      "sources"
     ],
     "operations": [
@@ -24321,6 +24773,34 @@
      "POST item"
     ],
     "properties": {
+     "account": null,
+     "address_city": "string",
+     "address_country": "string",
+     "address_line1": "string",
+     "address_line1_check": "string",
+     "address_line2": "string",
+     "address_state": "string",
+     "address_zip": "string",
+     "address_zip_check": "string",
+     "available_payout_methods": "array",
+     "brand": "string",
+     "country": "string",
+     "currency": "string",
+     "customer": null,
+     "cvc_check": "string",
+     "default_for_currency": "boolean",
+     "dynamic_last4": "string",
+     "exp_month": "integer",
+     "exp_year": "integer",
+     "fingerprint": "string",
+     "funding": "string",
+     "id": "string",
+     "last4": "string",
+     "metadata": "object",
+     "name": "string",
+     "object": "string",
+     "status": "string",
+     "tokenization_method": "string",
      "acss_debit": null,
      "affirm": null,
      "afterpay_clearpay": null,
@@ -24335,21 +24815,17 @@
      "card_present": null,
      "cashapp": null,
      "created": "integer",
-     "customer": null,
      "customer_balance": null,
      "eps": null,
      "fpx": null,
      "giropay": null,
      "grabpay": null,
-     "id": "string",
      "ideal": null,
      "interac_present": null,
      "klarna": null,
      "konbini": null,
      "link": null,
      "livemode": "boolean",
-     "metadata": "object",
-     "object": "string",
      "oxxo": null,
      "p24": null,
      "paynow": null,
@@ -24364,51 +24840,27 @@
      "us_bank_account": null,
      "wechat_pay": null,
      "zip": null,
-     "account": null,
      "account_holder_name": "string",
      "account_holder_type": "string",
      "account_type": "string",
-     "available_payout_methods": "array",
      "bank_name": "string",
-     "country": "string",
-     "currency": "string",
-     "default_for_currency": "boolean",
-     "fingerprint": "string",
      "future_requirements": null,
-     "last4": "string",
      "requirements": null,
-     "routing_number": "string",
-     "status": "string",
-     "address_city": "string",
-     "address_country": "string",
-     "address_line1": "string",
-     "address_line1_check": "string",
-     "address_line2": "string",
-     "address_state": "string",
-     "address_zip": "string",
-     "address_zip_check": "string",
-     "brand": "string",
-     "cvc_check": "string",
-     "dynamic_last4": "string",
-     "exp_month": "integer",
-     "exp_year": "integer",
-     "funding": "string",
-     "name": "string",
-     "tokenization_method": "string"
+     "routing_number": "string"
     },
     "evidence": [
+     "openapi/_original/customers-openapi-original.yml#DELETE /v1/customers/{customer}/cards/{id}",
      "openapi/_original/customers-openapi-original.yml#DELETE /v1/customers/{customer}/sources/{id}",
+     "openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/cards",
+     "openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/cards/{id}",
      "openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/payment_methods",
      "openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/payment_methods/{payment_method}",
      "openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/sources",
      "openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/sources/{id}",
+     "openapi/_original/customers-openapi-original.yml#POST /v1/customers/{customer}/cards",
+     "openapi/_original/customers-openapi-original.yml#POST /v1/customers/{customer}/cards/{id}",
      "openapi/_original/customers-openapi-original.yml#POST /v1/customers/{customer}/sources",
-     "openapi/_original/customers-openapi-original.yml#POST /v1/customers/{customer}/sources/{id}",
-     "openapi/_original/payment-method-openapi-original.yml#GET /v1/payment_methods",
-     "openapi/_original/payment-method-openapi-original.yml#GET /v1/payment_methods/{payment_method}",
-     "openapi/_original/payment-method-openapi-original.yml#POST /v1/payment_methods",
-     "openapi/_original/payment-method-openapi-original.yml#POST /v1/payment_methods/{payment_method}",
-     "openapi/_original/stripe-payment-method-api-openapi.yml#GET /v1/payment_methods"
+     "openapi/_original/customers-openapi-original.yml#POST /v1/customers/{customer}/sources/{id}"
     ]
    },
    "sumup": {
@@ -24451,6 +24903,70 @@
      "openapi/_original/super-payments-openapi.yml#GET /payment-methods",
      "openapi/_original/super-payments-openapi.yml#GET /payment-methods/{id}",
      "openapi/_original/super-payments-openapi.yml#POST /payment-methods"
+    ]
+   },
+   "toqio": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "data": "object",
+     "code": "string",
+     "errorSeverity": "string",
+     "message": "string",
+     "httpStatus": "integer",
+     "debugTrace": "string",
+     "requestId": "string",
+     "date": "integer",
+     "errorOrigin": "string",
+     "cardLimitDaily": "integer",
+     "cardLimitMonthly": "integer",
+     "cardLimitTransaction": "number",
+     "lifetimeSpendLimit": "number",
+     "cardMinLimitTransaction": "number",
+     "cardMinLimitTransactionForPhysicalBusiness": "number",
+     "accountId": "string",
+     "fundingType": "string",
+     "companyId": "string",
+     "userId": "string",
+     "physical": "boolean",
+     "nameOnCard": "string",
+     "cardDeliveryName": "string",
+     "cardDeliveryAddress": "object",
+     "cardBillingAddress": "object",
+     "dateOfBirth": "integer",
+     "phone": "object",
+     "email": "string",
+     "firstName": "string",
+     "lastName": "string",
+     "cardProgramme": "string",
+     "cardDesign": "string",
+     "currency": "string",
+     "readOnly": "boolean",
+     "billingAccountId": "string",
+     "telephone": "string",
+     "cardLimitPurchasesDaily": "integer",
+     "cardLimitPurchasesMonthly": "integer",
+     "cardLimitATMDaily": "integer",
+     "cardLimitATMMonthly": "integer",
+     "cardLimitATMOperations": "integer",
+     "cardLimitPurchasesOperations": "integer",
+     "securityQuestions": "object"
+    },
+    "evidence": [
+     "openapi/_original/toqio-card-management-api-openapi.yml#DELETE /customers/{customerId}/cards/{cardId}",
+     "openapi/_original/toqio-card-management-api-openapi.yml#GET /customers/{customerId}/cards/{cardId}",
+     "openapi/_original/toqio-card-management-api-openapi.yml#POST /customers/{customerId}/cards",
+     "openapi/_original/toqio-cards-openapi.yml#DELETE /api/customers/{customerId}/cards/{cardId}",
+     "openapi/_original/toqio-cards-openapi.yml#GET /api/customers/{customerId}/cards/{cardId}",
+     "openapi/_original/toqio-cards-openapi.yml#GET /api/customers/{customerId}/clients/{clientId}/cards",
+     "openapi/_original/toqio-cards-openapi.yml#POST /api/customers/{customerId}/cards"
     ]
    },
    "tratta": {

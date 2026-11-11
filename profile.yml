@@ -784,65 +784,66 @@ concepts:
     segments_seen:
       payment-methods: 40
       payment_methods: 24
+      cards: 19
       paymentmethods: 13
       sources: 7
       payment_sources: 3
       payment_instruments: 2
       instruments: 1
-    providers_exposing: 86
-    providers_with_readable_schema: 83
+    providers_exposing: 101
+    providers_with_readable_schema: 97
     operations:
     - operation: GET collection
-      providers: 75
-      share: 0.872
+      providers: 87
+      share: 0.861
       tier: core
     - operation: POST collection
-      providers: 39
-      share: 0.453
-      tier: extended
+      providers: 51
+      share: 0.505
+      tier: core
     - operation: GET item
-      providers: 35
-      share: 0.407
+      providers: 42
+      share: 0.416
       tier: extended
     - operation: DELETE item
-      providers: 27
-      share: 0.314
+      providers: 40
+      share: 0.396
       tier: extended
     - operation: UPDATE item
-      providers: 18
-      share: 0.209
-      tier: extended
+      providers: 20
+      share: 0.198
+      tier: long-tail
     - operation: UPDATE collection
-      providers: 4
-      share: 0.047
+      providers: 5
+      share: 0.05
       tier: long-tail
     - operation: POST item
-      providers: 2
-      share: 0.023
+      providers: 4
+      share: 0.04
       tier: long-tail
     - operation: DELETE collection
       providers: 1
-      share: 0.012
+      share: 0.01
       tier: long-tail
     properties:
     - name: id
       tier: core
-      providers: 56
-      share: 0.675
+      providers: 66
+      share: 0.68
       type: string
       spellings:
       - id
       - paymentMethodId
+      - reference_id
       - payment_method_id
       - Id
-      - reference_id
       - uuid
       - paymentMethodID
       - _id
     - name: type
       tier: core
-      providers: 46
-      share: 0.554
+      providers: 49
+      share: 0.505
       type: string
       spellings:
       - type
@@ -852,85 +853,115 @@ concepts:
       - scheme
     - name: created_at
       tier: extended
-      providers: 32
-      share: 0.386
+      providers: 42
+      share: 0.433
       type: string
       spellings:
       - created_at
       - createdAt
-      - created_date
       - created
-      - created_time
+      - created_date
       - date_created
-      - createdOn
+      - dateCreated
+      - created_time
+      - CreationDate
     - name: status
       tier: extended
-      providers: 24
-      share: 0.289
+      providers: 27
+      share: 0.278
       type: string
       spellings:
       - status
       - state
+    - name: brand
+      tier: extended
+      providers: 24
+      share: 0.247
+      type: string
+      spellings:
+      - brand
+      - card_type
+      - card_brand
+      - network
+      - cardType
+      - cardBrand
+      - CardType
+    - name: customer_id
+      tier: extended
+      providers: 21
+      share: 0.216
+      type: string
+      spellings:
+      - customer_id
+      - customerId
+      - shopperReference
+      - owner_id
+      - customer
+    - name: last4
+      tier: extended
+      providers: 21
+      share: 0.216
+      type: string
+      spellings:
+      - last4
+      - last_four
+      - last_4
+      - last_digits
+      - masked_number
+      - lastFour
+      - maskedNumber
     - name: updated_at
       tier: extended
-      providers: 19
-      share: 0.229
+      providers: 20
+      share: 0.206
       type: string
       spellings:
       - updated_at
       - updatedAt
       - modifiedAt
-    - name: metadata
-      tier: extended
-      providers: 17
-      share: 0.205
-      type: object
-      spellings:
-      - metadata
-      - attributes
-      - additionalData
-    long_tail_count: 603
+      - updated
+    long_tail_count: 671
     long_tail_sample:
-    - customer_id
-    - name
-    - card
-    - billing_address
-    - brand
-    - last4
     - exp_month
     - exp_year
+    - billing_address
+    - name
+    - metadata
+    - card
     - country
+    - fingerprint
     - token
     - currency
     - default
+    - bin
     - description
+    - account_id
+    - cardholder_name
     - external_id
-    - fingerprint
+    - number
     - account_number
     - amount
     - bank_account
-    - bin
+    - card_number
+    - deleted
+    - enabled
+    - expiration_date
     - is_default
-    - account_type
-    - number
+    - merchant_id
     - payment_method
-    - payment_type
-    - routing_number
     - account
-    - account_holder_name
-    - account_id
+    - account_type
     - address_line1
     - address_line2
-    - apple_pay
+    - bank_code
     - bank_name
-    - card_number
-    - cardholder_name
-    - city
     - code
-    - created_by
-    - deleted
     - email
-    - enabled
+    - expiration
+    - holder_name
+    - issuer
+    - last_four_digits
+    - payment_type
   customer:
     segments_seen:
       customers: 134

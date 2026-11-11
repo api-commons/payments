@@ -67,7 +67,7 @@ concepts:
     path_segment:
     - paymentmethods
     properties:
-      metadata: additionalData
+      customer_id: shopperReference
     core_coverage: 0.0
     evidence:
     - openapi/_original/adyen-checkout-api-openapi.yml#POST /paymentMethods

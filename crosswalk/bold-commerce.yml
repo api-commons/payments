@@ -8,6 +8,7 @@ concepts:
     - payment_methods
     properties:
       type: type
+      last4: last_four
     core_coverage: 0.5
     evidence:
     - openapi/_original/bold-commerce-openapi.yml#GET /subscriptions/v1/shops/{shop_identifier}/subscriptions/{subscription_id}/payment_methods

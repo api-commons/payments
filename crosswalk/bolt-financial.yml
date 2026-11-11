@@ -23,7 +23,8 @@ concepts:
     properties:
       id: id
       type: type
-      metadata: metadata
+      brand: network
+      last4: last4
     core_coverage: 1.0
     evidence:
     - openapi/_original/bolt-financial-bolt-api-openapi.yml#DELETE /v1/account/payment_methods/{payment_method_id}

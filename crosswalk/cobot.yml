@@ -27,7 +27,6 @@ concepts:
     properties:
       id: id
       type: type
-      metadata: attributes
     core_coverage: 1.0
     evidence:
     - openapi/_original/cobot-api2-openapi.yml#GET /invoices/{id}/payment_methods
