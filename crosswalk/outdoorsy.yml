@@ -17,8 +17,8 @@ concepts:
       id: id
       created_at: created
       brand: brand
-      customer_id: owner_id
       last4: last_four
+      customer_id: owner_id
       updated_at: updated
     core_coverage: 0.5
     evidence:

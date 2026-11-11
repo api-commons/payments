@@ -13,6 +13,7 @@ concepts:
     - openapi/_original/bill-openapi.yml#GET /payments
     - openapi/_original/bill-openapi.yml#GET /payments/{paymentId}
     - openapi/_original/bill-openapi.yml#POST /payments
+    - openapi/_original/bill-openapi.yml#POST /payments/bulk
   customer:
     path_segment:
     - customers

@@ -18,8 +18,8 @@ concepts:
     - cards
     properties:
       created_at: createdDate
-      customer_id: customerId
       last4: maskedNumber
+      customer_id: customerId
     core_coverage: 0.0
     evidence:
     - openapi/_original/novopayment-accounts-openapi.yml#GET /customers/{customerId}/cards/{cardId}

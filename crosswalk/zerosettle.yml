@@ -8,11 +8,14 @@ concepts:
     - payment-intents
     properties:
       id: transaction_id
-      amount: amount_cents
+      amount:
+      - amount_cents
+      - amount
       currency: currency
     core_coverage: 0.5
     evidence:
     - openapi/_original/zerosettle-openapi.json#POST /iap/payment-intents
+    - openapi/_original/zerosettle-openapi.json#POST /iap/payment-intents/batch
   checkout_session:
     path_segment:
     - checkout-sessions

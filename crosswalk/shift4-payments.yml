@@ -71,8 +71,8 @@ concepts:
       created_at: created
       status: status
       brand: brand
-      customer_id: customerId
       last4: last4
+      customer_id: customerId
     core_coverage: 1.0
     evidence:
     - openapi/_original/shift4-api-openapi.yml#DELETE /customers/{customerId}/cards/{cardId}

@@ -1423,6 +1423,7 @@ adopters:
   apis_io: https://apis.io/providers/mastercard/
   crosswalk: crosswalk/mastercard.yml
   concepts:
+  - payment
   - refund
 - provider: mercado-pago
   apis_io: https://apis.io/providers/mercado-pago/
@@ -1637,6 +1638,7 @@ adopters:
   crosswalk: crosswalk/open-financial.yml
   concepts:
   - payment
+  - refund
 - provider: opennode
   apis_io: https://apis.io/providers/opennode/
   crosswalk: crosswalk/opennode.yml
@@ -2602,7 +2604,9 @@ adopters:
   crosswalk: crosswalk/visa.yml
   concepts:
   - checkout_session
+  - customer
   - payment
+  - payment_method
 - provider: visa-acceptance
   apis_io: https://apis.io/providers/visa-acceptance/
   crosswalk: crosswalk/visa-acceptance.yml

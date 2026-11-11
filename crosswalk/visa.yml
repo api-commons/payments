@@ -33,3 +33,24 @@ concepts:
     evidence:
     - openapi/_original/visa-click-to-pay.yml#GET /visasrci/v1/checkout/{checkoutId}
     - openapi/_original/visa-click-to-pay.yml#POST /visasrci/v1/checkout
+  payment_method:
+    path_segment:
+    - cards
+    properties:
+      last4: last4
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/visa-in-app-provisioning.yml#POST /universal/core/customers/{vCustomerID}/cards
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: firstName
+      status: status
+      last_name: lastName
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/visa-in-app-provisioning.yml#DELETE /universal/core/customers/{vCustomerID}
+    - openapi/_original/visa-in-app-provisioning.yml#GET /universal/core/customers/{vCustomerID}
+    - openapi/_original/visa-in-app-provisioning.yml#POST /universal/core/customers
+    - openapi/_original/visa-in-app-provisioning.yml#PUT /universal/core/customers/{vCustomerID}

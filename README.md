@@ -16,15 +16,15 @@ below is a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| payment | 281 | 264 | id 74%, status 68%, amount 62%, created_at 50% | payments 184, charges 44, payment 42, charge 28 |
+| payment | 282 | 265 | id 74%, status 68%, amount 62%, created_at 50% | payments 185, charges 44, payment 42, charge 28 |
 | checkout_session | 82 | 74 | id 73%, status 58% | checkout 29, checkouts 23, sessions 22, payment-links 16 |
-| refund | 213 | 200 | id 74%, amount 70%, status 62%, created_at 50% | refund 121, refunds 110, credits 15, reversals 12 |
-| payment_method | 101 | 97 | id 68%, type 50% | payment-methods 40, payment_methods 24, cards 19, paymentmethods 13 |
-| customer | 167 | 159 | id 84%, name 68%, email 66%, created_at 57% | customers 134, customer 31, buyers 8, payers 8 |
+| refund | 214 | 201 | id 74%, amount 70%, status 62%, created_at 50% | refund 122, refunds 110, credits 15, reversals 12 |
+| payment_method | 102 | 98 | id 67%, type 50% | payment-methods 40, payment_methods 24, cards 20, paymentmethods 13 |
+| customer | 168 | 160 | id 84%, name 68%, email 66%, created_at 56% | customers 135, customer 31, buyers 8, payers 8 |
 | payout | 121 | 109 | id 66%, status 66%, amount 59%, created_at 50% | payouts 69, settlements 29, payout 17, settlement 11 |
 | dispute | 77 | 71 | status 68%, created_at 65%, id 65%, reason 65% | disputes 48, chargebacks 20, dispute 13, chargeback 7 |
 
-Cohort: 692 providers with harvested OpenAPI, 431 crosswalks. Of the providers exposing a payment: 71% create, 68% list, 65% fetch, 21% update, 10% delete. Generated 2026-11-10 by build.py.
+Cohort: 692 providers with harvested OpenAPI, 431 crosswalks. Of the providers exposing a payment: 71% create, 67% list, 65% fetch, 21% update, 10% delete. Generated 2026-11-10 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

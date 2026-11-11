@@ -35,3 +35,4 @@ concepts:
     - openapi/_original/chariot-openapi-original.yml#GET /v1/disbursements
     - openapi/_original/chariot-openapi-original.yml#GET /v1/disbursements/{id}
     - openapi/_original/chariot-openapi-original.yml#POST /v1/disbursements
+    - openapi/_original/chariot-openapi-original.yml#POST /v1/disbursements/bulk

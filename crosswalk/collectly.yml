@@ -54,8 +54,8 @@ concepts:
       type: type
       status: status
       brand: card_type
-      customer_id: customer_id
       last4: last4
+      customer_id: customer_id
     core_coverage: 0.5
     evidence:
     - openapi/_original/collectly-partners1-openapi.yml#DELETE /practices/{practice_id}/patients/{patient_id}/payment-methods/{payment_methods}

@@ -2,13 +2,13 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/refund.json",
   "title": "Refund",
-  "description": "The common refund in Payments, distilled from 200 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common refund in Payments, distilled from 201 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.74,
+      "x-commons-share": 0.736,
       "x-commons-providers": 148,
       "x-commons-spellings": [
         "id",
@@ -24,7 +24,7 @@
     "amount": {
       "type": "number",
       "x-commons-tier": "core",
-      "x-commons-share": 0.7,
+      "x-commons-share": 0.697,
       "x-commons-providers": 140,
       "x-commons-spellings": [
         "amount",
@@ -39,7 +39,7 @@
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.625,
+      "x-commons-share": 0.622,
       "x-commons-providers": 125,
       "x-commons-spellings": [
         "status",
@@ -52,7 +52,7 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.505,
+      "x-commons-share": 0.502,
       "x-commons-providers": 101,
       "x-commons-spellings": [
         "created_at",
@@ -69,7 +69,7 @@
     "currency": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.385,
+      "x-commons-share": 0.383,
       "x-commons-providers": 77,
       "x-commons-spellings": [
         "currency",
@@ -82,7 +82,7 @@
     "reason": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.32,
+      "x-commons-share": 0.318,
       "x-commons-providers": 64,
       "x-commons-spellings": [
         "reason",
@@ -96,7 +96,7 @@
     "payment_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.28,
+      "x-commons-share": 0.279,
       "x-commons-providers": 56,
       "x-commons-spellings": [
         "payment_id",
@@ -112,7 +112,7 @@
     "description": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.23,
+      "x-commons-share": 0.229,
       "x-commons-providers": 46,
       "x-commons-spellings": [
         "description",
@@ -126,7 +126,7 @@
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.23,
+      "x-commons-share": 0.229,
       "x-commons-providers": 46,
       "x-commons-spellings": [
         "updated_at",
@@ -143,7 +143,7 @@
     "metadata": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.21,
+      "x-commons-share": 0.209,
       "x-commons-providers": 42,
       "x-commons-spellings": [
         "metadata",
@@ -163,7 +163,7 @@
   "x-commons": {
     "context": "payments",
     "concept": "refund",
-    "providers": 200,
+    "providers": 201,
     "generated": "2026-11-10",
     "version": "0.1.0-draft.20261110",
     "status": "draft"

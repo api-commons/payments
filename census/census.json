@@ -1,5 +1,23 @@
 {
  "cohort_size": 692,
+ "unreadable": [
+  {
+   "spec": "novopayment/openapi/_original/novopayment-issuer-tokenization-openapi.yml",
+   "error": "while scanning a block scalar"
+  },
+  {
+   "spec": "novopayment/openapi/_original/novopayment-issuer-tokenization.yaml",
+   "error": "while scanning a block scalar"
+  },
+  {
+   "spec": "novopayment/openapi/_original/novopayment-payment-authorizer-openapi.yml",
+   "error": "while scanning a block scalar"
+  },
+  {
+   "spec": "novopayment/openapi/_original/novopayment-payment-authorizer.yaml",
+   "error": "while scanning a block scalar"
+  }
+ ],
  "concepts": {
   "payment": {
    "1fort": {
@@ -973,7 +991,8 @@
     "evidence": [
      "openapi/_original/bill-openapi.yml#GET /payments",
      "openapi/_original/bill-openapi.yml#GET /payments/{paymentId}",
-     "openapi/_original/bill-openapi.yml#POST /payments"
+     "openapi/_original/bill-openapi.yml#POST /payments",
+     "openapi/_original/bill-openapi.yml#POST /payments/bulk"
     ]
    },
    "bitski": {
@@ -5571,6 +5590,29 @@
      "openapi/_original/marqeta-diva-api-openapi.yml#GET /views/authorizations/{time_agg}"
     ]
    },
+   "mastercard": {
+    "segments": [
+     "payments"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "transactionId": "string",
+     "transactionMessage": "string",
+     "transactionStatus": "string",
+     "cardId": "string",
+     "card": "object",
+     "donation": "object",
+     "donorId": "string",
+     "pspVersion": "string",
+     "source": "string",
+     "authPayerResponse": "object"
+    },
+    "evidence": [
+     "openapi/_original/mastercard-donate-api-openapi.yml#POST /payments"
+    ]
+   },
    "mercado-pago": {
     "segments": [
      "payments"
@@ -6269,7 +6311,10 @@
      "creditorAgent": "object",
      "requestedExecutionDate": "string",
      "settlementDate": "string",
-     "statusHistory": "array"
+     "statusHistory": "array",
+     "batchId": "string",
+     "numberOfTransactions": "integer",
+     "controlSum": "number"
     },
     "evidence": [
      "openapi/_original/montran-corporate-payments-portal-openapi.yml#GET /payments",
@@ -6277,7 +6322,8 @@
      "openapi/_original/montran-corporate-payments-portal-openapi.yml#POST /payments",
      "openapi/_original/montran-global-payments-hub-openapi.yml#GET /payments",
      "openapi/_original/montran-global-payments-hub-openapi.yml#GET /payments/{paymentId}",
-     "openapi/_original/montran-global-payments-hub-openapi.yml#POST /payments"
+     "openapi/_original/montran-global-payments-hub-openapi.yml#POST /payments",
+     "openapi/_original/montran-instant-payments-gateway-openapi.yml#POST /payments/bulk"
     ]
    },
    "moov": {
@@ -11123,10 +11169,19 @@
      "storekit_subscription_end": "string",
      "storekit_original_transaction_id": "string",
      "external_purchase_token": "string",
-     "ios_version": "string"
+     "ios_version": "string",
+     "amount": "integer",
+     "original_amount": "integer",
+     "publishable_key": "string",
+     "stripe_account": "string",
+     "is_subscription": "boolean",
+     "subscription_interval": "string",
+     "error": "string",
+     "products": "array"
     },
     "evidence": [
-     "openapi/_original/zerosettle-openapi.json#POST /iap/payment-intents"
+     "openapi/_original/zerosettle-openapi.json#POST /iap/payment-intents",
+     "openapi/_original/zerosettle-openapi.json#POST /iap/payment-intents/batch"
     ]
    },
    "zuora": {
@@ -18692,6 +18747,22 @@
      "openapi/_original/omise-openapi.yml#POST /charges/{id}/refunds"
     ]
    },
+   "open-financial": {
+    "segments": [
+     "refund"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "batch_status": "string",
+     "refund_batch_id": "string",
+     "refunds": "array"
+    },
+    "evidence": [
+     "openapi/_original/open-financial-1-openapi.yml#POST /refund/batch"
+    ]
+   },
    "opennode": {
     "segments": [
      "refunds",
@@ -25011,6 +25082,24 @@
      "openapi/_original/unlock-protocol-locksmith-openapi.yml#DELETE /v2/purchase/payment-methods"
     ]
    },
+   "visa": {
+    "segments": [
+     "cards"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "last4": "string",
+     "vCardID": "string",
+     "expirationDate": "object",
+     "paymentAccountReference": "string",
+     "encCard": "string"
+    },
+    "evidence": [
+     "openapi/_original/visa-in-app-provisioning.yml#POST /universal/core/customers/{vCustomerID}/cards"
+    ]
+   },
    "vivenu": {
     "segments": [
      "payment-methods"
@@ -25965,12 +26054,12 @@
      "customer_secret": "string",
      "customer_context": "object",
      "client_metadata": "object",
+     "number_of_customers": "integer",
      "type": "string",
      "region": "string",
      "locale": "string",
      "host_secret": "boolean",
      "models": "object",
-     "number_of_customers": "integer",
      "link": "string"
     },
     "evidence": [
@@ -25979,6 +26068,7 @@
      "openapi/_original/bud-platform-openapi.yml#GET /characteristics/v1/customer",
      "openapi/_original/bud-platform-openapi.yml#GET /platform/v3/customers",
      "openapi/_original/bud-platform-openapi.yml#POST /platform/v3/customers",
+     "openapi/_original/bud-platform-openapi.yml#POST /platform/v3/customers/batch",
      "openapi/_original/bud-platform-openapi.yml#POST /v1/customers",
      "openapi/_original/bud-platform-openapi.yml#POST /v2/customers"
     ]
@@ -27250,6 +27340,7 @@
     "operations": [
      "GET collection",
      "POST collection",
+     "PUT collection",
      "PUT item"
     ],
     "properties": {
@@ -27281,14 +27372,18 @@
      "pushCommunicationId": "string",
      "requestedOn": "string",
      "data": null,
-     "passThrough": "object"
+     "passThrough": "object",
+     "batchId": "string",
+     "batch": "array"
     },
     "evidence": [
      "openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /customers",
      "openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/accounting/customers",
      "openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /customers",
      "openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /v2/accounting/customers",
+     "openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /v2/accounting/customers/batch",
      "openapi/_original/fis-accounting-data-as-a-service-openapi.json#PUT /customers/{id}",
+     "openapi/_original/fis-accounting-data-as-a-service-openapi.json#PUT /v2/accounting/customers/batch",
      "openapi/_original/fis-accounting-data-as-a-service-openapi.json#PUT /v2/accounting/customers/{id}"
     ]
    },
@@ -31264,6 +31359,37 @@
      "openapi/_original/versapay-api-reference.json#POST /api/imports/customer"
     ]
    },
+   "visa": {
+    "segments": [
+     "customers"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET item",
+     "POST collection",
+     "PUT item"
+    ],
+    "properties": {
+     "locale": "string",
+     "status": "string",
+     "lastName": "string",
+     "firstName": "string",
+     "encAddress": "string",
+     "vCustomerID": "string",
+     "createdDateTime": "integer",
+     "encEmailAddress": "string",
+     "encMobileNumber": "string",
+     "updatedDateTime": "integer",
+     "clientCustomerID": "string",
+     "vParentCustomerID": "string"
+    },
+    "evidence": [
+     "openapi/_original/visa-in-app-provisioning.yml#DELETE /universal/core/customers/{vCustomerID}",
+     "openapi/_original/visa-in-app-provisioning.yml#GET /universal/core/customers/{vCustomerID}",
+     "openapi/_original/visa-in-app-provisioning.yml#POST /universal/core/customers",
+     "openapi/_original/visa-in-app-provisioning.yml#PUT /universal/core/customers/{vCustomerID}"
+    ]
+   },
    "vivenu": {
     "segments": [
      "customers"
@@ -32401,12 +32527,15 @@
      "transfers": "array",
      "bypass_chariot_organization_verification": "boolean",
      "transactions": "array",
-     "idempotency_key": "string"
+     "idempotency_key": "string",
+     "disbursements": "array",
+     "count": "integer"
     },
     "evidence": [
      "openapi/_original/chariot-openapi-original.yml#GET /v1/disbursements",
      "openapi/_original/chariot-openapi-original.yml#GET /v1/disbursements/{id}",
-     "openapi/_original/chariot-openapi-original.yml#POST /v1/disbursements"
+     "openapi/_original/chariot-openapi-original.yml#POST /v1/disbursements",
+     "openapi/_original/chariot-openapi-original.yml#POST /v1/disbursements/bulk"
     ]
    },
    "coinbase": {
@@ -33661,18 +33790,28 @@
    },
    "moniepoint": {
     "segments": [
+     "disbursements",
      "settlements"
     ],
     "operations": [
-     "GET collection"
+     "GET collection",
+     "POST collection"
     ],
     "properties": {
      "requestSuccessful": "boolean",
      "responseMessage": "string",
      "responseCode": "string",
-     "responseBody": "object"
+     "responseBody": "object",
+     "title": "string",
+     "batchReference": "string",
+     "narration": "string",
+     "sourceAccountNumber": "string",
+     "onValidationFailure": "string",
+     "notificationInterval": "integer",
+     "transactionList": "array"
     },
     "evidence": [
+     "openapi/_original/monnify-disbursements-api-openapi.yml#POST /api/v2/disbursements/bulk",
      "openapi/_original/monnify-settlements-api-openapi.yml#GET /api/v1/settlements"
     ]
    },
@@ -38634,6 +38773,7 @@
     "vicai",
     "virgin-money-uk",
     "virto-commerce",
+    "visa",
     "vivenu",
     "volt-io",
     "vopay",
@@ -39070,6 +39210,7 @@
     "kakao",
     "keap",
     "keycorp",
+    "klarna",
     "later",
     "layup-technologies",
     "lean-technologies",
@@ -40836,6 +40977,7 @@
     "macquarie-bank",
     "mamo",
     "mangopay",
+    "mastercard",
     "mavrck",
     "memo-bank",
     "method-financial",
@@ -41146,6 +41288,7 @@
     "lootrush",
     "lorum",
     "macquarie-bank",
+    "mastercard",
     "mavrck",
     "momence",
     "monetizenow",
@@ -41296,6 +41439,7 @@
     "klarna",
     "lean-technologies",
     "lightspeed",
+    "mastercard",
     "memo-bank",
     "modulr",
     "moniepoint",
@@ -41396,6 +41540,7 @@
     "impala",
     "iugu",
     "ledger",
+    "mastercard",
     "mercury",
     "mono-africa",
     "mono-co",
@@ -42140,6 +42285,7 @@
     "mamo",
     "mandateshield-com",
     "marqeta",
+    "mastercard",
     "mastercard-gateway-api",
     "mavrck",
     "memo-bank",

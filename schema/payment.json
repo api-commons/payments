@@ -2,14 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/payment.json",
   "title": "Payment",
-  "description": "The common payment in Payments, distilled from 264 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common payment in Payments, distilled from 265 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.735,
-      "x-commons-providers": 194,
+      "x-commons-share": 0.736,
+      "x-commons-providers": 195,
       "x-commons-spellings": [
         "id",
         "paymentId",
@@ -24,7 +24,7 @@
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.678,
+      "x-commons-share": 0.675,
       "x-commons-providers": 179,
       "x-commons-spellings": [
         "status",
@@ -38,7 +38,7 @@
     "amount": {
       "type": "number",
       "x-commons-tier": "core",
-      "x-commons-share": 0.617,
+      "x-commons-share": 0.615,
       "x-commons-providers": 163,
       "x-commons-spellings": [
         "amount",
@@ -51,7 +51,7 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.504,
+      "x-commons-share": 0.502,
       "x-commons-providers": 133,
       "x-commons-spellings": [
         "created_at",
@@ -68,7 +68,7 @@
     "currency": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.439,
+      "x-commons-share": 0.438,
       "x-commons-providers": 116,
       "x-commons-spellings": [
         "currency",
@@ -80,8 +80,8 @@
     "payment_method_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.318,
-      "x-commons-providers": 84,
+      "x-commons-share": 0.321,
+      "x-commons-providers": 85,
       "x-commons-spellings": [
         "payment_method",
         "paymentMethod",
@@ -90,13 +90,13 @@
         "payment_method_id",
         "paymentMethodId",
         "card_id",
-        "paymentSource"
+        "cardId"
       ]
     },
     "description": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.295,
+      "x-commons-share": 0.294,
       "x-commons-providers": 78,
       "x-commons-spellings": [
         "description",
@@ -111,7 +111,7 @@
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.277,
+      "x-commons-share": 0.275,
       "x-commons-providers": 73,
       "x-commons-spellings": [
         "updated_at",
@@ -128,7 +128,7 @@
     "metadata": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.265,
+      "x-commons-share": 0.264,
       "x-commons-providers": 70,
       "x-commons-spellings": [
         "metadata",
@@ -144,7 +144,7 @@
     "customer_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.258,
+      "x-commons-share": 0.257,
       "x-commons-providers": 68,
       "x-commons-spellings": [
         "customer",
@@ -160,7 +160,7 @@
     "external_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.246,
+      "x-commons-share": 0.245,
       "x-commons-providers": 65,
       "x-commons-spellings": [
         "reference",
@@ -180,7 +180,7 @@
   "x-commons": {
     "context": "payments",
     "concept": "payment",
-    "providers": 264,
+    "providers": 265,
     "generated": "2026-11-10",
     "version": "0.1.0-draft.20261110",
     "status": "draft"

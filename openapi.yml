@@ -16,7 +16,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.712
+      x-commons-share: 0.713
       responses:
         '200':
           description: OK
@@ -35,7 +35,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.676
+      x-commons-share: 0.674
       responses:
         '200':
           description: OK
@@ -62,7 +62,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.651
+      x-commons-share: 0.649
       responses:
         '200':
           description: OK
@@ -75,7 +75,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: extended
-      x-commons-share: 0.214
+      x-commons-share: 0.213
       responses:
         '200':
           description: OK
@@ -185,7 +185,7 @@ paths:
       tags:
       - Refunds
       x-commons-tier: core
-      x-commons-share: 0.892
+      x-commons-share: 0.893
       responses:
         '200':
           description: OK
@@ -204,7 +204,7 @@ paths:
       tags:
       - Refunds
       x-commons-tier: extended
-      x-commons-share: 0.39
+      x-commons-share: 0.388
       responses:
         '200':
           description: OK
@@ -231,7 +231,7 @@ paths:
       tags:
       - Refunds
       x-commons-tier: extended
-      x-commons-share: 0.399
+      x-commons-share: 0.397
       responses:
         '200':
           description: OK
@@ -245,7 +245,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: core
-      x-commons-share: 0.861
+      x-commons-share: 0.853
       responses:
         '200':
           description: OK
@@ -270,7 +270,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: core
-      x-commons-share: 0.505
+      x-commons-share: 0.51
       responses:
         '200':
           description: OK
@@ -291,7 +291,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: extended
-      x-commons-share: 0.416
+      x-commons-share: 0.412
       responses:
         '200':
           description: OK
@@ -304,7 +304,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: extended
-      x-commons-share: 0.396
+      x-commons-share: 0.392
       responses:
         '200':
           description: OK
@@ -320,7 +320,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.808
+      x-commons-share: 0.81
       responses:
         '200':
           description: OK
@@ -334,7 +334,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.569
+      x-commons-share: 0.571
       responses:
         '200':
           description: OK
@@ -352,7 +352,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: extended
-      x-commons-share: 0.437
+      x-commons-share: 0.44
       responses:
         '200':
           description: OK
@@ -366,7 +366,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.796
+      x-commons-share: 0.792
       responses:
         '200':
           description: OK
@@ -390,7 +390,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.784
+      x-commons-share: 0.786
       responses:
         '200':
           description: OK
@@ -403,6 +403,25 @@ paths:
           application/json:
             schema: *id005
   /payouts:
+    post:
+      operationId: createPayout
+      summary: Create a payout
+      tags:
+      - Payouts
+      x-commons-tier: core
+      x-commons-share: 0.636
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id006
+                $ref: '#/components/schemas/Payout'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
     get:
       operationId: listPayouts
       summary: List payouts
@@ -417,8 +436,7 @@ paths:
             application/json:
               schema:
                 type: array
-                items: &id006
-                  $ref: '#/components/schemas/Payout'
+                items: *id006
       parameters:
       - name: limit
         in: query
@@ -428,24 +446,6 @@ paths:
         in: query
         schema:
           type: string
-    post:
-      operationId: createPayout
-      summary: Create a payout
-      tags:
-      - Payouts
-      x-commons-tier: core
-      x-commons-share: 0.628
-      responses:
-        '200':
-          description: OK
-          content:
-            application/json:
-              schema: *id006
-      requestBody:
-        required: true
-        content:
-          application/json:
-            schema: *id006
   /payouts/{payout_id}:
     parameters:
     - $ref: '#/components/parameters/payout_id'

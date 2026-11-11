@@ -16,3 +16,10 @@ concepts:
     core_coverage: 0.75
     evidence:
     - openapi/_original/open-financial-1-openapi.yml#GET /v1/pg/sandbox/payment_token/{tokenvalue}/payment
+  refund:
+    path_segment:
+    - refund
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/open-financial-1-openapi.yml#POST /refund/batch

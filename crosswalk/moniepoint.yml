@@ -20,8 +20,10 @@ concepts:
     - openapi/_original/monnify-refunds-api-openapi.yml#GET /api/v1/refunds/{refundReference}
   payout:
     path_segment:
+    - disbursements
     - settlements
     properties: {}
     core_coverage: 0.0
     evidence:
+    - openapi/_original/monnify-disbursements-api-openapi.yml#POST /api/v2/disbursements/bulk
     - openapi/_original/monnify-settlements-api-openapi.yml#GET /api/v1/settlements

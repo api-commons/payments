@@ -76,8 +76,8 @@ concepts:
       brand:
       - card_brand
       - card_type
-      customer_id: customer_id
       last4: last_4
+      customer_id: customer_id
     core_coverage: 0.5
     evidence:
     - openapi/_original/block-openapi.json#DELETE /v2/customers/{customer_id}/cards/{card_id}

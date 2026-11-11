@@ -70,7 +70,7 @@ concepts:
     - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/accounting/customers
     - openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /customers
     - openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /v2/accounting/customers
-    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#PUT /customers/{id}
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /v2/accounting/customers/batch
   dispute:
     path_segment:
     - disputes
