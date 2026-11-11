@@ -1,0 +1,27 @@
+provider: azupay
+apis_io: https://apis.io/providers/azupay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: paymentId
+      status: status
+      metadata: metaData
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/azupay-payment.yml#GET /payment
+    - openapi/_original/azupay-payment.yml#POST /payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      status: status
+      description: description
+      metadata: metaData
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/azupay-payment-agreement.yml#POST /paymentInitiation/refund
+    - openapi/_original/azupay-payment-request.yml#POST /paymentRequest/refund

@@ -1,0 +1,16 @@
+provider: ebanx
+apis_io: https://apis.io/providers/ebanx/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: refund_id
+      amount: amount
+      status: status
+      description: description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/ebanx-pay-in-direct-api-openapi.yml#POST /ws/refund

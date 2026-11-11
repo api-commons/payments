@@ -1,0 +1,26 @@
+provider: rye
+apis_io: https://apis.io/providers/rye/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout-sessions
+    properties:
+      id: referenceId
+      customer_id: buyer
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/rye-checkout-intents-openapi-original.yml#POST /api/v1/betas/checkout-sessions
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      status: state
+      created_at: createdAt
+      reason: reason
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/rye-checkout-intents-openapi-original.yml#POST /api/v1/test-helpers/returns/{returnId}/refund

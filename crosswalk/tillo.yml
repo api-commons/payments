@@ -1,0 +1,15 @@
+provider: tillo
+apis_io: https://apis.io/providers/tillo/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      status: status
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tillo-gift-card-openapi.yml#POST /digital/refund

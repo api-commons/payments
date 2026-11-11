@@ -1,0 +1,16 @@
+provider: triodos-bank-uk
+apis_io: https://apis.io/providers/triodos-bank-uk/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorisations
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/triodos-bank-uk-xs2a-openapi.json#GET /{tenant}/v1/bulk-payments/sepa-credit-transfers/{resource-id}/authorisations
+    - openapi/_original/triodos-bank-uk-xs2a-openapi.json#GET /{tenant}/v1/bulk-payments/sepa-credit-transfers/{resource-id}/authorisations/{authorisation-id}
+    - openapi/_original/triodos-bank-uk-xs2a-openapi.json#GET /{tenant}/v1/consents/{resource-id}/authorisations
+    - openapi/_original/triodos-bank-uk-xs2a-openapi.json#GET /{tenant}/v1/consents/{resource-id}/authorisations/{authorisation-id}
+    - openapi/_original/triodos-bank-uk-xs2a-openapi.json#GET /{tenant}/v1/periodic-payments/sepa-credit-transfers/{resource-id}/authorisations

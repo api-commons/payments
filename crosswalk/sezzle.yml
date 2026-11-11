@@ -1,0 +1,38 @@
+provider: sezzle
+apis_io: https://apis.io/providers/sezzle/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/sezzle-v2-openapi.yaml#DELETE /order/{order_uuid}/checkout
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: uuid
+      amount: amount_in_cents
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/sezzle-v2-openapi.yaml#POST /order/{order_uuid}/refund
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: uuid
+      name: first_name
+      email: email
+      phone: phone
+      address: billing_address
+      last_name: last_name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/sezzle-v2-openapi.yaml#DELETE /customer/{customer_uuid}
+    - openapi/_original/sezzle-v2-openapi.yaml#GET /customer
+    - openapi/_original/sezzle-v2-openapi.yaml#GET /customer/{customer_uuid}
+    - openapi/_original/sezzle-v2-openapi.yaml#GET /token/{token}/customer

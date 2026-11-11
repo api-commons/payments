@@ -1,0 +1,32 @@
+provider: paddle
+apis_io: https://apis.io/providers/paddle/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      currency: currency_code
+      customer_id: customer_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/paddle-openapi.yml#POST /subscriptions/{subscription_id}/charge
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: created_at
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paddle-openapi.yml#GET /customers
+    - openapi/_original/paddle-openapi.yml#GET /customers/{customer_id}
+    - openapi/_original/paddle-openapi.yml#PATCH /customers/{customer_id}
+    - openapi/_original/paddle-openapi.yml#POST /customers

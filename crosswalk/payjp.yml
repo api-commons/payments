@@ -1,0 +1,47 @@
+provider: payjp
+apis_io: https://apis.io/providers/payjp/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      amount: amount
+      created_at: created
+      currency: currency
+      metadata: metadata
+      customer_id: customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/payjp-openapi.yml#GET /charges
+    - openapi/_original/payjp-openapi.yml#GET /charges/{id}
+    - openapi/_original/payjp-openapi.yml#POST /charges
+    - openapi/_original/payjp-openapi.yml#POST /charges/{id}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      created_at: created
+      currency: currency
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/payjp-openapi.yml#POST /charges/{id}/refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      email: email
+      created_at: created
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/payjp-openapi.yml#DELETE /customers/{id}
+    - openapi/_original/payjp-openapi.yml#GET /customers
+    - openapi/_original/payjp-openapi.yml#GET /customers/{id}
+    - openapi/_original/payjp-openapi.yml#POST /customers
+    - openapi/_original/payjp-openapi.yml#POST /customers/{id}

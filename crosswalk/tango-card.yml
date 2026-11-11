@@ -1,0 +1,17 @@
+provider: tango-card
+apis_io: https://apis.io/providers/tango-card/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: displayName
+      created_at: createdAt
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tango-raas-api-openapi.yml#GET /customers
+    - openapi/_original/tango-raas-api-openapi.yml#GET /customers/{customerIdentifier}
+    - openapi/_original/tango-raas-api-openapi.yml#POST /customers

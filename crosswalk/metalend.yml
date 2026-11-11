@@ -1,0 +1,15 @@
+provider: metalend
+apis_io: https://apis.io/providers/metalend/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - withdrawals
+    properties:
+      status: status
+      amount: amount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/metalend-rebalancing-openapi.json#GET /v1/withdrawals/{trackingId}
+    - openapi/_original/metalend-rebalancing-openapi.json#POST /v1/withdrawals

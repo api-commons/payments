@@ -1,0 +1,15 @@
+provider: hipay
+apis_io: https://apis.io/providers/hipay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - settlement
+    properties:
+      amount: amount
+      currency: currency
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/settlement.yaml#GET /settlement
+    - openapi/_original/settlement.yaml#GET /settlement/{id}

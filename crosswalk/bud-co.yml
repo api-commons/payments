@@ -1,0 +1,19 @@
+provider: bud-co
+apis_io: https://apis.io/providers/bud-co/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id: customer_id
+      created_at: created_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bud-platform-openapi.yml#DELETE /platform/v3/customers/{customer_id}
+    - openapi/_original/bud-platform-openapi.yml#DELETE /v1/customers/{customer_id}
+    - openapi/_original/bud-platform-openapi.yml#GET /characteristics/v1/customer
+    - openapi/_original/bud-platform-openapi.yml#GET /platform/v3/customers
+    - openapi/_original/bud-platform-openapi.yml#POST /platform/v3/customers

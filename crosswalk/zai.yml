@@ -1,0 +1,76 @@
+provider: zai
+apis_io: https://apis.io/providers/zai/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      status:
+      - state
+      - status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      payment_method_id: payment_method
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zai-assembly-api.json#GET /charges
+    - openapi/_original/zai-assembly-api.json#GET /charges/{id}
+    - openapi/_original/zai-assembly-api.json#POST /charges
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount:
+      - amount
+      - total_amount
+      status:
+      - state
+      - status
+      created_at: created_at
+      currency: currency
+      description: description
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zai-assembly-api.json#PATCH /items/{id}/refund
+  customer:
+    path_segment:
+    - buyers
+    properties:
+      id: id
+      name:
+      - full_name
+      - first_name
+      email: email
+      created_at: created_at
+      phone:
+      - mobile
+      - phone
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zai-assembly-api.json#GET /charges/{id}/buyers
+    - openapi/_original/zai-assembly-api.json#GET /items/{id}/buyers
+  payout:
+    path_segment:
+    - disbursements
+    properties:
+      id:
+      - id
+      - reference_id
+      status: state
+      amount: amount
+      created_at: created_at
+      currency: currency
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zai-assembly-api.json#GET /disbursements
+    - openapi/_original/zai-assembly-api.json#GET /disbursements/{id}

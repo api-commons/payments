@@ -1,0 +1,18 @@
+provider: receeve
+apis_io: https://apis.io/providers/receeve/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - settlement
+    - settlements
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/receeve-openapi-original.yml#GET /finance/v1/{clientId}/settlement
+    - openapi/_original/receeve-openapi-original.yml#GET /finance/v1/{clientId}/settlements

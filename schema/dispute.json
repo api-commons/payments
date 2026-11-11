@@ -1,0 +1,134 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/dispute.json",
+  "title": "Dispute",
+  "description": "The common dispute in Payments, distilled from 71 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.676,
+      "x-commons-providers": 48,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "Status"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.648,
+      "x-commons-providers": 46,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "created",
+        "created_date",
+        "createdDate",
+        "CreationDate",
+        "created_time",
+        "date_created"
+      ],
+      "format": "date-time"
+    },
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.648,
+      "x-commons-providers": 46,
+      "x-commons-spellings": [
+        "id",
+        "dispute_id",
+        "disputeId",
+        "uuid",
+        "referenceId",
+        "Id",
+        "disputeID",
+        "_id"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.648,
+      "x-commons-providers": 46,
+      "x-commons-spellings": [
+        "reason",
+        "reason_code",
+        "reasonCode",
+        "disputeReason",
+        "DisputeReason",
+        "category"
+      ]
+    },
+    "amount": {
+      "type": "integer",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.465,
+      "x-commons-providers": 33,
+      "x-commons-spellings": [
+        "amount",
+        "amountInCents",
+        "totalAmount",
+        "Amount"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.38,
+      "x-commons-providers": 27,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "updated",
+        "updated_time",
+        "update_time",
+        "lastModified",
+        "updatedDate"
+      ],
+      "format": "date-time"
+    },
+    "payment_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.366,
+      "x-commons-providers": 26,
+      "x-commons-spellings": [
+        "transactionId",
+        "payment_id",
+        "payment",
+        "transaction_id",
+        "charge",
+        "paymentId",
+        "charge_id",
+        "chargeId"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.31,
+      "x-commons-providers": 22,
+      "x-commons-spellings": [
+        "currency",
+        "currency_code",
+        "currency_iso_code",
+        "Currency"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "payments",
+    "concept": "dispute",
+    "providers": 71,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

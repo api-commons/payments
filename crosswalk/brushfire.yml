@@ -1,0 +1,13 @@
+provider: brushfire
+apis_io: https://apis.io/providers/brushfire/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties:
+      id: Id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/brushfire-openapi.json#GET /events/{eventId}/paymentmethods

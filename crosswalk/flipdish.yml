@@ -1,0 +1,66 @@
+provider: flipdish
+apis_io: https://apis.io/providers/flipdish/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment_intents
+    properties:
+      id: Id
+      status: Status
+      created_at: Created
+      currency: Currency
+      description: Description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/flipdish-payments-openapi.json#GET /api/v1.0/payment_intents/{paymentIntentId}
+  refund:
+    path_segment:
+    - refund
+    - refunds
+    properties:
+      reason: RefundReason
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/flipdish-orders-openapi.json#POST /api/v1.0/orders/{id}/refund
+    - openapi/_original/flipdish-payments-openapi.json#GET /api/v1.0/{appId}/bankaccounts/{bankAccountId}/payouts/{payoutId}/refunds
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id: CustomerId
+      name: Name
+      phone: PhoneNumber
+      status: Status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/flipdish-customers-openapi.json#GET /api/v1.0/{appId}/customers
+    - openapi/_original/flipdish-customers-openapi.json#GET /api/v1.0/{appId}/customers/{customerId}
+    - openapi/_original/flipdish-customers-openapi.json#POST /api/v1.0/{appId}/customers
+    - openapi/_original/flipdish-customers-openapi.json#POST /api/v1.0/{appId}/customers/{customerId}
+    - openapi/_original/flipdish-marketing-openapi.json#GET /api/v1.0/vouchers/{appId}/customer/{customerId}
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: PayoutId
+      amount: Amount
+      created_at: CreatedDate
+      currency: Currency
+      destination:
+      - BankAccountId
+      - DestinationAccount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/flipdish-payments-openapi.json#GET /api/v1.0/{appId}/bankaccounts/{bankAccountId}/payouts/{payoutId}
+    - openapi/_original/flipdish-payments-openapi.json#GET /api/v1.0/{appId}/payouts
+  dispute:
+    path_segment:
+    - chargebacks
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/flipdish-payments-openapi.json#GET /api/v1.0/{appId}/bankaccounts/{bankAccountId}/payouts/{payoutId}/chargebacks
+    - openapi/_original/flipdish-payments-openapi.json#GET /api/v1.0/{appId}/reporting/reports/payouts3/{bankAccountId}/{payoutId}/export/chargebacks

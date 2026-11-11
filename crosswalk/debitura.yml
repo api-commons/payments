@@ -1,0 +1,21 @@
+provider: debitura
+apis_io: https://apis.io/providers/debitura/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - paymentId
+      created_at: dateCreated
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/debitura-collection-partner-api.json#DELETE /cases/{id}/payments/{paymentId}
+    - openapi/_original/debitura-collection-partner-api.json#DELETE /managed-cases/{id}/payments/{paymentId}
+    - openapi/_original/debitura-collection-partner-api.json#GET /cases/{id}/payments
+    - openapi/_original/debitura-collection-partner-api.json#GET /managed-cases/{id}/payments
+    - openapi/_original/debitura-collection-partner-api.json#POST /cases/{id}/payments

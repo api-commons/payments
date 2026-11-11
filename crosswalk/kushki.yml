@@ -1,0 +1,27 @@
+provider: kushki
+apis_io: https://apis.io/providers/kushki/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    - charge
+    properties:
+      status: status
+      amount:
+      - amount
+      - totalAmount
+      currency:
+      - currencyCode
+      - currency
+      payment_method_id: token
+      description: description
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/kushki-card-payments-api-openapi.yml#DELETE /v1/charges/{ticketNumber}
+    - openapi/_original/kushki-card-payments-api-openapi.yml#POST /card/v1/charges
+    - openapi/_original/kushki-card-present-api-openapi.yml#POST /cardpresent/v1/charges
+    - openapi/_original/kushki-cash-payments-api-openapi.yml#DELETE /cash/v1/charges/{ticketNumber}
+    - openapi/_original/kushki-cash-payments-api-openapi.yml#GET /cash/v1/charges/{ticketNumber}

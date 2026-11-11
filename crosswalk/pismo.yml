@@ -1,0 +1,18 @@
+provider: pismo
+apis_io: https://apis.io/providers/pismo/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+      payment_method_id: card_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/pismo-openapi.yml#GET /accounts/v1/accounts/{accountId}/authorizations
+    - openapi/_original/pismo-openapi.yml#GET /accounts/v1/accounts/{accountId}/authorizations/{authorizationId}

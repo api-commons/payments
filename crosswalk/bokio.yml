@@ -1,0 +1,42 @@
+provider: bokio
+apis_io: https://apis.io/providers/bokio/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/bokio-company-api-openapi.yml#DELETE /companies/{companyId}/invoices/{invoiceId}/payments/{paymentId}
+    - openapi/_original/bokio-company-api-openapi.yml#GET /companies/{companyId}/invoices/{invoiceId}/payments
+    - openapi/_original/bokio-company-api-openapi.yml#GET /companies/{companyId}/invoices/{invoiceId}/payments/{paymentId}
+    - openapi/_original/bokio-company-api-openapi.yml#POST /companies/{companyId}/invoices/{invoiceId}/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      address: address
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bokio-company-api-openapi.yml#DELETE /companies/{companyId}/customers/{customerId}
+    - openapi/_original/bokio-company-api-openapi.yml#GET /companies/{companyId}/customers
+    - openapi/_original/bokio-company-api-openapi.yml#GET /companies/{companyId}/customers/{customerId}
+    - openapi/_original/bokio-company-api-openapi.yml#POST /companies/{companyId}/customers
+    - openapi/_original/bokio-company-api-openapi.yml#PUT /companies/{companyId}/customers/{customerId}
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      id: id
+      method: type
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/bokio-company-api-openapi.yml#DELETE /companies/{companyId}/invoices/{invoiceId}/settlements/{settlementId}
+    - openapi/_original/bokio-company-api-openapi.yml#GET /companies/{companyId}/invoices/{invoiceId}/settlements
+    - openapi/_original/bokio-company-api-openapi.yml#GET /companies/{companyId}/invoices/{invoiceId}/settlements/{settlementId}
+    - openapi/_original/bokio-company-api-openapi.yml#POST /companies/{companyId}/invoices/{invoiceId}/settlements

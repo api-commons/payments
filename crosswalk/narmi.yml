@@ -1,0 +1,25 @@
+provider: narmi
+apis_io: https://apis.io/providers/narmi/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: state
+      amount: amount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/narmi-public-openapi-original.yml#DELETE /v1/payments/{id}/
+    - openapi/_original/narmi-public-openapi-original.yml#GET /v1/payments/
+    - openapi/_original/narmi-public-openapi-original.yml#POST /v1/payments/
+  payout:
+    path_segment:
+    - withdrawals
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/narmi-public-openapi-original.yml#POST /v1/accounts/{uuid}/withdrawals/

@@ -1,0 +1,19 @@
+provider: the-bank-of-london
+apis_io: https://apis.io/providers/the-bank-of-london/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      metadata: metadata
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/payments
+    - openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/payments/{paymentId}
+    - openapi/_original/the-bank-of-london-api-openapi.json#POST /v2/payments

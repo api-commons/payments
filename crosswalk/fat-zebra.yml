@@ -1,0 +1,74 @@
+provider: fat-zebra
+apis_io: https://apis.io/providers/fat-zebra/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    - charge
+    properties:
+      amount: amount
+      currency: currency
+      external_id: reference
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/fat-zebra-gateway.json#GET /paypal/authorizations
+    - openapi/_original/fat-zebra-gateway.json#GET /paypal/authorizations/{id}
+    - openapi/_original/fat-zebra-gateway.json#POST /paypal/billing_agreements/{id}/charge
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: transaction_id
+      amount: amount
+      currency: currency
+      description: description
+      metadata:
+      - extra
+      - metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fat-zebra-gateway.json#GET /paypal/refunds
+    - openapi/_original/fat-zebra-gateway.json#GET /paypal/refunds/{id}
+    - openapi/_original/fat-zebra-gateway.json#GET /refunds
+    - openapi/_original/fat-zebra-gateway.json#GET /refunds/{id}
+    - openapi/_original/fat-zebra-gateway.json#POST /paypal/captures/{id}/refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: first_name
+      email: email_address
+      address: address
+      last_name: last_name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fat-zebra-gateway.json#DELETE /customers/{id}
+    - openapi/_original/fat-zebra-gateway.json#GET /customers
+    - openapi/_original/fat-zebra-gateway.json#GET /customers/{id}
+    - openapi/_original/fat-zebra-gateway.json#POST /customers
+    - openapi/_original/fat-zebra-gateway.json#PUT /customers/{id}
+  payout:
+    path_segment:
+    - settlement
+    - payouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/fat-zebra-gateway.json#GET /purchases/settlement
+    - openapi/_original/fat-zebra-gateway.json#GET /reports/payouts/{date}
+  dispute:
+    path_segment:
+    - chargebacks
+    - disputes
+    - dispute
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/fat-zebra-gateway.json#GET /chargebacks
+    - openapi/_original/fat-zebra-gateway.json#GET /chargebacks/{id}
+    - openapi/_original/fat-zebra-gateway.json#GET /disputes
+    - openapi/_original/fat-zebra-gateway.json#GET /transactions/{transaction_fatzebra_id}/dispute
+    - openapi/_original/fat-zebra-gateway.json#PATCH /chargebacks/{id}

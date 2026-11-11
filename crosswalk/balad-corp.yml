@@ -1,0 +1,12 @@
+provider: balad-corp
+apis_io: https://apis.io/providers/balad-corp/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - sources
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/balad-corp-gateway-openapi.yml#GET /remit-api/v1/lookups/sources

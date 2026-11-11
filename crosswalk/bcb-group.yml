@@ -1,0 +1,18 @@
+provider: bcb-group
+apis_io: https://apis.io/providers/bcb-group/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id: transactionId
+      amount: amount
+      currency: currency
+      external_id: reference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bcb-group-payments-openapi.json#GET /v1/payments/{accountId}
+    - openapi/_original/bcb-group-payments-openapi.json#POST /v1/accounts/{accountId}/virtual/{iban}/payment

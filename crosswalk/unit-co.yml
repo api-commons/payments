@@ -1,0 +1,41 @@
+provider: unit-co
+apis_io: https://apis.io/providers/unit-co/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - authorizations
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/unit-co-openapi.yml#GET /authorizations
+    - openapi/_original/unit-co-openapi.yml#GET /authorizations/{authorizationId}
+    - openapi/_original/unit-co-openapi.yml#GET /payments
+    - openapi/_original/unit-co-openapi.yml#GET /payments/{paymentId}
+    - openapi/_original/unit-co-openapi.yml#PATCH /payments/{paymentId}
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/unit-co-openapi.yml#DELETE /accounts/{accountId}/relationships/customers
+    - openapi/_original/unit-co-openapi.yml#GET /customers
+    - openapi/_original/unit-co-openapi.yml#GET /customers/{customerId}
+    - openapi/_original/unit-co-openapi.yml#PATCH /customers/{customerId}
+    - openapi/_original/unit-co-openapi.yml#POST /accounts/{accountId}/relationships/customers
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/unit-co-openapi.yml#GET /disputes
+    - openapi/_original/unit-co-openapi.yml#GET /disputes/{disputeId}

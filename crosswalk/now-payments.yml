@@ -1,0 +1,31 @@
+provider: now-payments
+apis_io: https://apis.io/providers/now-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: payment_id
+      status: payment_status
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/openapi.yml#GET /payment
+    - openapi/_original/openapi.yml#GET /payment/{payment_id}
+    - openapi/_original/openapi.yml#POST /payment
+  payout:
+    path_segment:
+    - payout
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.yml#GET /payout/{payout_id}
+    - openapi/_original/openapi.yml#POST /payout

@@ -1,0 +1,29 @@
+provider: koin
+apis_io: https://apis.io/providers/koin/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    - refunds
+    properties:
+      id: refund_id
+      amount: amount
+      status: status
+      payment_id: transaction
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/koin-payments-openapi.json#GET /v1/payment/orders/{order_id}/refunds/{refund_id}
+    - openapi/_original/koin-payments-openapi.json#PUT /v1/payment/orders/{order_id}/refund
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: payout_id
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/koin-payments-openapi.json#GET /v1/payment/payouts
+    - openapi/_original/koin-payments-openapi.json#GET /v1/payment/payouts/{payout_id}
+    - openapi/_original/koin-payments-openapi.json#POST /v1/payment/payouts

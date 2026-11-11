@@ -1,0 +1,49 @@
+provider: monetizenow
+apis_io: https://apis.io/providers/monetizenow/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: paymentStatus
+      amount: amount
+      currency: currency
+      payment_method_id: paymentMethodId
+      description: description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/monetizenow-openapi.json#GET /api/accounts/{accountId}/payments
+    - openapi/_original/monetizenow-openapi.json#GET /api/accounts/{accountId}/payments/{paymentId}
+  refund:
+    path_segment:
+    - credits
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      currency: currency
+      reason: reason
+      payment_id: paymentId
+      metadata: customFields
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/monetizenow-openapi.json#GET /api/credits/{creditId}
+    - openapi/_original/monetizenow-openapi.json#POST /api/accounts/{accountId}/billGroups/{billGroupId}/credits
+    - openapi/_original/monetizenow-openapi.json#POST /api/payments/{paymentId}/refund
+    - openapi/_original/monetizenow-openapi.json#PUT /api/accounts/{accountId}/billGroups/{billGroupId}/credits/{creditId}
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties:
+      id: id
+      type: paymentMethodType
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/monetizenow-openapi.json#GET /api/accounts/{accountId}/paymentMethods
+    - openapi/_original/monetizenow-openapi.json#GET /api/paymentMethods/{paymentMethodId}
+    - openapi/_original/monetizenow-openapi.json#POST /api/accounts/{accountId}/paymentMethods

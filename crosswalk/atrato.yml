@@ -1,0 +1,14 @@
+provider: atrato
+apis_io: https://apis.io/providers/atrato/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: status
+      amount: totalAmount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/atrato-partners-openapi.yml#GET /api/v4/integration/cash-in/payments

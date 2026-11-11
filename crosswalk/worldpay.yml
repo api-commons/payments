@@ -1,0 +1,54 @@
+provider: worldpay
+apis_io: https://apis.io/providers/worldpay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id: paymentId
+      created_at: timestamp
+      description: narrative
+      external_id: orderReference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/worldpay-fraudsight-openapi.yaml#POST /fraudsight/update/payment
+    - openapi/_original/worldpay-payment-queries-openapi.yaml#GET /paymentQueries/payments
+    - openapi/_original/worldpay-payment-queries-openapi.yaml#GET /paymentQueries/payments/{paymentId}
+    - openapi/_original/worldpay-payments-openapi.yaml#GET /api/payments/{linkData}
+    - openapi/_original/worldpay-payments-openapi.yaml#POST /api/payments
+  refund:
+    path_segment:
+    - reversals
+    - refunds
+    properties:
+      amount: amount
+      currency: currency
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/worldpay-apms-openapi.yaml#POST /apmPayments/{paymentId}/reversals
+    - openapi/_original/worldpay-card-payments-openapi.yaml#POST /payments/sales/reversals/{linkData}
+    - openapi/_original/worldpay-payments-openapi.yaml#POST /api/payments/{linkData}/refunds
+    - openapi/_original/worldpay-payments-openapi.yaml#POST /api/payments/{linkData}/reversals
+  payout:
+    path_segment:
+    - settlements
+    - payouts
+    properties:
+      amount: amount
+      currency: currency
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/worldpay-apms-openapi.yaml#POST /apmPayments/{paymentId}/settlements
+    - openapi/_original/worldpay-card-payments-openapi.yaml#POST /payments/settlements/{linkData}
+    - openapi/_original/worldpay-card-payouts-openapi.yaml#GET /payouts/{resource}
+    - openapi/_original/worldpay-payments-openapi.yaml#POST /api/payments/{linkData}/settlements
+  dispute:
+    path_segment:
+    - chargeback
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/worldpay-fraudsight-openapi.yaml#POST /fraudsight/update/chargeback

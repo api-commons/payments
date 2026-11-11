@@ -1,0 +1,12 @@
+provider: payments-canada
+apis_io: https://apis.io/providers/payments-canada/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/rtr-inbound-participant-payment-api-openapi.yml#POST /payments

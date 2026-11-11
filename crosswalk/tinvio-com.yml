@@ -1,0 +1,38 @@
+provider: tinvio-com
+apis_io: https://apis.io/providers/tinvio-com/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: status
+      amount: totalAmount
+      currency:
+      - currency
+      - currencyCode
+      payment_method_id: paymentMethod
+      metadata: customFields
+      external_id:
+      - reference
+      - externalReference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tinvio-com-openapi-original.yaml#DELETE /api/v1/payments/{resourceId}
+    - openapi/_original/tinvio-com-openapi-original.yaml#GET /api/v1/bills/{resourceId}/payments
+    - openapi/_original/tinvio-com-openapi-original.yaml#GET /api/v1/invoices/{resourceId}/payments
+    - openapi/_original/tinvio-com-openapi-original.yaml#GET /api/v1/payments/{resourceId}
+    - openapi/_original/tinvio-com-openapi-original.yaml#POST /api/v1/bills/{resourceId}/payments
+  refund:
+    path_segment:
+    - credits
+    - refunds
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tinvio-com-openapi-original.yaml#DELETE /api/v1/bills/{resourceId}/credits/{creditsAppliedResourceId}
+    - openapi/_original/tinvio-com-openapi-original.yaml#DELETE /api/v1/invoices/{resourceId}/credits/{creditsAppliedResourceId}
+    - openapi/_original/tinvio-com-openapi-original.yaml#GET /api/v1/bills/{resourceId}/credits
+    - openapi/_original/tinvio-com-openapi-original.yaml#GET /api/v1/customer-credit-notes/{resourceId}/refunds
+    - openapi/_original/tinvio-com-openapi-original.yaml#GET /api/v1/invoices/{resourceId}/credits

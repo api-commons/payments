@@ -1,0 +1,24 @@
+provider: lemonway
+apis_io: https://apis.io/providers/lemonway/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      status: status
+      reason: comment
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/lemonway-directkit-api-2-0-openapi.yml#PUT /v2/refund/{transactionid}
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/lemonway-directkit-api-2-0-openapi.yml#GET /v2/disputes

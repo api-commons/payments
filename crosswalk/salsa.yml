@@ -1,0 +1,13 @@
+provider: salsa
+apis_io: https://apis.io/providers/salsa/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/salsa-openapi.yml#GET /employers/{employerId}/workers/{workerId}/payments
+    - openapi/_original/salsa-openapi.yml#POST /employers/{employerId}/workers/{workerId}/payments

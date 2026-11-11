@@ -1,0 +1,61 @@
+provider: dojo
+apis_io: https://apis.io/providers/dojo/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment-intents
+    properties:
+      id: id
+      status: status
+      amount:
+      - amount
+      - totalAmount
+      created_at: createdAt
+      description: description
+      updated_at: updatedAt
+      metadata: metadata
+      customer_id: customer
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dojo-api.json#DELETE /payment-intents/{paymentIntentId}
+    - openapi/_original/dojo-api.json#GET /payment-intents/{paymentIntentId}
+    - openapi/_original/dojo-api.json#POST /payment-intents
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refundId
+      amount: amount
+      reason: refundReason
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/dojo-api.json#GET /payment-intents/refunds/{refundId}
+    - openapi/_original/dojo-api.json#POST /payment-intents/{paymentIntentId}/refunds
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/dojo-api.json#DELETE /customers/public/{customerId}/payment-methods/{paymentMethodId}
+    - openapi/_original/dojo-api.json#GET /customers/public/{customerId}/payment-methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: emailAddress
+      created_at: createdAt
+      phone: phoneNumber
+      address: billingAddress
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dojo-api.json#DELETE /customers/{customerId}
+    - openapi/_original/dojo-api.json#GET /customers/{customerId}
+    - openapi/_original/dojo-api.json#PATCH /customers/{customerId}
+    - openapi/_original/dojo-api.json#POST /customers

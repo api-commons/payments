@@ -1,0 +1,29 @@
+provider: paymob
+apis_io: https://apis.io/providers/paymob/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - payment-links
+    properties:
+      id: id
+      currency: currency
+      amount: amount_cents
+      description: description
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/paymob-accept-api-openapi.yml#POST /api/ecommerce/payment-links
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id:
+      - id
+      - transaction_id
+      amount: amount_cents
+      created_at: created_at
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/paymob-accept-api-openapi.yml#POST /api/acceptance/void_refund/refund

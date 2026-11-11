@@ -1,0 +1,29 @@
+provider: paypay
+apis_io: https://apis.io/providers/paypay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/paypay-opa-openapi-original.json#DELETE /v2/payments/{merchantPaymentId}
+    - openapi/_original/paypay-opa-openapi-original.json#GET /v2/codes/payments/{merchantPaymentId}
+    - openapi/_original/paypay-opa-openapi-original.json#GET /v2/payments/{merchantPaymentId}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      amount: amount
+      status: status
+      reason: reason
+      payment_id: paymentId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/paypay-opa-openapi-original.json#GET /v2/refunds/{merchantRefundId}?paymentId={paymentId}
+    - openapi/_original/paypay-opa-openapi-original.json#POST /v2/refunds

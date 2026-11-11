@@ -1,0 +1,50 @@
+provider: btg-pactual
+apis_io: https://apis.io/providers/btg-pactual/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - sales
+    properties:
+      id:
+      - id
+      - paymentId
+      status: status
+      amount:
+      - amount
+      - totalAmount
+      payment_method_id: paymentMethod
+      description: description
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/btg-pactual-acquirers-salesprovider-openapi.yml#GET /{companyId}/acquirer/sales
+    - openapi/_original/btg-pactual-acquirers-salesprovider-openapi.yml#GET /{companyId}/acquirer/sales/{saleId}
+    - openapi/_original/btg-pactual-banking-payments-openapi.yml#DELETE /{companyId}/banking/payments/{paymentId}
+    - openapi/_original/btg-pactual-banking-payments-openapi.yml#GET /{companyId}/banking/payments
+    - openapi/_original/btg-pactual-banking-payments-openapi.yml#GET /{companyId}/banking/payments-recurrences/{recurrenceId}/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: name
+      email: email
+      phone: phoneNumber
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/btg-pactual-onboarding-openapi.yml#GET /apps/{clientId}/.well-known/customers/{taxId}
+  payout:
+    path_segment:
+    - settlement
+    - settlements
+    properties:
+      id: id
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/btg-pactual-fidc-payment-openapi.yml#GET /fidc-loan/v1/settlement/{settlementId}
+    - openapi/_original/btg-pactual-fidc-payment-openapi.yml#POST /fidc-loan/v1/settlement
+    - openapi/_original/btg-pactual-scf-risco-sacado-openapi.yml#GET /settlements/{settlementId}
+    - openapi/_original/btg-pactual-scf-risco-sacado-openapi.yml#POST /settlements

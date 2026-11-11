@@ -1,0 +1,16 @@
+provider: atomadic-tech
+apis_io: https://apis.io/providers/atomadic-tech/
+context: payments
+generated: '2026-11-10'
+concepts:
+  dispute:
+    path_segment:
+    - dispute
+    properties:
+      status: status
+      id: dispute_id
+      reason: reason
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/atomadic-tech-openapi.json#POST /v1/escrow/dispute
+    - openapi/_original/atomadic-tech-openapi.yml#POST /v1/escrow/dispute

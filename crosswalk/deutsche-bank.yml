@@ -1,0 +1,18 @@
+provider: deutsche-bank
+apis_io: https://apis.io/providers/deutsche-bank/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    - sessions
+    properties:
+      expires_at: expires
+      url: redirect_url
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/deutsche-bank-merchant-solution-services-v2.1.json#POST /form/event/{event_id}/checkout/{tx_action}
+    - openapi/_original/deutsche-bank-merchant-solution-services-v2.1.json#POST /paymentlink/event/{event_id}/checkout/{tx_action}
+    - openapi/_original/deutsche-bank-merchant-solution-services-v2.json#POST /form/event/{event_id}/checkout/{tx_action}
+    - openapi/_original/deutsche-bank-oneid-fakerock-v1.json#POST /am/json/realms/root/realms/{realm}/sessions

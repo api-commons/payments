@@ -1,0 +1,45 @@
+provider: interswitch
+apis_io: https://apis.io/providers/interswitch/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      currency: currency
+      payment_method_id: paymentMethod
+      customer_id: customerId
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/interswitch-payment-gateway-api-openapi.yml#GET /paymentgateway/api/v1/payments/{paymentId}
+    - openapi/_original/interswitch-payment-gateway-api-openapi.yml#POST /paymentgateway/api/v1/payments
+  checkout_session:
+    path_segment:
+    - sessions
+    - payment-links
+    properties:
+      status: status
+      currency: currency
+      amount: amount
+      expires_at: expiresAt
+      description: description
+      success_url: returnUrl
+      url: redirectUrl
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/interswitch-payment-gateway-api-openapi.yml#POST /paymentgateway/api/v1/hosted-fields/sessions
+    - openapi/_original/interswitch-payment-gateway-api-openapi.yml#POST /paymentgateway/api/v1/payment-links
+    - openapi/_original/interswitch-payment-gateway-api-openapi.yml#POST /paymentgateway/api/v1/three-d-secure/sessions
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: paymentMethodId
+      type: type
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/interswitch-lending-api-openapi.yml#GET /lending-service/api/v1/users/{customerId}/payment-methods

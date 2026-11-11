@@ -1,0 +1,21 @@
+provider: doku
+apis_io: https://apis.io/providers/doku/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      customer_id: customer
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/doku-openapi.yml#POST /checkout/v1/payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      reason: reason
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/doku-openapi.yml#POST /direct-debit/core/v1/debit/refund

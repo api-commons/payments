@@ -1,0 +1,30 @@
+provider: modivo
+apis_io: https://apis.io/providers/modivo/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/modivo-commerce-rest-api-openapi.yml#GET /V1/guest-carts/{cartId}/payment-methods
+    - openapi/_original/modivo-eobuwie-commerce-rest-api-openapi.yml#GET /V1/guest-carts/{cartId}/payment-methods
+    - openapi/_original/modivo-eobuwie-rest-schema-swagger.json#GET /V1/guest-carts/{cartId}/payment-methods
+    - openapi/_original/modivo-rest-schema-swagger.json#GET /V1/guest-carts/{cartId}/payment-methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      email: email
+      created_at: created_at
+      address: addresses
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/modivo-commerce-rest-api-openapi.yml#POST /V1/customers
+    - openapi/_original/modivo-eobuwie-commerce-rest-api-openapi.yml#POST /V1/customers
+    - openapi/_original/modivo-eobuwie-rest-schema-swagger.json#POST /V1/customers
+    - openapi/_original/modivo-rest-schema-swagger.json#POST /V1/customers

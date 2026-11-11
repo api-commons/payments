@@ -1,0 +1,31 @@
+provider: lorum
+apis_io: https://apis.io/providers/lorum/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      amount: amount
+      external_id:
+      - external_id
+      - external_reference
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/lorum-openapi-original.json#POST /v1/accounts/{account_id}/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name:
+      - first_name
+      - display_name
+      address: address
+      last_name: last_name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/lorum-openapi-original.json#GET /v1/customers
+    - openapi/_original/lorum-openapi-original.json#GET /v1/customers/{customer_id}
+    - openapi/_original/lorum-openapi-original.json#PATCH /v1/customers/{customer_id}

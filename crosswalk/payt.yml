@@ -1,0 +1,17 @@
+provider: payt
+apis_io: https://apis.io/providers/payt/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      amount: total_amount
+      payment_method_id: payment_method
+      description: description
+      updated_at: updated_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/payt-openapi-original.json#GET /v1/payments

@@ -1,0 +1,42 @@
+provider: execution-market
+apis_io: https://apis.io/providers/execution-market/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      status: status
+      amount: total_amount
+      created_at: created_at
+      currency: currency
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/execution-market-openapi.json#GET /api/v1/tasks/{task_id}/payment
+    - openapi/_original/execution-market-openapi.yml#GET /api/v1/tasks/{task_id}/payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/execution-market-openapi.json#POST /api/v1/escrow/refund
+    - openapi/_original/execution-market-openapi.yml#POST /api/v1/escrow/refund
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: created_at
+      id: id
+      reason: reason
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/execution-market-openapi.json#GET /api/v1/disputes
+    - openapi/_original/execution-market-openapi.json#GET /api/v1/disputes/{dispute_id}
+    - openapi/_original/execution-market-openapi.json#POST /api/v1/disputes
+    - openapi/_original/execution-market-openapi.yml#GET /api/v1/disputes
+    - openapi/_original/execution-market-openapi.yml#GET /api/v1/disputes/{dispute_id}

@@ -1,0 +1,57 @@
+provider: culqi
+apis_io: https://apis.io/providers/culqi/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      amount: amount
+      created_at: creation_date
+      currency: currency_code
+      payment_method_id: source
+      description: description
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/culqi-openapi.yml#GET /charges
+    - openapi/_original/culqi-openapi.yml#GET /charges/{id}
+    - openapi/_original/culqi-openapi.yml#PATCH /charges/{id}
+    - openapi/_original/culqi-openapi.yml#POST /charges
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amount
+      created_at: creation_date
+      reason: reason
+      payment_id: charge_id
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/culqi-openapi.yml#GET /refunds
+    - openapi/_original/culqi-openapi.yml#GET /refunds/{id}
+    - openapi/_original/culqi-openapi.yml#PATCH /refunds/{id}
+    - openapi/_original/culqi-openapi.yml#POST /refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      created_at: creation_date
+      phone: phone_number
+      address: address
+      last_name: last_name
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/culqi-openapi.yml#DELETE /customers/{id}
+    - openapi/_original/culqi-openapi.yml#GET /customers
+    - openapi/_original/culqi-openapi.yml#GET /customers/{id}
+    - openapi/_original/culqi-openapi.yml#PATCH /customers/{id}
+    - openapi/_original/culqi-openapi.yml#POST /customers

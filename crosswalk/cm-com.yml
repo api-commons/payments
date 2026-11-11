@@ -1,0 +1,100 @@
+provider: cm-com
+apis_io: https://apis.io/providers/cm-com/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      payment_method_id: paymentMethod
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/bancontact/v1/transactions/{transactionId}/payments
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/idealqr/v1/transactions/{transactionId}/payments
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/idealqr/v1/transactions/{transactionId}/payments/{paymentId}
+    - openapi/_original/cm-com-sign-v1-openapi.yml#GET /dossiers/{dossierId}/invitees/{inviteeId}/payments
+  checkout_session:
+    path_segment:
+    - sessions
+    - checkout
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      customer_id: consumer
+      currency: currency
+      amount: amount
+      expires_at: expiresAt
+      description: description
+      success_url: returnUrl
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/cm-com-live-entrance-management-v1-openapi.yml#POST /entrance/v1.0/scan/{entrancePlanUuid}/checkout
+    - openapi/_original/cm-com-live-entrance-management-v2-openapi.yml#POST /entrance/v2.0/scan/{entrancePlanUuid}/checkout
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/apple-pay/v1/sessions/{sessionId}
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/google-pay/v1/sessions/{sessionId}
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#POST /paymentmethods/apple-pay/v1/sessions
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id:
+      - id
+      - transactionId
+      amount: amount
+      status: status
+      created_at:
+      - created
+      - createdAt
+      currency: currency
+      reason: reason
+      payment_id:
+      - paymentId
+      - payment
+      - transaction
+      - captureId
+      description: description
+      updated_at: updated
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/apple-pay/v1/sessions/{sessionId}/transactions/{transactionId}/refunds
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/bancontact/v1/transactions/{transactionId}/payments/{paymentId}/refunds
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/bancontact/v1/transactions/{transactionId}/refunds
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/banktransfer/v1/transactions/{transactionId}/refunds
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/belfiuspaybutton/v1/transactions/{transactionId}/refunds
+  payment_method:
+    path_segment:
+    - paymentmethods
+    - payment-methods
+    properties:
+      id: uuid
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/cm-com-live-event-ticketing-v1-openapi.yml#GET /events/{event_id}/payment-methods
+    - openapi/_original/cm-com-live-ga-partner-v1-openapi.yml#GET /events/{event_uuid}/paymentmethods
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods
+  dispute:
+    path_segment:
+    - chargebacks
+    properties:
+      status: status
+      created_at: created
+      id: id
+      reason: reason
+      amount: amount
+      updated_at: updated
+      payment_id:
+      - transactionId
+      - paymentId
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/bancontact/v1/transactions/{transactionId}/payments/{paymentId}/chargebacks
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/checkout/v1/transactions/{transactionId}/chargebacks
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/creditcard/v1/transactions/{transactionId}/chargebacks
+    - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/sepadirectdebit/v1/transactions/{transactionId}/chargebacks

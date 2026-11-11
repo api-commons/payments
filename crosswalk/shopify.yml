@@ -1,0 +1,78 @@
+provider: shopify
+apis_io: https://apis.io/providers/shopify/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/checkouts/{token}/payments.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/checkouts/{token}/payments/{payment_id}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/checkouts/{token}/payments.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/checkouts/{token}/payments/{payment_id}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-07/checkouts/{token}/payments.json
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/checkouts/{token}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/checkouts/{token}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-07/checkouts/{token}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-10/checkouts/{token}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2021-01/checkouts/{token}.json
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/orders/{order_id}/refunds.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/orders/{order_id}/refunds/{refund_id}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/orders/{order_id}/refunds.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/orders/{order_id}/refunds/{refund_id}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-07/orders/{order_id}/refunds.json
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      created_at: created_at
+      phone: phone
+      address: addresses
+      status: state
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/shopify-admin-rest-api-openapi.yml#GET /customers.json
+    - openapi/_original/shopify-admin-rest-api-openapi.yml#GET /customers/{customer_id}.json
+    - openapi/_original/shopify-admin-rest-api-openapi.yml#POST /customers.json
+    - openapi/_original/shopify-admin-rest-api-openapi.yml#PUT /customers/{customer_id}.json
+    - openapi/_original/shopify-api-openapi.yml#DELETE /admin/api/2020-01/customers/{customer_id}.json
+  payout:
+    path_segment:
+    - payouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/shopify_payments/payouts.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/shopify_payments/payouts/{payout_id}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/shopify_payments/payouts.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/shopify_payments/payouts/{payout_id}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-07/shopify_payments/payouts.json
+  dispute:
+    path_segment:
+    - disputes
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/shopify_payments/disputes.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-01/shopify_payments/disputes/{dispute_id}.json
+    - openapi/_original/shopify-api-openapi.yml#GET /admin/api/2020-04/shopify_payments/disputes.json

@@ -1,0 +1,21 @@
+provider: augustus
+apis_io: https://apis.io/providers/augustus/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+      method:
+      - type
+      - rail
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/augustus-openapi.json#GET /v1/payouts
+    - openapi/_original/augustus-openapi.json#GET /v1/payouts/{id}
+    - openapi/_original/augustus-openapi.json#POST /v1/payouts

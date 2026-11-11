@@ -1,0 +1,49 @@
+provider: xfers
+apis_io: https://apis.io/providers/xfers/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - charges
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      amount: amount
+      currency: currency
+      description: description
+      metadata: meta_data
+      customer_id: customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/xfers-indonesia-openapi.json#GET /v3/charges
+    - openapi/_original/xfers-indonesia-openapi.json#GET /v3/charges/{id}
+    - openapi/_original/xfers-indonesia-openapi.json#POST /v3/charges
+    - openapi/_original/xfers-indonesia-payment-gateway-unique-amount-openapi.json#GET /v3/payment_gateway/payments
+    - openapi/_original/xfers-indonesia-payment-gateway-unique-amount-openapi.json#GET /v3/payment_gateway/payments/{id}
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/xfers-indonesia-openapi.json#POST /v3/charges/{id}/refunds
+    - openapi/_original/xfers-singapore-openapi.json#POST /v3/charges/{id}/refunds
+  payout:
+    path_segment:
+    - payouts
+    - disbursements
+    properties:
+      amount: amount
+      currency: currency
+      destination: recipient
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/xfers-indonesia-openapi.json#GET /v3/loans/{loan_id}/disbursements
+    - openapi/_original/xfers-indonesia-openapi.json#GET /v3/loans/{loan_id}/disbursements/{id}
+    - openapi/_original/xfers-indonesia-openapi.json#GET /v3/payouts
+    - openapi/_original/xfers-indonesia-openapi.json#GET /v3/payouts/{id}
+    - openapi/_original/xfers-indonesia-openapi.json#POST /v3/loans/{loan_id}/disbursements

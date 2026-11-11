@@ -1,0 +1,22 @@
+provider: geidea
+apis_io: https://apis.io/providers/geidea/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      currency: currency
+      reason: reason
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/geidea-openapi.yml#POST /pgw/api/v2/direct/refund
+  customer:
+    path_segment:
+    - payer
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/geidea-openapi.yml#POST /pgw/api/v6/direct/authenticate/payer

@@ -1,0 +1,91 @@
+provider: zuora
+apis_io: https://apis.io/providers/zuora/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - referenceId
+      status: status
+      amount: amount
+      created_at: createdDate
+      currency: currency
+      payment_method_id: paymentMethodId
+      updated_at: updatedDate
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zuora-v1-openapi.yml#DELETE /v1/payments/{paymentKey}
+    - openapi/_original/zuora-v1-openapi.yml#GET /v1/payments
+    - openapi/_original/zuora-v1-openapi.yml#GET /v1/payments/{paymentKey}
+    - openapi/_original/zuora-v1-openapi.yml#POST /v1/payments
+    - openapi/_original/zuora-v1-openapi.yml#PUT /v1/payments/{paymentId}
+  checkout_session:
+    path_segment:
+    - sessions
+    properties:
+      currency: currency
+      amount: amount
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/zuora-v1-openapi.yml#POST /web-payments/sessions
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id:
+      - id
+      - referenceId
+      amount:
+      - amount
+      - totalAmount
+      status: status
+      created_at: createdDate
+      reason:
+      - comment
+      - reasonCode
+      payment_id: paymentId
+      updated_at: updatedDate
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zuora-v1-openapi.yml#DELETE /v1/refunds/{refundKey}
+    - openapi/_original/zuora-v1-openapi.yml#GET /v1/refunds
+    - openapi/_original/zuora-v1-openapi.yml#GET /v1/refunds/{refundKey}
+    - openapi/_original/zuora-v1-openapi.yml#POST /v1/creditmemos/{creditMemoKey}/refunds
+    - openapi/_original/zuora-v1-openapi.yml#POST /v1/payments/{paymentKey}/refunds
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+      created_at: createdOn
+      status:
+      - state
+      - status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zuora-v1-openapi.yml#DELETE /v1/payment-methods/{payment-method-id}
+    - openapi/_original/zuora-v1-openapi.yml#GET /v1/accounts/{account-key}/payment-methods
+    - openapi/_original/zuora-v1-openapi.yml#GET /v1/payment-methods/{payment-method-id}
+    - openapi/_original/zuora-v1-openapi.yml#POST /v1/payment-methods
+    - openapi/_original/zuora-v1-openapi.yml#PUT /v1/payment-methods/{payment-method-id}
+  dispute:
+    path_segment:
+    - chargeback
+    properties:
+      status: status
+      created_at: createdDate
+      id:
+      - id
+      - referenceId
+      reason: reasonCode
+      amount: amount
+      updated_at: updatedDate
+      payment_id: paymentId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/zuora-v1-openapi.yml#POST /v1/gateway-settlement/payments/{payment-key}/chargeback

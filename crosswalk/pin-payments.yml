@@ -1,0 +1,46 @@
+provider: pin-payments
+apis_io: https://apis.io/providers/pin-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      amount: amount
+      currency: currency
+      description: description
+      metadata: metadata
+      external_id: reference
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/pin-payments-openapi.yaml#GET /charges
+    - openapi/_original/pin-payments-openapi.yaml#GET /charges/{charge_token}
+    - openapi/_original/pin-payments-openapi.yaml#GET /customers/{customer_token}/charges
+    - openapi/_original/pin-payments-openapi.yaml#POST /charges
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/pin-payments-openapi.yaml#GET /charges/{charge_token}/refunds
+    - openapi/_original/pin-payments-openapi.yaml#GET /refunds
+    - openapi/_original/pin-payments-openapi.yaml#GET /refunds/{refund_token}
+    - openapi/_original/pin-payments-openapi.yaml#POST /charges/{charge_token}/refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: first_name
+      email: email
+      phone: phone_number
+      last_name: last_name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/pin-payments-openapi.yaml#DELETE /customers/{customer_token}
+    - openapi/_original/pin-payments-openapi.yaml#GET /customers
+    - openapi/_original/pin-payments-openapi.yaml#GET /customers/{customer_token}
+    - openapi/_original/pin-payments-openapi.yaml#POST /customers
+    - openapi/_original/pin-payments-openapi.yaml#PUT /customers/{customer_token}

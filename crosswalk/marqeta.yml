@@ -1,0 +1,72 @@
+provider: marqeta
+apis_io: https://apis.io/providers/marqeta/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - authorizations
+    properties:
+      status: status
+      amount:
+      - amount
+      - total_amount
+      created_at: created_time
+      currency: currency_code
+      payment_method_id: token
+      description: description
+      updated_at: updated_time
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/payments
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/payments/{payment_token}
+    - openapi/_original/marqeta-core-api-openapi.yml#POST /accounts/{account_token}/payments
+    - openapi/_original/marqeta-diva-api-openapi.yml#GET /views/authorizations/{time_agg}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      amount: amount
+      status: status
+      created_at: created_time
+      currency: currency_code
+      description: description
+      updated_at: updated_time
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/refunds
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/refunds/{refund_token}
+    - openapi/_original/marqeta-core-api-openapi.yml#POST /accounts/{account_token}/refunds
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      amount: total_amount
+      currency: currency_code
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/marqeta-diva-api-openapi.yml#GET /views/settlements/{time_agg}
+  dispute:
+    path_segment:
+    - chargebacks
+    - disputes
+    properties:
+      status:
+      - status
+      - state
+      created_at: created_time
+      reason:
+      - category
+      - reason_code
+      amount: amount
+      updated_at: updated_time
+      currency: currency_code
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/disputes
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /accounts/{account_token}/disputes/{dispute_token}
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /chargebacks
+    - openapi/_original/marqeta-core-api-openapi.yml#GET /chargebacks/{token}
+    - openapi/_original/marqeta-core-api-openapi.yml#POST /accounts/{account_token}/disputes

@@ -1,0 +1,32 @@
+provider: helcim
+apis_io: https://apis.io/providers/helcim/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: transactionId
+      amount: amount
+      status: status
+      created_at: dateCreated
+      currency: currency
+      payment_id: originalTransactionId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/helcim-api.json#POST /devices/{code}/payment/refund
+    - openapi/_original/helcim-api.json#POST /payment/refund
+    - openapi/_original/helcim-api.json#PUT /ach/transactions/{transactionId}/refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      address: billingAddress
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/helcim-api.json#GET /customers
+    - openapi/_original/helcim-api.json#GET /customers/{customerId}
+    - openapi/_original/helcim-api.json#POST /customers
+    - openapi/_original/helcim-api.json#PUT /customers/{customerId}

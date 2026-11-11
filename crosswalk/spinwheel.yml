@@ -1,0 +1,15 @@
+provider: spinwheel
+apis_io: https://apis.io/providers/spinwheel/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - payers
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/spinwheel-openapi.yml#DELETE /v1/payments/payers/{payerId}
+    - openapi/_original/spinwheel-openapi.yml#GET /v1/payments/payers
+    - openapi/_original/spinwheel-openapi.yml#GET /v1/payments/payers/{payerId}
+    - openapi/_original/spinwheel-openapi.yml#POST /v1/payments/payers

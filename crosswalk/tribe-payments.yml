@@ -1,0 +1,32 @@
+provider: tribe-payments
+apis_io: https://apis.io/providers/tribe-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/tribe-payments-obb-tpp-api-openapi.json#GET /direct/payments/{paymentId}
+    - openapi/_original/tribe-payments-obb-tpp-api-openapi.json#GET /payments/{paymentId}
+    - openapi/_original/tribe-payments-obb-tpp-api-openapi.json#POST /direct/payments
+    - openapi/_original/tribe-payments-obb-tpp-api-openapi.json#POST /direct/payments/{bankIdentifier}
+    - openapi/_original/tribe-payments-obb-tpp-api-openapi.json#POST /payments
+  refund:
+    path_segment:
+    - refund
+    properties:
+      payment_id: transaction
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tribe-payments-trb-cc-api-merchant-api-credit-card-v3.json#POST /refund
+  dispute:
+    path_segment:
+    - disputes
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/tribe-payments-trb-report-api-merchant-api-report-v3.json#POST /disputes

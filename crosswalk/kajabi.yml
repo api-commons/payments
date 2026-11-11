@@ -1,0 +1,15 @@
+provider: kajabi
+apis_io: https://apis.io/providers/kajabi/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/kajabi-public-api-openapi.yml#GET /v1/customers
+    - openapi/_original/kajabi-public-api-openapi.yml#GET /v1/customers/{id}

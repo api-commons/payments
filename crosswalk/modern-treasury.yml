@@ -1,0 +1,42 @@
+provider: modern-treasury
+apis_io: https://apis.io/providers/modern-treasury/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment_orders
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      description:
+      - description
+      - statement_descriptor
+      updated_at: updated_at
+      metadata: metadata
+      external_id: external_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/modern-treasury-openapi.yml#GET /api/payment_orders
+    - openapi/_original/modern-treasury-openapi.yml#GET /api/payment_orders/{id}
+    - openapi/_original/modern-treasury-openapi.yml#PATCH /api/payment_orders/{id}
+    - openapi/_original/modern-treasury-openapi.yml#POST /api/payment_orders
+    - openapi/_original/modern-treasury-openapi.yml#PUT /api/invoices/{id}/payment_orders/{payment_order_id}
+  refund:
+    path_segment:
+    - reversals
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      reason: reason
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/modern-treasury-openapi.yml#GET /api/payment_orders/{payment_order_id}/reversals
+    - openapi/_original/modern-treasury-openapi.yml#GET /api/payment_orders/{payment_order_id}/reversals/{reversal_id}
+    - openapi/_original/modern-treasury-openapi.yml#POST /api/payment_orders/{payment_order_id}/reversals

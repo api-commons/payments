@@ -1,0 +1,31 @@
+provider: tyro
+apis_io: https://apis.io/providers/tyro/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - sales
+    properties:
+      id: id
+      status: status
+      payment_method_id: source
+      customer_id: customer
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tyro-connect-sales.yml#GET /sales
+    - openapi/_original/tyro-connect-sales.yml#GET /sales/{saleId}
+    - openapi/_original/tyro-connect-sales.yml#PATCH /sales/{saleId}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/tyro-connect-pay.yml#GET /pay/refunds
+    - openapi/_original/tyro-connect-pay.yml#GET /pay/refunds/{refundRequestId}
+    - openapi/_original/tyro-connect-pay.yml#POST /pay/refunds

@@ -1,0 +1,45 @@
+provider: temenos
+apis_io: https://apis.io/providers/temenos/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - charges
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      created_at: createdDate
+      currency: currency
+      description:
+      - description
+      - narrative
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/temenos-cloud-banking-openapi.yml#POST /payments
+    - openapi/_original/temenos-enterprise-product-pricing-openapi.yml#GET /arrangements/{arrangementId}/charges
+    - openapi/_original/temenos-infinity-openapi.yml#GET /payments/{paymentId}
+    - openapi/_original/temenos-infinity-openapi.yml#POST /payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customerId
+      name: firstName
+      email: email
+      phone: phone
+      address:
+      - address
+      - addresses
+      status: status
+      last_name: lastName
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/temenos-data-hub-openapi.yml#GET /analytics/customers
+    - openapi/_original/temenos-infinity-openapi.yml#GET /customers/{customerId}
+    - openapi/_original/temenos-infinity-openapi.yml#PUT /customers/{customerId}
+    - openapi/_original/temenos-transact-openapi.yml#GET /party/customers
+    - openapi/_original/temenos-transact-openapi.yml#GET /party/customers/{customerId}

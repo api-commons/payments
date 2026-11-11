@@ -1,0 +1,33 @@
+provider: fipto
+apis_io: https://apis.io/providers/fipto/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - payment-links
+    properties:
+      id: id
+      created_at: created_at
+      description: note
+      mode: type
+      metadata: attributes
+      url: link
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fipto-customer-api-openapi.json#GET /companies/{company_id}/payment-links
+    - openapi/_original/fipto-customer-api-openapi.json#GET /companies/{company_id}/payment-links/{payment_link_id}
+    - openapi/_original/fipto-customer-api-openapi.json#PATCH /companies/{company_id}/payment-links/{payment_link_id}
+    - openapi/_original/fipto-customer-api-openapi.json#POST /companies/{company_id}/payment-links
+    - openapi/_original/fipto-customer-api-openapi.yml#GET /companies/{company_id}/payment-links
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      method: type
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/fipto-customer-api-openapi.json#POST /companies/{company_id}/aisp-pisp/wallets/{wallet_id}/payouts
+    - openapi/_original/fipto-customer-api-openapi.json#POST /companies/{company_id}/wallets/{wallet_id}/payouts
+    - openapi/_original/fipto-customer-api-openapi.yml#POST /companies/{company_id}/aisp-pisp/wallets/{wallet_id}/payouts
+    - openapi/_original/fipto-customer-api-openapi.yml#POST /companies/{company_id}/wallets/{wallet_id}/payouts

@@ -1,0 +1,32 @@
+provider: shopback
+apis_io: https://apis.io/providers/shopback/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      id: uuid
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      payment_method_id: paymentToken
+      external_id: merchantOrderId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/shopback-online-payments-openapi.yml#POST /tokenized-payment/v1/charge
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: referenceId
+      amount: amount
+      status: status
+      created_at: createdAt
+      reason: reason
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/shopback-in-store-payments-openapi.yml#POST /posi-sandbox/v1/instore/order/{referenceId}/refund
+    - openapi/_original/shopback-online-payments-openapi.yml#POST /order/{orderUuid}/refund

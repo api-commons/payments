@@ -1,0 +1,14 @@
+provider: shopgo
+apis_io: https://apis.io/providers/shopgo/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      status: result
+      created_at: created
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/shopgo-management-openapi.yml#POST /v1/management/order/{number}/payment/

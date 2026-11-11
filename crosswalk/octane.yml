@@ -1,0 +1,28 @@
+provider: octane
+apis_io: https://apis.io/providers/octane/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      reason: reason
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/octane-octane-rest-api-openapi.yml#POST /refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name:
+      - name
+      - display_name
+      created_at: created_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/octane-octane-rest-api-openapi.yml#DELETE /customers/{customer_name}
+    - openapi/_original/octane-octane-rest-api-openapi.yml#GET /customers
+    - openapi/_original/octane-octane-rest-api-openapi.yml#GET /customers/{customer_name}
+    - openapi/_original/octane-octane-rest-api-openapi.yml#POST /customers

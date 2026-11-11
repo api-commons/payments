@@ -1,0 +1,18 @@
+provider: open-financial
+apis_io: https://apis.io/providers/open-financial/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+      payment_method_id: payment_token
+      customer_id: customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/open-financial-1-openapi.yml#GET /v1/pg/sandbox/payment_token/{tokenvalue}/payment

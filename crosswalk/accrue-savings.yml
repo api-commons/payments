@@ -1,0 +1,43 @@
+provider: accrue-savings
+apis_io: https://apis.io/providers/accrue-savings/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment-intents
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: createdAt
+      updated_at: updatedAt
+      metadata: attributes
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#GET /api/v1/payment-intents
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#GET /api/v1/payment-intents/{paymentIntentId}
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#GET /api/v1/payments
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#GET /api/v1/payments/{paymentId}
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#PATCH /api/v1/payments/{paymentId}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#POST /api/v1/payments/{paymentId}/refund
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      method: type
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#GET /api/v1/counterparties/:counterpartyId/payouts
+    - openapi/_original/accrue-savings-merchant-api-openapi.yaml#POST /api/v1/counterparties/:counterpartyId/payouts

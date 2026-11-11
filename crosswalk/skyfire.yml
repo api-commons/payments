@@ -1,0 +1,15 @@
+provider: skyfire
+apis_io: https://apis.io/providers/skyfire/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - charges
+    properties:
+      payment_method_id: token
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/skyfire-agent-and-token-apis-openapi.yml#GET /api/v1/tokens/{tokenId}/charges
+    - openapi/_original/skyfire-agent-and-token-apis-openapi.yml#POST /api/v1/tokens/charge

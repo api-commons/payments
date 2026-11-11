@@ -1,0 +1,22 @@
+provider: instamojo
+apis_io: https://apis.io/providers/instamojo/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/instamojo-payments-api.yml#GET /payments/{payment_id}/
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      payment_id: payment_id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/instamojo-payments-api.yml#GET /refunds/
+    - openapi/_original/instamojo-payments-api.yml#GET /refunds/{id}/
+    - openapi/_original/instamojo-payments-api.yml#POST /refunds/

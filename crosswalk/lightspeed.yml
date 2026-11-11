@@ -1,0 +1,57 @@
+provider: lightspeed
+apis_io: https://apis.io/providers/lightspeed/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - sales
+    properties:
+      id: id
+      status: state
+      created_at: created_at
+      payment_method_id: source
+      description: note
+      updated_at: updated_at
+      metadata:
+      - _metadata
+      - attributes
+      customer_id: customer_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/lightspeed-k-series-openapi.json#GET /f/v2/business-location/{businessLocationId}/sales
+    - openapi/_original/lightspeed-k-series-openapi.yml#GET /f/v2/business-location/{businessLocationId}/sales
+    - openapi/_original/lightspeed-x-series-openapi.json#GET /sales
+    - openapi/_original/lightspeed-x-series-openapi.json#GET /sales/{sale_id}
+    - openapi/_original/lightspeed-x-series-openapi.json#POST /sales
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/lightspeed-k-series-openapi.json#GET /f/finance/{businessLocationId}/paymentMethods
+    - openapi/_original/lightspeed-k-series-openapi.yml#GET /f/finance/{businessLocationId}/paymentMethods
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id: id
+      name:
+      - first_name
+      - name
+      email: email
+      created_at: created_at
+      phone:
+      - mobile
+      - phone
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/lightspeed-x-series-openapi.json#DELETE /customer_groups/{customer_group_id}/customers
+    - openapi/_original/lightspeed-x-series-openapi.json#DELETE /customers/{customer_id}
+    - openapi/_original/lightspeed-x-series-openapi.json#GET /customer_groups/{customer_group_id}/customers
+    - openapi/_original/lightspeed-x-series-openapi.json#GET /customers
+    - openapi/_original/lightspeed-x-series-openapi.json#GET /customers/{customer_id}

@@ -1,0 +1,13 @@
+provider: privatedao-org
+apis_io: https://apis.io/providers/privatedao-org/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/privatedao-org-agent-exchange-openapi.json#POST /api/jobs/{jobId}/payment
+    - openapi/_original/privatedao-org-agent-exchange-openapi.yml#POST /api/jobs/{jobId}/payment

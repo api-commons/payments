@@ -1,0 +1,33 @@
+provider: korapay
+apis_io: https://apis.io/providers/korapay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      status: status
+      amount: amount
+      currency: currency
+      external_id: reference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/korapay-openapi.yml#GET /charges/{reference}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/korapay-openapi.yml#GET /refunds
+    - openapi/_original/korapay-openapi.yml#GET /refunds/{reference}
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/korapay-openapi.yml#GET /payouts

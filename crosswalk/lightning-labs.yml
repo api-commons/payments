@@ -1,0 +1,16 @@
+provider: lightning-labs
+apis_io: https://apis.io/providers/lightning-labs/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/lightning-labs-openapi.json#DELETE /v1/payment
+    - openapi/_original/lightning-labs-openapi.json#DELETE /v1/payments
+    - openapi/_original/lightning-labs-openapi.json#GET /v1/payments

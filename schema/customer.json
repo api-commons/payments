@@ -1,0 +1,169 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/customer.json",
+  "title": "Customer",
+  "description": "The common customer in Payments, distilled from 159 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.843,
+      "x-commons-providers": 134,
+      "x-commons-spellings": [
+        "id",
+        "customerId",
+        "customer_id",
+        "reference_id",
+        "Id",
+        "_id",
+        "uuid",
+        "GUID"
+      ]
+    },
+    "name": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.679,
+      "x-commons-providers": 108,
+      "x-commons-spellings": [
+        "name",
+        "first_name",
+        "firstName",
+        "fullName",
+        "Name",
+        "display_name",
+        "full_name",
+        "DisplayName"
+      ]
+    },
+    "email": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.66,
+      "x-commons-providers": 105,
+      "x-commons-spellings": [
+        "email",
+        "emailAddress",
+        "email_address",
+        "Email",
+        "EmailAddress"
+      ],
+      "format": "email"
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.566,
+      "x-commons-providers": 90,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "created",
+        "created_date",
+        "createdDate",
+        "createdOn",
+        "date_created",
+        "creation_date"
+      ],
+      "format": "date-time"
+    },
+    "phone": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.497,
+      "x-commons-providers": 79,
+      "x-commons-spellings": [
+        "phone",
+        "phone_number",
+        "phoneNumber",
+        "PhoneNumber",
+        "Mobile",
+        "mobile",
+        "Phone"
+      ]
+    },
+    "address": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.358,
+      "x-commons-providers": 57,
+      "x-commons-spellings": [
+        "address",
+        "addresses",
+        "billingAddress",
+        "billing_address",
+        "Addresses",
+        "Address"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.346,
+      "x-commons-providers": 55,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "Result",
+        "Status",
+        "result",
+        "State"
+      ]
+    },
+    "last_name": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.321,
+      "x-commons-providers": 51,
+      "x-commons-spellings": [
+        "last_name",
+        "lastName"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.321,
+      "x-commons-providers": 51,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "updated_date",
+        "date_modified",
+        "modified_date",
+        "modifiedAt",
+        "modified_at",
+        "LastUpdated"
+      ],
+      "format": "date-time"
+    },
+    "metadata": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.258,
+      "x-commons-providers": 41,
+      "x-commons-spellings": [
+        "metadata",
+        "attributes",
+        "custom_fields",
+        "custom",
+        "extra",
+        "customFields",
+        "MetaData",
+        "AdditionalData"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "payments",
+    "concept": "customer",
+    "providers": 159,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

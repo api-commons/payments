@@ -1,0 +1,14 @@
+provider: optum
+apis_io: https://apis.io/providers/optum/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - payers
+    properties:
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/optum-payer-list-api-v1-openapi.yml#GET /medicalnetwork/payerlist/v1/payers
+    - openapi/_original/optum-payer-list-api-v1.json#GET /medicalnetwork/payerlist/v1/payers

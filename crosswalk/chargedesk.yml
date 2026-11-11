@@ -1,0 +1,60 @@
+provider: chargedesk
+apis_io: https://apis.io/providers/chargedesk/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    - charge
+    properties:
+      id:
+      - id
+      - transaction_id
+      status: status
+      amount: amount
+      currency: currency
+      description: description
+      metadata: metadata
+      customer_id: customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/chargedesk-rest-api-openapi.yml#DELETE /charges/{charge_id}
+    - openapi/_original/chargedesk-rest-api-openapi.yml#GET /charges
+    - openapi/_original/chargedesk-rest-api-openapi.yml#GET /charges/{charge_id}
+    - openapi/_original/chargedesk-rest-api-openapi.yml#POST /charges
+    - openapi/_original/chargedesk-rest-api-openapi.yml#POST /charges/{charge_id}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id:
+      - id
+      - transaction_id
+      amount: amount
+      status: status
+      currency: currency
+      description: description
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/chargedesk-rest-api-openapi.yml#POST /gateway/charges/{charge_id}/refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id:
+      - id
+      - customer_id
+      name: name
+      email: email
+      phone: phone
+      address: billing_address
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/chargedesk-rest-api-openapi.yml#DELETE /customers/{customer_id}
+    - openapi/_original/chargedesk-rest-api-openapi.yml#GET /customers
+    - openapi/_original/chargedesk-rest-api-openapi.yml#GET /customers/{customer_id}
+    - openapi/_original/chargedesk-rest-api-openapi.yml#POST /customers
+    - openapi/_original/chargedesk-rest-api-openapi.yml#POST /customers/{customer_id}

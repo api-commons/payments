@@ -1,0 +1,14 @@
+provider: genome
+apis_io: https://apis.io/providers/genome/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - payout
+    properties:
+      status: status
+      created_at: timestamp
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/genome-openapi.yml#POST /api/pf/payout

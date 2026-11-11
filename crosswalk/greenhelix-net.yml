@@ -1,0 +1,37 @@
+provider: greenhelix-net
+apis_io: https://apis.io/providers/greenhelix-net/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/greenhelix-net-a2a-commerce-gateway-openapi.yml#POST /v1/checkout
+    - openapi/_original/greenhelix-net-openapi.json#POST /v1/checkout
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      reason: reason
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/greenhelix-net-a2a-commerce-gateway-openapi.yml#POST /v1/payments/intents/{intent_id}/refund
+    - openapi/_original/greenhelix-net-a2a-commerce-gateway-openapi.yml#POST /v1/payments/settlements/{settlement_id}/refund
+    - openapi/_original/greenhelix-net-openapi.json#POST /v1/payments/intents/{intent_id}/refund
+    - openapi/_original/greenhelix-net-openapi.json#POST /v1/payments/settlements/{settlement_id}/refund
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      reason: reason
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/greenhelix-net-a2a-commerce-gateway-openapi.yml#GET /v1/disputes
+    - openapi/_original/greenhelix-net-a2a-commerce-gateway-openapi.yml#GET /v1/disputes/{dispute_id}
+    - openapi/_original/greenhelix-net-a2a-commerce-gateway-openapi.yml#POST /v1/disputes
+    - openapi/_original/greenhelix-net-openapi.json#GET /v1/disputes
+    - openapi/_original/greenhelix-net-openapi.json#GET /v1/disputes/{dispute_id}

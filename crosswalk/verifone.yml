@@ -1,0 +1,57 @@
+provider: verifone
+apis_io: https://apis.io/providers/verifone/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      id: id
+      customer_id: customer
+      currency: currency_code
+      amount: amount
+      expires_at: expiry_time
+      success_url: return_url
+      line_items: line_items
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/checkout-api.json#POST /v2/checkout
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id:
+      - id
+      - refundId
+      amount: amount
+      status: status
+      created_at:
+      - created_at
+      - createdAt
+      currency: currency_code
+      reason:
+      - reason_code
+      - reason
+      metadata: additional_data
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/ecommerce-api.json#POST /api/v2/transactions/refund
+    - openapi/_original/ecommerce-api.json#POST /api/v2/transactions/{id}/refund
+    - openapi/_original/paypal-ecommerce-api.json#POST /transactions/{id}/refund
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: id
+      email: email_address
+      created_at: created_at
+      phone: phone_number
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/customer-api.json#DELETE /v2/customer/{customerId}
+    - openapi/_original/customer-api.json#GET /v2/customer
+    - openapi/_original/customer-api.json#GET /v2/customer/{customerId}
+    - openapi/_original/customer-api.json#POST /v2/customer
+    - openapi/_original/customer-api.json#POST /v2/customer/{customerId}

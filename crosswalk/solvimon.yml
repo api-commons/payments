@@ -1,0 +1,78 @@
+provider: solvimon
+apis_io: https://apis.io/providers/solvimon/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: result
+      amount: amount
+      created_at:
+      - created_at
+      - timestamp
+      payment_method_id: payment_method_id
+      updated_at: updated_at
+      customer_id:
+      - customer_id
+      - customer
+      external_id:
+      - external_reference
+      - reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/solvimon-transaction-api-openapi.yml#GET /v{version}/invoices/{resourceId}/payments
+    - openapi/_original/solvimon-transaction-api-openapi.yml#GET /v{version}/payments
+    - openapi/_original/solvimon-transaction-api-openapi.yml#GET /v{version}/payments/{resourceId}
+    - openapi/_original/solvimon-transaction-api-openapi.yml#POST /v{version}/payments
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status:
+      - status
+      - payment_status
+      created_at: created_at
+      payment_id: payment
+      updated_at: updated_at
+      metadata: custom_fields
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/solvimon-transaction-api-openapi.yml#POST /v{version}/invoices/{resourceId}/refund
+    - openapi/_original/solvimon-transaction-api-openapi.yml#POST /v{version}/payments/{resourceId}/refund
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+      created_at: created_at
+      status: status
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/solvimon-configuration-api-openapi.yml#GET /v{version}/payment-methods
+    - openapi/_original/solvimon-configuration-api-openapi.yml#GET /v{version}/payment-methods/{resourceIdOrReference}
+    - openapi/_original/solvimon-configuration-api-openapi.yml#PATCH /v{version}/payment-methods/{resourceIdOrReference}
+    - openapi/_original/solvimon-configuration-api-openapi.yml#POST /v{version}/payment-methods
+    - openapi/_original/solvimon-configuration-api-openapi.yml#PUT /v{version}/payment-methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      email: email
+      created_at: created_at
+      status: status
+      metadata: custom_fields
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/solvimon-configuration-api-openapi.yml#DELETE /v{version}/customers/{resourceIdOrReference}
+    - openapi/_original/solvimon-configuration-api-openapi.yml#GET /v{version}/customers
+    - openapi/_original/solvimon-configuration-api-openapi.yml#GET /v{version}/customers/{resourceIdOrReference}
+    - openapi/_original/solvimon-configuration-api-openapi.yml#PATCH /v{version}/customers/{resourceIdOrReference}
+    - openapi/_original/solvimon-configuration-api-openapi.yml#POST /v{version}/customers

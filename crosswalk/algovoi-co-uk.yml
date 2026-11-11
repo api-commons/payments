@@ -1,0 +1,50 @@
+provider: algovoi-co-uk
+apis_io: https://apis.io/providers/algovoi-co-uk/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - payment-links
+    - checkout
+    properties:
+      id: id
+      created_at: created_at
+      currency: currency
+      amount: amount
+      expires_at: expires_at
+      url:
+      - checkout_url
+      - redirect_url
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/algovoi-co-uk-gateway-openapi.json#POST /suite-store/checkout
+    - openapi/_original/algovoi-co-uk-gateway-openapi.json#POST /v1/payment-links
+    - openapi/_original/algovoi-co-uk-gateway-openapi.yml#POST /suite-store/checkout
+    - openapi/_original/algovoi-co-uk-gateway-openapi.yml#POST /v1/payment-links
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      email: email
+      created_at: created_at
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/algovoi-co-uk-gateway-openapi.json#GET /v1/customers
+    - openapi/_original/algovoi-co-uk-gateway-openapi.json#POST /v1/customers
+    - openapi/_original/algovoi-co-uk-gateway-openapi.yml#GET /v1/customers
+    - openapi/_original/algovoi-co-uk-gateway-openapi.yml#POST /v1/customers
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: payout_id
+      status: status
+      amount: amount
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/algovoi-co-uk-gateway-openapi.json#POST /v1/payouts
+    - openapi/_original/algovoi-co-uk-gateway-openapi.yml#POST /v1/payouts

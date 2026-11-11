@@ -1,0 +1,38 @@
+provider: b3
+apis_io: https://apis.io/providers/b3/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - sessions
+    - checkout-sessions
+    properties:
+      id: id
+      created_at: createdAt
+      expires_at: expiresAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/b3-b3os-workflow-openapi.json#GET /v1/ai/workflow/chat/sessions
+    - openapi/_original/b3-b3os-workflow-openapi_2.json#DELETE /v1/organizations/{orgId}/sessions/{id}
+    - openapi/_original/b3-b3os-workflow-openapi_2.json#GET /v1/ai/workflow/chat/sessions
+    - openapi/_original/b3-b3os-workflow-openapi_2.json#GET /v1/organizations/{orgId}/sessions
+    - openapi/_original/b3-b3os-workflow-openapi_2.json#POST /v1/organizations/{orgId}/sessions
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/b3-b3os-workflow-openapi_2.json#DELETE /v1/organizations/{orgId}/stripe/payment-methods/{pmId}
+  payout:
+    path_segment:
+    - withdrawals
+    properties:
+      amount: amount
+      created_at: timestamp
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/addresses/{address_hash}/withdrawals
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/blocks/{block_number_or_hash}/withdrawals
+    - openapi/_original/b3-data-api-openapi.json#GET /blockscout/withdrawals

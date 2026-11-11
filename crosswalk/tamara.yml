@@ -1,0 +1,28 @@
+provider: tamara
+apis_io: https://apis.io/providers/tamara/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      status: status
+      customer_id: consumer
+      amount: total_amount
+      description: description
+      mode: payment_type
+      metadata: additional_data
+      url: checkout_url
+      line_items: items
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tamara-checkout-api-openapi.yml#POST /checkout
+  refund:
+    path_segment:
+    - refund
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/tamara-payments-api-openapi.yml#POST /payments/refund

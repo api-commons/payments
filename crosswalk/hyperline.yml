@@ -1,0 +1,40 @@
+provider: hyperline
+apis_io: https://apis.io/providers/hyperline/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - payments
+    properties:
+      id: id
+      amount: amount
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/hyperline-openapi.yml#POST /invoices/{id}/charge
+    - openapi/_original/hyperline-openapi.yml#POST /payments
+  refund:
+    path_segment:
+    - credits
+    - refund
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/hyperline-openapi.yml#GET /customers/{id}/credits
+    - openapi/_original/hyperline-openapi.yml#POST /customers/{id}/credits
+    - openapi/_original/hyperline-openapi.yml#POST /transactions/{id}/refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/hyperline-openapi.yml#DELETE /customers/{id}
+    - openapi/_original/hyperline-openapi.yml#GET /customers
+    - openapi/_original/hyperline-openapi.yml#GET /customers/{id}
+    - openapi/_original/hyperline-openapi.yml#PATCH /customers/{id}
+    - openapi/_original/hyperline-openapi.yml#POST /customers

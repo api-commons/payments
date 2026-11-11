@@ -1,0 +1,54 @@
+provider: resolve
+apis_io: https://apis.io/providers/resolve/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - charges
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      payment_method_id: source
+      updated_at: updated_at
+      metadata: metadata
+      customer_id: customer_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /charges
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /charges/{charge_id}
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /payments
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /payments/{payment_id}
+    - openapi/_original/resolve-merchant-api-openapi.yaml#PUT /charges/{charge_id}
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      email: email
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /customers
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /customers/{customer_id}
+    - openapi/_original/resolve-merchant-api-openapi.yaml#POST /customers
+    - openapi/_original/resolve-merchant-api-openapi.yaml#PUT /customers/{customer_id}
+    - openapi/_original/resolve-partners-api-openapi.yaml#GET /customers
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /payouts
+    - openapi/_original/resolve-merchant-api-openapi.yaml#GET /payouts/{payout_id}
+    - openapi/_original/resolve-partners-api-openapi.yaml#GET /payouts
+    - openapi/_original/resolve-partners-api-openapi.yaml#GET /payouts/{payout_id}

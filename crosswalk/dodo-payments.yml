@@ -1,0 +1,88 @@
+provider: dodo-payments
+apis_io: https://apis.io/providers/dodo-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - charge
+    properties:
+      id: payment_id
+      status: status
+      amount: total_amount
+      created_at: created_at
+      currency: currency
+      metadata: metadata
+      customer_id: customer
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dodo-payments-openapi.yml#GET /payments
+    - openapi/_original/dodo-payments-openapi.yml#GET /payments/{id}
+    - openapi/_original/dodo-payments-openapi.yml#POST /payments
+    - openapi/_original/dodo-payments-openapi.yml#POST /subscriptions/{id}/charge
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties:
+      status: status
+      created_at: created_at
+      customer_id: customer
+      metadata: metadata
+      success_url: return_url
+      url: checkout_url
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/dodo-payments-openapi.yml#GET /checkouts/{session_id}
+    - openapi/_original/dodo-payments-openapi.yml#POST /checkouts
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refund_id
+      amount: amount
+      status: status
+      created_at: created_at
+      currency: currency
+      reason: reason
+      payment_id: payment_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dodo-payments-openapi.yml#GET /refunds
+    - openapi/_original/dodo-payments-openapi.yml#GET /refunds/{refund_id}
+    - openapi/_original/dodo-payments-openapi.yml#POST /refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customer_id
+      name: name
+      email: email
+      created_at: created_at
+      phone: phone_number
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dodo-payments-openapi.yml#GET /customers
+    - openapi/_original/dodo-payments-openapi.yml#GET /customers/{id}
+    - openapi/_original/dodo-payments-openapi.yml#PATCH /customers/{id}
+    - openapi/_original/dodo-payments-openapi.yml#POST /customers
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: payout_id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dodo-payments-openapi.yml#GET /payouts
+  dispute:
+    path_segment:
+    - disputes
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/dodo-payments-openapi.yml#GET /disputes
+    - openapi/_original/dodo-payments-openapi.yml#GET /disputes/{dispute_id}

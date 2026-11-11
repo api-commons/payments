@@ -1,0 +1,40 @@
+provider: veem
+apis_io: https://apis.io/providers/veem/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      payment_method_id: paymentMethod
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/veem-api-openapi.yml#GET /veem/v1.2/payments/{paymentId}
+    - openapi/_original/veem-api-openapi.yml#POST /veem/v1.2/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name:
+      - firstName
+      - name
+      email: email
+      last_name: lastName
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/veem-api-openapi.yml#GET /veem/v1.2/customers
+  payout:
+    path_segment:
+    - payout
+    properties:
+      id: id
+      status: status
+      amount: amount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/veem-api-openapi.yml#POST /veem/v1.0/payments/cryptowallet/payout

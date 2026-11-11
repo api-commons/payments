@@ -1,0 +1,46 @@
+provider: bancontact
+apis_io: https://apis.io/providers/bancontact/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      description: description
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/merchant-payment.openapi.yaml#DELETE /v3/payments/{id}
+    - openapi/_original/merchant-payment.openapi.yaml#GET /v3/payments/{id}
+    - openapi/_original/merchant-payment.openapi.yaml#POST /v3/payments
+    - openapi/_original/merchant-reconciliation.openapi.yaml#GET /v3/reconciliation/payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refundId
+      amount: amount
+      status: status
+      created_at: creationDate
+      currency: currency
+      payment_id: paymentId
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/merchant-reconciliation.openapi.yaml#GET /v3/reconciliation/refunds
+    - openapi/_original/refund-public.openapi.yaml#GET /v3/payments/{payment-id}/refunds/{refund-id}
+    - openapi/_original/refund-public.openapi.yaml#POST /v3/payments/{payment-id}/refunds
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: payoutId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/merchant-reconciliation.openapi.yaml#GET /v3/reconciliation/payouts

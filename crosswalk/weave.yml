@@ -1,0 +1,15 @@
+provider: weave
+apis_io: https://apis.io/providers/weave/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - payment-methods
+    - payment_methods
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/weave-openapi.yml#GET /v1/finance/account/payment_methods
+    - openapi/_original/weave-openapi.yml#GET /v1/payment-methods

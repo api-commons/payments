@@ -1,0 +1,26 @@
+provider: brick-blue
+apis_io: https://apis.io/providers/brick-blue/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - withdrawals
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/brick-blue-openapi.json#GET /api/v1/wallet/{owner}/withdrawals
+    - openapi/_original/brick-blue-openapi.yml#GET /api/v1/wallet/{owner}/withdrawals
+  dispute:
+    path_segment:
+    - dispute
+    - disputes
+    properties:
+      reason: reason
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/brick-blue-openapi.json#GET /api/v1/disputes
+    - openapi/_original/brick-blue-openapi.json#GET /api/v1/tasks/{id}/dispute
+    - openapi/_original/brick-blue-openapi.json#POST /api/v1/tasks/{id}/dispute
+    - openapi/_original/brick-blue-openapi.yml#GET /api/v1/disputes
+    - openapi/_original/brick-blue-openapi.yml#GET /api/v1/tasks/{id}/dispute

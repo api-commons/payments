@@ -1,0 +1,52 @@
+provider: cryptomus
+apis_io: https://apis.io/providers/cryptomus/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: uuid
+      status:
+      - payment_status
+      - state
+      - result
+      - status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      updated_at: updated_at
+      metadata: additional_data
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.yml#POST /payment
+    - openapi/_original/openapi.yml#POST /test-webhook/payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: uuid
+      status:
+      - state
+      - result
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/openapi.yml#POST /payment/refund
+  payout:
+    path_segment:
+    - payout
+    properties:
+      id: uuid
+      status:
+      - state
+      - result
+      - status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.yml#POST /payout
+    - openapi/_original/openapi.yml#POST /test-webhook/payout

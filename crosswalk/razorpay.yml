@@ -1,0 +1,39 @@
+provider: razorpay
+apis_io: https://apis.io/providers/razorpay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/razorpay-openapi.yml#GET /orders/{id}/payments
+    - openapi/_original/razorpay-openapi.yml#GET /payments
+    - openapi/_original/razorpay-openapi.yml#GET /payments/{id}
+    - openapi/_original/razorpay-openapi.yml#PATCH /payments/{id}
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      created_at: created_at
+      currency: currency
+      payment_id: payment_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/razorpay-openapi.yml#GET /payments/{id}/refunds
+    - openapi/_original/razorpay-openapi.yml#GET /refunds
+    - openapi/_original/razorpay-openapi.yml#GET /refunds/{id}
+    - openapi/_original/razorpay-openapi.yml#PATCH /refunds/{id}
+    - openapi/_original/razorpay-openapi.yml#POST /payments/{id}/refund

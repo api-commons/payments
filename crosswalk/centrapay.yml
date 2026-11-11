@@ -1,0 +1,16 @@
+provider: centrapay
+apis_io: https://apis.io/providers/centrapay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      created_at: createdAt
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/centrapay-openapi.yml#POST /api/payment-requests/{paymentRequestId}/refund

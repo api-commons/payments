@@ -1,0 +1,12 @@
+provider: paxos
+apis_io: https://apis.io/providers/paxos/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/paxos-v2-openapi-original.json#GET /statements/payments

@@ -1,0 +1,15 @@
+provider: aza-finance
+apis_io: https://apis.io/providers/aza-finance/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - payout
+    properties:
+      id: id
+      status: state
+      created_at: created_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/aza-finance-openapi-original.json#POST /transactions/{Transaction ID}/payout

@@ -1,0 +1,20 @@
+provider: paymentsense
+apis_io: https://apis.io/providers/paymentsense/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      metadata: metaData
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/paymentsense-connect-e-v0.json#GET /v1/payments/{access-token}
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/paymentsense-connect-e-v0.json#GET /v1/payment-methods

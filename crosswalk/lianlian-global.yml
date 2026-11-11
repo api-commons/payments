@@ -1,0 +1,78 @@
+provider: lianlian-global
+apis_io: https://apis.io/providers/lianlian-global/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: createTime
+      currency: currency
+      payment_method_id: paymentMethod
+      description: note
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/lianlian-global-llg-payments-payment-openapi.yml#POST /payments
+    - openapi/_original/lianlian-global-llp-api-userapi-supplier-openapi.yml#GET /batch-payments/{batchId}/payments
+    - openapi/_original/lianlian-global-outbound-payout-verification-payout-openapi.yml#POST /payment
+  refund:
+    path_segment:
+    - refund
+    - refunds
+    properties:
+      id:
+      - transactionId
+      - id
+      amount: amount
+      status: status
+      created_at: create_time
+      currency: currency
+      reason: reason
+      payment_id: payment_id
+      updated_at: update_time
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/lianlian-global-cards-open-api-transactions-apis-openapi.yml#POST /gateway/vcc-api/sub-user/transfer/refund
+    - openapi/_original/lianlian-global-lppe-acceptpayment-openapi.yml#POST /accept_payments/refunds
+  customer:
+    path_segment:
+    - payer
+    - payers
+    properties:
+      created_at: createTime
+      status:
+      - result
+      - status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/lianlian-global-b2b-cross-border-payer-openapi.yml#GET /payer/{payerId}
+    - openapi/_original/lianlian-global-b2b-cross-border-payer-openapi.yml#POST /payer
+    - openapi/_original/lianlian-global-b2b-cross-border-payer-openapi.yml#PUT /payer/{payerId}
+    - openapi/_original/lianlian-global-lppe-payouts-openapi.yml#DELETE /payers/{payer_id}
+    - openapi/_original/lianlian-global-lppe-payouts-openapi.yml#GET /payers
+  payout:
+    path_segment:
+    - payout
+    - payouts
+    properties:
+      id:
+      - payoutId
+      - transaction_id
+      status: status
+      created_at:
+      - createTime
+      - create_time
+      updated_at: updateTime
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/lianlian-global-b2b-cross-border-payout-import-openapi.yml#GET /payout/{payoutId}
+    - openapi/_original/lianlian-global-b2b-cross-border-payout-import-openapi.yml#POST /payout
+    - openapi/_original/lianlian-global-b2b-cross-border-payout-openapi.yml#GET /payout/{payoutId}
+    - openapi/_original/lianlian-global-b2b-cross-border-payout-openapi.yml#POST /payout
+    - openapi/_original/lianlian-global-b2b-inflow-payout-payout-openapi.yml#GET /payout/{payoutId}

@@ -1,0 +1,16 @@
+provider: euronet
+apis_io: https://apis.io/providers/euronet/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: paymentStatus
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/xe-mass-payments-api-openapi.json#GET /transactions/{transactionid}/payments
+    - openapi/_original/xe-mass-payments-api-openapi.json#GET /transactions/{transactionid}/payments/{paymentid}
+    - openapi/_original/xe-mass-payments-api-openapi.json#PATCH /transactions/{transactionid}/payments/{paymentId}

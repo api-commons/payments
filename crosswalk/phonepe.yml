@@ -1,0 +1,15 @@
+provider: phonepe
+apis_io: https://apis.io/providers/phonepe/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: refundId
+      amount: amount
+      status: state
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/phonepe-openapi.yml#POST /payments/v2/refund

@@ -1,0 +1,16 @@
+provider: decentro
+apis_io: https://apis.io/providers/decentro/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: reference_id
+      amount: amount
+      status: status
+      payment_id: original_transaction_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/decentro-openapi.json#POST /v3/payments/upi/refund

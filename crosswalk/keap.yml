@@ -1,0 +1,38 @@
+provider: keap
+apis_io: https://apis.io/providers/keap/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - payment_id
+      - transaction_id
+      status: payment_status
+      amount: amount
+      payment_method_id: payment_method_id
+      description: note
+      updated_at: last_updated
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/keap-e-commerce-v1-api-openapi.yml#GET /rest/v1/orders/{orderId}/payments
+    - openapi/_original/keap-e-commerce-v1-api-openapi.yml#POST /rest/v1/orders/{orderId}/payments
+    - openapi/_original/keap-v1-openapi.json#GET /rest/v1/affiliates/{affiliateId}/payments
+    - openapi/_original/keap-v1-openapi.json#GET /rest/v1/orders/{orderId}/payments
+    - openapi/_original/keap-v1-openapi.json#POST /rest/v1/orders/{orderId}/payments
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties:
+      id: payment_method_id
+      type: payment_method_type
+      created_at: created_time
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/keap-v2-openapi.json#DELETE /rest/v2/contacts/{contact_id}/paymentMethods/{payment_method_id}
+    - openapi/_original/keap-v2-openapi.json#GET /rest/v2/contacts/{contact_id}/paymentMethods
+    - openapi/_original/keap-v2-openapi.json#GET /rest/v2/paymentMethods

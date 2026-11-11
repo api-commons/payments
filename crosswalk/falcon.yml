@@ -1,0 +1,36 @@
+provider: falcon
+apis_io: https://apis.io/providers/falcon/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/falcon-repayment-apis-openapi.yml#POST /account/{accountID}/net-banking/payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/falcon-transaction-apis-openapi.yml#POST /account/refund
+  dispute:
+    path_segment:
+    - dispute
+    - chargeback
+    properties:
+      id:
+      - disputeId
+      - referenceId
+      reason: reason
+      amount: amount
+      payment_id: transactionId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/falcon-dispute-apis-openapi.yml#GET /dispute/{disputeId}
+    - openapi/_original/falcon-dispute-apis-openapi.yml#POST /dispute
+    - openapi/_original/falcon-transaction-apis-openapi.yml#POST /account/chargeback

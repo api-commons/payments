@@ -1,0 +1,65 @@
+provider: bread-financial
+apis_io: https://apis.io/providers/bread-financial/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      amount: amount
+      payment_method_id:
+      - paymentMethodID
+      - source
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/bread-servicing-openapi.json#POST /api/servicing/payment-agreement/{id}/payment
+    - openapi/_original/bread-tradein-openapi.json#POST /api/tradein/payment
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      id:
+      - id
+      - transactionID
+      status: status
+      created_at: createdAt
+      expires_at: expiresAt
+      metadata: metadata
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bread-checkout-openapi.json#POST /api/application/instore/{shortcode}/checkout
+    - openapi/_original/bread-checkout-openapi.json#POST /api/application/{applicationID}/agreement/{agreementID}/checkout
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id:
+      - id
+      - referenceID
+      amount:
+      - totalAmount
+      - amount
+      status: status
+      created_at: createdAt
+      updated_at: updatedAt
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bread-merchant-operations-openapi.json#POST /api/transaction/{transactionID}/refund
+    - openapi/_original/bread-payments-openapi.json#GET /api/payments/refund
+    - openapi/_original/bread-payments-openapi.json#GET /api/payments/refund/{refundReferenceID}
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: createdAt
+      id: id
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/bread-servicing-openapi.json#GET /api/servicing/payment-agreement/{id}/disputes
+    - openapi/_original/bread-servicing-openapi.json#POST /api/servicing/payment-agreement/{id}/disputes
+    - openapi/_original/bread-servicing-openapi.json#PUT /api/servicing/payment-agreement/{id}/disputes/{disputeID}

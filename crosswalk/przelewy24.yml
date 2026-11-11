@@ -1,0 +1,32 @@
+provider: przelewy24
+apis_io: https://apis.io/providers/przelewy24/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      payment_method_id: token
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/openapi-extended.yml#POST /api/v1/card/charge
+    - openapi/_original/openapi.yml#POST /api/v1/card/charge
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id:
+      - refundId
+      - id
+      amount: amount
+      status: status
+      currency: currency
+      description: description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/openapi-ekspres.yml#POST /express/v1/transfer/p24/refund
+    - openapi/_original/openapi-ekspres.yml#PUT /express/v1/payment/refund
+    - openapi/_original/openapi-extended.yml#POST /api/v1/transaction/refund
+    - openapi/_original/openapi-marketplace.yml#POST /api/v1/multiStore/refund
+    - openapi/_original/openapi.yml#POST /api/v1/transaction/refund

@@ -1,0 +1,171 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/refund.json",
+  "title": "Refund",
+  "description": "The common refund in Payments, distilled from 200 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.74,
+      "x-commons-providers": 148,
+      "x-commons-spellings": [
+        "id",
+        "refundId",
+        "transactionId",
+        "refund_id",
+        "transaction_id",
+        "reference_id",
+        "uuid",
+        "_id"
+      ]
+    },
+    "amount": {
+      "type": "number",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.7,
+      "x-commons-providers": 140,
+      "x-commons-spellings": [
+        "amount",
+        "totalAmount",
+        "total_amount",
+        "amount_cents",
+        "Amount",
+        "amountInCents",
+        "amount_in_cents"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.625,
+      "x-commons-providers": 125,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "result",
+        "payment_status",
+        "Status"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.505,
+      "x-commons-providers": 101,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "created",
+        "timestamp",
+        "created_date",
+        "createdOn",
+        "dateCreated",
+        "creation_date"
+      ],
+      "format": "date-time"
+    },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.385,
+      "x-commons-providers": 77,
+      "x-commons-spellings": [
+        "currency",
+        "currency_code",
+        "currencyCode",
+        "currency_iso_code",
+        "Currency"
+      ]
+    },
+    "reason": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.32,
+      "x-commons-providers": 64,
+      "x-commons-spellings": [
+        "reason",
+        "refundReason",
+        "reason_code",
+        "comment",
+        "RefundReason",
+        "reasonCode"
+      ]
+    },
+    "payment_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.28,
+      "x-commons-providers": 56,
+      "x-commons-spellings": [
+        "payment_id",
+        "paymentId",
+        "transaction",
+        "payment",
+        "originalTransactionId",
+        "charge",
+        "chargeId",
+        "charge_id"
+      ]
+    },
+    "description": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.23,
+      "x-commons-providers": 46,
+      "x-commons-spellings": [
+        "description",
+        "note",
+        "memo",
+        "statement_descriptor",
+        "remarks",
+        "StatementDescriptor"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.23,
+      "x-commons-providers": 46,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "updated",
+        "modified_at",
+        "update_time",
+        "updated_time",
+        "modifiedAt",
+        "updated_date"
+      ],
+      "format": "date-time"
+    },
+    "metadata": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.21,
+      "x-commons-providers": 42,
+      "x-commons-spellings": [
+        "metadata",
+        "attributes",
+        "custom_fields",
+        "additionalData",
+        "metaData",
+        "extra",
+        "customFields",
+        "additional_data"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "payments",
+    "concept": "refund",
+    "providers": 200,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

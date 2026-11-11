@@ -1,0 +1,28 @@
+provider: shift4
+apis_io: https://apis.io/providers/shift4/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      currency: currencyCode
+      payment_id:
+      - transaction
+      - payment
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/shift4-payment-api.yml#POST /ach/refund
+    - openapi/_original/shift4-payment-api.yml#POST /paypal/refund
+    - openapi/_original/shift4-payment-api.yml#POST /transactions/refund
+  payout:
+    path_segment:
+    - payout
+    properties:
+      amount: amount
+      currency: currencyCode
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/shift4-payment-api.yml#POST /oct/payout

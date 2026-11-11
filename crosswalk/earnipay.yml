@@ -1,0 +1,21 @@
+provider: earnipay
+apis_io: https://apis.io/providers/earnipay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: name
+      email: email
+      phone: phone
+      address: address
+      status: state
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/earnipay-e-invoicing-openapi-original.json#DELETE /v1/customers/{id}
+    - openapi/_original/earnipay-e-invoicing-openapi-original.json#GET /v1/customers
+    - openapi/_original/earnipay-e-invoicing-openapi-original.json#GET /v1/customers/{id}
+    - openapi/_original/earnipay-e-invoicing-openapi-original.json#PATCH /v1/customers/{id}
+    - openapi/_original/earnipay-e-invoicing-openapi-original.json#POST /v1/customers

@@ -1,0 +1,31 @@
+provider: wincl
+apis_io: https://apis.io/providers/wincl/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/wincl-openapi-original.json#GET /api/v1/order/payment/{orderId}
+    - openapi/_original/wincl-openapi-original.json#GET /api/v3/rewards/internal/orders/{orderId}/payments
+    - openapi/_original/wincl-openapi-original.json#GET /api/v3/rewards/internal/payments/{id}
+    - openapi/_original/wincl-openapi-original.json#GET /bapi/v3/rewards/payments
+    - openapi/_original/wincl-openapi-original.json#GET /bapi/v3/rewards/payments/{id}
+  checkout_session:
+    path_segment:
+    - checkout
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/wincl-openapi-original.json#GET /api/v2/payment/stripe/test/checkout
+  refund:
+    path_segment:
+    - credits
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/wincl-openapi-original.json#GET /api/v2/creditbox/item/{id}/credits

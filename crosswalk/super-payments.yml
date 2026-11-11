@@ -1,0 +1,104 @@
+provider: super-payments
+apis_io: https://apis.io/providers/super-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - transactionId
+      status: status
+      amount: amount
+      currency: currency
+      payment_method_id: paymentMethodId
+      metadata: metadata
+      external_id: externalReference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/super-payments-openapi.yml#GET /payments/{transactionId}
+    - openapi/_original/super-payments-openapi.yml#POST /payments
+  checkout_session:
+    path_segment:
+    - payment-links
+    - checkout-sessions
+    properties:
+      id:
+      - checkoutSessionId
+      - id
+      status: status
+      created_at: createdAt
+      customer_id: customer
+      expires_at: expiresAt
+      metadata: metadata
+      success_url: successUrl
+      updated_at: updatedAt
+      line_items: lineItems
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/super-payments-openapi.yml#DELETE /payment-links/{linkId}
+    - openapi/_original/super-payments-openapi.yml#GET /checkout-sessions/{checkoutSessionId}
+    - openapi/_original/super-payments-openapi.yml#GET /payment-links
+    - openapi/_original/super-payments-openapi.yml#GET /payment-links/{linkId}
+    - openapi/_original/super-payments-openapi.yml#POST /checkout-sessions
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: transactionId
+      amount: amount
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/super-payments-openapi.yml#GET /refunds/{transactionId}
+    - openapi/_original/super-payments-openapi.yml#POST /refunds
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+      created_at: createdAt
+      status: status
+      updated_at: updatedAt
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/super-payments-openapi.yml#GET /payment-methods
+    - openapi/_original/super-payments-openapi.yml#GET /payment-methods/{id}
+    - openapi/_original/super-payments-openapi.yml#POST /payment-methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: firstName
+      email: emailAddress
+      created_at: createdAt
+      phone: phoneNumber
+      last_name: lastName
+      updated_at: updatedAt
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/super-payments-openapi.yml#GET /customers
+    - openapi/_original/super-payments-openapi.yml#GET /customers/{id}
+    - openapi/_original/super-payments-openapi.yml#PATCH /customers/{id}
+    - openapi/_original/super-payments-openapi.yml#POST /customers
+  payout:
+    path_segment:
+    - settlements
+    - payouts
+    properties:
+      id: transactionId
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/super-payments-openapi.yml#GET /settlements
+    - openapi/_original/super-payments-openapi.yml#GET /settlements/{settlementId}
+    - openapi/_original/super-payments-openapi.yml#POST /refunds/payouts

@@ -1,0 +1,17 @@
+provider: griffin
+apis_io: https://apis.io/providers/griffin/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      created_at: created-at
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/griffin-openapi-original.yml#GET /v0/bank/accounts/{bank-account-id}/payments
+    - openapi/_original/griffin-openapi-original.yml#GET /v0/organizations/{organization-id}/payments
+    - openapi/_original/griffin-openapi-original.yml#GET /v0/payments/{payment-id}
+    - openapi/_original/griffin-openapi-original.yml#PATCH /v0/payments/{payment-id}
+    - openapi/_original/griffin-openapi-original.yml#POST /v0/bank/accounts/{bank-account-id}/payments

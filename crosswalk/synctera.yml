@@ -1,0 +1,36 @@
+provider: synctera
+apis_io: https://apis.io/providers/synctera/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - transaction_id
+      status: status
+      description: description
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/synctera-openapi.json#GET /payment_schedules/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      phone: phone_number
+      status: status
+      last_name: last_name
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/synctera-openapi.json#GET /customers
+    - openapi/_original/synctera-openapi.json#GET /customers/{customer_id}
+    - openapi/_original/synctera-openapi.json#PATCH /customers/{customer_id}
+    - openapi/_original/synctera-openapi.json#POST /customers
+    - openapi/_original/synctera-openapi.json#PUT /customers/{customer_id}

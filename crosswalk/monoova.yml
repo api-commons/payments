@@ -1,0 +1,36 @@
+provider: monoova
+apis_io: https://apis.io/providers/monoova/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      status: status
+      amount: amount
+      customer_id: customer
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/monoova-cc.yml#POST /au/card/ccm/CreditCardTransaction/payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: transactionId
+      status: status
+      reason: refundReason
+      payment_id: originalTransactionId
+      description: description
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/monoova-cc.yml#POST /au/card/ccm/CreditCardTransactionAsync/refund
+    - openapi/_original/monoova-payments.yml#POST /receivables/v2/refund
+  payout:
+    path_segment:
+    - settlement
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/monoova-payments.yml#GET /reports/v1/settlement/{date}

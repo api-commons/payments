@@ -1,0 +1,18 @@
+provider: innago
+apis_io: https://apis.io/providers/innago/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: paymentStatus
+      amount: amount
+      customer_id: payerId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/openapi.yml#GET /v1/payments
+    - openapi/_original/openapi.yml#GET /v1/payments/{paymentUid}
+    - openapi/_original/openapi.yml#POST /v1/externalreferences/invoices/{externalInvoiceUid}/payments
+    - openapi/_original/openapi.yml#POST /v1/invoices/{invoiceUid}/payments

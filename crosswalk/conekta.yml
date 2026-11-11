@@ -1,0 +1,85 @@
+provider: conekta
+apis_io: https://apis.io/providers/conekta/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      payment_method_id: payment_method
+      description: description
+      customer_id: customer_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/conekta-api-openapi.yml#GET /charges
+    - openapi/_original/conekta-api-openapi.yml#POST /orders/{id}/charges
+    - openapi/_original/conekta-api-openapi.yml#PUT /charges/{id}
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties:
+      id: id
+      status: status
+      expires_at: expires_at
+      mode: type
+      metadata: metadata
+      success_url: success_url
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/conekta-api-openapi.yml#GET /checkouts
+    - openapi/_original/conekta-api-openapi.yml#GET /checkouts/{id}
+    - openapi/_original/conekta-api-openapi.yml#POST /checkouts
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amount
+      status: payment_status
+      created_at: created_at
+      currency: currency
+      reason: reason
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/conekta-api-openapi.yml#DELETE /orders/{id}/refunds/{refund_id}
+    - openapi/_original/conekta-api-openapi.yml#POST /orders/{id}/refunds
+  payment_method:
+    path_segment:
+    - payment_sources
+    properties:
+      id: id
+      type: type
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/conekta-api-openapi.yml#DELETE /customers/{id}/payment_sources/{payment_method_id}
+    - openapi/_original/conekta-api-openapi.yml#GET /customers/{id}/payment_sources
+    - openapi/_original/conekta-api-openapi.yml#POST /customers/{id}/payment_sources
+    - openapi/_original/conekta-api-openapi.yml#PUT /customers/{id}/payment_sources/{payment_method_id}
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: created_at
+      phone: phone
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/conekta-api-openapi.yml#DELETE /customers/{id}
+    - openapi/_original/conekta-api-openapi.yml#GET /customers
+    - openapi/_original/conekta-api-openapi.yml#GET /customers/{id}
+    - openapi/_original/conekta-api-openapi.yml#POST /customers
+    - openapi/_original/conekta-api-openapi.yml#PUT /customers/{id}

@@ -1,0 +1,38 @@
+provider: bitpay
+apis_io: https://apis.io/providers/bitpay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amount
+      status: status
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/openapi.yml#DELETE /invoices/{invoiceId}/refunds/{refundId}
+    - openapi/_original/openapi.yml#GET /invoices/{invoiceId}/refunds
+    - openapi/_original/openapi.yml#GET /invoices/{invoiceId}/refunds/{refundId}
+    - openapi/_original/openapi.yml#POST /invoices/{invoiceId}/refunds
+  payout:
+    path_segment:
+    - payouts
+    - settlements
+    properties:
+      id: id
+      status: status
+      amount:
+      - amount
+      - totalAmount
+      created_at: dateCreated
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.yml#DELETE /payouts/{payoutId}
+    - openapi/_original/openapi.yml#GET /payouts
+    - openapi/_original/openapi.yml#GET /payouts/{payoutId}
+    - openapi/_original/openapi.yml#GET /settlements
+    - openapi/_original/openapi.yml#GET /settlements/{settlementId}

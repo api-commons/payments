@@ -1,0 +1,77 @@
+provider: dlocal
+apis_io: https://apis.io/providers/dlocal/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_date
+      currency: currency
+      payment_method_id: payment_method_id
+      description: description
+      customer_id: payer
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dlocal-payins-openapi.yml#GET /payments/{payment_id}
+    - openapi/_original/dlocal-payins-openapi.yml#POST /payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id:
+      - id
+      - transaction_id
+      amount: amount
+      status: status
+      created_at: created_date
+      currency: currency
+      payment_id: payment_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dlocal-payins-openapi.yml#GET /refunds/{refund_id}
+    - openapi/_original/dlocal-payins-openapi.yml#POST /refunds
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dlocal-payins-openapi.yml#GET /payment-methods
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id:
+      - id
+      - transaction_id
+      status: status
+      amount: amount
+      created_at: created_date
+      currency: currency
+      updated_at: updated_date
+      destination: beneficiary
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dlocal-payouts-openapi.yml#GET /payouts/{payout_id}
+    - openapi/_original/dlocal-payouts-openapi.yml#POST /payouts
+  dispute:
+    path_segment:
+    - chargebacks
+    properties:
+      status: status
+      created_at: created_date
+      id: id
+      reason: reason_code
+      amount: amount
+      payment_id: payment_id
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/dlocal-payins-openapi.yml#GET /chargebacks/{chargeback_id}

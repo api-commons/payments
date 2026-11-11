@@ -1,0 +1,16 @@
+provider: coingate
+apis_io: https://apis.io/providers/coingate/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/openapi.json#POST /orders/{order_id}/refunds

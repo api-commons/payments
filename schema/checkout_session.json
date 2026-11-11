@@ -1,0 +1,207 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/checkout_session.json",
+  "title": "Checkout Session",
+  "description": "The common checkout_session in Payments, distilled from 74 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.73,
+      "x-commons-providers": 54,
+      "x-commons-spellings": [
+        "id",
+        "reference_id",
+        "checkoutSessionId",
+        "transaction_id",
+        "_id",
+        "transactionId",
+        "transactionID",
+        "referenceId"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.581,
+      "x-commons-providers": 43,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "paymentStatus",
+        "payment_status"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.473,
+      "x-commons-providers": 35,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "created",
+        "timestamp",
+        "created_time",
+        "createdTime",
+        "createdOn",
+        "created_on"
+      ],
+      "format": "date-time"
+    },
+    "customer_id": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.432,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "customer",
+        "customerId",
+        "customer_id",
+        "consumer",
+        "buyer",
+        "payer"
+      ]
+    },
+    "currency": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.392,
+      "x-commons-providers": 29,
+      "x-commons-spellings": [
+        "currency",
+        "currency_code"
+      ]
+    },
+    "amount": {
+      "type": "integer",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.378,
+      "x-commons-providers": 28,
+      "x-commons-spellings": [
+        "amount",
+        "totalAmount",
+        "total_amount",
+        "amount_cents",
+        "amountInCents"
+      ]
+    },
+    "expires_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.351,
+      "x-commons-providers": 26,
+      "x-commons-spellings": [
+        "expires_at",
+        "expiresAt",
+        "expires",
+        "expiry",
+        "expiration_date",
+        "expiry_time"
+      ],
+      "format": "date-time"
+    },
+    "description": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.338,
+      "x-commons-providers": 25,
+      "x-commons-spellings": [
+        "description",
+        "note",
+        "statement_descriptor",
+        "statementDescriptor"
+      ]
+    },
+    "mode": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.338,
+      "x-commons-providers": 25,
+      "x-commons-spellings": [
+        "type",
+        "mode",
+        "payment_type",
+        "intent"
+      ]
+    },
+    "metadata": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.311,
+      "x-commons-providers": 23,
+      "x-commons-spellings": [
+        "metadata",
+        "custom_fields",
+        "attributes",
+        "additionalData",
+        "additional_data"
+      ]
+    },
+    "success_url": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.311,
+      "x-commons-providers": 23,
+      "x-commons-spellings": [
+        "return_url",
+        "returnUrl",
+        "success_url",
+        "successUrl",
+        "merchant_urls"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.284,
+      "x-commons-providers": 21,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "updated_time",
+        "updatedTime",
+        "modified_at"
+      ],
+      "format": "date-time"
+    },
+    "url": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.27,
+      "x-commons-providers": 20,
+      "x-commons-spellings": [
+        "redirect_url",
+        "checkout_url",
+        "link",
+        "redirectUrl",
+        "payment_url",
+        "checkoutUrl"
+      ]
+    },
+    "line_items": {
+      "type": "array",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.257,
+      "x-commons-providers": 19,
+      "x-commons-spellings": [
+        "items",
+        "line_items",
+        "lineItems",
+        "products"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "payments",
+    "concept": "checkout_session",
+    "providers": 74,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

@@ -1,0 +1,16 @@
+provider: tickitto
+apis_io: https://apis.io/providers/tickitto/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      id: _id
+      created_at: created_on
+      currency: currency
+      line_items: items
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tickitto-openapi-original.json#POST /api/basket/checkout

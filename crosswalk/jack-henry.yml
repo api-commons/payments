@@ -1,0 +1,39 @@
+provider: jack-henry
+apis_io: https://apis.io/providers/jack-henry/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      description: memo
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/banno-consumer-api-openapi.yml#POST /a/consumer/api/v0/users/{userId}/bill-pay/payments
+    - openapi/_original/banno-consumer-api-openapi.yml#POST /a/consumer/api/v0/users/{userId}/zelle/payments
+  refund:
+    path_segment:
+    - credits
+    properties:
+      id: id
+      amount: amount
+      status: status
+      description: memo
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/ach/credits
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customerId
+      name: firstName
+      last_name: lastName
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/jxchange-rest-openapi.yml#GET /jxchange/v1/customers
+    - openapi/_original/jxchange-rest-openapi.yml#GET /jxchange/v1/customers/{customerId}

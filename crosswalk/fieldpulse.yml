@@ -1,0 +1,27 @@
+provider: fieldpulse
+apis_io: https://apis.io/providers/fieldpulse/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/fieldpulse-api-openapi-original.json#DELETE /payments/{id}
+    - openapi/_original/fieldpulse-api-openapi-original.json#GET /payments
+    - openapi/_original/fieldpulse-api-openapi-original.json#GET /payments/{id}
+    - openapi/_original/fieldpulse-api-openapi-original.json#POST /payments
+    - openapi/_original/fieldpulse-api-openapi-original.json#PUT /payments/{id}
+  customer:
+    path_segment:
+    - customers
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/fieldpulse-api-openapi-original.json#DELETE /customers/{customerId}
+    - openapi/_original/fieldpulse-api-openapi-original.json#GET /customers
+    - openapi/_original/fieldpulse-api-openapi-original.json#GET /customers/{customerId}
+    - openapi/_original/fieldpulse-api-openapi-original.json#POST /customers
+    - openapi/_original/fieldpulse-api-openapi-original.json#PUT /customers/{customerId}

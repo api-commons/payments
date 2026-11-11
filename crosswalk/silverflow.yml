@@ -1,0 +1,62 @@
+provider: silverflow
+apis_io: https://apis.io/providers/silverflow/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      status: status
+      amount: amount
+      created_at: created
+      updated_at: lastModified
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/silverflow-openapi.yml#GET /charges
+    - openapi/_original/silverflow-openapi.yml#GET /charges/{chargeKey}
+    - openapi/_original/silverflow-openapi.yml#GET /pos/charges
+    - openapi/_original/silverflow-openapi.yml#POST /charges
+    - openapi/_original/silverflow-openapi.yml#POST /pos/charges
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      status: status
+      created_at: created
+      updated_at: lastModified
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/silverflow-openapi.yml#POST /charges/{chargeKey}/refund
+    - openapi/_original/silverflow-openapi.yml#POST /pos/charges/{chargeKey}/refund
+    - openapi/_original/silverflow-openapi_2.yml#POST /charges/{chargeKey}/refund
+    - openapi/_original/silverflow-openapi_2.yml#POST /pos/charges/{chargeKey}/refund
+  payout:
+    path_segment:
+    - payout
+    properties:
+      status: status
+      amount: amount
+      created_at: created
+      method: type
+      updated_at: lastModified
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/silverflow-openapi.yml#POST /charges/payout
+    - openapi/_original/silverflow-openapi_2.yml#POST /charges/payout
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: created
+      reason: reason
+      updated_at: lastModified
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/silverflow-openapi.yml#GET /disputes
+    - openapi/_original/silverflow-openapi.yml#GET /disputes/{disputeKey}
+    - openapi/_original/silverflow-openapi_2.yml#GET /disputes
+    - openapi/_original/silverflow-openapi_2.yml#GET /disputes/{disputeKey}

@@ -1,0 +1,55 @@
+provider: xrpay
+apis_io: https://apis.io/providers/xrpay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment-intents
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      currency: currency
+      payment_method_id: payment_method
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/xrpay-openapi.json#GET /api/v1/payment-intents
+    - openapi/_original/xrpay-openapi.json#GET /api/v1/payment-intents/{id}
+    - openapi/_original/xrpay-openapi.json#POST /api/v1/payment-intents
+    - openapi/_original/xrpay-openapi.yml#GET /api/v1/payment-intents
+    - openapi/_original/xrpay-openapi.yml#GET /api/v1/payment-intents/{id}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      currency: currency
+      reason: reason
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/xrpay-openapi.json#GET /api/v1/refunds
+    - openapi/_original/xrpay-openapi.json#GET /api/v1/refunds/{id}
+    - openapi/_original/xrpay-openapi.json#POST /api/v1/refunds
+    - openapi/_original/xrpay-openapi.yml#GET /api/v1/refunds
+    - openapi/_original/xrpay-openapi.yml#GET /api/v1/refunds/{id}
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      currency: currency
+      destination: destination_id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/xrpay-openapi.json#GET /api/v1/payouts
+    - openapi/_original/xrpay-openapi.json#GET /api/v1/payouts/{id}
+    - openapi/_original/xrpay-openapi.json#POST /api/v1/payouts
+    - openapi/_original/xrpay-openapi.yml#GET /api/v1/payouts
+    - openapi/_original/xrpay-openapi.yml#GET /api/v1/payouts/{id}

@@ -1,0 +1,34 @@
+provider: layup-technologies
+apis_io: https://apis.io/providers/layup-technologies/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id: _id
+      amount: amount
+      created_at: timestamp
+      payment_method_id: paymentMethod
+      description: note
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/layup-technologies-openapi-original.json#DELETE /v1/payments
+    - openapi/_original/layup-technologies-openapi-original.json#GET /v1/payments
+    - openapi/_original/layup-technologies-openapi-original.json#GET /v1/payments/{_id}
+    - openapi/_original/layup-technologies-openapi-original.json#POST /v1/bank-transactions/{id}/payment
+    - openapi/_original/layup-technologies-openapi-original.json#POST /v1/payments
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      id: _id
+      amount: amount
+      created_at: createdAt
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/layup-technologies-openapi-original.json#POST /v2/settlements

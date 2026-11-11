@@ -1,0 +1,52 @@
+provider: fintecture
+apis_io: https://apis.io/providers/fintecture/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      updated_at: updated_at
+      metadata: attributes
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/fintecture-pis-api-openapi.yml#GET /pis/v2/payments
+    - openapi/_original/fintecture-pis-api-openapi.yml#GET /pis/v2/payments/{payment_id}
+    - openapi/_original/fintecture-pis-api-openapi.yml#PATCH /pis/v2/payments/{payment_id}
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      created_at: created_at
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/fintecture-pis-api-openapi.yml#GET /pis/v2/payments/{payment_id}/refunds
+    - openapi/_original/fintecture-pis-api-openapi.yml#POST /pis/v2/refund
+  customer:
+    path_segment:
+    - customer
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/fintecture-ais-api-openapi.yml#DELETE /ais/v1/customer/{customer_id}
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/fintecture-pis-api-openapi.yml#GET /pis/v2/settlements
+    - openapi/_original/fintecture-pis-api-openapi.yml#GET /pis/v2/settlements/{settlement_id}

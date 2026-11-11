@@ -1,0 +1,72 @@
+provider: mangopay
+apis_io: https://apis.io/providers/mangopay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/countries/authorizations
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/countries/{CountryCode}/authorizations
+  checkout_session:
+    path_segment:
+    - checkout
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/mangopay-openapi.json#POST /v2.01/oauth/token/embedded/checkout
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: Id
+      amount: Amount
+      status: Status
+      created_at: CreationDate
+      currency: Currency
+      reason: RefundReason
+      description: StatementDescriptor
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/payins/{PayInId}/refunds
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/payouts/{PayoutId}/refunds
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/refunds/{RefundId}
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/repudiations/{RepudiationId}/refunds
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/transfers/{TransferId}/refunds
+  payout:
+    path_segment:
+    - settlements
+    - payouts
+    properties:
+      id: Id
+      status: Status
+      created_at: CreationDate
+      method: Type
+      destination: BankAccountId
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/payouts/{PayoutId}
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/settlements/{SettlementId}
+    - openapi/_original/mangopay-openapi.json#GET /v3.0/{ClientId}/payins/intents/settlements
+    - openapi/_original/mangopay-openapi.json#GET /v3.0/{ClientId}/payins/intents/settlements/{SettlementId}
+    - openapi/_original/mangopay-openapi.json#POST /v3.0/{ClientId}/payins/intents/settlements
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: Status
+      created_at: CreationDate
+      id: Id
+      reason: DisputeReason
+      amount: Amount
+      currency: Currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/disputes
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/disputes/{DisputeId}
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/payins/{PayInId}/disputes
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/disputes
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/wallets/{WalletId}/disputes

@@ -1,0 +1,27 @@
+provider: openpayments-io
+apis_io: https://apis.io/providers/openpayments-io/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorisations
+    - payments
+    properties:
+      id: paymentId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/openpayments-io-openapi.yml#GET /iso/payments/{paymentId}
+    - openapi/_original/openpayments-io-openapi.yml#GET /psd2/consent/v1/consents/{consentId}/authorisations
+    - openapi/_original/openpayments-io-openapi.yml#GET /psd2/consent/v1/consents/{consentId}/authorisations/{authorisationId}
+    - openapi/_original/openpayments-io-openapi.yml#GET /psd2/paymentinitiation/v1/signing-baskets/{basketId}/authorisations/{authorisationId}
+    - openapi/_original/openpayments-io-openapi.yml#GET /psd2/paymentinitiation/v1/{payment-service}/{payment-product}/{paymentId}/authorisations
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: payoutId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/openpayments-io-openapi.yml#GET /premium/v1/payouts/{payoutId}
+    - openapi/_original/openpayments-io-openapi.yml#POST /premium/v1/payouts

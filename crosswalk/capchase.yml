@@ -1,0 +1,20 @@
+provider: capchase
+apis_io: https://apis.io/providers/capchase/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - buyers
+    properties:
+      id: id
+      name: name
+      created_at: created_at
+      status:
+      - state
+      - status
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/capchase-pay-openapi.yml#GET /pay/buyers/{id}
+    - openapi/_original/capchase-pay-openapi.yml#POST /pay/buyers

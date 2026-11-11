@@ -1,0 +1,111 @@
+provider: curlec
+apis_io: https://apis.io/providers/curlec/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      payment_method_id: card_id
+      description: description
+      customer_id: customer_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/curlec-razorpay-openapi.json#GET /orders/{id}/payments
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payments
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payments/{id}
+    - openapi/_original/curlec-razorpay-openapi.json#GET /virtual_accounts/{id}/payments
+    - openapi/_original/curlec-razorpay-openapi.json#PATCH /payments/{id}
+  checkout_session:
+    path_segment:
+    - payment_links
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      created_at: created_at
+      customer_id: customer
+      currency: currency
+      amount: amount
+      description: description
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payment_links
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payment_links/{id}
+    - openapi/_original/curlec-razorpay-openapi.json#PATCH /payment_links/{id}
+    - openapi/_original/curlec-razorpay-openapi.json#POST /payment_links
+  refund:
+    path_segment:
+    - refunds
+    - reversals
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      created_at: created_at
+      currency: currency
+      payment_id: payment_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payments/{payment_id}/refunds
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payments/{payment_id}/refunds/{refund_id}
+    - openapi/_original/curlec-razorpay-openapi.json#GET /refunds
+    - openapi/_original/curlec-razorpay-openapi.json#GET /refunds/{id}
+    - openapi/_original/curlec-razorpay-openapi.json#GET /transfers/{id}/reversals
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/curlec-razorpay-openapi.json#GET /customers
+    - openapi/_original/curlec-razorpay-openapi.json#GET /customers/{id}
+    - openapi/_original/curlec-razorpay-openapi.json#POST /customers
+    - openapi/_original/curlec-razorpay-openapi.json#PUT /customers/{id}
+  payout:
+    path_segment:
+    - payouts
+    - settlements
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payouts
+    - openapi/_original/curlec-razorpay-openapi.json#GET /payouts/{payout_id}
+    - openapi/_original/curlec-razorpay-openapi.json#GET /settlements
+    - openapi/_original/curlec-razorpay-openapi.json#GET /settlements/{id}
+    - openapi/_original/curlec-razorpay-openapi.json#POST /payouts
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: created_at
+      id: id
+      reason: reason_code
+      amount: amount
+      payment_id: payment_id
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/curlec-razorpay-openapi.json#GET /disputes
+    - openapi/_original/curlec-razorpay-openapi.json#GET /disputes/{id}

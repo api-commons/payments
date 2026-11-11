@@ -1,0 +1,29 @@
+provider: snipcart
+apis_io: https://apis.io/providers/snipcart/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amount
+      reason: comment
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/snipcart-rest-api-openapi.yml#GET /orders/{token}/refunds
+    - openapi/_original/snipcart-rest-api-openapi.yml#GET /orders/{token}/refunds/{id}
+    - openapi/_original/snipcart-rest-api-openapi.yml#POST /orders/{token}/refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      email: email
+      created_at: creationDate
+      status: status
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/snipcart-rest-api-openapi.yml#GET /customers
+    - openapi/_original/snipcart-rest-api-openapi.yml#GET /customers/{id}

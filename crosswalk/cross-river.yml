@@ -1,0 +1,33 @@
+provider: cross-river
+apis_io: https://apis.io/providers/cross-river/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/cross-river-openapi.yml#POST /ach/v1/payments
+    - openapi/_original/cross-river-openapi.yml#POST /rtp/v1/payments
+    - openapi/_original/cross-river-openapi.yml#POST /wires/v1/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: firstName
+      email: email
+      status: status
+      last_name: lastName
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/cross-river-openapi.yml#DELETE /core/v1/cm/customers/{id}
+    - openapi/_original/cross-river-openapi.yml#GET /core/v1/cm/customers/{id}
+    - openapi/_original/cross-river-openapi.yml#POST /core/v1/cm/customers

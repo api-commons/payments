@@ -1,0 +1,34 @@
+provider: currencycloud
+apis_io: https://apis.io/providers/currencycloud/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      updated_at: updated_at
+      customer_id: payer_id
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/currencycloud-openapi-original.yml#GET /payments/{id}
+    - openapi/_original/currencycloud-openapi-original.yml#POST /payments/{id}
+  customer:
+    path_segment:
+    - payers
+    properties:
+      id: id
+      name: first_name
+      created_at: created_at
+      address: address
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/currencycloud-openapi-original.yml#GET /payers/{id}

@@ -1,0 +1,19 @@
+provider: fifth-third-bancorp
+apis_io: https://apis.io/providers/fifth-third-bancorp/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      email: email
+      created_at: created_at
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/newline-platform-api.json#DELETE /customers/{uid}
+    - openapi/_original/newline-platform-api.json#GET /customers
+    - openapi/_original/newline-platform-api.json#GET /customers/{uid}
+    - openapi/_original/newline-platform-api.json#POST /customers
+    - openapi/_original/newline-platform-api.json#PUT /customers/{uid}

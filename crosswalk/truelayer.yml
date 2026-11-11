@@ -1,0 +1,44 @@
+provider: truelayer
+apis_io: https://apis.io/providers/truelayer/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      currency: currency
+      payment_method_id: payment_method
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/truelayer-payments-openapi.yml#GET /v3/payments/{id}
+    - openapi/_original/truelayer-payments-openapi.yml#POST /v3/payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/truelayer-payments-openapi.yml#GET /v3/payments/{id}/refunds
+    - openapi/_original/truelayer-payments-openapi.yml#POST /v3/payments/{id}/refunds
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      currency: currency
+      destination: beneficiary
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/truelayer-payments-openapi.yml#GET /v3/payouts/{id}
+    - openapi/_original/truelayer-payments-openapi.yml#POST /v3/payouts

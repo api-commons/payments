@@ -1,0 +1,19 @@
+provider: hypto
+apis_io: https://apis.io/providers/hypto/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      amount: amount
+      status: status
+      created_at: created_at
+      description: note
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/hypto-openapi.json#GET /api/upi_collections/invalid_credits/{id}/refunds
+    - openapi/_original/hypto-openapi.json#GET /api/virtual_accounts/invalid_credits/{id}/refunds
+    - openapi/_original/hypto-openapi.json#POST /api/upi_collections/refund/{order_id}

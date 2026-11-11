@@ -1,0 +1,30 @@
+provider: treez
+apis_io: https://apis.io/providers/treez/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: id
+      status: payment_status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/treez-dispensary-openapi.json#POST /{dispensary}/invoice/payment
+    - openapi/_original/treez-dispensary.json#POST /{dispensary}/invoice/payment
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: customer_id
+      name: first_name
+      email: email
+      phone: phone
+      address: addresses
+      status: status
+      last_name: last_name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/treez-dispensary-openapi.json#GET /{dispensary}/customer/{customer_id}
+    - openapi/_original/treez-dispensary.json#GET /{dispensary}/customer/{customer_id}

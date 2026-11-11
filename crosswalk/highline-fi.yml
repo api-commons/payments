@@ -1,0 +1,22 @@
+provider: highline-fi
+apis_io: https://apis.io/providers/highline-fi/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/highline-fi-openapi.yml#GET /payment-requests/{payment-request-id}/payments
+    - openapi/_original/highline-fi-openapi.yml#GET /payments
+    - openapi/_original/highline-fi-openapi.yml#GET /payments/{payment-id}
+  payout:
+    path_segment:
+    - settlements
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/highline-fi-openapi.yml#GET /settlements
+    - openapi/_original/highline-fi-openapi.yml#GET /settlements/{settlement-id}

@@ -1,0 +1,44 @@
+provider: amcs-group
+apis_io: https://apis.io/providers/amcs-group/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - charges
+    properties:
+      id: GUID
+      status: status
+      amount: Amount
+      metadata: extra
+      external_id: Reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/amcs-group-erp-openapi-original.json#GET /accounting/charges
+    - openapi/_original/amcs-group-erp-openapi-original.json#GET /accounting/charges/{guid}
+    - openapi/_original/amcs-group-erp-openapi-original.json#GET /accounting/payments
+    - openapi/_original/amcs-group-erp-openapi-original.json#GET /accounting/payments/{guid}
+    - openapi/_original/amcs-group-erp-openapi-original.json#POST /accounting/payments
+  refund:
+    path_segment:
+    - refund
+    properties:
+      status: result
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/amcs-group-pay-openapi-original.json#POST /ExternalTransaction/Refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: GUID
+      name: Name
+      status: status
+      metadata: extra
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/amcs-group-erp-openapi-original.json#GET /directory/customers
+    - openapi/_original/amcs-group-erp-openapi-original.json#GET /directory/customers/{guid}
+    - openapi/_original/amcs-group-erp-openapi-original.json#POST /directory/customers
+    - openapi/_original/amcs-group-erp-openapi-original.json#PUT /directory/customers/{guid}

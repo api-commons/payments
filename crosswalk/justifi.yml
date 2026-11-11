@@ -1,0 +1,120 @@
+provider: justifi
+apis_io: https://apis.io/providers/justifi/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      payment_method_id: payment_method
+      description:
+      - description
+      - statement_descriptor
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/justifi-openapi-original.yml#GET /payments
+    - openapi/_original/justifi-openapi-original.yml#GET /payments/{id}
+    - openapi/_original/justifi-openapi-original.yml#PATCH /payments/{id}
+    - openapi/_original/justifi-openapi-original.yml#POST /payments
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      amount: amount
+      description:
+      - statement_descriptor
+      - description
+      mode:
+      - type
+      - mode
+      metadata: metadata
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/justifi-openapi-original.yml#GET /checkouts
+    - openapi/_original/justifi-openapi-original.yml#GET /checkouts/{id}
+    - openapi/_original/justifi-openapi-original.yml#PATCH /checkouts/{id}
+    - openapi/_original/justifi-openapi-original.yml#POST /checkouts
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amount
+      status: status
+      created_at: created_at
+      reason: reason
+      payment_id: payment_id
+      description: description
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/justifi-openapi-original.yml#GET /refunds
+    - openapi/_original/justifi-openapi-original.yml#GET /refunds/{id}
+    - openapi/_original/justifi-openapi-original.yml#PATCH /refunds/{id}
+    - openapi/_original/justifi-openapi-original.yml#POST /checkouts/{id}/refunds
+    - openapi/_original/justifi-openapi-original.yml#POST /payments/{id}/refunds
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      id: id
+      type: type
+      created_at: created_at
+      status: status
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/justifi-openapi-original.yml#DELETE /payment_method_groups/{id}/payment_methods/{payment_method_id}
+    - openapi/_original/justifi-openapi-original.yml#GET /payment_methods
+    - openapi/_original/justifi-openapi-original.yml#GET /payment_methods/{token}
+    - openapi/_original/justifi-openapi-original.yml#PATCH /payment_methods/{token}
+    - openapi/_original/justifi-openapi-original.yml#POST /payment_methods
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      method: type
+      updated_at: updated_at
+      destination: bank_account
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/justifi-openapi-original.yml#GET /payouts
+    - openapi/_original/justifi-openapi-original.yml#GET /payouts/{id}
+    - openapi/_original/justifi-openapi-original.yml#GET /reports/payouts/{id}
+    - openapi/_original/justifi-openapi-original.yml#PATCH /payouts/{id}
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: created_at
+      id: id
+      reason: reason
+      amount: amount
+      updated_at: updated_at
+      payment_id: payment_id
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/justifi-openapi-original.yml#GET /disputes
+    - openapi/_original/justifi-openapi-original.yml#GET /disputes/{id}
+    - openapi/_original/justifi-openapi-original.yml#PATCH /disputes/{id}

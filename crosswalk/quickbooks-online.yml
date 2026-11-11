@@ -1,0 +1,13 @@
+provider: quickbooks-online
+apis_io: https://apis.io/providers/quickbooks-online/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customer
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/quickbooks-online-openapi.yml#GET /v3/company/{realmId}/customer/{customerId}
+    - openapi/_original/quickbooks-online-openapi.yml#POST /v3/company/{realmId}/customer

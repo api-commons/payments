@@ -1,0 +1,115 @@
+provider: block
+apis_io: https://apis.io/providers/block/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      created_at: created_at
+      description: note
+      updated_at: updated_at
+      customer_id: customer_id
+      external_id: idempotency_key
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/block-openapi.json#GET /v2/payments
+    - openapi/_original/block-openapi.json#GET /v2/payments/{payment_id}
+    - openapi/_original/block-openapi.json#POST /v2/payments
+    - openapi/_original/block-openapi.json#PUT /v2/payments/{payment_id}
+  checkout_session:
+    path_segment:
+    - payment-links
+    - checkouts
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      created_at: created_at
+      customer_id: customer_id
+      description:
+      - note
+      - description
+      mode: payment_type
+      updated_at: updated_at
+      url: redirect_url
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/block-openapi.json#DELETE /v2/online-checkout/payment-links/{id}
+    - openapi/_original/block-openapi.json#GET /v2/online-checkout/payment-links
+    - openapi/_original/block-openapi.json#GET /v2/online-checkout/payment-links/{id}
+    - openapi/_original/block-openapi.json#GET /v2/terminals/checkouts/{checkout_id}
+    - openapi/_original/block-openapi.json#POST /v2/locations/{location_id}/checkouts
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id:
+      - id
+      - refund_id
+      status: status
+      created_at: created_at
+      reason: reason
+      payment_id: payment_id
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/block-openapi.json#GET /v2/refunds
+    - openapi/_original/block-openapi.json#GET /v2/refunds/{refund_id}
+    - openapi/_original/block-openapi.json#GET /v2/terminals/refunds/{terminal_refund_id}
+    - openapi/_original/block-openapi.json#POST /v2/refunds
+    - openapi/_original/block-openapi.json#POST /v2/terminals/refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id:
+      - id
+      - reference_id
+      email: email_address
+      created_at: created_at
+      phone: phone_number
+      address: address
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/block-openapi.json#DELETE /v2/customers/{customer_id}
+    - openapi/_original/block-openapi.json#GET /v2/customers
+    - openapi/_original/block-openapi.json#GET /v2/customers/{customer_id}
+    - openapi/_original/block-openapi.json#POST /v2/customers
+    - openapi/_original/block-openapi.json#PUT /v2/customers/{customer_id}
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      method: type
+      updated_at: updated_at
+      destination: destination
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/block-openapi.json#GET /v2/payouts
+    - openapi/_original/block-openapi.json#GET /v2/payouts/{payout_id}
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: state
+      created_at: created_at
+      id:
+      - dispute_id
+      - id
+      reason: reason
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/block-openapi.json#GET /v2/disputes
+    - openapi/_original/block-openapi.json#GET /v2/disputes/{dispute_id}

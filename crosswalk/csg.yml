@@ -1,0 +1,40 @@
+provider: csg
+apis_io: https://apis.io/providers/csg/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties:
+      created_at: created_date
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/csg-forte-rest-openapi.yml#GET /organizations/{organizationId}/locations/{locationId}/paymentmethods
+    - openapi/_original/csg-forte-rest-openapi.yml#POST /organizations/{organizationId}/locations/{locationId}/paymentmethods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: first_name
+      email: email
+      created_at: created_date
+      phone: phone
+      address: billing_address
+      last_name: last_name
+      updated_at: updated_date
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/csg-forte-rest-openapi.yml#DELETE /organizations/{organizationId}/locations/{locationId}/customers/{customerId}
+    - openapi/_original/csg-forte-rest-openapi.yml#GET /organizations/{organizationId}/locations/{locationId}/customers
+    - openapi/_original/csg-forte-rest-openapi.yml#GET /organizations/{organizationId}/locations/{locationId}/customers/{customerId}
+    - openapi/_original/csg-forte-rest-openapi.yml#POST /organizations/{organizationId}/locations/{locationId}/customers
+    - openapi/_original/csg-forte-rest-openapi.yml#PUT /organizations/{organizationId}/locations/{locationId}/customers/{customerId}
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/csg-forte-rest-openapi.yml#GET /organizations/{organizationId}/locations/{locationId}/settlements

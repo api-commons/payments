@@ -1,0 +1,56 @@
+provider: wordline
+apis_io: https://apis.io/providers/wordline/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorisations
+    - authorizations
+    - payments
+    properties:
+      amount: totalAmount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/external-accounts/{issuerAccountExternalReference}/authorizations
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/external-accounts/{issuerAccountExternalReference}/authorizations/{authorizationId}
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/{accountReference}/authorizations
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/accounts/{accountReference}/authorizations/{authorizationId}
+    - openapi/_original/worldline-interchange-fees-api.yaml#GET /acquiring/interchangefees/v2.0/acquirers/{acquirerId}/payments
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/worldline-open-banking-payment-initiation-3.15.0.yaml#POST /refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: firstName
+      address: addresses
+      last_name: lastName
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/customers
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/customers/{customerReference}
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#PATCH /issuers/{issuerId}/customers/{customerReference}
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#POST /issuers/{issuerId}/customers
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#PUT /issuers/{issuerId}/customers/{customerReference}
+  dispute:
+    path_segment:
+    - disputes
+    - dispute
+    properties:
+      created_at: creationDate
+      reason:
+      - disputeReason
+      - reason
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/cards/external-cards/{issuerCardExternalReference}/disputes
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/cards/{cardReference}/disputes
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/disputes/{disputeFolderReference}
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/operations/{externalOperationReference}/dispute
+    - openapi/_original/worldline-card-issuing-api-2.41.1.json#GET /issuers/{issuerId}/transactions/{transactionId}/dispute

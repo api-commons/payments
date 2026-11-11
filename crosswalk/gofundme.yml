@@ -1,0 +1,15 @@
+provider: gofundme
+apis_io: https://apis.io/providers/gofundme/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id:
+      - id
+      - payout_id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/gofundme-pro-api-openapi.json#GET /organizations/{org_id}/payouts/{payout_type}

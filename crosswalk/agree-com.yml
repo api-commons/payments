@@ -1,0 +1,19 @@
+provider: agree-com
+apis_io: https://apis.io/providers/agree-com/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      address: address
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/agree-com-api-openapi-original.json#GET /api/v1/customers
+    - openapi/_original/agree-com-api-openapi-original.json#GET /api/v1/customers/{id}
+    - openapi/_original/agree-com-api-openapi-original.json#GET /api/v1/reports/revenue/customers
+    - openapi/_original/agree-com-api-openapi-original.json#PATCH /api/v1/customers/{id}
+    - openapi/_original/agree-com-api-openapi-original.json#POST /api/v1/customers

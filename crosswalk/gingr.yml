@@ -1,0 +1,44 @@
+provider: gingr
+apis_io: https://apis.io/providers/gingr/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/gingr-openapi.json#GET /v1/invoices/charges
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      id: id
+      mode: type
+      metadata: attributes
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/gingr-openapi.json#POST /v1/bookings/{bookingId}/checkout
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/gingr-openapi.json#POST /v1/payments/deposits/{depositId}/refund
+    - openapi/_original/gingr-openapi.json#POST /v1/payments/invoices/{invoiceId}/refund
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+      metadata: attributes
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/gingr-openapi.json#GET /v1/config/payment-methods

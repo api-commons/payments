@@ -1,0 +1,15 @@
+provider: forter
+apis_io: https://apis.io/providers/forter/
+context: payments
+generated: '2026-11-10'
+concepts:
+  dispute:
+    path_segment:
+    - dispute
+    properties:
+      status: status
+      reason: reason
+      amount: amount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/forter-openapi.yml#POST /v2/dispute/{id}

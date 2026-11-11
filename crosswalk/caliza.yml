@@ -1,0 +1,24 @@
+provider: caliza
+apis_io: https://apis.io/providers/caliza/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      created_at: createdDate
+      description: memo
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/caliza-api-documentation-reference-openapi.yml#GET /v1/payments/{id}
+    - openapi/_original/caliza-api-documentation-reference-openapi.yml#POST /v1/payments
+  payout:
+    path_segment:
+    - payouts
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/caliza-api-documentation-reference-openapi.yml#POST /v1/transactions/payouts

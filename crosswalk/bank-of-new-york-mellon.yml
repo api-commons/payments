@@ -1,0 +1,20 @@
+provider: bank-of-new-york-mellon
+apis_io: https://apis.io/providers/bank-of-new-york-mellon/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      external_id: clientReference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bny-mellon-treasury-services-api-openapi.yml#GET /payments
+    - openapi/_original/bny-mellon-treasury-services-api-openapi.yml#GET /payments/{paymentId}
+    - openapi/_original/bny-mellon-treasury-services-api-openapi.yml#POST /payments

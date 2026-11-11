@@ -1,0 +1,44 @@
+provider: scalapay
+apis_io: https://apis.io/providers/scalapay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/scalapay-openapi-original.yml#GET /v2/payments/{token}
+  refund:
+    path_segment:
+    - refund
+    - refunds
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/scalapay-openapi-original.yml#GET /v1/reporting/payouts/{token}/refunds
+    - openapi/_original/scalapay-openapi-original.yml#GET /v1/reporting/refunds
+    - openapi/_original/scalapay-openapi-original.yml#POST /v1/instore/orders/{token}/refund
+    - openapi/_original/scalapay-openapi-original.yml#POST /v2/payments/{token}/refund
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      status: status
+      amount: totalAmount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/scalapay-openapi-original.yml#GET /v1/reporting/payouts
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      created_at: createdAt
+      amount: amountInCents
+      updated_at: updatedAt
+      currency: currency
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/scalapay-openapi-original.yml#GET /v1/reporting/disputes

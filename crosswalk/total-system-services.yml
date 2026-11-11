@@ -1,0 +1,30 @@
+provider: total-system-services
+apis_io: https://apis.io/providers/total-system-services/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: transactionId
+      amount: amount
+      status: status
+      created_at: timestamp
+      reason: reason
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tsys-payment-gateway-openapi.yml#POST /transactions/{transactionId}/refund
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      id: id
+      reason: reason
+      amount: amount
+      payment_id: transactionId
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/tsys-issuing-openapi.yml#GET /disputes
+    - openapi/_original/tsys-issuing-openapi.yml#POST /disputes

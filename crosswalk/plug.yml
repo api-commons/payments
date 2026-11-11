@@ -1,0 +1,69 @@
+provider: plug
+apis_io: https://apis.io/providers/plug/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    - charge
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      payment_method_id:
+      - paymentMethod
+      - paymentSource
+      description:
+      - description
+      - statementDescriptor
+      updated_at: updatedAt
+      customer_id: customerId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/plug-openapi-original.yml#GET /v1/charges
+    - openapi/_original/plug-openapi-original.yml#GET /v1/charges/{id}
+    - openapi/_original/plug-openapi-original.yml#POST /v1/charges
+    - openapi/_original/plug-openapi-original.yml#POST /v1/charges/{id}
+    - openapi/_original/plug-openapi-original.yml#POST /v1/sessions/{id}/charge
+  checkout_session:
+    path_segment:
+    - sessions
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      currency: currency
+      amount: amount
+      description:
+      - description
+      - statementDescriptor
+      updated_at: updatedAt
+      line_items: items
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/plug-openapi-original.yml#GET /v1/sessions
+    - openapi/_original/plug-openapi-original.yml#GET /v1/sessions/{id}
+    - openapi/_original/plug-openapi-original.yml#PATCH /v1/sessions/{id}
+    - openapi/_original/plug-openapi-original.yml#POST /v1/sessions
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: createdAt
+      phone: phoneNumber
+      address:
+      - address
+      - billingAddress
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/plug-openapi-original.yml#DELETE /v1/customers/{id}
+    - openapi/_original/plug-openapi-original.yml#GET /v1/customers
+    - openapi/_original/plug-openapi-original.yml#GET /v1/customers/{id}
+    - openapi/_original/plug-openapi-original.yml#PATCH /v1/customers/{id}
+    - openapi/_original/plug-openapi-original.yml#POST /v1/customers

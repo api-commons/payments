@@ -1,0 +1,28 @@
+provider: fiserv
+apis_io: https://apis.io/providers/fiserv/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - authorizations
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      currency: currency
+      description: memo
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/fiserv-bankinghub-openapi.yml#POST /banking/payments
+    - openapi/_original/fiserv-carddeveloper-openapi.yml#POST /v1/authorizations
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/fiserv-cardpointe-gateway-openapi.yml#PUT /refund
+    - openapi/_original/fiserv-commercehub-openapi.yml#POST /payments/v1/charges/{transactionId}/refund

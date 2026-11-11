@@ -1,0 +1,13 @@
+provider: booking-com
+apis_io: https://apis.io/providers/booking-com/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/booking-com-charges-api-openapi.yml#GET /charges-api/properties/{propertyId}/charges
+    - openapi/_original/booking-com-charges-api-openapi.yml#POST /charges-api/properties/{propertyId}/charges

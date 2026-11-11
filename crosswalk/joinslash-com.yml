@@ -1,0 +1,38 @@
+provider: joinslash-com
+apis_io: https://apis.io/providers/joinslash-com/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      created_at: createdAt
+      currency: currency
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/joinslash-com.json#GET /payments/refund
+    - openapi/_original/joinslash-com.json#GET /payments/refund/{refundId}
+    - openapi/_original/joinslash-com.json#GET /refund
+    - openapi/_original/joinslash-com.json#GET /refund/{refundId}
+    - openapi/_original/joinslash-com.json#POST /payments/refund
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: id
+      name: name
+      email: email
+      phone: phone
+      address: address
+      status: status
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/joinslash-com.json#GET /customer
+    - openapi/_original/joinslash-com.json#GET /customer/{customerId}
+    - openapi/_original/joinslash-com.json#PATCH /customer/{customerId}
+    - openapi/_original/joinslash-com.json#POST /customer

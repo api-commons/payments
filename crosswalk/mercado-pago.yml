@@ -1,0 +1,79 @@
+provider: mercado-pago
+apis_io: https://apis.io/providers/mercado-pago/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      created_at: date_created
+      payment_method_id:
+      - payment_method_id
+      - token
+      description:
+      - description
+      - statement_descriptor
+      metadata: metadata
+      customer_id: payer
+      external_id: external_reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mercado-pago-openapi.yml#GET /v1/payments/{id}
+    - openapi/_original/mercado-pago-openapi.yml#POST /v1/payments
+    - openapi/_original/mercado-pago-openapi.yml#PUT /v1/payments/{id}
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount:
+      - amount
+      - total_amount
+      status: status
+      created_at: date_created
+      payment_id: payment_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/mercado-pago-openapi.yml#GET /v1/payments/{id}/refunds
+    - openapi/_original/mercado-pago-openapi.yml#GET /v1/payments/{id}/refunds/{refund_id}
+    - openapi/_original/mercado-pago-openapi.yml#POST /v1/orders/{id}/refund
+    - openapi/_original/mercado-pago-openapi.yml#POST /v1/payments/{id}/refunds
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      id: id
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/mercado-pago-openapi.yml#GET /v1/payment_methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      phone: phone
+      last_name: last_name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mercado-pago-openapi.yml#GET /v1/customers/{id}
+    - openapi/_original/mercado-pago-openapi.yml#POST /v1/customers
+    - openapi/_original/mercado-pago-openapi.yml#PUT /v1/customers/{id}
+  dispute:
+    path_segment:
+    - chargebacks
+    properties:
+      status: status
+      created_at: date_created
+      id: id
+      reason: reason
+      amount: amount
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/mercado-pago-openapi.yml#GET /v1/chargebacks/{id}

@@ -1,0 +1,30 @@
+provider: tesser
+apis_io: https://apis.io/providers/tesser/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tesser-openapi-original.json#GET /v1/payments
+    - openapi/_original/tesser-openapi-original.json#GET /v1/payments/{paymentId}
+    - openapi/_original/tesser-openapi-original.json#PATCH /v1/payments/{paymentId}
+    - openapi/_original/tesser-openapi-original.json#POST /v1/payments
+  payout:
+    path_segment:
+    - withdrawals
+    properties:
+      id: id
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/tesser-openapi-original.json#GET /v1/treasury/withdrawals
+    - openapi/_original/tesser-openapi-original.json#GET /v1/treasury/withdrawals/{id}
+    - openapi/_original/tesser-openapi-original.json#POST /v1/treasury/withdrawals

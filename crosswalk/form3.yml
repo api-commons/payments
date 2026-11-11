@@ -1,0 +1,31 @@
+provider: form3
+apis_io: https://apis.io/providers/form3/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      created_at: created_on
+      metadata: attributes
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/form3-payments.yml#GET /transaction/payments
+    - openapi/_original/form3-payments.yml#GET /transaction/payments/{id}
+    - openapi/_original/form3-payments.yml#POST /transaction/payments
+  refund:
+    path_segment:
+    - reversals
+    properties:
+      id: id
+      created_at: created_on
+      metadata: attributes
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/form3-payments.yml#GET /transaction/claims/{id}/reversals/{reversalId}
+    - openapi/_original/form3-payments.yml#GET /transaction/directdebits/{id}/returns/{returnId}/reversals/{reversalId}
+    - openapi/_original/form3-payments.yml#GET /transaction/directdebits/{id}/reversals/{reversalId}
+    - openapi/_original/form3-payments.yml#GET /transaction/payments/{id}/recalls/{recallId}/reversals/{reversalId}
+    - openapi/_original/form3-payments.yml#GET /transaction/payments/{id}/returns/{returnId}/reversals/{reversalId}

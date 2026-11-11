@@ -1,0 +1,54 @@
+provider: bridge
+apis_io: https://apis.io/providers/bridge/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties:
+      id: id
+      amount: amount
+      currency: currency
+      description: description
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bridge-openapi-original.json#GET /customers/{customerID}/card_accounts/{cardAccountID}/authorizations
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id:
+      - id
+      - customer_id
+      name: first_name
+      email: email
+      created_at: created_at
+      phone: phone
+      status: status
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bridge-openapi-original.json#DELETE /customers/{customerID}
+    - openapi/_original/bridge-openapi-original.json#GET /customers
+    - openapi/_original/bridge-openapi-original.json#GET /customers/{customerID}
+    - openapi/_original/bridge-openapi-original.json#GET /rewards/{currency}/customer/{customerID}
+    - openapi/_original/bridge-openapi-original.json#POST /customers
+  payout:
+    path_segment:
+    - withdrawals
+    properties:
+      id: id
+      amount: amount
+      created_at: created_at
+      currency: currency
+      method: type
+      updated_at: updated_at
+      destination: destination
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/bridge-openapi-original.json#GET /customers/{customerID}/card_accounts/{cardAccountID}/withdrawals
+    - openapi/_original/bridge-openapi-original.json#GET /customers/{customerID}/card_accounts/{cardAccountID}/withdrawals/{cardWithdrawalID}
+    - openapi/_original/bridge-openapi-original.json#POST /customers/{customerID}/card_accounts/{cardAccountID}/withdrawals

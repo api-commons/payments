@@ -1,0 +1,21 @@
+provider: slash
+apis_io: https://apis.io/providers/slash/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: id
+      name: name
+      email: email
+      phone: phone
+      address: address
+      status: status
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/slash-openapi-original.json#GET /customer
+    - openapi/_original/slash-openapi-original.json#GET /customer/{customerId}
+    - openapi/_original/slash-openapi-original.json#PATCH /customer/{customerId}
+    - openapi/_original/slash-openapi-original.json#POST /customer

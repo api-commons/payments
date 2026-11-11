@@ -1,0 +1,12 @@
+provider: bakkt
+apis_io: https://apis.io/providers/bakkt/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - instruments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/bakkt-crypto-openapi.yml#GET /apex-crypto/api/v2/instruments

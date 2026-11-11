@@ -1,0 +1,44 @@
+provider: ready2order
+apis_io: https://apis.io/providers/ready2order/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - sales
+    - charge
+    properties:
+      customer_id: customer_id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ready2order-openapi-original.json#POST /coupons/{id}/charge
+    - openapi/_original/ready2order-openapi-original.json#POST /export/sales
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ready2order-openapi-original.json#DELETE /paymentMethods/{id}
+    - openapi/_original/ready2order-openapi-original.json#GET /paymentMethods
+    - openapi/_original/ready2order-openapi-original.json#GET /paymentMethods/{id}
+    - openapi/_original/ready2order-openapi-original.json#POST /paymentMethods
+    - openapi/_original/ready2order-openapi-original.json#PUT /paymentMethods/{id}
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id: customer_id
+      name: firstName
+      email: email
+      phone: phone
+      address: address
+      last_name: lastName
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/ready2order-openapi-original.json#DELETE /customers/{id}
+    - openapi/_original/ready2order-openapi-original.json#DELETE /products/{id}/price/customer/{customerId}
+    - openapi/_original/ready2order-openapi-original.json#GET /customers
+    - openapi/_original/ready2order-openapi-original.json#GET /customers/{id}
+    - openapi/_original/ready2order-openapi-original.json#GET /products/{id}/price/customer

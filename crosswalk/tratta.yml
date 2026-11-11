@@ -1,0 +1,50 @@
+provider: tratta
+apis_io: https://apis.io/providers/tratta/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      payment_method_id: payment_method_id
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tratta-openapi.yml#GET /charges
+    - openapi/_original/tratta-openapi.yml#GET /charges/{id}
+    - openapi/_original/tratta-openapi.yml#POST /charges
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      id: id
+      type: type
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tratta-openapi.yml#DELETE /payment_methods/{id}
+    - openapi/_original/tratta-openapi.yml#GET /payment_methods
+    - openapi/_original/tratta-openapi.yml#GET /payment_methods/{id}
+    - openapi/_original/tratta-openapi.yml#POST /payment_methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      created_at: created_at
+      phone: phone
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/tratta-openapi.yml#GET /customers
+    - openapi/_original/tratta-openapi.yml#GET /customers/{id}
+    - openapi/_original/tratta-openapi.yml#POST /customers
+    - openapi/_original/tratta-openapi.yml#PUT /customers/{id}

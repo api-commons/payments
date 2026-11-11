@@ -1,0 +1,23 @@
+provider: amazon
+apis_io: https://apis.io/providers/amazon/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/amazon-pay-api-openapi.yml#GET /charges/{chargeId}
+    - openapi/_original/amazon-pay-api-openapi.yml#POST /charges
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refundId
+      payment_id: chargeId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/amazon-pay-api-openapi.yml#GET /refunds/{refundId}
+    - openapi/_original/amazon-pay-api-openapi.yml#POST /refunds

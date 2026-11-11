@@ -1,0 +1,17 @@
+provider: alliance-data-systems
+apis_io: https://apis.io/providers/alliance-data-systems/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      created_at: createdOn
+      reason: reason
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bread-pay-platform-openapi.yml#POST /transaction/{transactionID}/refund

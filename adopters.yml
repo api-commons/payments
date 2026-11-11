@@ -1,0 +1,2754 @@
+context: payments
+generated: '2026-11-10'
+adopters:
+- provider: 1fort
+  apis_io: https://apis.io/providers/1fort/
+  crosswalk: crosswalk/1fort.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payout
+  - refund
+- provider: 2ndkitchen
+  apis_io: https://apis.io/providers/2ndkitchen/
+  crosswalk: crosswalk/2ndkitchen.yml
+  concepts:
+  - payment_method
+- provider: accrue-savings
+  apis_io: https://apis.io/providers/accrue-savings/
+  crosswalk: crosswalk/accrue-savings.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: adyen
+  apis_io: https://apis.io/providers/adyen/
+  crosswalk: crosswalk/adyen.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: aeropay
+  apis_io: https://apis.io/providers/aeropay/
+  crosswalk: crosswalk/aeropay.yml
+  concepts:
+  - refund
+- provider: affirm
+  apis_io: https://apis.io/providers/affirm/
+  crosswalk: crosswalk/affirm.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - refund
+- provider: afriex
+  apis_io: https://apis.io/providers/afriex/
+  crosswalk: crosswalk/afriex.yml
+  concepts:
+  - customer
+- provider: agendapro
+  apis_io: https://apis.io/providers/agendapro/
+  crosswalk: crosswalk/agendapro.yml
+  concepts:
+  - payment
+- provider: aghanim
+  apis_io: https://apis.io/providers/aghanim/
+  crosswalk: crosswalk/aghanim.yml
+  concepts:
+  - payment
+  - refund
+- provider: agree-com
+  apis_io: https://apis.io/providers/agree-com/
+  crosswalk: crosswalk/agree-com.yml
+  concepts:
+  - customer
+- provider: airtm
+  apis_io: https://apis.io/providers/airtm/
+  crosswalk: crosswalk/airtm.yml
+  concepts:
+  - payment
+  - payout
+- provider: airwallex
+  apis_io: https://apis.io/providers/airwallex/
+  crosswalk: crosswalk/airwallex.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: algbra
+  apis_io: https://apis.io/providers/algbra/
+  crosswalk: crosswalk/algbra.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+- provider: algovoi-co-uk
+  apis_io: https://apis.io/providers/algovoi-co-uk/
+  crosswalk: crosswalk/algovoi-co-uk.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payout
+- provider: alliance-data-systems
+  apis_io: https://apis.io/providers/alliance-data-systems/
+  crosswalk: crosswalk/alliance-data-systems.yml
+  concepts:
+  - refund
+- provider: amazon
+  apis_io: https://apis.io/providers/amazon/
+  crosswalk: crosswalk/amazon.yml
+  concepts:
+  - payment
+  - refund
+- provider: amcs-group
+  apis_io: https://apis.io/providers/amcs-group/
+  crosswalk: crosswalk/amcs-group.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: ansa
+  apis_io: https://apis.io/providers/ansa/
+  crosswalk: crosswalk/ansa.yml
+  concepts:
+  - customer
+  - payment_method
+  - refund
+- provider: apexxfintech
+  apis_io: https://apis.io/providers/apexxfintech/
+  crosswalk: crosswalk/apexxfintech.yml
+  concepts:
+  - refund
+- provider: appcharge
+  apis_io: https://apis.io/providers/appcharge/
+  crosswalk: crosswalk/appcharge.yml
+  concepts:
+  - refund
+- provider: aqueduct
+  apis_io: https://apis.io/providers/aqueduct/
+  crosswalk: crosswalk/aqueduct.yml
+  concepts:
+  - refund
+- provider: asaas
+  apis_io: https://apis.io/providers/asaas/
+  crosswalk: crosswalk/asaas.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - refund
+- provider: ascend
+  apis_io: https://apis.io/providers/ascend/
+  crosswalk: crosswalk/ascend.yml
+  concepts:
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: atomadic-tech
+  apis_io: https://apis.io/providers/atomadic-tech/
+  crosswalk: crosswalk/atomadic-tech.yml
+  concepts:
+  - dispute
+- provider: atrato
+  apis_io: https://apis.io/providers/atrato/
+  crosswalk: crosswalk/atrato.yml
+  concepts:
+  - payment
+- provider: augustus
+  apis_io: https://apis.io/providers/augustus/
+  crosswalk: crosswalk/augustus.yml
+  concepts:
+  - payout
+- provider: avaloq
+  apis_io: https://apis.io/providers/avaloq/
+  crosswalk: crosswalk/avaloq.yml
+  concepts:
+  - customer
+  - payment
+- provider: aza-finance
+  apis_io: https://apis.io/providers/aza-finance/
+  crosswalk: crosswalk/aza-finance.yml
+  concepts:
+  - payout
+- provider: azupay
+  apis_io: https://apis.io/providers/azupay/
+  crosswalk: crosswalk/azupay.yml
+  concepts:
+  - payment
+  - refund
+- provider: b3
+  apis_io: https://apis.io/providers/b3/
+  crosswalk: crosswalk/b3.yml
+  concepts:
+  - checkout_session
+  - payment_method
+  - payout
+- provider: bakkt
+  apis_io: https://apis.io/providers/bakkt/
+  crosswalk: crosswalk/bakkt.yml
+  concepts:
+  - payment_method
+- provider: balad-corp
+  apis_io: https://apis.io/providers/balad-corp/
+  crosswalk: crosswalk/balad-corp.yml
+  concepts:
+  - payment_method
+- provider: bancomat
+  apis_io: https://apis.io/providers/bancomat/
+  crosswalk: crosswalk/bancomat.yml
+  concepts:
+  - checkout_session
+  - payment
+- provider: bancontact
+  apis_io: https://apis.io/providers/bancontact/
+  crosswalk: crosswalk/bancontact.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: bank-of-america
+  apis_io: https://apis.io/providers/bank-of-america/
+  crosswalk: crosswalk/bank-of-america.yml
+  concepts:
+  - payment
+- provider: bank-of-new-york-mellon
+  apis_io: https://apis.io/providers/bank-of-new-york-mellon/
+  crosswalk: crosswalk/bank-of-new-york-mellon.yml
+  concepts:
+  - payment
+- provider: barclays
+  apis_io: https://apis.io/providers/barclays/
+  crosswalk: crosswalk/barclays.yml
+  concepts:
+  - payment
+- provider: bcb-group
+  apis_io: https://apis.io/providers/bcb-group/
+  crosswalk: crosswalk/bcb-group.yml
+  concepts:
+  - payment
+- provider: beeketing
+  apis_io: https://apis.io/providers/beeketing/
+  crosswalk: crosswalk/beeketing.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - refund
+- provider: belvo
+  apis_io: https://apis.io/providers/belvo/
+  crosswalk: crosswalk/belvo.yml
+  concepts:
+  - customer
+- provider: bigcommerce
+  apis_io: https://apis.io/providers/bigcommerce/
+  crosswalk: crosswalk/bigcommerce.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - refund
+- provider: bill
+  apis_io: https://apis.io/providers/bill/
+  crosswalk: crosswalk/bill.yml
+  concepts:
+  - customer
+  - payment
+- provider: bitpay
+  apis_io: https://apis.io/providers/bitpay/
+  crosswalk: crosswalk/bitpay.yml
+  concepts:
+  - payout
+  - refund
+- provider: bitski
+  apis_io: https://apis.io/providers/bitski/
+  crosswalk: crosswalk/bitski.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: blackbaud
+  apis_io: https://apis.io/providers/blackbaud/
+  crosswalk: crosswalk/blackbaud.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: blackbird
+  apis_io: https://apis.io/providers/blackbird/
+  crosswalk: crosswalk/blackbird.yml
+  concepts:
+  - payment
+  - refund
+- provider: block
+  apis_io: https://apis.io/providers/block/
+  crosswalk: crosswalk/block.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: blockchain.com
+  apis_io: https://apis.io/providers/blockchain.com/
+  crosswalk: crosswalk/blockchain.com.yml
+  concepts:
+  - payment_method
+  - payout
+- provider: bokio
+  apis_io: https://apis.io/providers/bokio/
+  crosswalk: crosswalk/bokio.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: bold-commerce
+  apis_io: https://apis.io/providers/bold-commerce/
+  crosswalk: crosswalk/bold-commerce.yml
+  concepts:
+  - customer
+  - payment_method
+- provider: bolt
+  apis_io: https://apis.io/providers/bolt/
+  crosswalk: crosswalk/bolt.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: bolt-financial
+  apis_io: https://apis.io/providers/bolt-financial/
+  crosswalk: crosswalk/bolt-financial.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: bond
+  apis_io: https://apis.io/providers/bond/
+  crosswalk: crosswalk/bond.yml
+  concepts:
+  - customer
+  - payout
+- provider: booking-com
+  apis_io: https://apis.io/providers/booking-com/
+  crosswalk: crosswalk/booking-com.yml
+  concepts:
+  - payment
+- provider: braintree
+  apis_io: https://apis.io/providers/braintree/
+  crosswalk: crosswalk/braintree.yml
+  concepts:
+  - customer
+  - dispute
+  - payment_method
+  - refund
+- provider: bread-financial
+  apis_io: https://apis.io/providers/bread-financial/
+  crosswalk: crosswalk/bread-financial.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - payment
+  - refund
+- provider: brick-blue
+  apis_io: https://apis.io/providers/brick-blue/
+  crosswalk: crosswalk/brick-blue.yml
+  concepts:
+  - dispute
+  - payout
+- provider: bridge
+  apis_io: https://apis.io/providers/bridge/
+  crosswalk: crosswalk/bridge.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: brl
+  apis_io: https://apis.io/providers/brl/
+  crosswalk: crosswalk/brl.yml
+  concepts:
+  - payout
+- provider: brushfire
+  apis_io: https://apis.io/providers/brushfire/
+  crosswalk: crosswalk/brushfire.yml
+  concepts:
+  - payment_method
+- provider: btcpay
+  apis_io: https://apis.io/providers/btcpay/
+  crosswalk: crosswalk/btcpay.yml
+  concepts:
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: btg-pactual
+  apis_io: https://apis.io/providers/btg-pactual/
+  crosswalk: crosswalk/btg-pactual.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: bud-co
+  apis_io: https://apis.io/providers/bud-co/
+  crosswalk: crosswalk/bud-co.yml
+  concepts:
+  - customer
+- provider: bunq
+  apis_io: https://apis.io/providers/bunq/
+  crosswalk: crosswalk/bunq.yml
+  concepts:
+  - payment
+- provider: bvnk
+  apis_io: https://apis.io/providers/bvnk/
+  crosswalk: crosswalk/bvnk.yml
+  concepts:
+  - payment
+- provider: cacheflow
+  apis_io: https://apis.io/providers/cacheflow/
+  crosswalk: crosswalk/cacheflow.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: cadana
+  apis_io: https://apis.io/providers/cadana/
+  crosswalk: crosswalk/cadana.yml
+  concepts:
+  - payment_method
+  - payout
+- provider: caliza
+  apis_io: https://apis.io/providers/caliza/
+  crosswalk: crosswalk/caliza.yml
+  concepts:
+  - payment
+  - payout
+- provider: capchase
+  apis_io: https://apis.io/providers/capchase/
+  crosswalk: crosswalk/capchase.yml
+  concepts:
+  - customer
+- provider: capitalist
+  apis_io: https://apis.io/providers/capitalist/
+  crosswalk: crosswalk/capitalist.yml
+  concepts:
+  - payment
+- provider: cariqa
+  apis_io: https://apis.io/providers/cariqa/
+  crosswalk: crosswalk/cariqa.yml
+  concepts:
+  - payment_method
+- provider: carry1st
+  apis_io: https://apis.io/providers/carry1st/
+  crosswalk: crosswalk/carry1st.yml
+  concepts:
+  - payment
+- provider: casap
+  apis_io: https://apis.io/providers/casap/
+  crosswalk: crosswalk/casap.yml
+  concepts:
+  - dispute
+- provider: cash-app
+  apis_io: https://apis.io/providers/cash-app/
+  crosswalk: crosswalk/cash-app.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: cashfree
+  apis_io: https://apis.io/providers/cashfree/
+  crosswalk: crosswalk/cashfree.yml
+  concepts:
+  - dispute
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: cellulant
+  apis_io: https://apis.io/providers/cellulant/
+  crosswalk: crosswalk/cellulant.yml
+  concepts:
+  - payment
+- provider: centrapay
+  apis_io: https://apis.io/providers/centrapay/
+  crosswalk: crosswalk/centrapay.yml
+  concepts:
+  - refund
+- provider: chargeafter
+  apis_io: https://apis.io/providers/chargeafter/
+  crosswalk: crosswalk/chargeafter.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: chargebee
+  apis_io: https://apis.io/providers/chargebee/
+  crosswalk: crosswalk/chargebee.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: chargedesk
+  apis_io: https://apis.io/providers/chargedesk/
+  crosswalk: crosswalk/chargedesk.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: chariot
+  apis_io: https://apis.io/providers/chariot/
+  crosswalk: crosswalk/chariot.yml
+  concepts:
+  - customer
+  - payment_method
+  - payout
+- provider: citi
+  apis_io: https://apis.io/providers/citi/
+  crosswalk: crosswalk/citi.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: clearbank
+  apis_io: https://apis.io/providers/clearbank/
+  crosswalk: crosswalk/clearbank.yml
+  concepts:
+  - payment
+- provider: clickfunnels
+  apis_io: https://apis.io/providers/clickfunnels/
+  crosswalk: crosswalk/clickfunnels.yml
+  concepts:
+  - refund
+- provider: cm-com
+  apis_io: https://apis.io/providers/cm-com/
+  crosswalk: crosswalk/cm-com.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: cobot
+  apis_io: https://apis.io/providers/cobot/
+  crosswalk: crosswalk/cobot.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: coinbase
+  apis_io: https://apis.io/providers/coinbase/
+  crosswalk: crosswalk/coinbase.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: coinflow
+  apis_io: https://apis.io/providers/coinflow/
+  crosswalk: crosswalk/coinflow.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: coingate
+  apis_io: https://apis.io/providers/coingate/
+  crosswalk: crosswalk/coingate.yml
+  concepts:
+  - refund
+- provider: coinme
+  apis_io: https://apis.io/providers/coinme/
+  crosswalk: crosswalk/coinme.yml
+  concepts:
+  - payment_method
+- provider: coinsph
+  apis_io: https://apis.io/providers/coinsph/
+  crosswalk: crosswalk/coinsph.yml
+  concepts:
+  - refund
+- provider: collectly
+  apis_io: https://apis.io/providers/collectly/
+  crosswalk: crosswalk/collectly.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payment_method
+  - refund
+- provider: commerce-coinbase
+  apis_io: https://apis.io/providers/commerce-coinbase/
+  crosswalk: crosswalk/commerce-coinbase.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: commerce-layer
+  apis_io: https://apis.io/providers/commerce-layer/
+  crosswalk: crosswalk/commerce-layer.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: conekta
+  apis_io: https://apis.io/providers/conekta/
+  crosswalk: crosswalk/conekta.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: connexpay
+  apis_io: https://apis.io/providers/connexpay/
+  crosswalk: crosswalk/connexpay.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+- provider: creem
+  apis_io: https://apis.io/providers/creem/
+  crosswalk: crosswalk/creem.yml
+  concepts:
+  - checkout_session
+  - customer
+- provider: cross-river
+  apis_io: https://apis.io/providers/cross-river/
+  crosswalk: crosswalk/cross-river.yml
+  concepts:
+  - customer
+  - payment
+- provider: crossmint
+  apis_io: https://apis.io/providers/crossmint/
+  crosswalk: crosswalk/crossmint.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: cryptomus
+  apis_io: https://apis.io/providers/cryptomus/
+  crosswalk: crosswalk/cryptomus.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: csg
+  apis_io: https://apis.io/providers/csg/
+  crosswalk: crosswalk/csg.yml
+  concepts:
+  - customer
+  - payment_method
+  - payout
+- provider: culqi
+  apis_io: https://apis.io/providers/culqi/
+  crosswalk: crosswalk/culqi.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: curlec
+  apis_io: https://apis.io/providers/curlec/
+  crosswalk: crosswalk/curlec.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: currencycloud
+  apis_io: https://apis.io/providers/currencycloud/
+  crosswalk: crosswalk/currencycloud.yml
+  concepts:
+  - customer
+  - payment
+- provider: customers-bank
+  apis_io: https://apis.io/providers/customers-bank/
+  crosswalk: crosswalk/customers-bank.yml
+  concepts:
+  - customer
+- provider: cybersource
+  apis_io: https://apis.io/providers/cybersource/
+  crosswalk: crosswalk/cybersource.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: datanomik
+  apis_io: https://apis.io/providers/datanomik/
+  crosswalk: crosswalk/datanomik.yml
+  concepts:
+  - payment
+- provider: debbie-collect
+  apis_io: https://apis.io/providers/debbie-collect/
+  crosswalk: crosswalk/debbie-collect.yml
+  concepts:
+  - customer
+  - payment
+- provider: debitura
+  apis_io: https://apis.io/providers/debitura/
+  crosswalk: crosswalk/debitura.yml
+  concepts:
+  - payment
+- provider: decentro
+  apis_io: https://apis.io/providers/decentro/
+  crosswalk: crosswalk/decentro.yml
+  concepts:
+  - refund
+- provider: deutsche-bank
+  apis_io: https://apis.io/providers/deutsche-bank/
+  crosswalk: crosswalk/deutsche-bank.yml
+  concepts:
+  - checkout_session
+- provider: diebold
+  apis_io: https://apis.io/providers/diebold/
+  crosswalk: crosswalk/diebold.yml
+  concepts:
+  - payment
+- provider: dlocal
+  apis_io: https://apis.io/providers/dlocal/
+  crosswalk: crosswalk/dlocal.yml
+  concepts:
+  - dispute
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: dodo-payments
+  apis_io: https://apis.io/providers/dodo-payments/
+  crosswalk: crosswalk/dodo-payments.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: dojo
+  apis_io: https://apis.io/providers/dojo/
+  crosswalk: crosswalk/dojo.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: doku
+  apis_io: https://apis.io/providers/doku/
+  crosswalk: crosswalk/doku.yml
+  concepts:
+  - payment
+  - refund
+- provider: donately
+  apis_io: https://apis.io/providers/donately/
+  crosswalk: crosswalk/donately.yml
+  concepts:
+  - refund
+- provider: drippay
+  apis_io: https://apis.io/providers/drippay/
+  crosswalk: crosswalk/drippay.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: duffel
+  apis_io: https://apis.io/providers/duffel/
+  crosswalk: crosswalk/duffel.yml
+  concepts:
+  - payment
+- provider: dwolla
+  apis_io: https://apis.io/providers/dwolla/
+  crosswalk: crosswalk/dwolla.yml
+  concepts:
+  - customer
+- provider: earnipay
+  apis_io: https://apis.io/providers/earnipay/
+  crosswalk: crosswalk/earnipay.yml
+  concepts:
+  - customer
+- provider: ebanx
+  apis_io: https://apis.io/providers/ebanx/
+  crosswalk: crosswalk/ebanx.yml
+  concepts:
+  - refund
+- provider: eci-solutions
+  apis_io: https://apis.io/providers/eci-solutions/
+  crosswalk: crosswalk/eci-solutions.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: efi-bank
+  apis_io: https://apis.io/providers/efi-bank/
+  crosswalk: crosswalk/efi-bank.yml
+  concepts:
+  - payment
+- provider: elastic-path
+  apis_io: https://apis.io/providers/elastic-path/
+  crosswalk: crosswalk/elastic-path.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - refund
+- provider: embat
+  apis_io: https://apis.io/providers/embat/
+  crosswalk: crosswalk/embat.yml
+  concepts:
+  - payment
+- provider: epos-now
+  apis_io: https://apis.io/providers/epos-now/
+  crosswalk: crosswalk/epos-now.yml
+  concepts:
+  - customer
+- provider: etsy
+  apis_io: https://apis.io/providers/etsy/
+  crosswalk: crosswalk/etsy.yml
+  concepts:
+  - payment
+- provider: euronet
+  apis_io: https://apis.io/providers/euronet/
+  crosswalk: crosswalk/euronet.yml
+  concepts:
+  - payment
+- provider: execution-market
+  apis_io: https://apis.io/providers/execution-market/
+  crosswalk: crosswalk/execution-market.yml
+  concepts:
+  - dispute
+  - payment
+  - refund
+- provider: fabric-com
+  apis_io: https://apis.io/providers/fabric-com/
+  crosswalk: crosswalk/fabric-com.yml
+  concepts:
+  - customer
+  - payment
+- provider: falcon
+  apis_io: https://apis.io/providers/falcon/
+  crosswalk: crosswalk/falcon.yml
+  concepts:
+  - dispute
+  - payment
+  - refund
+- provider: fastspring
+  apis_io: https://apis.io/providers/fastspring/
+  crosswalk: crosswalk/fastspring.yml
+  concepts:
+  - checkout_session
+  - payment_method
+- provider: fat-zebra
+  apis_io: https://apis.io/providers/fat-zebra/
+  crosswalk: crosswalk/fat-zebra.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: fawry
+  apis_io: https://apis.io/providers/fawry/
+  crosswalk: crosswalk/fawry.yml
+  concepts:
+  - refund
+- provider: fiat-republic
+  apis_io: https://apis.io/providers/fiat-republic/
+  crosswalk: crosswalk/fiat-republic.yml
+  concepts:
+  - customer
+  - payment
+- provider: fieldpulse
+  apis_io: https://apis.io/providers/fieldpulse/
+  crosswalk: crosswalk/fieldpulse.yml
+  concepts:
+  - customer
+  - payment
+- provider: fifth-third-bancorp
+  apis_io: https://apis.io/providers/fifth-third-bancorp/
+  crosswalk: crosswalk/fifth-third-bancorp.yml
+  concepts:
+  - customer
+- provider: fin
+  apis_io: https://apis.io/providers/fin/
+  crosswalk: crosswalk/fin.yml
+  concepts:
+  - customer
+  - payment
+- provider: fincra
+  apis_io: https://apis.io/providers/fincra/
+  crosswalk: crosswalk/fincra.yml
+  concepts:
+  - payment
+- provider: finicity
+  apis_io: https://apis.io/providers/finicity/
+  crosswalk: crosswalk/finicity.yml
+  concepts:
+  - customer
+- provider: finix
+  apis_io: https://apis.io/providers/finix/
+  crosswalk: crosswalk/finix.yml
+  concepts:
+  - dispute
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: fintecture
+  apis_io: https://apis.io/providers/fintecture/
+  crosswalk: crosswalk/fintecture.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: fipto
+  apis_io: https://apis.io/providers/fipto/
+  crosswalk: crosswalk/fipto.yml
+  concepts:
+  - checkout_session
+  - payout
+- provider: fis
+  apis_io: https://apis.io/providers/fis/
+  crosswalk: crosswalk/fis.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: fiserv
+  apis_io: https://apis.io/providers/fiserv/
+  crosswalk: crosswalk/fiserv.yml
+  concepts:
+  - payment
+  - refund
+- provider: flexa
+  apis_io: https://apis.io/providers/flexa/
+  crosswalk: crosswalk/flexa.yml
+  concepts:
+  - refund
+- provider: flipdish
+  apis_io: https://apis.io/providers/flipdish/
+  crosswalk: crosswalk/flipdish.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: float-financial
+  apis_io: https://apis.io/providers/float-financial/
+  crosswalk: crosswalk/float-financial.yml
+  concepts:
+  - payment
+- provider: flutterwave
+  apis_io: https://apis.io/providers/flutterwave/
+  crosswalk: crosswalk/flutterwave.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+- provider: form3
+  apis_io: https://apis.io/providers/form3/
+  crosswalk: crosswalk/form3.yml
+  concepts:
+  - payment
+  - refund
+- provider: forter
+  apis_io: https://apis.io/providers/forter/
+  crosswalk: crosswalk/forter.yml
+  concepts:
+  - dispute
+- provider: fudo
+  apis_io: https://apis.io/providers/fudo/
+  crosswalk: crosswalk/fudo.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+- provider: geidea
+  apis_io: https://apis.io/providers/geidea/
+  crosswalk: crosswalk/geidea.yml
+  concepts:
+  - customer
+  - refund
+- provider: genome
+  apis_io: https://apis.io/providers/genome/
+  crosswalk: crosswalk/genome.yml
+  concepts:
+  - payout
+- provider: gerencianet
+  apis_io: https://apis.io/providers/gerencianet/
+  crosswalk: crosswalk/gerencianet.yml
+  concepts:
+  - payment
+  - refund
+- provider: getpaid
+  apis_io: https://apis.io/providers/getpaid/
+  crosswalk: crosswalk/getpaid.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: gingr
+  apis_io: https://apis.io/providers/gingr/
+  crosswalk: crosswalk/gingr.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payment_method
+  - refund
+- provider: givebutter
+  apis_io: https://apis.io/providers/givebutter/
+  crosswalk: crosswalk/givebutter.yml
+  concepts:
+  - payout
+- provider: global-payments
+  apis_io: https://apis.io/providers/global-payments/
+  crosswalk: crosswalk/global-payments.yml
+  concepts:
+  - dispute
+  - payment_method
+  - payout
+- provider: gocardless
+  apis_io: https://apis.io/providers/gocardless/
+  crosswalk: crosswalk/gocardless.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: gofundme
+  apis_io: https://apis.io/providers/gofundme/
+  crosswalk: crosswalk/gofundme.yml
+  concepts:
+  - payout
+- provider: goodlord
+  apis_io: https://apis.io/providers/goodlord/
+  crosswalk: crosswalk/goodlord.yml
+  concepts:
+  - payment
+- provider: goody
+  apis_io: https://apis.io/providers/goody/
+  crosswalk: crosswalk/goody.yml
+  concepts:
+  - payment_method
+- provider: gov-uk-pay
+  apis_io: https://apis.io/providers/gov-uk-pay/
+  crosswalk: crosswalk/gov-uk-pay.yml
+  concepts:
+  - dispute
+  - payment
+  - refund
+- provider: gr4vy
+  apis_io: https://apis.io/providers/gr4vy/
+  crosswalk: crosswalk/gr4vy.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment_method
+  - payout
+  - refund
+- provider: greenhelix-net
+  apis_io: https://apis.io/providers/greenhelix-net/
+  crosswalk: crosswalk/greenhelix-net.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - refund
+- provider: griffin
+  apis_io: https://apis.io/providers/griffin/
+  crosswalk: crosswalk/griffin.yml
+  concepts:
+  - payment
+- provider: halliday
+  apis_io: https://apis.io/providers/halliday/
+  crosswalk: crosswalk/halliday.yml
+  concepts:
+  - payment
+- provider: helcim
+  apis_io: https://apis.io/providers/helcim/
+  crosswalk: crosswalk/helcim.yml
+  concepts:
+  - customer
+  - refund
+- provider: hevn-inc
+  apis_io: https://apis.io/providers/hevn-inc/
+  crosswalk: crosswalk/hevn-inc.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: highline-fi
+  apis_io: https://apis.io/providers/highline-fi/
+  crosswalk: crosswalk/highline-fi.yml
+  concepts:
+  - payment
+  - payout
+- provider: hilt-so
+  apis_io: https://apis.io/providers/hilt-so/
+  crosswalk: crosswalk/hilt-so.yml
+  concepts:
+  - checkout_session
+  - payment
+- provider: hipay
+  apis_io: https://apis.io/providers/hipay/
+  crosswalk: crosswalk/hipay.yml
+  concepts:
+  - payout
+- provider: hitpay
+  apis_io: https://apis.io/providers/hitpay/
+  crosswalk: crosswalk/hitpay.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: housecall-pro
+  apis_io: https://apis.io/providers/housecall-pro/
+  crosswalk: crosswalk/housecall-pro.yml
+  concepts:
+  - customer
+  - payment
+- provider: howler
+  apis_io: https://apis.io/providers/howler/
+  crosswalk: crosswalk/howler.yml
+  concepts:
+  - payment
+- provider: huntington-bancshares
+  apis_io: https://apis.io/providers/huntington-bancshares/
+  crosswalk: crosswalk/huntington-bancshares.yml
+  concepts:
+  - payment
+- provider: hyperline
+  apis_io: https://apis.io/providers/hyperline/
+  crosswalk: crosswalk/hyperline.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: hyperpay
+  apis_io: https://apis.io/providers/hyperpay/
+  crosswalk: crosswalk/hyperpay.yml
+  concepts:
+  - checkout_session
+  - payment
+- provider: hypto
+  apis_io: https://apis.io/providers/hypto/
+  crosswalk: crosswalk/hypto.yml
+  concepts:
+  - refund
+- provider: imprint
+  apis_io: https://apis.io/providers/imprint/
+  crosswalk: crosswalk/imprint.yml
+  concepts:
+  - customer
+  - payment_method
+- provider: innago
+  apis_io: https://apis.io/providers/innago/
+  crosswalk: crosswalk/innago.yml
+  concepts:
+  - payment
+- provider: insforge
+  apis_io: https://apis.io/providers/insforge/
+  crosswalk: crosswalk/insforge.yml
+  concepts:
+  - checkout_session
+  - customer
+- provider: instamojo
+  apis_io: https://apis.io/providers/instamojo/
+  crosswalk: crosswalk/instamojo.yml
+  concepts:
+  - payment
+  - refund
+- provider: interchecks
+  apis_io: https://apis.io/providers/interchecks/
+  crosswalk: crosswalk/interchecks.yml
+  concepts:
+  - payment
+  - payout
+- provider: interswitch
+  apis_io: https://apis.io/providers/interswitch/
+  crosswalk: crosswalk/interswitch.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payment_method
+- provider: intuit
+  apis_io: https://apis.io/providers/intuit/
+  crosswalk: crosswalk/intuit.yml
+  concepts:
+  - customer
+  - payment
+- provider: invoiced
+  apis_io: https://apis.io/providers/invoiced/
+  crosswalk: crosswalk/invoiced.yml
+  concepts:
+  - customer
+  - payment
+- provider: iugu
+  apis_io: https://apis.io/providers/iugu/
+  crosswalk: crosswalk/iugu.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: jack-henry
+  apis_io: https://apis.io/providers/jack-henry/
+  crosswalk: crosswalk/jack-henry.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: jobox-ai
+  apis_io: https://apis.io/providers/jobox-ai/
+  crosswalk: crosswalk/jobox-ai.yml
+  concepts:
+  - dispute
+  - payment
+- provider: joinslash-com
+  apis_io: https://apis.io/providers/joinslash-com/
+  crosswalk: crosswalk/joinslash-com.yml
+  concepts:
+  - customer
+  - refund
+- provider: justifi
+  apis_io: https://apis.io/providers/justifi/
+  crosswalk: crosswalk/justifi.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: justt
+  apis_io: https://apis.io/providers/justt/
+  crosswalk: crosswalk/justt.yml
+  concepts:
+  - dispute
+- provider: kajabi
+  apis_io: https://apis.io/providers/kajabi/
+  crosswalk: crosswalk/kajabi.yml
+  concepts:
+  - customer
+- provider: keap
+  apis_io: https://apis.io/providers/keap/
+  crosswalk: crosswalk/keap.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: klarna
+  apis_io: https://apis.io/providers/klarna/
+  crosswalk: crosswalk/klarna.yml
+  concepts:
+  - checkout_session
+  - payout
+  - refund
+- provider: koin
+  apis_io: https://apis.io/providers/koin/
+  crosswalk: crosswalk/koin.yml
+  concepts:
+  - payout
+  - refund
+- provider: komoju
+  apis_io: https://apis.io/providers/komoju/
+  crosswalk: crosswalk/komoju.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: korapay
+  apis_io: https://apis.io/providers/korapay/
+  crosswalk: crosswalk/korapay.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: kriya
+  apis_io: https://apis.io/providers/kriya/
+  crosswalk: crosswalk/kriya.yml
+  concepts:
+  - customer
+- provider: kushki
+  apis_io: https://apis.io/providers/kushki/
+  crosswalk: crosswalk/kushki.yml
+  concepts:
+  - payment
+- provider: layup-technologies
+  apis_io: https://apis.io/providers/layup-technologies/
+  crosswalk: crosswalk/layup-technologies.yml
+  concepts:
+  - payment
+  - payout
+- provider: lead-bank
+  apis_io: https://apis.io/providers/lead-bank/
+  crosswalk: crosswalk/lead-bank.yml
+  concepts:
+  - payout
+- provider: leaflink
+  apis_io: https://apis.io/providers/leaflink/
+  crosswalk: crosswalk/leaflink.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: lean-tech
+  apis_io: https://apis.io/providers/lean-tech/
+  crosswalk: crosswalk/lean-tech.yml
+  concepts:
+  - payment
+  - refund
+- provider: lean-technologies
+  apis_io: https://apis.io/providers/lean-technologies/
+  crosswalk: crosswalk/lean-technologies.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: ledger
+  apis_io: https://apis.io/providers/ledger/
+  crosswalk: crosswalk/ledger.yml
+  concepts:
+  - payout
+- provider: lemonway
+  apis_io: https://apis.io/providers/lemonway/
+  crosswalk: crosswalk/lemonway.yml
+  concepts:
+  - dispute
+  - refund
+- provider: leo1
+  apis_io: https://apis.io/providers/leo1/
+  crosswalk: crosswalk/leo1.yml
+  concepts:
+  - payout
+  - refund
+- provider: lianlian-global
+  apis_io: https://apis.io/providers/lianlian-global/
+  crosswalk: crosswalk/lianlian-global.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: lightning-labs
+  apis_io: https://apis.io/providers/lightning-labs/
+  crosswalk: crosswalk/lightning-labs.yml
+  concepts:
+  - payment
+- provider: lightspark
+  apis_io: https://apis.io/providers/lightspark/
+  crosswalk: crosswalk/lightspark.yml
+  concepts:
+  - customer
+- provider: lightspeed
+  apis_io: https://apis.io/providers/lightspeed/
+  crosswalk: crosswalk/lightspeed.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+- provider: lithic-com
+  apis_io: https://apis.io/providers/lithic-com/
+  crosswalk: crosswalk/lithic-com.yml
+  concepts:
+  - dispute
+  - payment
+- provider: loop
+  apis_io: https://apis.io/providers/loop/
+  crosswalk: crosswalk/loop.yml
+  concepts:
+  - payment
+- provider: loopay
+  apis_io: https://apis.io/providers/loopay/
+  crosswalk: crosswalk/loopay.yml
+  concepts:
+  - payout
+- provider: lorum
+  apis_io: https://apis.io/providers/lorum/
+  crosswalk: crosswalk/lorum.yml
+  concepts:
+  - customer
+  - payment
+- provider: malt
+  apis_io: https://apis.io/providers/malt/
+  crosswalk: crosswalk/malt.yml
+  concepts:
+  - payment
+- provider: mamo
+  apis_io: https://apis.io/providers/mamo/
+  crosswalk: crosswalk/mamo.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: mangopay
+  apis_io: https://apis.io/providers/mangopay/
+  crosswalk: crosswalk/mangopay.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: marqeta
+  apis_io: https://apis.io/providers/marqeta/
+  crosswalk: crosswalk/marqeta.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: mastercard
+  apis_io: https://apis.io/providers/mastercard/
+  crosswalk: crosswalk/mastercard.yml
+  concepts:
+  - refund
+- provider: mercado-pago
+  apis_io: https://apis.io/providers/mercado-pago/
+  crosswalk: crosswalk/mercado-pago.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: mercoa
+  apis_io: https://apis.io/providers/mercoa/
+  crosswalk: crosswalk/mercoa.yml
+  concepts:
+  - payment_method
+- provider: metalend
+  apis_io: https://apis.io/providers/metalend/
+  crosswalk: crosswalk/metalend.yml
+  concepts:
+  - payout
+- provider: method-financial
+  apis_io: https://apis.io/providers/method-financial/
+  crosswalk: crosswalk/method-financial.yml
+  concepts:
+  - payment
+  - payment_method
+  - refund
+- provider: midtrans
+  apis_io: https://apis.io/providers/midtrans/
+  crosswalk: crosswalk/midtrans.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payout
+  - refund
+- provider: modern-treasury
+  apis_io: https://apis.io/providers/modern-treasury/
+  crosswalk: crosswalk/modern-treasury.yml
+  concepts:
+  - payment
+  - refund
+- provider: modivo
+  apis_io: https://apis.io/providers/modivo/
+  crosswalk: crosswalk/modivo.yml
+  concepts:
+  - customer
+  - payment_method
+- provider: modulr
+  apis_io: https://apis.io/providers/modulr/
+  crosswalk: crosswalk/modulr.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: momence
+  apis_io: https://apis.io/providers/momence/
+  crosswalk: crosswalk/momence.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: moneris
+  apis_io: https://apis.io/providers/moneris/
+  crosswalk: crosswalk/moneris.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: monetizenow
+  apis_io: https://apis.io/providers/monetizenow/
+  crosswalk: crosswalk/monetizenow.yml
+  concepts:
+  - payment
+  - payment_method
+  - refund
+- provider: moniepoint
+  apis_io: https://apis.io/providers/moniepoint/
+  crosswalk: crosswalk/moniepoint.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: monite
+  apis_io: https://apis.io/providers/monite/
+  crosswalk: crosswalk/monite.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payment_method
+- provider: mono-africa
+  apis_io: https://apis.io/providers/mono-africa/
+  crosswalk: crosswalk/mono-africa.yml
+  concepts:
+  - payment
+- provider: mono-co
+  apis_io: https://apis.io/providers/mono-co/
+  crosswalk: crosswalk/mono-co.yml
+  concepts:
+  - customer
+- provider: monoova
+  apis_io: https://apis.io/providers/monoova/
+  crosswalk: crosswalk/monoova.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: montran
+  apis_io: https://apis.io/providers/montran/
+  crosswalk: crosswalk/montran.yml
+  concepts:
+  - payment
+- provider: moov
+  apis_io: https://apis.io/providers/moov/
+  crosswalk: crosswalk/moov.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: mtn-group
+  apis_io: https://apis.io/providers/mtn-group/
+  crosswalk: crosswalk/mtn-group.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: mvmnt
+  apis_io: https://apis.io/providers/mvmnt/
+  crosswalk: crosswalk/mvmnt.yml
+  concepts:
+  - customer
+  - payment
+- provider: n3xt
+  apis_io: https://apis.io/providers/n3xt/
+  crosswalk: crosswalk/n3xt.yml
+  concepts:
+  - payment
+- provider: nacha
+  apis_io: https://apis.io/providers/nacha/
+  crosswalk: crosswalk/nacha.yml
+  concepts:
+  - customer
+- provider: nala
+  apis_io: https://apis.io/providers/nala/
+  crosswalk: crosswalk/nala.yml
+  concepts:
+  - payout
+- provider: narmi
+  apis_io: https://apis.io/providers/narmi/
+  crosswalk: crosswalk/narmi.yml
+  concepts:
+  - payment
+  - payout
+- provider: natural-ai
+  apis_io: https://apis.io/providers/natural-ai/
+  crosswalk: crosswalk/natural-ai.yml
+  concepts:
+  - customer
+  - payment
+- provider: neon-commerce
+  apis_io: https://apis.io/providers/neon-commerce/
+  crosswalk: crosswalk/neon-commerce.yml
+  concepts:
+  - checkout_session
+  - payout
+  - refund
+- provider: nopan
+  apis_io: https://apis.io/providers/nopan/
+  crosswalk: crosswalk/nopan.yml
+  concepts:
+  - refund
+- provider: northmill
+  apis_io: https://apis.io/providers/northmill/
+  crosswalk: crosswalk/northmill.yml
+  concepts:
+  - customer
+  - payment_method
+- provider: novopayment
+  apis_io: https://apis.io/providers/novopayment/
+  crosswalk: crosswalk/novopayment.yml
+  concepts:
+  - customer
+  - payment
+- provider: now-payments
+  apis_io: https://apis.io/providers/now-payments/
+  crosswalk: crosswalk/now-payments.yml
+  concepts:
+  - payment
+  - payout
+- provider: octane
+  apis_io: https://apis.io/providers/octane/
+  crosswalk: crosswalk/octane.yml
+  concepts:
+  - customer
+  - refund
+- provider: omise
+  apis_io: https://apis.io/providers/omise/
+  crosswalk: crosswalk/omise.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: open-financial
+  apis_io: https://apis.io/providers/open-financial/
+  crosswalk: crosswalk/open-financial.yml
+  concepts:
+  - payment
+- provider: opennode
+  apis_io: https://apis.io/providers/opennode/
+  crosswalk: crosswalk/opennode.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: openpay
+  apis_io: https://apis.io/providers/openpay/
+  crosswalk: crosswalk/openpay.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: openpayments-io
+  apis_io: https://apis.io/providers/openpayments-io/
+  crosswalk: crosswalk/openpayments-io.yml
+  concepts:
+  - payment
+  - payout
+- provider: opply
+  apis_io: https://apis.io/providers/opply/
+  crosswalk: crosswalk/opply.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - refund
+- provider: optum
+  apis_io: https://apis.io/providers/optum/
+  crosswalk: crosswalk/optum.yml
+  concepts:
+  - customer
+- provider: ordway
+  apis_io: https://apis.io/providers/ordway/
+  crosswalk: crosswalk/ordway.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: outdoorsy
+  apis_io: https://apis.io/providers/outdoorsy/
+  crosswalk: crosswalk/outdoorsy.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: overflow
+  apis_io: https://apis.io/providers/overflow/
+  crosswalk: crosswalk/overflow.yml
+  concepts:
+  - dispute
+  - payment_method
+  - refund
+- provider: p2flux-api
+  apis_io: https://apis.io/providers/p2flux-api/
+  crosswalk: crosswalk/p2flux-api.yml
+  concepts:
+  - payment
+- provider: paddle
+  apis_io: https://apis.io/providers/paddle/
+  crosswalk: crosswalk/paddle.yml
+  concepts:
+  - customer
+  - payment
+- provider: pagar-me
+  apis_io: https://apis.io/providers/pagar-me/
+  crosswalk: crosswalk/pagar-me.yml
+  concepts:
+  - dispute
+- provider: pagarme
+  apis_io: https://apis.io/providers/pagarme/
+  crosswalk: crosswalk/pagarme.yml
+  concepts:
+  - customer
+  - payment
+- provider: pagbank
+  apis_io: https://apis.io/providers/pagbank/
+  crosswalk: crosswalk/pagbank.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: pagopa
+  apis_io: https://apis.io/providers/pagopa/
+  crosswalk: crosswalk/pagopa.yml
+  concepts:
+  - customer
+  - payment
+- provider: pagseguro
+  apis_io: https://apis.io/providers/pagseguro/
+  crosswalk: crosswalk/pagseguro.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: paid
+  apis_io: https://apis.io/providers/paid/
+  crosswalk: crosswalk/paid.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment_method
+- provider: paidy
+  apis_io: https://apis.io/providers/paidy/
+  crosswalk: crosswalk/paidy.yml
+  concepts:
+  - payment
+  - refund
+- provider: paxos
+  apis_io: https://apis.io/providers/paxos/
+  crosswalk: crosswalk/paxos.yml
+  concepts:
+  - payment
+- provider: payabli
+  apis_io: https://apis.io/providers/payabli/
+  crosswalk: crosswalk/payabli.yml
+  concepts:
+  - customer
+  - dispute
+  - payout
+  - refund
+- provider: payfast
+  apis_io: https://apis.io/providers/payfast/
+  crosswalk: crosswalk/payfast.yml
+  concepts:
+  - refund
+- provider: payflex
+  apis_io: https://apis.io/providers/payflex/
+  crosswalk: crosswalk/payflex.yml
+  concepts:
+  - refund
+- provider: payjoy
+  apis_io: https://apis.io/providers/payjoy/
+  crosswalk: crosswalk/payjoy.yml
+  concepts:
+  - payment
+- provider: payjp
+  apis_io: https://apis.io/providers/payjp/
+  crosswalk: crosswalk/payjp.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: payments-canada
+  apis_io: https://apis.io/providers/payments-canada/
+  crosswalk: crosswalk/payments-canada.yml
+  concepts:
+  - payment
+- provider: paymentsense
+  apis_io: https://apis.io/providers/paymentsense/
+  crosswalk: crosswalk/paymentsense.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: paymob
+  apis_io: https://apis.io/providers/paymob/
+  crosswalk: crosswalk/paymob.yml
+  concepts:
+  - checkout_session
+  - refund
+- provider: paypal
+  apis_io: https://apis.io/providers/paypal/
+  crosswalk: crosswalk/paypal.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: paypay
+  apis_io: https://apis.io/providers/paypay/
+  crosswalk: crosswalk/paypay.yml
+  concepts:
+  - payment
+  - refund
+- provider: payrix
+  apis_io: https://apis.io/providers/payrix/
+  crosswalk: crosswalk/payrix.yml
+  concepts:
+  - customer
+  - dispute
+  - payout
+  - refund
+- provider: paystack
+  apis_io: https://apis.io/providers/paystack/
+  crosswalk: crosswalk/paystack.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: payt
+  apis_io: https://apis.io/providers/payt/
+  crosswalk: crosswalk/payt.yml
+  concepts:
+  - payment
+- provider: payu
+  apis_io: https://apis.io/providers/payu/
+  crosswalk: crosswalk/payu.yml
+  concepts:
+  - payout
+  - refund
+- provider: paywithmybank
+  apis_io: https://apis.io/providers/paywithmybank/
+  crosswalk: crosswalk/paywithmybank.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - refund
+- provider: phonepe
+  apis_io: https://apis.io/providers/phonepe/
+  crosswalk: crosswalk/phonepe.yml
+  concepts:
+  - refund
+- provider: pin-payments
+  apis_io: https://apis.io/providers/pin-payments/
+  crosswalk: crosswalk/pin-payments.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: pinch-payments
+  apis_io: https://apis.io/providers/pinch-payments/
+  crosswalk: crosswalk/pinch-payments.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: pismo
+  apis_io: https://apis.io/providers/pismo/
+  crosswalk: crosswalk/pismo.yml
+  concepts:
+  - payment
+- provider: plug
+  apis_io: https://apis.io/providers/plug/
+  crosswalk: crosswalk/plug.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+- provider: pluggy
+  apis_io: https://apis.io/providers/pluggy/
+  crosswalk: crosswalk/pluggy.yml
+  concepts:
+  - customer
+  - payment
+- provider: podium
+  apis_io: https://apis.io/providers/podium/
+  crosswalk: crosswalk/podium.yml
+  concepts:
+  - payment
+  - refund
+- provider: pointcheckout
+  apis_io: https://apis.io/providers/pointcheckout/
+  crosswalk: crosswalk/pointcheckout.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: polar-sh
+  apis_io: https://apis.io/providers/polar-sh/
+  crosswalk: crosswalk/polar-sh.yml
+  concepts:
+  - checkout_session
+  - customer
+- provider: polysign
+  apis_io: https://apis.io/providers/polysign/
+  crosswalk: crosswalk/polysign.yml
+  concepts:
+  - payout
+- provider: portone
+  apis_io: https://apis.io/providers/portone/
+  crosswalk: crosswalk/portone.yml
+  concepts:
+  - payment
+  - payout
+- provider: ppro
+  apis_io: https://apis.io/providers/ppro/
+  crosswalk: crosswalk/ppro.yml
+  concepts:
+  - dispute
+  - payment
+  - refund
+- provider: primer
+  apis_io: https://apis.io/providers/primer/
+  crosswalk: crosswalk/primer.yml
+  concepts:
+  - payment
+  - refund
+- provider: privatedao-org
+  apis_io: https://apis.io/providers/privatedao-org/
+  crosswalk: crosswalk/privatedao-org.yml
+  concepts:
+  - payment
+- provider: processout
+  apis_io: https://apis.io/providers/processout/
+  crosswalk: crosswalk/processout.yml
+  concepts:
+  - customer
+  - payout
+  - refund
+- provider: propertyme
+  apis_io: https://apis.io/providers/propertyme/
+  crosswalk: crosswalk/propertyme.yml
+  concepts:
+  - payment
+- provider: przelewy24
+  apis_io: https://apis.io/providers/przelewy24/
+  crosswalk: crosswalk/przelewy24.yml
+  concepts:
+  - payment
+  - refund
+- provider: quickbooks-online
+  apis_io: https://apis.io/providers/quickbooks-online/
+  crosswalk: crosswalk/quickbooks-online.yml
+  concepts:
+  - customer
+- provider: r2
+  apis_io: https://apis.io/providers/r2/
+  crosswalk: crosswalk/r2.yml
+  concepts:
+  - refund
+- provider: raiffeisen-ru
+  apis_io: https://apis.io/providers/raiffeisen-ru/
+  crosswalk: crosswalk/raiffeisen-ru.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: rainforest
+  apis_io: https://apis.io/providers/rainforest/
+  crosswalk: crosswalk/rainforest.yml
+  concepts:
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: ravelin
+  apis_io: https://apis.io/providers/ravelin/
+  crosswalk: crosswalk/ravelin.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payout
+  - refund
+- provider: razorpay
+  apis_io: https://apis.io/providers/razorpay/
+  crosswalk: crosswalk/razorpay.yml
+  concepts:
+  - payment
+  - refund
+- provider: reachware-inc
+  apis_io: https://apis.io/providers/reachware-inc/
+  crosswalk: crosswalk/reachware-inc.yml
+  concepts:
+  - refund
+- provider: ready2order
+  apis_io: https://apis.io/providers/ready2order/
+  crosswalk: crosswalk/ready2order.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+- provider: receeve
+  apis_io: https://apis.io/providers/receeve/
+  crosswalk: crosswalk/receeve.yml
+  concepts:
+  - payout
+- provider: recharge-payments
+  apis_io: https://apis.io/providers/recharge-payments/
+  crosswalk: crosswalk/recharge-payments.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: remitian
+  apis_io: https://apis.io/providers/remitian/
+  crosswalk: crosswalk/remitian.yml
+  concepts:
+  - payment
+- provider: rentberry
+  apis_io: https://apis.io/providers/rentberry/
+  crosswalk: crosswalk/rentberry.yml
+  concepts:
+  - payment
+  - payout
+- provider: resolve
+  apis_io: https://apis.io/providers/resolve/
+  crosswalk: crosswalk/resolve.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: revolut
+  apis_io: https://apis.io/providers/revolut/
+  crosswalk: crosswalk/revolut.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: ripple-labs
+  apis_io: https://apis.io/providers/ripple-labs/
+  crosswalk: crosswalk/ripple-labs.yml
+  concepts:
+  - payment
+- provider: riskified
+  apis_io: https://apis.io/providers/riskified/
+  crosswalk: crosswalk/riskified.yml
+  concepts:
+  - dispute
+  - refund
+- provider: roadsync
+  apis_io: https://apis.io/providers/roadsync/
+  crosswalk: crosswalk/roadsync.yml
+  concepts:
+  - refund
+- provider: romit
+  apis_io: https://apis.io/providers/romit/
+  crosswalk: crosswalk/romit.yml
+  concepts:
+  - refund
+- provider: routable
+  apis_io: https://apis.io/providers/routable/
+  crosswalk: crosswalk/routable.yml
+  concepts:
+  - payment_method
+- provider: rye
+  apis_io: https://apis.io/providers/rye/
+  crosswalk: crosswalk/rye.yml
+  concepts:
+  - checkout_session
+  - refund
+- provider: salsa
+  apis_io: https://apis.io/providers/salsa/
+  crosswalk: crosswalk/salsa.yml
+  concepts:
+  - payment
+- provider: samcart
+  apis_io: https://apis.io/providers/samcart/
+  crosswalk: crosswalk/samcart.yml
+  concepts:
+  - customer
+  - payment
+  - refund
+- provider: satispay
+  apis_io: https://apis.io/providers/satispay/
+  crosswalk: crosswalk/satispay.yml
+  concepts:
+  - checkout_session
+  - payment
+- provider: scalapay
+  apis_io: https://apis.io/providers/scalapay/
+  crosswalk: crosswalk/scalapay.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: scvd-store
+  apis_io: https://apis.io/providers/scvd-store/
+  crosswalk: crosswalk/scvd-store.yml
+  concepts:
+  - payment_method
+  - refund
+- provider: sezzle
+  apis_io: https://apis.io/providers/sezzle/
+  crosswalk: crosswalk/sezzle.yml
+  concepts:
+  - checkout_session
+  - customer
+  - refund
+- provider: shift4
+  apis_io: https://apis.io/providers/shift4/
+  crosswalk: crosswalk/shift4.yml
+  concepts:
+  - payout
+  - refund
+- provider: shift4-payments
+  apis_io: https://apis.io/providers/shift4-payments/
+  crosswalk: crosswalk/shift4-payments.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: shop-ware
+  apis_io: https://apis.io/providers/shop-ware/
+  crosswalk: crosswalk/shop-ware.yml
+  concepts:
+  - customer
+  - payment
+- provider: shopback
+  apis_io: https://apis.io/providers/shopback/
+  crosswalk: crosswalk/shopback.yml
+  concepts:
+  - payment
+  - refund
+- provider: shopgo
+  apis_io: https://apis.io/providers/shopgo/
+  crosswalk: crosswalk/shopgo.yml
+  concepts:
+  - payment
+- provider: shopify
+  apis_io: https://apis.io/providers/shopify/
+  crosswalk: crosswalk/shopify.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: shoplazza
+  apis_io: https://apis.io/providers/shoplazza/
+  crosswalk: crosswalk/shoplazza.yml
+  concepts:
+  - customer
+  - refund
+- provider: shoppable
+  apis_io: https://apis.io/providers/shoppable/
+  crosswalk: crosswalk/shoppable.yml
+  concepts:
+  - checkout_session
+- provider: silverflow
+  apis_io: https://apis.io/providers/silverflow/
+  crosswalk: crosswalk/silverflow.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: six-group
+  apis_io: https://apis.io/providers/six-group/
+  crosswalk: crosswalk/six-group.yml
+  concepts:
+  - customer
+  - payment
+- provider: skyfire
+  apis_io: https://apis.io/providers/skyfire/
+  crosswalk: crosswalk/skyfire.yml
+  concepts:
+  - payment
+- provider: slash
+  apis_io: https://apis.io/providers/slash/
+  crosswalk: crosswalk/slash.yml
+  concepts:
+  - customer
+- provider: slope
+  apis_io: https://apis.io/providers/slope/
+  crosswalk: crosswalk/slope.yml
+  concepts:
+  - customer
+  - payment_method
+- provider: snipcart
+  apis_io: https://apis.io/providers/snipcart/
+  crosswalk: crosswalk/snipcart.yml
+  concepts:
+  - customer
+  - refund
+- provider: sofi-technologies
+  apis_io: https://apis.io/providers/sofi-technologies/
+  crosswalk: crosswalk/sofi-technologies.yml
+  concepts:
+  - payout
+- provider: solvimon
+  apis_io: https://apis.io/providers/solvimon/
+  crosswalk: crosswalk/solvimon.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+  - refund
+- provider: spade
+  apis_io: https://apis.io/providers/spade/
+  crosswalk: crosswalk/spade.yml
+  concepts:
+  - dispute
+  - refund
+- provider: spinwheel
+  apis_io: https://apis.io/providers/spinwheel/
+  crosswalk: crosswalk/spinwheel.yml
+  concepts:
+  - customer
+- provider: splitit
+  apis_io: https://apis.io/providers/splitit/
+  crosswalk: crosswalk/splitit.yml
+  concepts:
+  - refund
+- provider: spreedly
+  apis_io: https://apis.io/providers/spreedly/
+  crosswalk: crosswalk/spreedly.yml
+  concepts:
+  - payment
+  - payment_method
+- provider: square
+  apis_io: https://apis.io/providers/square/
+  crosswalk: crosswalk/square.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: stark-bank
+  apis_io: https://apis.io/providers/stark-bank/
+  crosswalk: crosswalk/stark-bank.yml
+  concepts:
+  - payment
+- provider: stax
+  apis_io: https://apis.io/providers/stax/
+  crosswalk: crosswalk/stax.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - refund
+- provider: stellar
+  apis_io: https://apis.io/providers/stellar/
+  crosswalk: crosswalk/stellar.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: stonex
+  apis_io: https://apis.io/providers/stonex/
+  crosswalk: crosswalk/stonex.yml
+  concepts:
+  - payment
+- provider: stripe
+  apis_io: https://apis.io/providers/stripe/
+  crosswalk: crosswalk/stripe.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: sumup
+  apis_io: https://apis.io/providers/sumup/
+  crosswalk: crosswalk/sumup.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment_method
+  - payout
+  - refund
+- provider: super-payments
+  apis_io: https://apis.io/providers/super-payments/
+  crosswalk: crosswalk/super-payments.yml
+  concepts:
+  - checkout_session
+  - customer
+  - payment
+  - payment_method
+  - payout
+  - refund
+- provider: swell-io
+  apis_io: https://apis.io/providers/swell-io/
+  crosswalk: crosswalk/swell-io.yml
+  concepts:
+  - payment
+  - refund
+- provider: synchrony-financial
+  apis_io: https://apis.io/providers/synchrony-financial/
+  crosswalk: crosswalk/synchrony-financial.yml
+  concepts:
+  - refund
+- provider: synctera
+  apis_io: https://apis.io/providers/synctera/
+  crosswalk: crosswalk/synctera.yml
+  concepts:
+  - customer
+  - payment
+- provider: tabby
+  apis_io: https://apis.io/providers/tabby/
+  crosswalk: crosswalk/tabby.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - payment
+  - refund
+- provider: tamara
+  apis_io: https://apis.io/providers/tamara/
+  crosswalk: crosswalk/tamara.yml
+  concepts:
+  - checkout_session
+  - refund
+- provider: tango-card
+  apis_io: https://apis.io/providers/tango-card/
+  crosswalk: crosswalk/tango-card.yml
+  concepts:
+  - customer
+- provider: tap-payments
+  apis_io: https://apis.io/providers/tap-payments/
+  crosswalk: crosswalk/tap-payments.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: td-bank
+  apis_io: https://apis.io/providers/td-bank/
+  crosswalk: crosswalk/td-bank.yml
+  concepts:
+  - customer
+- provider: temenos
+  apis_io: https://apis.io/providers/temenos/
+  crosswalk: crosswalk/temenos.yml
+  concepts:
+  - customer
+  - payment
+- provider: tesser
+  apis_io: https://apis.io/providers/tesser/
+  crosswalk: crosswalk/tesser.yml
+  concepts:
+  - payment
+  - payout
+- provider: teya
+  apis_io: https://apis.io/providers/teya/
+  crosswalk: crosswalk/teya.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: the-bank-of-london
+  apis_io: https://apis.io/providers/the-bank-of-london/
+  crosswalk: crosswalk/the-bank-of-london.yml
+  concepts:
+  - payment
+- provider: theloopbreaker-com
+  apis_io: https://apis.io/providers/theloopbreaker-com/
+  crosswalk: crosswalk/theloopbreaker-com.yml
+  concepts:
+  - dispute
+- provider: thrivecart
+  apis_io: https://apis.io/providers/thrivecart/
+  crosswalk: crosswalk/thrivecart.yml
+  concepts:
+  - customer
+  - refund
+- provider: thunes
+  apis_io: https://apis.io/providers/thunes/
+  crosswalk: crosswalk/thunes.yml
+  concepts:
+  - customer
+- provider: ticketspice
+  apis_io: https://apis.io/providers/ticketspice/
+  crosswalk: crosswalk/ticketspice.yml
+  concepts:
+  - customer
+- provider: tickitto
+  apis_io: https://apis.io/providers/tickitto/
+  crosswalk: crosswalk/tickitto.yml
+  concepts:
+  - checkout_session
+- provider: tietoevry
+  apis_io: https://apis.io/providers/tietoevry/
+  crosswalk: crosswalk/tietoevry.yml
+  concepts:
+  - dispute
+  - payment
+  - refund
+- provider: till-payments
+  apis_io: https://apis.io/providers/till-payments/
+  crosswalk: crosswalk/till-payments.yml
+  concepts:
+  - payout
+  - refund
+- provider: tillo
+  apis_io: https://apis.io/providers/tillo/
+  crosswalk: crosswalk/tillo.yml
+  concepts:
+  - refund
+- provider: tinvio-com
+  apis_io: https://apis.io/providers/tinvio-com/
+  crosswalk: crosswalk/tinvio-com.yml
+  concepts:
+  - payment
+  - refund
+- provider: token-io
+  apis_io: https://apis.io/providers/token-io/
+  crosswalk: crosswalk/token-io.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payout
+  - refund
+- provider: toqio
+  apis_io: https://apis.io/providers/toqio/
+  crosswalk: crosswalk/toqio.yml
+  concepts:
+  - customer
+- provider: toss-payments
+  apis_io: https://apis.io/providers/toss-payments/
+  crosswalk: crosswalk/toss-payments.yml
+  concepts:
+  - payment
+  - payout
+- provider: total-system-services
+  apis_io: https://apis.io/providers/total-system-services/
+  crosswalk: crosswalk/total-system-services.yml
+  concepts:
+  - dispute
+  - refund
+- provider: tratta
+  apis_io: https://apis.io/providers/tratta/
+  crosswalk: crosswalk/tratta.yml
+  concepts:
+  - customer
+  - payment
+  - payment_method
+- provider: treez
+  apis_io: https://apis.io/providers/treez/
+  crosswalk: crosswalk/treez.yml
+  concepts:
+  - customer
+  - payment
+- provider: trend
+  apis_io: https://apis.io/providers/trend/
+  crosswalk: crosswalk/trend.yml
+  concepts:
+  - checkout_session
+  - payout
+- provider: tribe-payments
+  apis_io: https://apis.io/providers/tribe-payments/
+  crosswalk: crosswalk/tribe-payments.yml
+  concepts:
+  - dispute
+  - payment
+  - refund
+- provider: triodos-bank-uk
+  apis_io: https://apis.io/providers/triodos-bank-uk/
+  crosswalk: crosswalk/triodos-bank-uk.yml
+  concepts:
+  - payment
+- provider: truelayer
+  apis_io: https://apis.io/providers/truelayer/
+  crosswalk: crosswalk/truelayer.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: trustly
+  apis_io: https://apis.io/providers/trustly/
+  crosswalk: crosswalk/trustly.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - refund
+- provider: tweed
+  apis_io: https://apis.io/providers/tweed/
+  crosswalk: crosswalk/tweed.yml
+  concepts:
+  - checkout_session
+  - payout
+- provider: tyro
+  apis_io: https://apis.io/providers/tyro/
+  crosswalk: crosswalk/tyro.yml
+  concepts:
+  - payment
+  - refund
+- provider: unit-co
+  apis_io: https://apis.io/providers/unit-co/
+  crosswalk: crosswalk/unit-co.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+- provider: unlock-protocol
+  apis_io: https://apis.io/providers/unlock-protocol/
+  crosswalk: crosswalk/unlock-protocol.yml
+  concepts:
+  - checkout_session
+  - payment_method
+- provider: unstoppable-finance
+  apis_io: https://apis.io/providers/unstoppable-finance/
+  crosswalk: crosswalk/unstoppable-finance.yml
+  concepts:
+  - customer
+- provider: upward-financial
+  apis_io: https://apis.io/providers/upward-financial/
+  crosswalk: crosswalk/upward-financial.yml
+  concepts:
+  - dispute
+  - payment
+- provider: us-bancorp
+  apis_io: https://apis.io/providers/us-bancorp/
+  crosswalk: crosswalk/us-bancorp.yml
+  concepts:
+  - payment
+- provider: uzum
+  apis_io: https://apis.io/providers/uzum/
+  crosswalk: crosswalk/uzum.yml
+  concepts:
+  - payment
+  - refund
+- provider: vantiv
+  apis_io: https://apis.io/providers/vantiv/
+  crosswalk: crosswalk/vantiv.yml
+  concepts:
+  - dispute
+- provider: veem
+  apis_io: https://apis.io/providers/veem/
+  crosswalk: crosswalk/veem.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: verifone
+  apis_io: https://apis.io/providers/verifone/
+  crosswalk: crosswalk/verifone.yml
+  concepts:
+  - checkout_session
+  - customer
+  - refund
+- provider: versapay
+  apis_io: https://apis.io/providers/versapay/
+  crosswalk: crosswalk/versapay.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - refund
+- provider: virto-commerce
+  apis_io: https://apis.io/providers/virto-commerce/
+  crosswalk: crosswalk/virto-commerce.yml
+  concepts:
+  - payment
+  - refund
+- provider: visa
+  apis_io: https://apis.io/providers/visa/
+  crosswalk: crosswalk/visa.yml
+  concepts:
+  - checkout_session
+  - payment
+- provider: visa-acceptance
+  apis_io: https://apis.io/providers/visa-acceptance/
+  crosswalk: crosswalk/visa-acceptance.yml
+  concepts:
+  - payment
+  - refund
+- provider: vivenu
+  apis_io: https://apis.io/providers/vivenu/
+  crosswalk: crosswalk/vivenu.yml
+  concepts:
+  - checkout_session
+  - customer
+  - dispute
+  - payment
+  - payment_method
+  - refund
+- provider: vopay
+  apis_io: https://apis.io/providers/vopay/
+  crosswalk: crosswalk/vopay.yml
+  concepts:
+  - payment
+  - payment_method
+  - refund
+- provider: vtex
+  apis_io: https://apis.io/providers/vtex/
+  crosswalk: crosswalk/vtex.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: weave
+  apis_io: https://apis.io/providers/weave/
+  crosswalk: crosswalk/weave.yml
+  concepts:
+  - payment_method
+- provider: weavr
+  apis_io: https://apis.io/providers/weavr/
+  crosswalk: crosswalk/weavr.yml
+  concepts:
+  - customer
+  - payment
+- provider: western-union
+  apis_io: https://apis.io/providers/western-union/
+  crosswalk: crosswalk/western-union.yml
+  concepts:
+  - customer
+  - payment
+- provider: wetravel
+  apis_io: https://apis.io/providers/wetravel/
+  crosswalk: crosswalk/wetravel.yml
+  concepts:
+  - checkout_session
+- provider: wincl
+  apis_io: https://apis.io/providers/wincl/
+  crosswalk: crosswalk/wincl.yml
+  concepts:
+  - checkout_session
+  - payment
+  - refund
+- provider: wingspan
+  apis_io: https://apis.io/providers/wingspan/
+  crosswalk: crosswalk/wingspan.yml
+  concepts:
+  - payment
+  - refund
+- provider: wise
+  apis_io: https://apis.io/providers/wise/
+  crosswalk: crosswalk/wise.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+- provider: wordline
+  apis_io: https://apis.io/providers/wordline/
+  crosswalk: crosswalk/wordline.yml
+  concepts:
+  - customer
+  - dispute
+  - payment
+  - refund
+- provider: worldpay
+  apis_io: https://apis.io/providers/worldpay/
+  crosswalk: crosswalk/worldpay.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: xendit
+  apis_io: https://apis.io/providers/xendit/
+  crosswalk: crosswalk/xendit.yml
+  concepts:
+  - customer
+  - payout
+  - refund
+- provider: xfers
+  apis_io: https://apis.io/providers/xfers/
+  crosswalk: crosswalk/xfers.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: xflow
+  apis_io: https://apis.io/providers/xflow/
+  crosswalk: crosswalk/xflow.yml
+  concepts:
+  - checkout_session
+  - payment
+  - payout
+- provider: xrpay
+  apis_io: https://apis.io/providers/xrpay/
+  crosswalk: crosswalk/xrpay.yml
+  concepts:
+  - payment
+  - payout
+  - refund
+- provider: yapily
+  apis_io: https://apis.io/providers/yapily/
+  crosswalk: crosswalk/yapily.yml
+  concepts:
+  - payment
+- provider: zai
+  apis_io: https://apis.io/providers/zai/
+  crosswalk: crosswalk/zai.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+  - refund
+- provider: zepto-payments
+  apis_io: https://apis.io/providers/zepto-payments/
+  crosswalk: crosswalk/zepto-payments.yml
+  concepts:
+  - dispute
+  - payment
+  - payout
+  - refund
+- provider: zero-hash
+  apis_io: https://apis.io/providers/zero-hash/
+  crosswalk: crosswalk/zero-hash.yml
+  concepts:
+  - customer
+  - payment
+  - payout
+- provider: zerosettle
+  apis_io: https://apis.io/providers/zerosettle/
+  crosswalk: crosswalk/zerosettle.yml
+  concepts:
+  - checkout_session
+  - payment
+- provider: ziina
+  apis_io: https://apis.io/providers/ziina/
+  crosswalk: crosswalk/ziina.yml
+  concepts:
+  - refund
+- provider: zuora
+  apis_io: https://apis.io/providers/zuora/
+  crosswalk: crosswalk/zuora.yml
+  concepts:
+  - checkout_session
+  - dispute
+  - payment
+  - payment_method
+  - refund

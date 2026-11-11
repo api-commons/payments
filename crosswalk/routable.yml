@@ -1,0 +1,19 @@
+provider: routable
+apis_io: https://apis.io/providers/routable/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      id: id
+      type: type
+      created_at: date_created
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/routable-openapi.yml#GET /payment_methods
+    - openapi/_original/routable-openapi.yml#GET /payment_methods/{id}
+    - openapi/_original/routable-openapi.yml#PATCH /payment_methods/{id}
+    - openapi/_original/routable-openapi.yml#POST /payment_methods

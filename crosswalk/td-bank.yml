@@ -1,0 +1,16 @@
+provider: td-bank
+apis_io: https://apis.io/providers/td-bank/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customerId
+      name: name
+      email: email
+      address: addresses
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/td-bank-customer-api-openapi.yml#GET /accounts/{accountId}/customers

@@ -1,0 +1,18 @@
+provider: belvo
+apis_io: https://apis.io/providers/belvo/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/belvo-openapi.json#GET /payments/br/customers/
+    - openapi/_original/belvo-openapi.json#GET /payments/br/customers/{id}/
+    - openapi/_original/belvo-openapi.json#POST /payments/br/customers/

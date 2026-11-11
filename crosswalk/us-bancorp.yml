@@ -1,0 +1,18 @@
+provider: us-bancorp
+apis_io: https://apis.io/providers/us-bancorp/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      currency: currency
+      description: description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/us-bank-push-to-card-openapi.yml#GET /push-to-card/payments/{paymentId}
+    - openapi/_original/us-bank-push-to-card-openapi.yml#POST /push-to-card/payments

@@ -1,0 +1,27 @@
+provider: moniepoint
+apis_io: https://apis.io/providers/moniepoint/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/monnify-collections-api-openapi.yml#POST /api/v1/merchant/cards/charge
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/monnify-refunds-api-openapi.yml#GET /api/v1/refunds
+    - openapi/_original/monnify-refunds-api-openapi.yml#GET /api/v1/refunds/{refundReference}
+  payout:
+    path_segment:
+    - settlements
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/monnify-settlements-api-openapi.yml#GET /api/v1/settlements

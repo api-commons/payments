@@ -1,0 +1,19 @@
+provider: agendapro
+apis_io: https://apis.io/providers/agendapro/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - sales
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/agendapro-connect-v3-openapi.yml#GET /v3/sales
+    - openapi/_original/agendapro-connect-v3-openapi.yml#GET /v3/sales/{id}
+    - openapi/_original/platform-connect-v3.json#GET /v3/sales
+    - openapi/_original/platform-connect-v3.json#GET /v3/sales/{id}

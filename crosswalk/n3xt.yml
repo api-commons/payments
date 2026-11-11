@@ -1,0 +1,19 @@
+provider: n3xt
+apis_io: https://apis.io/providers/n3xt/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: createdAt
+      description: description
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/n3xt-openapi-original.json#GET /payments
+    - openapi/_original/n3xt-openapi-original.json#GET /payments/{id}

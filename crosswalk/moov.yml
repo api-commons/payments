@@ -1,0 +1,84 @@
+provider: moov
+apis_io: https://apis.io/providers/moov/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties:
+      status: status
+      created_at: createdOn
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /issuing/{accountID}/authorizations
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /issuing/{accountID}/authorizations/{authorizationID}
+    - openapi/_original/moov-openapi.yml#GET /issuing/{accountID}/authorizations
+    - openapi/_original/moov-openapi.yml#GET /issuing/{accountID}/authorizations/{authorizationID}
+    - openapi/_original/moov-openapi_2.yml#GET /issuing/{accountID}/authorizations
+  checkout_session:
+    path_segment:
+    - payment-links
+    - sessions
+    properties:
+      status: status
+      created_at: createdOn
+      customer_id: customer
+      currency: currency
+      amount: amount
+      description: description
+      mode: mode
+      url: link
+      line_items: lineItems
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/moov-api-openapi.yml#DELETE /accounts/{accountID}/payment-links/{paymentLinkCode}
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/payment-links
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/payment-links/{paymentLinkCode}
+    - openapi/_original/moov-api-openapi.yml#PATCH /accounts/{accountID}/payment-links/{paymentLinkCode}
+    - openapi/_original/moov-api-openapi.yml#POST /accounts/{accountID}/payment-links
+  refund:
+    path_segment:
+    - refunds
+    - reversals
+    properties:
+      id: refundID
+      amount: amount
+      status: status
+      created_at: createdOn
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/transfers/{transferID}/refunds
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/transfers/{transferID}/refunds/{refundID}
+    - openapi/_original/moov-api-openapi.yml#POST /accounts/{accountID}/transfers/{transferID}/refunds
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/transfers/{transferID}/refunds
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/transfers/{transferID}/refunds/{refundID}
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: paymentMethodID
+      type: paymentMethodType
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/payment-methods
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/payment-methods/{paymentMethodID}
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/payment-methods
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/payment-methods/{paymentMethodID}
+    - openapi/_original/moov-openapi.yml#GET /accounts/{accountID}/payment-methods
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: createdOn
+      id: disputeID
+      reason: reason
+      amount: amount
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/disputes
+    - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/disputes/{disputeID}
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/disputes
+    - openapi/_original/moov-api-v2026.01.00-openapi.yml#GET /accounts/{accountID}/disputes/{disputeID}
+    - openapi/_original/moov-openapi.yml#GET /accounts/{accountID}/disputes

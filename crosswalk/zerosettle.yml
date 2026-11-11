@@ -1,0 +1,25 @@
+provider: zerosettle
+apis_io: https://apis.io/providers/zerosettle/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment-intents
+    properties:
+      id: transaction_id
+      amount: amount_cents
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/zerosettle-openapi.json#POST /iap/payment-intents
+  checkout_session:
+    path_segment:
+    - checkout-sessions
+    properties:
+      id:
+      - checkout_session_id
+      - transaction_id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/zerosettle-openapi.json#POST /iap/checkout-sessions

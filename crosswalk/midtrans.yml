@@ -1,0 +1,44 @@
+provider: midtrans
+apis_io: https://apis.io/providers/midtrans/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      id: transaction_id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/midtrans-openapi.yml#POST /v2/charge
+  checkout_session:
+    path_segment:
+    - payment-links
+    properties:
+      expires_at: expiry
+      url: payment_url
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/midtrans-openapi.yml#DELETE /v1/payment-links/{order_id}
+    - openapi/_original/midtrans-openapi.yml#GET /v1/payment-links/{order_id}
+    - openapi/_original/midtrans-openapi.yml#POST /v1/payment-links
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: transaction_id
+      amount: amount
+      reason: reason
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/midtrans-openapi.yml#POST /v2/{order_id}/refund
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      status: status
+      amount: amount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/midtrans-openapi.yml#GET /iris/api/v1/payouts/{reference_no}
+    - openapi/_original/midtrans-openapi.yml#POST /iris/api/v1/payouts

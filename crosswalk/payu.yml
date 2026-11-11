@@ -1,0 +1,28 @@
+provider: payu
+apis_io: https://apis.io/providers/payu/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refundId
+      amount: amount
+      status: status
+      currency: currencyCode
+      description: description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/payu-europe-rest-api.yaml#GET /api/v2_1/orders/{orderId}/refunds
+    - openapi/_original/payu-europe-rest-api.yaml#GET /api/v2_1/orders/{orderId}/refunds/{refundId}
+    - openapi/_original/payu-europe-rest-api.yaml#POST /api/v2_1/orders/{orderId}/refunds
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/payu-europe-rest-api.yaml#GET /api/v2_1/payouts/{payoutId}
+    - openapi/_original/payu-europe-rest-api.yaml#POST /api/v2_1/payouts

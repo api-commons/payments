@@ -1,0 +1,69 @@
+provider: paywithmybank
+apis_io: https://apis.io/providers/paywithmybank/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      description: description
+      updated_at: updatedAt
+      customer_id: customer
+      external_id: merchantReference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/paywithmybank-openapi-original.yml#GET /payments
+    - openapi/_original/paywithmybank-openapi-original.yml#GET /payments/{paymentId}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: transactionId
+      amount: amount
+      status: status
+      created_at: createdAt
+      currency: currency
+      payment_id:
+      - payment
+      - originalTransactionId
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paywithmybank-openapi-original.yml#POST /transactions/{transactionId}/refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customerId
+      name: name
+      email: email
+      created_at: createdAt
+      phone: phone
+      address: address
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paywithmybank-openapi-original.yml#GET /customers
+    - openapi/_original/paywithmybank-openapi-original.yml#GET /customers/{customerId}
+    - openapi/_original/paywithmybank-openapi-original.yml#POST /customers
+    - openapi/_original/paywithmybank-openapi-original.yml#POST /customers/{customerId}
+  dispute:
+    path_segment:
+    - dispute
+    properties:
+      status: status
+      created_at: createdAt
+      amount: amount
+      updated_at: updatedAt
+      payment_id:
+      - transactionId
+      - payment
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/paywithmybank-openapi-original.yml#POST /collections/recovery/dispute

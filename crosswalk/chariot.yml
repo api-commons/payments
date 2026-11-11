@@ -1,0 +1,37 @@
+provider: chariot
+apis_io: https://apis.io/providers/chariot/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - payment_sources
+    properties:
+      id: id
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/chariot-openapi-original.yml#GET /v1/payment_sources
+    - openapi/_original/chariot-openapi-original.yml#GET /v1/payment_sources/{id}
+  customer:
+    path_segment:
+    - customers
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/chariot-fdx-openapi-original.yml#GET /accounts/{id}/customers
+  payout:
+    path_segment:
+    - disbursements
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/chariot-openapi-original.yml#GET /v1/disbursements
+    - openapi/_original/chariot-openapi-original.yml#GET /v1/disbursements/{id}
+    - openapi/_original/chariot-openapi-original.yml#POST /v1/disbursements

@@ -1,0 +1,42 @@
+provider: tietoevry
+apis_io: https://apis.io/providers/tietoevry/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorisations
+    - payments
+    properties:
+      id: paymentId
+      metadata: metadata
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/consents/{consent-id}/authorisations
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/consents/{consent-id}/authorisations/{authorisation-id}
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/funds-confirmation-consents/{consent-id}/authorisations
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/funds-confirmation-consents/{consent-id}/authorisations/{authorisation-id}
+    - openapi/_original/tietoevry-financial-api-aggregation-swagger.json#GET /v1/xs2a/v1.0/providers/{provider-id}/payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refundId
+      metadata: metadata
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway.yaml#GET /v1/creditor/payments/{payment-id}/refunds/{refund-id}
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway.yaml#POST /v1/creditor/payments/{payment-id}/refunds
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway_2.yaml#GET /v1/creditor/payments/{payment-id}/refunds/{refund-id}
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway_2.yaml#POST /v1/creditor/payments/{payment-id}/refunds
+  dispute:
+    path_segment:
+    - chargebacks
+    properties:
+      reason: reasonCode
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway.yaml#GET /v1/debtor/payments/{payment-id}/chargebacks/{chargeback-id}
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway.yaml#POST /v1/debtor/payments/{payment-id}/chargebacks
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway_2.yaml#GET /v1/debtor/payments/{payment-id}/chargebacks/{chargeback-id}
+    - openapi/_original/tietoevry-sepa-direct-debit-api-gateway_2.yaml#POST /v1/debtor/payments/{payment-id}/chargebacks

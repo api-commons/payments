@@ -1,0 +1,51 @@
+provider: zepto-payments
+apis_io: https://apis.io/providers/zepto-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: state
+      amount: amount
+      created_at: created_at
+      description: description
+      metadata: metadata
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/zepto-payments-pay-to.yml#GET /payto/payments
+    - openapi/_original/zepto-payments-pay-to.yml#GET /payto/payments/{payment_uid}
+    - openapi/_original/zepto-payments-pay-to.yml#POST /payto/payments
+    - openapi/_original/zepto-payments-zepto.yml#GET /payments
+    - openapi/_original/zepto-payments-zepto.yml#GET /payments/{payment_ref}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      status: state
+      created_at: created_at
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/zepto-payments-pay-to.yml#GET /payto/refunds
+    - openapi/_original/zepto-payments-pay-to.yml#GET /payto/refunds/{refund_uid}
+    - openapi/_original/zepto-payments-pay-to.yml#POST /payto/refunds
+    - openapi/_original/zepto-payments-zepto.yml#GET /refunds/{refund_ref}
+  payout:
+    path_segment:
+    - payouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/zepto-payments-zepto.yml#DELETE /payouts/{ref}
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/zepto-payments-investigations.yml#GET /investigations/disputes
+    - openapi/_original/zepto-payments-investigations.yml#GET /investigations/disputes/{dispute_id}

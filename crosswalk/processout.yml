@@ -1,0 +1,37 @@
+provider: processout
+apis_io: https://apis.io/providers/processout/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      amount: amount
+      reason: reason
+      metadata: metadata
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/processout-openapi.json#POST /invoices/{invoice_id}/refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: first_name
+      email: email
+      phone: phone
+      status: state
+      last_name: last_name
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/processout-openapi.json#POST /customers
+  payout:
+    path_segment:
+    - payouts
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/processout-openapi.json#DELETE /payouts/{payout_id}
+    - openapi/_original/processout-openapi.json#GET /payouts
+    - openapi/_original/processout-openapi.json#GET /payouts/{payout_id}

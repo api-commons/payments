@@ -1,0 +1,67 @@
+provider: ordway
+apis_io: https://apis.io/providers/ordway/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: payment_id
+      status: status
+      created_at: created_date
+      currency: currency
+      payment_method_id: payment_method
+      updated_at: updated_date
+      metadata: custom_fields
+      customer_id: customer_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /payments
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /payments/{id}
+    - openapi/_original/ordway-rest-api-openapi.yml#POST /payments
+  refund:
+    path_segment:
+    - credits
+    - refunds
+    properties:
+      id: refund_id
+      status: status
+      created_at: created_date
+      currency: currency
+      payment_id: payment_id
+      updated_at: updated_date
+      metadata: custom_fields
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /credits
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /credits/{id}
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /refunds
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /refunds/{id}
+    - openapi/_original/ordway-rest-api-openapi.yml#POST /credits
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      id: payment_method_id
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /customers/{id}/payment_methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customer_id
+      name: name
+      created_at: created_date
+      status: status
+      updated_at: updated_date
+      metadata: custom_fields
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/ordway-rest-api-openapi.yml#DELETE /customers/{id}
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /customers
+    - openapi/_original/ordway-rest-api-openapi.yml#GET /customers/{id}
+    - openapi/_original/ordway-rest-api-openapi.yml#POST /customers
+    - openapi/_original/ordway-rest-api-openapi.yml#PUT /customers/{id}

@@ -1,0 +1,39 @@
+provider: swell-io
+apis_io: https://apis.io/providers/swell-io/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - transaction_id
+      status: status
+      amount: amount
+      created_at: date_created
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/swell-backend-api-openapi.yml#GET /payments
+    - openapi/_original/swell-backend-api-openapi.yml#GET /payments/{id}
+    - openapi/_original/swell-backend-api-openapi.yml#POST /payments
+    - openapi/_original/swell-backend-api-openapi.yml#PUT /payments/{id}
+    - openapi/_original/swell-frontend-api-openapi.yml#GET /api/settings/payments
+  refund:
+    path_segment:
+    - refunds
+    - credits
+    properties:
+      id: id
+      amount: amount
+      created_at: date_created
+      reason: reason
+      payment_id: payment_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/swell-backend-api-openapi.yml#GET /accounts/{id}/credits
+    - openapi/_original/swell-backend-api-openapi.yml#GET /refunds
+    - openapi/_original/swell-backend-api-openapi.yml#POST /accounts/{id}/credits
+    - openapi/_original/swell-backend-api-openapi.yml#POST /payments/{id}/refunds

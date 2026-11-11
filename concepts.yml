@@ -1,0 +1,136 @@
+# The payments bounded context: taking money, giving it back, and paying it out. See
+# ../schema-commons for the method; the only judgement in this repo is in this file.
+#
+# Cohort decision: "Acquired" (907) is a catalog tag for acquired COMPANIES, not card
+# acquiring, and the API / AI / LLM / MCP "Gateway" tags are not payment gateways; none is used.
+# checkout_session was handed over from the commerce context, where /checkout turned out
+# to be a hosted payment session, not a cart.
+context: payments
+name: Payments
+tags: [Payments, Payment Gateway, Payment Processing, Card Payments, Online Payments,
+       Merchant Services, Acquiring, Payment Orchestration, Checkout, Recurring Payments,
+       Embedded Payments, Mobile Payments]
+
+envelope: [_links, _pagination, _results, data, success, errors, warnings, count, total, page, meta, links,
+           value, results, next, previous, has_more, message, status_code, ids, next_page, previous_page,
+           page_info, cursor, total_count, per_page, total_pages, current_page, object, url, livemode]
+
+common_fields:
+  id: [uuid, guid, object_id, record_id, transaction_id, reference_id]
+  created_at: [created, created_date, created_time, date_created, create_time, creation_date, created_on, timestamp]
+  updated_at: [updated, updated_date, modified_at, last_modified, date_modified, update_time, modified_date, updated_time, last_updated]
+  metadata: [meta_data, custom_fields, custom, attributes, properties, additional_data, extra, udf]
+  currency: [currency_code, currency_iso_code, currency_iso, iso_currency_code]
+  amount: [value, amount_value, total, total_amount, amount_in_cents, amount_cents, money]
+  status: [state, status_code_text, payment_status, result]
+  description: [statement_descriptor, memo, note, narrative, remarks]
+  external_id: [merchant_reference, reference, client_reference, merchant_order_id, order_reference, idempotency_key, external_reference]
+
+concepts:
+  payment:
+    # "transactions" is not a segment: in this cohort it is as often a bank-ledger line or a
+    # card-program feed as a payment, and the path alone cannot tell them apart.
+    segments: [payments, payment, charges, charge, payment_intents, payment-intents, paymentintents, sales, authorizations, authorisations, payment_orders]
+    aliases:
+      customer_id: [customer, payer_id, payer, buyer_id, shopper_reference, customer_reference]
+      payment_method_id: [payment_method, source, card_id, instrument_id, token, payment_source, payment_token]
+      order_id: [order, invoice_id, invoice]
+      captured: [capture, is_captured, captured_at, capture_method, auto_capture]
+      refunded_amount: [amount_refunded, refund_amount]
+      failure_reason: [failure_message, failure_code, decline_reason, error_message, error_code, reason, response_message]
+      return_url: [redirect_url, success_url, callback_url, notification_url, webhook_url]
+      fee: [fees, application_fee, application_fee_amount, fee_amount]
+  checkout_session:
+    segments: [checkout_sessions, checkout-sessions, checkouts, checkout, sessions, payment_links, payment-links, paymentlinks, hosted_pages]
+    aliases:
+      url: [checkout_url, redirect_url, payment_url, link, hosted_url, web_url]
+      success_url: [return_url, redirect_success_url, merchant_urls]
+      cancel_url: [failure_url, redirect_cancel_url]
+      expires_at: [expiry, expiration, expires, expiry_time, expiration_date]
+      line_items: [items, products, order_lines, lines]
+      customer_id: [customer, buyer, consumer, payer]
+      mode: [type, payment_type, intent]
+  refund:
+    segments: [refunds, refund, reversals, credits]
+    aliases:
+      payment_id: [charge, charge_id, payment, transaction, original_transaction_id, parent_id, sale_id, capture_id]
+      reason: [refund_reason, reason_code, comment]
+  payment_method:
+    # "cards" and "tokens" are not segments: 104 providers matched only through them, and
+    # what they return (cvv, card_number, account_id, status) is an ISSUED card or an auth
+    # token, not a stored way to pay. Card issuing is its own context (contexts.yml).
+    segments: [payment_methods, payment-methods, paymentmethods, payment_sources, sources, instruments, payment_instruments, stored_payment_methods]
+    aliases:
+      type: [method, payment_method_type, kind, brand_type, scheme]
+      customer_id: [customer, owner_id, payer_id, shopper_reference]
+      brand: [card_brand, card_type, network, scheme_name]
+      last4: [last_four, last_4, last_digits, card_last_four, masked_number, number_last4]
+      exp_month: [expiry_month, expiration_month, exp_mm]
+      exp_year: [expiry_year, expiration_year, exp_yy]
+      billing_address: [billing_details, billing, address]
+      fingerprint: [card_fingerprint]
+  customer:
+    segments: [customers, customer, payers, payer, buyers, shoppers]
+    aliases:
+      name: [full_name, display_name, first_name]
+      email: [email_address, emails]
+      phone: [phone_number, mobile]
+      address: [billing_address, addresses]
+      default_payment_method_id: [default_source, default_payment_method, invoice_settings]
+  payout:
+    segments: [payouts, payout, settlements, settlement, disbursements, withdrawals]
+    aliases:
+      destination: [bank_account, bank_account_id, destination_id, beneficiary, recipient, destination_account]
+      arrival_date: [settlement_date, expected_arrival, value_date, estimated_arrival_date, paid_at]
+      method: [type, payout_method, rail]
+  dispute:
+    segments: [disputes, dispute, chargebacks, chargeback, retrievals]
+    aliases:
+      payment_id: [charge, charge_id, payment, transaction_id, transaction, original_transaction]
+      reason: [reason_code, dispute_reason, category]
+      evidence: [evidence_details, documents, files]
+      due_by: [evidence_due_by, respond_by, due_date, deadline, response_due]
+
+# Reviewed by hand: every provider counted only through /sessions. Kept: hosted payment
+# sessions (Citi, FastSpring, Klarna, Komoju, Plug, Satispay, Versapay, Zuora).
+exclude:
+  checkout_session:
+    basis-theory: /3ds/sessions are 3-D Secure authentication sessions
+    blackbaud: /sessions are school terms
+    brushfire: /events/{id}/sessions are event time slots
+    due: /kyc/sessions are identity-verification sessions
+    eci-solutions: /connections/sessions are OAuth connection sessions
+    lightspark: /auth/sessions are login sessions
+    lightspeed: /users/{id}/sessions are login sessions
+    method-financial: /elements/sessions are account-linking widget sessions
+    orange-business: /sessions are network quality-of-service sessions
+    payrix: /sessions are API login sessions
+    rainforest: /sessions are API session keys
+    sponge: /mpp/sessions are machine-payment protocol sessions, not hosted checkout
+    uphold: /kyc-sharing/sessions are identity sessions
+    virto-commerce: /security/users/{id}/sessions are login sessions
+    vtex: /api/sessions are storefront browsing sessions
+    zero-hash: /sessions are API auth sessions
+
+# One company, several catalog listings (found by scripts/duplicates.py, confirmed by hand).
+duplicates:
+  method-financial: [methodfi]
+  finix: [finix-payments]
+  billie: [billieio]
+  mesh: [mesh-connect]
+  m0: [m-0]
+  lootrush: [loot-rush-games]
+  mystars: [mystars-faas-fulfilment-api]
+  later: [mavrck]
+
+# Different companies publishing ONE specification: the UK Open Banking standard, republished
+# byte-identical by each bank. Every bank is an adopter with its own crosswalk; the
+# vocabulary counts once, because it was written once.
+shared_specs:
+  open-banking-uk: [aib-group-uk, bank-of-ireland-uk, bank-of-scotland, coventry-building-society,
+                    first-direct, gb-bank, halifax, lloyds-banking-group, metro-bank, mettle,
+                    monument-bank, santander-uk, secure-trust-bank, shawbrook-bank,
+                    skipton-building-society, starling-bank, tsb-bank, virgin-money-uk, chase-uk,
+                    coutts, cynergy-bank, hampden-and-co, investec, kroo, tandem-bank]
+  natwest: [cashplus]
+  nationwide-building-society: [weatherbys-bank]

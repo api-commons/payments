@@ -1,0 +1,22 @@
+provider: justt
+apis_io: https://apis.io/providers/justt/
+context: payments
+generated: '2026-11-10'
+concepts:
+  dispute:
+    path_segment:
+    - chargebacks
+    properties:
+      status: status
+      id: id
+      reason:
+      - reasonCode
+      - reason
+      amount: amount
+      payment_id: transactionId
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/justt-rest-api-openapi-original.json#GET /chargebacks
+    - openapi/_original/justt-rest-api-openapi-original.json#GET /chargebacks/{id}
+    - openapi/_original/justt-rest-api-openapi-original.json#PATCH /chargebacks/{id}

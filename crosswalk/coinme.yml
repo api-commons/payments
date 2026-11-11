@@ -1,0 +1,19 @@
+provider: coinme
+apis_io: https://apis.io/providers/coinme/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties:
+      id: paymentMethodId
+      type: type
+      created_at: createdAt
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/coinme-caas-openapi.json#DELETE /paymentmethods/{paymentMethodId}
+    - openapi/_original/coinme-caas-openapi.json#GET /paymentmethods
+    - openapi/_original/coinme-caas-openapi.json#GET /paymentmethods/{paymentMethodId}
+    - openapi/_original/coinme-caas-openapi.json#POST /paymentmethods

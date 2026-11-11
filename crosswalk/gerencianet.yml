@@ -1,0 +1,22 @@
+provider: gerencianet
+apis_io: https://apis.io/providers/gerencianet/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - charges
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/efi-cobrancas-openapi.yml#GET /charge/{id}
+    - openapi/_original/efi-cobrancas-openapi.yml#GET /charges
+    - openapi/_original/efi-cobrancas-openapi.yml#POST /charge
+  refund:
+    path_segment:
+    - refund
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/efi-cobrancas-openapi.yml#POST /charge/card/{id}/refund

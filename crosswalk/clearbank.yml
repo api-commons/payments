@@ -1,0 +1,14 @@
+provider: clearbank
+apis_io: https://apis.io/providers/clearbank/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      currency: currencyCode
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/clearbank-mccy-payments-v1.json#DELETE /v1/mccy/payments/{batchId}
+    - openapi/_original/clearbank-mccy-payments-v1.json#POST /v1/mccy/payments

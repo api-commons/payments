@@ -1,0 +1,61 @@
+provider: payabli
+apis_io: https://apis.io/providers/payabli/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: refundId
+      amount:
+      - totalAmount
+      - amount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/payabli-api-reference-openapi.json#POST /MoneyIn/refund/{transId}
+    - openapi/_original/payabli-api-reference-openapi.json#POST /v2/MoneyIn/refund/{transId}
+  customer:
+    path_segment:
+    - customer
+    - customers
+    properties:
+      id: customerId
+      email:
+      - Email
+      - email
+      created_at:
+      - Created
+      - createdAt
+      phone:
+      - Phone
+      - phone
+      address:
+      - Address
+      - address
+      status:
+      - State
+      - state
+      updated_at: LastUpdated
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/payabli-api-reference-openapi.json#DELETE /Customer/{customerId}
+    - openapi/_original/payabli-api-reference-openapi.json#GET /Customer/{customerId}
+    - openapi/_original/payabli-api-reference-openapi.json#GET /Query/customers/{entry}
+    - openapi/_original/payabli-api-reference-openapi.json#PUT /Customer/{customerId}
+  payout:
+    path_segment:
+    - settlements
+    - payouts
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/payabli-api-reference-openapi.json#GET /Query/payouts/{entry}
+    - openapi/_original/payabli-api-reference-openapi.json#GET /Query/settlements/{entry}
+  dispute:
+    path_segment:
+    - chargebacks
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/payabli-api-reference-openapi.json#GET /Query/chargebacks/{entry}

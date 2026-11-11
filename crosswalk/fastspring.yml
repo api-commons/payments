@@ -1,0 +1,21 @@
+provider: fastspring
+apis_io: https://apis.io/providers/fastspring/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - sessions
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/fastspring-openapi.yml#GET /sessions/{session_id}
+    - openapi/_original/fastspring-openapi.yml#PATCH /sessions/{session_id}
+    - openapi/_original/fastspring-openapi.yml#POST /sessions
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/fastspring-openapi.yml#GET /sessions/{session_id}/payment-methods

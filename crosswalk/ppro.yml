@@ -1,0 +1,51 @@
+provider: ppro
+apis_io: https://apis.io/providers/ppro/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties:
+      amount: amount
+      payment_method_id: paymentMethod
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/ppro-payment-agreements-openapi.yml#POST /v1/payment-agreements/{agreementId}/authorizations
+    - openapi/_original/ppro-payment-agreements.json#POST /v1/payment-agreements/{agreementId}/authorizations
+    - openapi/_original/ppro-payment-charges-openapi.yml#GET /v1/payment-charges/{paymentChargeId}/authorizations
+    - openapi/_original/ppro-payment-charges-openapi.yml#GET /v1/payment-charges/{paymentChargeId}/authorizations/{authorizationId}
+    - openapi/_original/ppro-payment-charges-openapi.yml#POST /v1/payment-charges/{paymentChargeId}/authorizations
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      amount: amount
+      reason: refundReason
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/ppro-payment-charges-openapi.yml#GET /v1/payment-charges/{paymentChargeId}/refunds
+    - openapi/_original/ppro-payment-charges-openapi.yml#GET /v1/payment-charges/{paymentChargeId}/refunds/{refundId}
+    - openapi/_original/ppro-payment-charges-openapi.yml#POST /v1/payment-charges/{paymentChargeId}/refunds
+    - openapi/_original/ppro-payment-charges.json#GET /v1/payment-charges/{paymentChargeId}/refunds
+    - openapi/_original/ppro-payment-charges.json#GET /v1/payment-charges/{paymentChargeId}/refunds/{refundId}
+  dispute:
+    path_segment:
+    - chargebacks
+    - disputes
+    properties:
+      status: status
+      created_at: createdAt
+      id:
+      - id
+      - disputeId
+      reason: reason
+      amount: amount
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/ppro-chargebacks-openapi.yml#GET /v1/chargebacks
+    - openapi/_original/ppro-chargebacks-openapi.yml#GET /v1/chargebacks/{id}
+    - openapi/_original/ppro-chargebacks.json#GET /v1/chargebacks
+    - openapi/_original/ppro-chargebacks.json#GET /v1/chargebacks/{id}
+    - openapi/_original/ppro-risk-management-2.json#GET /v1/disputes

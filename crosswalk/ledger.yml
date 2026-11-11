@@ -1,0 +1,18 @@
+provider: ledger
+apis_io: https://apis.io/providers/ledger/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      id: id
+      status: state
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/ledger-enterprise-vault-openapi-original.yml#GET /settlements
+    - openapi/_original/ledger-enterprise-vault-openapi-original.yml#GET /settlements/{settlement_id}
+    - openapi/_original/ledger-enterprise-vault-openapi-original.yml#POST /settlements
+    - openapi/_original/ledger-enterprise-vault-openapi.yml#GET /settlements
+    - openapi/_original/ledger-enterprise-vault-openapi.yml#GET /settlements/{settlement_id}

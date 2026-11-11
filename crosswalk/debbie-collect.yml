@@ -1,0 +1,21 @@
+provider: debbie-collect
+apis_io: https://apis.io/providers/debbie-collect/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/debbie-client-api-openapi.yml#POST /cases/{caseId}/payments
+  customer:
+    path_segment:
+    - customers
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/debbie-platform-api-openapi.yml#GET /customers/{customerId}
+    - openapi/_original/debbie-platform-api-openapi.yml#PATCH /customers/{customerId}
+    - openapi/_original/debbie-platform-api-openapi.yml#POST /customers

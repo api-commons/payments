@@ -1,0 +1,13 @@
+provider: ticketspice
+apis_io: https://apis.io/providers/ticketspice/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ticketspice-openapi.yml#GET /search/customers
+    - openapi/_original/ticketspice-openapi.yml#GET /search/customers/{id}

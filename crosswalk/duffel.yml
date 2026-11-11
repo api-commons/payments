@@ -1,0 +1,14 @@
+provider: duffel
+apis_io: https://apis.io/providers/duffel/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/duffel-openapi.yml#GET /air/payments
+    - openapi/_original/duffel-openapi.yml#GET /air/payments/{id}
+    - openapi/_original/duffel-openapi.yml#POST /air/payments

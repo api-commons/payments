@@ -1,0 +1,39 @@
+provider: hilt-so
+apis_io: https://apis.io/providers/hilt-so/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment-intents
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at:
+      - createdAt
+      - created_at
+      description: note
+      external_id: idempotencyKey
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/hilt-so-api-openapi.json#GET /v1/pay-me/payment-intents/{public_id}
+    - openapi/_original/hilt-so-api-openapi.json#GET /v1/pay-me/payments/{public_id}
+    - openapi/_original/hilt-so-api-openapi.json#GET /v1/payments/{payment_id}
+    - openapi/_original/hilt-so-api-openapi.json#GET /v1/products/{product_id}/payments
+    - openapi/_original/hilt-so-api-openapi.json#POST /v1/pay-me/payments
+  checkout_session:
+    path_segment:
+    - sessions
+    - checkouts
+    properties:
+      created_at: createdAt
+      description: note
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/hilt-so-api-openapi.json#GET /v1/testing/sessions
+    - openapi/_original/hilt-so-api-openapi.json#GET /v1/testing/sessions/{session_id}
+    - openapi/_original/hilt-so-api-openapi.json#POST /v1/pay-me/{x_handle}/checkouts
+    - openapi/_original/hilt-so-api-openapi.json#POST /v1/testing/sessions
+    - openapi/_original/hilt-so-openapi.yml#GET /v1/testing/sessions

@@ -1,0 +1,73 @@
+provider: moneris
+apis_io: https://apis.io/providers/moneris/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: paymentStatus
+      amount: amount
+      created_at: createdAt
+      payment_method_id: paymentMethod
+      updated_at: modifiedAt
+      customer_id:
+      - customerId
+      - customerReference
+      external_id: idempotencyKey
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/moneris-unified-api-openapi.json#GET /payments
+    - openapi/_original/moneris-unified-api-openapi.json#GET /payments/{payment-id}
+    - openapi/_original/moneris-unified-api-openapi.json#POST /payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refundId
+      created_at: createdAt
+      reason: reason
+      payment_id:
+      - payment
+      - paymentId
+      updated_at: modifiedAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/moneris-unified-api-openapi.json#GET /refunds
+    - openapi/_original/moneris-unified-api-openapi.json#GET /refunds/{refund-id}
+    - openapi/_original/moneris-unified-api-openapi.json#POST /refunds
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: paymentMethodId
+      created_at: createdAt
+      updated_at: modifiedAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/moneris-unified-api-openapi.json#DELETE /payment-methods/{payment-method-id}
+    - openapi/_original/moneris-unified-api-openapi.json#GET /payment-methods
+    - openapi/_original/moneris-unified-api-openapi.json#GET /payment-methods/{payment-method-id}
+    - openapi/_original/moneris-unified-api-openapi.json#POST /payment-methods
+    - openapi/_original/moneris-unified-api-openapi.json#PUT /payment-methods/{payment-method-id}
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customerId
+      name: firstName
+      email: email
+      created_at: createdAt
+      phone: phoneNumber
+      address: address
+      last_name: lastName
+      updated_at: modifiedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/moneris-unified-api-openapi.json#DELETE /customers/{customer-id}
+    - openapi/_original/moneris-unified-api-openapi.json#GET /customers
+    - openapi/_original/moneris-unified-api-openapi.json#GET /customers/{customer-id}
+    - openapi/_original/moneris-unified-api-openapi.json#POST /customers
+    - openapi/_original/moneris-unified-api-openapi.json#PUT /customers/{customer-id}

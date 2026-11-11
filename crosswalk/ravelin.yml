@@ -1,0 +1,50 @@
+provider: ravelin
+apis_io: https://apis.io/providers/ravelin/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      created_at: timestamp
+      customer_id:
+      - customerId
+      - customer
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/ravelin-merchant-api-openapi.yml#POST /v2/checkout
+  refund:
+    path_segment:
+    - refund
+    properties:
+      created_at: timestamp
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/ravelin-merchant-api-openapi.yml#POST /v2/refund
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: customerId
+      created_at: timestamp
+      metadata: custom
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/ravelin-merchant-api-openapi.yml#POST /v2/customer
+  payout:
+    path_segment:
+    - payout
+    properties:
+      created_at: timestamp
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/ravelin-merchant-api-openapi.yml#POST /v2/payout
+  dispute:
+    path_segment:
+    - dispute
+    properties:
+      created_at: timestamp
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/ravelin-merchant-api-openapi.yml#POST /v2/dispute

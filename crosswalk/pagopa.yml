@@ -1,0 +1,25 @@
+provider: pagopa
+apis_io: https://apis.io/providers/pagopa/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/fdr_organization.json#GET /organizations/{organizationId}/fdrs/{fdr}/revisions/{revision}/psps/{pspId}/payments
+    - openapi/_original/fdr_psp.json#GET /psps/{pspId}/created/fdrs/{fdr}/organizations/{organizationId}/payments
+    - openapi/_original/fdr_psp.json#GET /psps/{pspId}/published/fdrs/{fdr}/revisions/{revision}/organizations/{organizationId}/payments
+    - openapi/_original/pagopa-fdr-organizations-openapi.yml#GET /organizations/{organizationId}/fdrs/{fdr}/revisions/{revision}/psps/{pspId}/payments
+    - openapi/_original/pagopa-fdr-psp-openapi.yml#GET /psps/{pspId}/created/fdrs/{fdr}/organizations/{organizationId}/payments
+  customer:
+    path_segment:
+    - payer
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/pagopa-srtp-activation-openapi.yml#GET /activations/payer
+    - openapi/_original/srtp-activation.yaml#GET /activations/payer

@@ -1,0 +1,23 @@
+provider: bank-of-america
+apis_io: https://apis.io/providers/bank-of-america/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      description: memo
+      updated_at: updatedAt
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bank-of-america-cashpro-api-openapi.yml#DELETE /payments/{paymentId}
+    - openapi/_original/bank-of-america-cashpro-api-openapi.yml#GET /payments
+    - openapi/_original/bank-of-america-cashpro-api-openapi.yml#GET /payments/{paymentId}
+    - openapi/_original/bank-of-america-cashpro-api-openapi.yml#POST /payments

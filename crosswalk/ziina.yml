@@ -1,0 +1,16 @@
+provider: ziina
+apis_io: https://apis.io/providers/ziina/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      currency: currency_code
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/ziina-openapi.yml#GET /refund/{id}
+    - openapi/_original/ziina-openapi.yml#POST /refund

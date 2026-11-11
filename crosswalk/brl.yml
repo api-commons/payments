@@ -1,0 +1,21 @@
+provider: brl
+apis_io: https://apis.io/providers/brl/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - withdrawals
+    properties:
+      id: id
+      status: state
+      amount: amount
+      created_at: created-at
+      method: method
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/brl-openapi-original.json#GET /api/v0/assets/{asset}/withdrawals
+    - openapi/_original/brl-openapi-original.json#GET /api/v0/assets/{asset}/withdrawals/{id}
+    - openapi/_original/brl-openapi-original.json#GET /api/v0/withdrawals
+    - openapi/_original/brl-openapi-original.json#GET /api/v0/withdrawals/{id}
+    - openapi/_original/brl-openapi-original.json#GET /api/v1/accounts/{account-id}/withdrawals

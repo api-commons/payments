@@ -1,0 +1,66 @@
+provider: tap-payments
+apis_io: https://apis.io/providers/tap-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+      payment_method_id: source
+      description: description
+      metadata: metadata
+      customer_id: customer
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/tap-payments-openapi.yml#GET /charges
+    - openapi/_original/tap-payments-openapi.yml#GET /charges/{charge_id}
+    - openapi/_original/tap-payments-openapi.yml#POST /charges
+    - openapi/_original/tap-payments-openapi.yml#PUT /charges/{charge_id}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amount
+      status: status
+      currency: currency
+      reason: reason
+      payment_id: charge_id
+      description: description
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/tap-payments-openapi.yml#GET /refunds
+    - openapi/_original/tap-payments-openapi.yml#GET /refunds/{refund_id}
+    - openapi/_original/tap-payments-openapi.yml#POST /refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      phone: phone
+      last_name: last_name
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/tap-payments-openapi.yml#DELETE /customers/{customer_id}
+    - openapi/_original/tap-payments-openapi.yml#GET /customers
+    - openapi/_original/tap-payments-openapi.yml#GET /customers/{customer_id}
+    - openapi/_original/tap-payments-openapi.yml#POST /customers
+    - openapi/_original/tap-payments-openapi.yml#PUT /customers/{customer_id}
+  payout:
+    path_segment:
+    - payouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/tap-payments-openapi.yml#GET /payouts
+    - openapi/_original/tap-payments-openapi.yml#GET /payouts/{payout_id}

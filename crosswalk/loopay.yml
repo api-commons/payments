@@ -1,0 +1,19 @@
+provider: loopay
+apis_io: https://apis.io/providers/loopay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - payouts
+    - payout
+    properties:
+      id: id
+      status: state
+      amount: Amount
+      destination: bankAccount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/loopay-openapi-original.json#GET /affiliates/payouts
+    - openapi/_original/loopay-openapi-original.json#GET /payout/{id}
+    - openapi/_original/loopay-openapi-original.json#GET /payouts

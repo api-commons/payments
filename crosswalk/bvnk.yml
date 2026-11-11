@@ -1,0 +1,18 @@
+provider: bvnk
+apis_io: https://apis.io/providers/bvnk/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: uuid
+      status: status
+      created_at: dateCreated
+      updated_at: lastUpdated
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/bvnk-api-endpoints-openapi-original.yml#GET /api/v2/channel/payment
+    - openapi/_original/bvnk-api-endpoints-openapi-original.yml#GET /api/v2/channel/payment/{uuid}

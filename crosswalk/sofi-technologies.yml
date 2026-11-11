@@ -1,0 +1,12 @@
+provider: sofi-technologies
+apis_io: https://apis.io/providers/sofi-technologies/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - settlement
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/sofi-technologies-events-api-openapi.json#POST /Settlement

@@ -1,0 +1,27 @@
+provider: wingspan
+apis_io: https://apis.io/providers/wingspan/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/wingspan-payments-openapi-original.yml#GET /payments
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      status: status
+      created_at: createdAt
+      currency: currency
+      description: description
+      updated_at: updatedAt
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/wingspan-payments-openapi-original.yml#POST /payments/invoice/{invoice_id}/refund

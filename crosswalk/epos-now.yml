@@ -1,0 +1,19 @@
+provider: epos-now
+apis_io: https://apis.io/providers/epos-now/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: Id
+      email: EmailAddress
+      phone: PhoneNumber
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/epos-now-openapi.yml#DELETE /Customer/{Id}
+    - openapi/_original/epos-now-openapi.yml#GET /Customer
+    - openapi/_original/epos-now-openapi.yml#GET /Customer/{Id}
+    - openapi/_original/epos-now-openapi.yml#POST /Customer
+    - openapi/_original/epos-now-openapi.yml#PUT /Customer/{Id}

@@ -1,0 +1,52 @@
+provider: drippay
+apis_io: https://apis.io/providers/drippay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      customer_id:
+      - customerId
+      - customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/drippay-openapi-original.json#GET /v1/charges
+    - openapi/_original/drippay-openapi-original.json#GET /v1/charges/{id}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      reason:
+      - refundReason
+      - reason
+      description: note
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/drippay-openapi-original.json#POST /v1/charges/{id}/refund
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: createdAt
+      status: status
+      updated_at: updatedAt
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/drippay-openapi-original.json#GET /v1/customers
+    - openapi/_original/drippay-openapi-original.json#GET /v1/customers/{id}
+    - openapi/_original/drippay-openapi-original.json#GET /v1/drift/customer
+    - openapi/_original/drippay-openapi-original.json#GET /v1/integrations/stripe/customers
+    - openapi/_original/drippay-openapi-original.json#PATCH /v1/customers/{id}

@@ -1,0 +1,33 @@
+provider: avaloq
+apis_io: https://apis.io/providers/avaloq/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/avaloq-payments-openapi.yml#GET /v1/payments
+    - openapi/_original/avaloq-payments-openapi.yml#GET /v1/payments/{paymentId}
+    - openapi/_original/avaloq-payments-openapi.yml#POST /v1/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: firstName
+      email: email
+      phone: phone
+      status: status
+      last_name: lastName
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/avaloq-banking-openapi.yml#GET /v1/customers
+    - openapi/_original/avaloq-banking-openapi.yml#GET /v1/customers/{customerId}
+    - openapi/_original/avaloq-banking-openapi.yml#POST /v1/customers

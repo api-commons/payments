@@ -1,0 +1,86 @@
+provider: fis
+apis_io: https://apis.io/providers/fis/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - paymentId
+      status: status
+      amount:
+      - totalAmount
+      - amount
+      created_at: createdAt
+      currency: currency
+      payment_method_id: paymentMethod
+      description: memo
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#DELETE /v2/accounting/bills/payments/{id}
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#DELETE /v2/accounting/invoices/payments/{id}
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /bills/payments
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /invoices/payments
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/accounting/bills/payments
+  refund:
+    path_segment:
+    - refunds
+    - credits
+    properties:
+      id: id
+      amount: totalAmount
+      status: status
+      currency: currency
+      description: memo
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /refunds
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /reports/credits
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/accounting/refunds
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/visualizations/credits
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /refunds
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties:
+      id: id
+      type: type
+      status: status
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/accounting/paymentMethods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      email: emailAddress
+      phone: phone
+      address:
+      - addresses
+      - billingAddress
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /customers
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/accounting/customers
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /customers
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#POST /v2/accounting/customers
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#PUT /customers/{id}
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: createdDate
+      id: id
+      reason: reason
+      amount: totalAmount
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /commerce/disputes
+    - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /v2/commerce/disputes

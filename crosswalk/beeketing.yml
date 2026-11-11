@@ -1,0 +1,68 @@
+provider: beeketing
+apis_io: https://apis.io/providers/beeketing/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#POST /admin/balance/charge.json
+    - openapi/_original/beeketing-shopbase-admin-swagger.json#POST /admin/balance/charge.json
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties:
+      id: id
+      created_at: created_at
+      customer_id: customer
+      currency: currency
+      description: note
+      updated_at: updated_at
+      line_items: line_items
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#GET /admin/checkouts.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#GET /admin/checkouts/{checkout_id:\\d+}.json
+    - openapi/_original/beeketing-shopbase-admin-swagger.json#GET /admin/checkouts.json
+    - openapi/_original/beeketing-shopbase-admin-swagger.json#GET /admin/checkouts/{checkout_id:\\d+}.json
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount: amount
+      created_at: created_at
+      currency: currency
+      description: note
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#GET /admin/orders/{order_id:[0-9]+}/refunds.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#GET /admin/orders/{order_id:[0-9]+}/refunds/{refund_id:[0-9]+}.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#POST /admin/balance/refund.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#POST /admin/orders/{order_id:[0-9]+}/refunds.json
+    - openapi/_original/beeketing-shopbase-admin-swagger.json#GET /admin/orders/{order_id:[0-9]+}/refunds.json
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      created_at: created_at
+      phone: phone
+      address: addresses
+      status: state
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#DELETE /admin/customers/{id:\\d+}.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#GET /admin/customers.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#GET /admin/customers/{id:\\d+}.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#POST /admin/customers.json
+    - openapi/_original/beeketing-shopbase-admin-openapi.json#PUT /admin/customers/{id:\\d+}.json

@@ -1,0 +1,29 @@
+provider: intuit
+apis_io: https://apis.io/providers/intuit/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: Id
+      metadata: MetaData
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/quickbooks-accounting.yml#GET /payment/{paymentId}
+    - openapi/_original/quickbooks-accounting.yml#POST /payment
+    - openapi/_original/quickbooks-accounting.yml#POST /payment/{paymentId}
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: Id
+      name: DisplayName
+      phone: Mobile
+      metadata: MetaData
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/quickbooks-accounting.yml#GET /customer/{customerId}
+    - openapi/_original/quickbooks-accounting.yml#POST /customer
+    - openapi/_original/quickbooks-accounting.yml#POST /customer/{customerId}

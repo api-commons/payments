@@ -1,0 +1,32 @@
+provider: spreedly
+apis_io: https://apis.io/providers/spreedly/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      created_at: created_at
+      payment_method_id: token
+      updated_at: updated_at
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/spreedly-api-v1.json#GET /payments/{payment_token}
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      type: payment_method_type
+      created_at: created_at
+      status:
+      - state
+      - status
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/spreedly-api-v1.json#GET /payment_methods
+    - openapi/_original/spreedly-api-v1.json#GET /payment_methods/{payment_method_token}
+    - openapi/_original/spreedly-api-v1.json#POST /payment_methods
+    - openapi/_original/spreedly-api-v1.json#PUT /payment_methods/{payment_method_token}

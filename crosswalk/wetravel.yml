@@ -1,0 +1,16 @@
+provider: wetravel
+apis_io: https://apis.io/providers/wetravel/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - payment_links
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/wetravel-partner-openapi.json#DELETE /payment_links/{uuid}
+    - openapi/_original/wetravel-partner-openapi.json#GET /payment_links
+    - openapi/_original/wetravel-partner-openapi.json#GET /payment_links/{uuid}
+    - openapi/_original/wetravel-partner-openapi.json#POST /payment_links
+    - openapi/_original/wetravel-partner-openapi.json#PUT /payment_links/{uuid}

@@ -1,0 +1,24 @@
+provider: lightspark
+apis_io: https://apis.io/providers/lightspark/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id: id
+      name: fullName
+      email: email
+      created_at: createdAt
+      phone: phoneNumber
+      address: address
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/lightspark-openapi.yml#DELETE /customers/{customerId}
+    - openapi/_original/lightspark-openapi.yml#GET /agents/me/customer
+    - openapi/_original/lightspark-openapi.yml#GET /customers
+    - openapi/_original/lightspark-openapi.yml#GET /customers/{customerId}
+    - openapi/_original/lightspark-openapi.yml#PATCH /agents/me/customer

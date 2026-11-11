@@ -1,0 +1,13 @@
+provider: howler
+apis_io: https://apis.io/providers/howler/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/howler-consumer-portal-openapi.yml#GET /cashless_tags/{cashless_tag_uid}/top_up/{top_up_order_id}/payments
+    - openapi/_original/howler-consumer-portal-openapi.yml#GET /tickets/{ticket_id}/top_up/{top_up_order_id}/payments

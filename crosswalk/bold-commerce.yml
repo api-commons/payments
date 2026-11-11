@@ -1,0 +1,29 @@
+provider: bold-commerce
+apis_io: https://apis.io/providers/bold-commerce/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      type: type
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bold-commerce-openapi.yml#GET /subscriptions/v1/shops/{shop_identifier}/subscriptions/{subscription_id}/payment_methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      created_at: created_at
+      phone: phone
+      address: addresses
+      last_name: last_name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/bold-commerce-openapi.yml#GET /subscriptions/v1/shops/{shop_identifier}/customers
+    - openapi/_original/bold-commerce-openapi.yml#GET /subscriptions/v1/shops/{shop_identifier}/customers/{customer_id}
+    - openapi/_original/bold-commerce-openapi.yml#PUT /subscriptions/v1/shops/{shop_identifier}/customers/{customer_id}

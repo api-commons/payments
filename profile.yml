@@ -1,0 +1,1494 @@
+context: payments
+name: Payments
+generated: '2026-11-10'
+version: 0.1.0-draft.20261110
+status: draft
+cohort:
+  tags:
+  - Payments
+  - Payment Gateway
+  - Payment Processing
+  - Card Payments
+  - Online Payments
+  - Merchant Services
+  - Acquiring
+  - Payment Orchestration
+  - Checkout
+  - Recurring Payments
+  - Embedded Payments
+  - Mobile Payments
+  providers_with_harvested_openapi: 692
+thresholds:
+  core: 0.5
+  extended: 0.2
+  min_providers: 3
+excluded:
+  checkout_session:
+    basis-theory: /3ds/sessions are 3-D Secure authentication sessions
+    blackbaud: /sessions are school terms
+    brushfire: /events/{id}/sessions are event time slots
+    due: /kyc/sessions are identity-verification sessions
+    eci-solutions: /connections/sessions are OAuth connection sessions
+    lightspark: /auth/sessions are login sessions
+    lightspeed: /users/{id}/sessions are login sessions
+    method-financial: /elements/sessions are account-linking widget sessions
+    orange-business: /sessions are network quality-of-service sessions
+    payrix: /sessions are API login sessions
+    rainforest: /sessions are API session keys
+    sponge: /mpp/sessions are machine-payment protocol sessions, not hosted checkout
+    uphold: /kyc-sharing/sessions are identity sessions
+    virto-commerce: /security/users/{id}/sessions are login sessions
+    vtex: /api/sessions are storefront browsing sessions
+    zero-hash: /sessions are API auth sessions
+duplicates:
+  method-financial:
+  - methodfi
+  finix:
+  - finix-payments
+  billie:
+  - billieio
+  mesh:
+  - mesh-connect
+  m0:
+  - m-0
+  lootrush:
+  - loot-rush-games
+  mystars:
+  - mystars-faas-fulfilment-api
+  later:
+  - mavrck
+shared_specs:
+  open-banking-uk:
+  - aib-group-uk
+  - bank-of-ireland-uk
+  - bank-of-scotland
+  - coventry-building-society
+  - first-direct
+  - gb-bank
+  - halifax
+  - lloyds-banking-group
+  - metro-bank
+  - mettle
+  - monument-bank
+  - santander-uk
+  - secure-trust-bank
+  - shawbrook-bank
+  - skipton-building-society
+  - starling-bank
+  - tsb-bank
+  - virgin-money-uk
+  - chase-uk
+  - coutts
+  - cynergy-bank
+  - hampden-and-co
+  - investec
+  - kroo
+  - tandem-bank
+  natwest:
+  - cashplus
+  nationwide-building-society:
+  - weatherbys-bank
+concepts:
+  payment:
+    segments_seen:
+      payments: 184
+      charges: 44
+      payment: 42
+      charge: 28
+      authorizations: 19
+      sales: 11
+      payment-intents: 7
+      payment_intents: 6
+      authorisations: 6
+      payment_orders: 1
+    providers_exposing: 281
+    providers_with_readable_schema: 264
+    operations:
+    - operation: POST collection
+      providers: 200
+      share: 0.712
+      tier: core
+    - operation: GET collection
+      providers: 190
+      share: 0.676
+      tier: core
+    - operation: GET item
+      providers: 183
+      share: 0.651
+      tier: core
+    - operation: UPDATE item
+      providers: 60
+      share: 0.214
+      tier: extended
+    - operation: DELETE item
+      providers: 28
+      share: 0.1
+      tier: long-tail
+    - operation: POST item
+      providers: 15
+      share: 0.053
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 4
+      share: 0.014
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 4
+      share: 0.014
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 194
+      share: 0.735
+      type: string
+      spellings:
+      - id
+      - paymentId
+      - payment_id
+      - transactionId
+      - transaction_id
+      - reference_id
+      - uuid
+      - _id
+    - name: status
+      tier: core
+      providers: 179
+      share: 0.678
+      type: string
+      spellings:
+      - status
+      - state
+      - payment_status
+      - paymentStatus
+      - result
+      - Status
+    - name: amount
+      tier: core
+      providers: 163
+      share: 0.617
+      type: number
+      spellings:
+      - amount
+      - totalAmount
+      - total_amount
+      - Amount
+      - amount_cents
+    - name: created_at
+      tier: core
+      providers: 133
+      share: 0.504
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - createdDate
+      - created_date
+      - timestamp
+      - createdOn
+      - dateCreated
+    - name: currency
+      tier: extended
+      providers: 116
+      share: 0.439
+      type: string
+      spellings:
+      - currency
+      - currencyCode
+      - currency_code
+      - Currency
+    - name: payment_method_id
+      tier: extended
+      providers: 84
+      share: 0.318
+      type: string
+      spellings:
+      - payment_method
+      - paymentMethod
+      - source
+      - token
+      - payment_method_id
+      - paymentMethodId
+      - card_id
+      - paymentSource
+    - name: description
+      tier: extended
+      providers: 78
+      share: 0.295
+      type: string
+      spellings:
+      - description
+      - memo
+      - note
+      - statement_descriptor
+      - Description
+      - narrative
+      - statementDescriptor
+    - name: updated_at
+      tier: extended
+      providers: 73
+      share: 0.277
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - modified_at
+      - updated
+      - lastUpdated
+      - last_updated
+      - modified_date
+      - updated_time
+    - name: metadata
+      tier: extended
+      providers: 70
+      share: 0.265
+      type: object
+      spellings:
+      - metadata
+      - attributes
+      - additionalData
+      - metaData
+      - custom_fields
+      - extra
+      - additional_data
+      - MetaData
+    - name: customer_id
+      tier: extended
+      providers: 68
+      share: 0.258
+      type: string
+      spellings:
+      - customer
+      - customer_id
+      - customerId
+      - payer
+      - buyerId
+      - payerId
+      - shopperReference
+      - customerID
+    - name: external_id
+      tier: extended
+      providers: 65
+      share: 0.246
+      type: string
+      spellings:
+      - reference
+      - idempotency_key
+      - merchantReference
+      - externalReference
+      - external_id
+      - external_reference
+      - orderReference
+      - Reference
+    long_tail_count: 2921
+    long_tail_sample:
+    - order_id
+    - type
+    - failure_reason
+    - payment_type
+    - return_url
+    - method
+    - fee
+    - refunded_amount
+    - payment_date
+    - captured
+    - card
+    - expires_at
+    - notes
+    - channel
+    - date
+    - refunds
+    - billing_address
+    - merchant_id
+    - payment_amount
+    - email
+    - account_id
+    - items
+    - payment_reference
+    - transaction_type
+    - user_id
+    - due_date
+    - exchange_rate
+    - name
+    - relationships
+    - line_items
+    - shipping_address
+    - subscription_id
+    - terminal_id
+    - authorization
+    - code
+    - customer_name
+    - error
+    - number
+    - paid_at
+    - recipient
+  checkout_session:
+    segments_seen:
+      checkout: 29
+      checkouts: 23
+      sessions: 22
+      payment-links: 16
+      checkout-sessions: 5
+      payment_links: 5
+      paymentlinks: 2
+      hosted_pages: 1
+    providers_exposing: 82
+    providers_with_readable_schema: 74
+    operations:
+    - operation: POST collection
+      providers: 71
+      share: 0.866
+      tier: core
+    - operation: GET item
+      providers: 55
+      share: 0.671
+      tier: core
+    - operation: GET collection
+      providers: 33
+      share: 0.402
+      tier: extended
+    - operation: UPDATE item
+      providers: 23
+      share: 0.28
+      tier: extended
+    - operation: DELETE item
+      providers: 19
+      share: 0.232
+      tier: extended
+    - operation: POST item
+      providers: 5
+      share: 0.061
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 2
+      share: 0.024
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.012
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 54
+      share: 0.73
+      type: string
+      spellings:
+      - id
+      - reference_id
+      - checkoutSessionId
+      - transaction_id
+      - _id
+      - transactionId
+      - transactionID
+      - referenceId
+    - name: status
+      tier: core
+      providers: 43
+      share: 0.581
+      type: string
+      spellings:
+      - status
+      - state
+      - paymentStatus
+      - payment_status
+    - name: created_at
+      tier: extended
+      providers: 35
+      share: 0.473
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - timestamp
+      - created_time
+      - createdTime
+      - createdOn
+      - created_on
+    - name: customer_id
+      tier: extended
+      providers: 32
+      share: 0.432
+      type: object
+      spellings:
+      - customer
+      - customerId
+      - customer_id
+      - consumer
+      - buyer
+      - payer
+    - name: currency
+      tier: extended
+      providers: 29
+      share: 0.392
+      type: string
+      spellings:
+      - currency
+      - currency_code
+    - name: amount
+      tier: extended
+      providers: 28
+      share: 0.378
+      type: integer
+      spellings:
+      - amount
+      - totalAmount
+      - total_amount
+      - amount_cents
+      - amountInCents
+    - name: expires_at
+      tier: extended
+      providers: 26
+      share: 0.351
+      type: string
+      spellings:
+      - expires_at
+      - expiresAt
+      - expires
+      - expiry
+      - expiration_date
+      - expiry_time
+    - name: description
+      tier: extended
+      providers: 25
+      share: 0.338
+      type: string
+      spellings:
+      - description
+      - note
+      - statement_descriptor
+      - statementDescriptor
+    - name: mode
+      tier: extended
+      providers: 25
+      share: 0.338
+      type: string
+      spellings:
+      - type
+      - mode
+      - payment_type
+      - intent
+    - name: metadata
+      tier: extended
+      providers: 23
+      share: 0.311
+      type: object
+      spellings:
+      - metadata
+      - custom_fields
+      - attributes
+      - additionalData
+      - additional_data
+    - name: success_url
+      tier: extended
+      providers: 23
+      share: 0.311
+      type: string
+      spellings:
+      - return_url
+      - returnUrl
+      - success_url
+      - successUrl
+      - merchant_urls
+    - name: updated_at
+      tier: extended
+      providers: 21
+      share: 0.284
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - updated_time
+      - updatedTime
+      - modified_at
+    - name: url
+      tier: extended
+      providers: 20
+      share: 0.27
+      type: string
+      spellings:
+      - redirect_url
+      - checkout_url
+      - link
+      - redirectUrl
+      - payment_url
+      - checkoutUrl
+    - name: line_items
+      tier: extended
+      providers: 19
+      share: 0.257
+      type: array
+      spellings:
+      - items
+      - line_items
+      - lineItems
+      - products
+    long_tail_count: 858
+    long_tail_sample:
+    - external_id
+    - order_id
+    - billing_address
+    - name
+    - cancel_url
+    - token
+    - email
+    - payment_link
+    - account_id
+    - locale
+    - merchant_id
+    - order
+    - payment
+    - payment_intent_id
+    - payment_methods
+    - shipping_address
+    - tax_amount
+    - checkout_id
+    - client_secret
+    - code
+    - country
+    - customer_email
+    - payments
+    - product_id
+    - session
+    - session_id
+    - shipping
+    - user_id
+    - access_token
+    - action
+    - active
+    - allowed_payment_methods
+    - checkout_options
+    - company
+    - customer_details
+    - delivery_address
+    - expires_in
+    - location_id
+    - merchant
+    - merchant_name
+  refund:
+    segments_seen:
+      refund: 121
+      refunds: 110
+      credits: 15
+      reversals: 12
+    providers_exposing: 213
+    providers_with_readable_schema: 200
+    operations:
+    - operation: POST collection
+      providers: 190
+      share: 0.892
+      tier: core
+    - operation: GET item
+      providers: 85
+      share: 0.399
+      tier: extended
+    - operation: GET collection
+      providers: 83
+      share: 0.39
+      tier: extended
+    - operation: UPDATE item
+      providers: 12
+      share: 0.056
+      tier: long-tail
+    - operation: POST item
+      providers: 10
+      share: 0.047
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 10
+      share: 0.047
+      tier: long-tail
+    - operation: DELETE item
+      providers: 5
+      share: 0.023
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 1
+      share: 0.005
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 148
+      share: 0.74
+      type: string
+      spellings:
+      - id
+      - refundId
+      - transactionId
+      - refund_id
+      - transaction_id
+      - reference_id
+      - uuid
+      - _id
+    - name: amount
+      tier: core
+      providers: 140
+      share: 0.7
+      type: number
+      spellings:
+      - amount
+      - totalAmount
+      - total_amount
+      - amount_cents
+      - Amount
+      - amountInCents
+      - amount_in_cents
+    - name: status
+      tier: core
+      providers: 125
+      share: 0.625
+      type: string
+      spellings:
+      - status
+      - state
+      - result
+      - payment_status
+      - Status
+    - name: created_at
+      tier: core
+      providers: 101
+      share: 0.505
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - timestamp
+      - created_date
+      - createdOn
+      - dateCreated
+      - creation_date
+    - name: currency
+      tier: extended
+      providers: 77
+      share: 0.385
+      type: string
+      spellings:
+      - currency
+      - currency_code
+      - currencyCode
+      - currency_iso_code
+      - Currency
+    - name: reason
+      tier: extended
+      providers: 64
+      share: 0.32
+      type: string
+      spellings:
+      - reason
+      - refundReason
+      - reason_code
+      - comment
+      - RefundReason
+      - reasonCode
+    - name: payment_id
+      tier: extended
+      providers: 56
+      share: 0.28
+      type: string
+      spellings:
+      - payment_id
+      - paymentId
+      - transaction
+      - payment
+      - originalTransactionId
+      - charge
+      - chargeId
+      - charge_id
+    - name: description
+      tier: extended
+      providers: 46
+      share: 0.23
+      type: string
+      spellings:
+      - description
+      - note
+      - memo
+      - statement_descriptor
+      - remarks
+      - StatementDescriptor
+    - name: updated_at
+      tier: extended
+      providers: 46
+      share: 0.23
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - updated
+      - modified_at
+      - update_time
+      - updated_time
+      - modifiedAt
+      - updated_date
+    - name: metadata
+      tier: extended
+      providers: 42
+      share: 0.21
+      type: object
+      spellings:
+      - metadata
+      - attributes
+      - custom_fields
+      - additionalData
+      - metaData
+      - extra
+      - customFields
+      - additional_data
+    long_tail_count: 1616
+    long_tail_sample:
+    - external_id
+    - type
+    - order_id
+    - customer
+    - refund_amount
+    - customer_id
+    - order
+    - request_id
+    - merchant_id
+    - notes
+    - payment_method
+    - line_items
+    - method
+    - invoice_number
+    - items
+    - refunded_at
+    - source
+    - account_id
+    - amount_refunded
+    - fee
+    - payments
+    - refunded_amount
+    - token
+    - transaction_type
+    - card
+    - created_by
+    - expires_at
+    - paid
+    - paid_at
+    - refund_status
+    - code
+    - date
+    - due_date
+    - name
+    - refunded
+    - relationships
+    - response_code
+    - response_message
+    - signature
+    - tax_amount
+  payment_method:
+    segments_seen:
+      payment-methods: 40
+      payment_methods: 24
+      paymentmethods: 13
+      sources: 7
+      payment_sources: 3
+      payment_instruments: 2
+      instruments: 1
+    providers_exposing: 86
+    providers_with_readable_schema: 83
+    operations:
+    - operation: GET collection
+      providers: 75
+      share: 0.872
+      tier: core
+    - operation: POST collection
+      providers: 39
+      share: 0.453
+      tier: extended
+    - operation: GET item
+      providers: 35
+      share: 0.407
+      tier: extended
+    - operation: DELETE item
+      providers: 27
+      share: 0.314
+      tier: extended
+    - operation: UPDATE item
+      providers: 18
+      share: 0.209
+      tier: extended
+    - operation: UPDATE collection
+      providers: 4
+      share: 0.047
+      tier: long-tail
+    - operation: POST item
+      providers: 2
+      share: 0.023
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 1
+      share: 0.012
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 56
+      share: 0.675
+      type: string
+      spellings:
+      - id
+      - paymentMethodId
+      - payment_method_id
+      - Id
+      - reference_id
+      - uuid
+      - paymentMethodID
+      - _id
+    - name: type
+      tier: core
+      providers: 46
+      share: 0.554
+      type: string
+      spellings:
+      - type
+      - payment_method_type
+      - paymentMethodType
+      - method
+      - scheme
+    - name: created_at
+      tier: extended
+      providers: 32
+      share: 0.386
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created_date
+      - created
+      - created_time
+      - date_created
+      - createdOn
+    - name: status
+      tier: extended
+      providers: 24
+      share: 0.289
+      type: string
+      spellings:
+      - status
+      - state
+    - name: updated_at
+      tier: extended
+      providers: 19
+      share: 0.229
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - modifiedAt
+    - name: metadata
+      tier: extended
+      providers: 17
+      share: 0.205
+      type: object
+      spellings:
+      - metadata
+      - attributes
+      - additionalData
+    long_tail_count: 603
+    long_tail_sample:
+    - customer_id
+    - name
+    - card
+    - billing_address
+    - brand
+    - last4
+    - exp_month
+    - exp_year
+    - country
+    - token
+    - currency
+    - default
+    - description
+    - external_id
+    - fingerprint
+    - account_number
+    - amount
+    - bank_account
+    - bin
+    - is_default
+    - account_type
+    - number
+    - payment_method
+    - payment_type
+    - routing_number
+    - account
+    - account_holder_name
+    - account_id
+    - address_line1
+    - address_line2
+    - apple_pay
+    - bank_name
+    - card_number
+    - cardholder_name
+    - city
+    - code
+    - created_by
+    - deleted
+    - email
+    - enabled
+  customer:
+    segments_seen:
+      customers: 134
+      customer: 31
+      buyers: 8
+      payers: 8
+      payer: 5
+    providers_exposing: 167
+    providers_with_readable_schema: 159
+    operations:
+    - operation: GET item
+      providers: 135
+      share: 0.808
+      tier: core
+    - operation: GET collection
+      providers: 133
+      share: 0.796
+      tier: core
+    - operation: POST collection
+      providers: 131
+      share: 0.784
+      tier: core
+    - operation: UPDATE item
+      providers: 95
+      share: 0.569
+      tier: core
+    - operation: DELETE item
+      providers: 73
+      share: 0.437
+      tier: extended
+    - operation: POST item
+      providers: 15
+      share: 0.09
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 8
+      share: 0.048
+      tier: long-tail
+    - operation: DELETE collection
+      providers: 5
+      share: 0.03
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 134
+      share: 0.843
+      type: string
+      spellings:
+      - id
+      - customerId
+      - customer_id
+      - reference_id
+      - Id
+      - _id
+      - uuid
+      - GUID
+    - name: name
+      tier: core
+      providers: 108
+      share: 0.679
+      type: string
+      spellings:
+      - name
+      - first_name
+      - firstName
+      - fullName
+      - Name
+      - display_name
+      - full_name
+      - DisplayName
+    - name: email
+      tier: core
+      providers: 105
+      share: 0.66
+      type: string
+      spellings:
+      - email
+      - emailAddress
+      - email_address
+      - Email
+      - EmailAddress
+    - name: created_at
+      tier: core
+      providers: 90
+      share: 0.566
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - created_date
+      - createdDate
+      - createdOn
+      - date_created
+      - creation_date
+    - name: phone
+      tier: extended
+      providers: 79
+      share: 0.497
+      type: string
+      spellings:
+      - phone
+      - phone_number
+      - phoneNumber
+      - PhoneNumber
+      - Mobile
+      - mobile
+      - Phone
+    - name: address
+      tier: extended
+      providers: 57
+      share: 0.358
+      type: object
+      spellings:
+      - address
+      - addresses
+      - billingAddress
+      - billing_address
+      - Addresses
+      - Address
+    - name: status
+      tier: extended
+      providers: 55
+      share: 0.346
+      type: string
+      spellings:
+      - status
+      - state
+      - Result
+      - Status
+      - result
+      - State
+    - name: last_name
+      tier: extended
+      providers: 51
+      share: 0.321
+      type: string
+      spellings:
+      - last_name
+      - lastName
+    - name: updated_at
+      tier: extended
+      providers: 51
+      share: 0.321
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - updated_date
+      - date_modified
+      - modified_date
+      - modifiedAt
+      - modified_at
+      - LastUpdated
+    - name: metadata
+      tier: extended
+      providers: 41
+      share: 0.258
+      type: object
+      spellings:
+      - metadata
+      - attributes
+      - custom_fields
+      - custom
+      - extra
+      - customFields
+      - MetaData
+      - AdditionalData
+    long_tail_count: 1403
+    long_tail_sample:
+    - type
+    - external_id
+    - description
+    - city
+    - currency
+    - country
+    - date_of_birth
+    - notes
+    - balance
+    - company
+    - company_name
+    - website
+    - middle_name
+    - shipping_address
+    - deleted
+    - business_name
+    - contacts
+    - tax_id
+    - country_code
+    - fax
+    - gender
+    - postal_code
+    - tags
+    - zip
+    - birth_date
+    - card
+    - customer_type
+    - merchant_id
+    - nationality
+    - account_number
+    - address1
+    - cards
+    - default_address
+    - deleted_at
+    - dob
+    - ip_address
+    - kyc_status
+    - locale
+    - payment_methods
+    - relationships
+  payout:
+    segments_seen:
+      payouts: 69
+      settlements: 29
+      payout: 17
+      settlement: 11
+      withdrawals: 10
+      disbursements: 9
+    providers_exposing: 121
+    providers_with_readable_schema: 109
+    operations:
+    - operation: GET collection
+      providers: 76
+      share: 0.628
+      tier: core
+    - operation: POST collection
+      providers: 76
+      share: 0.628
+      tier: core
+    - operation: GET item
+      providers: 72
+      share: 0.595
+      tier: core
+    - operation: DELETE item
+      providers: 9
+      share: 0.074
+      tier: long-tail
+    - operation: POST item
+      providers: 4
+      share: 0.033
+      tier: long-tail
+    - operation: UPDATE item
+      providers: 4
+      share: 0.033
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 2
+      share: 0.017
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 72
+      share: 0.661
+      type: string
+      spellings:
+      - id
+      - payout_id
+      - transaction_id
+      - reference_id
+      - payoutId
+      - uuid
+      - transactionId
+      - referenceId
+    - name: status
+      tier: core
+      providers: 72
+      share: 0.661
+      type: string
+      spellings:
+      - status
+      - state
+      - result
+      - Status
+    - name: amount
+      tier: core
+      providers: 64
+      share: 0.587
+      type: number
+      spellings:
+      - amount
+      - totalAmount
+      - total_amount
+      - Amount
+      - amount_in_cents
+    - name: created_at
+      tier: core
+      providers: 55
+      share: 0.505
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - timestamp
+      - dateCreated
+      - date_created
+      - created-at
+      - createdDate
+    - name: currency
+      tier: extended
+      providers: 44
+      share: 0.404
+      type: string
+      spellings:
+      - currency
+      - currency_code
+      - Currency
+      - currencyCode
+    - name: method
+      tier: extended
+      providers: 26
+      share: 0.239
+      type: string
+      spellings:
+      - type
+      - method
+      - rail
+      - Type
+      - payoutMethod
+    - name: updated_at
+      tier: extended
+      providers: 25
+      share: 0.229
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - updated_date
+      - updateTime
+      - lastModified
+      - updated
+    - name: destination
+      tier: extended
+      providers: 23
+      share: 0.211
+      type: string
+      spellings:
+      - destination
+      - recipient
+      - beneficiary
+      - bank_account
+      - BankAccountId
+      - destination_id
+      - DestinationAccount
+      - bankAccount
+    long_tail_count: 908
+    long_tail_sample:
+    - description
+    - metadata
+    - external_id
+    - arrival_date
+    - payment_method
+    - merchant_id
+    - fee
+    - transactions
+    - account
+    - payout_date
+    - account_id
+    - customer_id
+    - order_id
+    - payout_type
+    - purpose
+    - settlement_id
+    - address
+    - code
+    - date
+    - name
+    - notes
+    - payout_amount
+    - request_id
+    - source
+    - to
+    - asset
+    - automatic
+    - bank_name
+    - card
+    - customer
+    - email
+    - entity
+    - exchange_rate
+    - expires_at
+    - failed_at
+    - failure_code
+    - failure_message
+    - fees
+    - invoice_id
+    - merchant
+  dispute:
+    segments_seen:
+      disputes: 48
+      chargebacks: 20
+      dispute: 13
+      chargeback: 7
+    providers_exposing: 77
+    providers_with_readable_schema: 71
+    operations:
+    - operation: GET collection
+      providers: 57
+      share: 0.74
+      tier: core
+    - operation: GET item
+      providers: 49
+      share: 0.636
+      tier: core
+    - operation: POST collection
+      providers: 27
+      share: 0.351
+      tier: extended
+    - operation: UPDATE item
+      providers: 12
+      share: 0.156
+      tier: long-tail
+    - operation: DELETE item
+      providers: 3
+      share: 0.039
+      tier: long-tail
+    - operation: POST item
+      providers: 3
+      share: 0.039
+      tier: long-tail
+    properties:
+    - name: status
+      tier: core
+      providers: 48
+      share: 0.676
+      type: string
+      spellings:
+      - status
+      - state
+      - Status
+    - name: created_at
+      tier: core
+      providers: 46
+      share: 0.648
+      type: string
+      spellings:
+      - created_at
+      - createdAt
+      - created
+      - created_date
+      - createdDate
+      - CreationDate
+      - created_time
+      - date_created
+    - name: id
+      tier: core
+      providers: 46
+      share: 0.648
+      type: string
+      spellings:
+      - id
+      - dispute_id
+      - disputeId
+      - uuid
+      - referenceId
+      - Id
+      - disputeID
+      - _id
+    - name: reason
+      tier: core
+      providers: 46
+      share: 0.648
+      type: string
+      spellings:
+      - reason
+      - reason_code
+      - reasonCode
+      - disputeReason
+      - DisputeReason
+      - category
+    - name: amount
+      tier: extended
+      providers: 33
+      share: 0.465
+      type: integer
+      spellings:
+      - amount
+      - amountInCents
+      - totalAmount
+      - Amount
+    - name: updated_at
+      tier: extended
+      providers: 27
+      share: 0.38
+      type: string
+      spellings:
+      - updated_at
+      - updatedAt
+      - updated
+      - updated_time
+      - update_time
+      - lastModified
+      - updatedDate
+    - name: payment_id
+      tier: extended
+      providers: 26
+      share: 0.366
+      type: string
+      spellings:
+      - transactionId
+      - payment_id
+      - payment
+      - transaction_id
+      - charge
+      - paymentId
+      - charge_id
+      - chargeId
+    - name: currency
+      tier: extended
+      providers: 22
+      share: 0.31
+      type: string
+      spellings:
+      - currency
+      - currency_code
+      - currency_iso_code
+      - Currency
+    long_tail_count: 504
+    long_tail_sample:
+    - due_by
+    - evidence
+    - metadata
+    - type
+    - description
+    - reason_description
+    - resolved_at
+    - dispute_status
+    - chargeback_id
+    - dispute_amount
+    - dispute_type
+    - external_id
+    - fee
+    - merchant
+    - merchant_id
+    - status_message
+    - account_id
+    - chargeback_amount
+    - comment
+    - date
+    - expired_at
+    - messages
+    - network
+    - phase
+    - transaction_amount
+    - transaction_type
+    - version
+    - action
+    - amount_money
+    - arn
+    - balance
+    - brand_dispute_id
+    - card_brand
+    - closed_at
+    - closing_note
+    - closing_reason
+    - completed_at
+    - created_by
+    - customer
+    - customer_id

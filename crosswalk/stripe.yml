@@ -1,0 +1,152 @@
+provider: stripe
+apis_io: https://apis.io/providers/stripe/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    - authorizations
+    - payment_intents
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created
+      currency: currency
+      payment_method_id:
+      - payment_method
+      - token
+      description:
+      - description
+      - statement_descriptor
+      metadata: metadata
+      customer_id: customer
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/charges-openapi-original.yml#GET /v1/charges
+    - openapi/_original/charges-openapi-original.yml#GET /v1/charges/{charge}
+    - openapi/_original/charges-openapi-original.yml#POST /v1/charges
+    - openapi/_original/charges-openapi-original.yml#POST /v1/charges/{charge}
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/authorizations
+  checkout_session:
+    path_segment:
+    - payment_links
+    - sessions
+    properties:
+      id: id
+      created_at: created
+      customer_id: customer
+      currency: currency
+      metadata:
+      - custom_fields
+      - metadata
+      success_url: return_url
+      line_items: line_items
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/billing-openapi-original.yml#POST /v1/billing_portal/sessions
+    - openapi/_original/financial-connections-openapi-original.yml#GET /v1/financial_connections/sessions/{session}
+    - openapi/_original/financial-connections-openapi-original.yml#POST /v1/financial_connections/sessions
+    - openapi/_original/payment-links-openapi-original.yml#GET /v1/payment_links
+    - openapi/_original/payment-links-openapi-original.yml#GET /v1/payment_links/{payment_link}
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      created_at: created
+      currency: currency
+      reason: reason
+      payment_id: charge
+      description:
+      - description
+      - statement_descriptor
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/charges-openapi-original.yml#GET /v1/charges/{charge}/refunds
+    - openapi/_original/charges-openapi-original.yml#GET /v1/charges/{charge}/refunds/{refund}
+    - openapi/_original/charges-openapi-original.yml#POST /v1/charges/{charge}/refund
+    - openapi/_original/charges-openapi-original.yml#POST /v1/charges/{charge}/refunds
+    - openapi/_original/charges-openapi-original.yml#POST /v1/charges/{charge}/refunds/{refund}
+  payment_method:
+    path_segment:
+    - payment_methods
+    - sources
+    properties:
+      id: id
+      type: type
+      created_at: created
+      status: status
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/customers-openapi-original.yml#DELETE /v1/customers/{customer}/sources/{id}
+    - openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/payment_methods
+    - openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/payment_methods/{payment_method}
+    - openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/sources
+    - openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}/sources/{id}
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: created
+      phone: phone
+      address: address
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/customers-openapi-original.yml#DELETE /v1/customers/{customer}
+    - openapi/_original/customers-openapi-original.yml#GET /v1/customers
+    - openapi/_original/customers-openapi-original.yml#GET /v1/customers/{customer}
+    - openapi/_original/customers-openapi-original.yml#POST /v1/customers
+    - openapi/_original/customers-openapi-original.yml#POST /v1/customers/{customer}
+  payout:
+    path_segment:
+    - payouts
+    - settlements
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created
+      currency: currency
+      method:
+      - method
+      - type
+      destination: destination
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/settlements
+    - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/settlements/{settlement}
+    - openapi/_original/issuing-openapi-original.yml#POST /v1/issuing/settlements/{settlement}
+    - openapi/_original/payouts-openapi-original.yml#GET /v1/payouts
+    - openapi/_original/payouts-openapi-original.yml#GET /v1/payouts/{payout}
+  dispute:
+    path_segment:
+    - disputes
+    - dispute
+    properties:
+      status: status
+      created_at: created
+      id: id
+      reason: reason
+      amount: amount
+      payment_id:
+      - charge
+      - transaction
+      currency: currency
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/charges-openapi-original.yml#GET /v1/charges/{charge}/dispute
+    - openapi/_original/charges-openapi-original.yml#POST /v1/charges/{charge}/dispute
+    - openapi/_original/disputes-openapi-original.yml#GET /v1/disputes
+    - openapi/_original/disputes-openapi-original.yml#GET /v1/disputes/{dispute}
+    - openapi/_original/disputes-openapi-original.yml#POST /v1/disputes/{dispute}

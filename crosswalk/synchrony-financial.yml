@@ -1,0 +1,19 @@
+provider: synchrony-financial
+apis_io: https://apis.io/providers/synchrony-financial/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    - reversals
+    properties:
+      id: transactionId
+      amount: amount
+      status: status
+      created_at: timestamp
+      payment_id: originalTransactionId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/synchrony-financial-credit-authorization-openapi.yml#POST /v1/authorizations/refunds
+    - openapi/_original/synchrony-financial-credit-authorization-openapi.yml#POST /v1/authorizations/reversals

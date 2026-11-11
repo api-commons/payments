@@ -1,0 +1,51 @@
+provider: gov-uk-pay
+apis_io: https://apis.io/providers/gov-uk-pay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: payment_id
+      status: state
+      amount:
+      - amount
+      - total_amount
+      created_at: created_date
+      description: description
+      metadata: metadata
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.json#GET /v1/payments
+    - openapi/_original/openapi.json#GET /v1/payments/{paymentId}
+    - openapi/_original/openapi.json#POST /v1/payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refund_id
+      amount: amount
+      status: status
+      created_at: created_date
+      payment_id: payment_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.json#GET /v1/payments/{paymentId}/refunds
+    - openapi/_original/openapi.json#GET /v1/payments/{paymentId}/refunds/{refundId}
+    - openapi/_original/openapi.json#GET /v1/refunds
+    - openapi/_original/openapi.json#POST /v1/payments/{paymentId}/refunds
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: created_date
+      id: dispute_id
+      reason: reason
+      amount: amount
+      payment_id: payment_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.json#GET /v1/disputes

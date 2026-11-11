@@ -1,0 +1,21 @@
+provider: bunq
+apis_io: https://apis.io/providers/bunq/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id: id
+      amount: amount
+      created_at: created
+      description: description
+      updated_at: updated
+      external_id: merchant_reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/bunq-openapi.json#GET /user/{userID}/monetary-account/{monetary-accountID}/mastercard-action/{mastercard-actionID}/payment
+    - openapi/_original/bunq-openapi.json#GET /user/{userID}/monetary-account/{monetary-accountID}/payment
+    - openapi/_original/bunq-openapi.json#GET /user/{userID}/monetary-account/{monetary-accountID}/payment/{itemId}
+    - openapi/_original/bunq-openapi.json#POST /user/{userID}/monetary-account/{monetary-accountID}/payment

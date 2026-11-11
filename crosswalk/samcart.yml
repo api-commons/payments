@@ -1,0 +1,47 @@
+provider: samcart
+apis_io: https://apis.io/providers/samcart/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency
+      customer_id: customer_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/samcart-openapi.yml#GET /charges
+    - openapi/_original/samcart-openapi.yml#GET /charges/{charge_id}
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount: amount
+      created_at: created_at
+      currency: currency
+      payment_id: charge_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/samcart-openapi.yml#GET /refunds
+    - openapi/_original/samcart-openapi.yml#GET /refunds/{refund_id}
+    - openapi/_original/samcart-openapi.yml#POST /charges/{charge_id}/refund
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      created_at: created_at
+      last_name: last_name
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/samcart-openapi.yml#GET /customers
+    - openapi/_original/samcart-openapi.yml#GET /customers/{customer_id}

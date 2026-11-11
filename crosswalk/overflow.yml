@@ -1,0 +1,43 @@
+provider: overflow
+apis_io: https://apis.io/providers/overflow/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amountInCents
+      status: status
+      created_at: createdAt
+      reason: reason
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/overflow-openapi-original.json#GET /api/v3/refunds
+    - openapi/_original/overflow-openapi-original.json#GET /api/v3/refunds/{refundId}
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/overflow-openapi-original.json#GET /api/v3/payment-methods/{donorId}
+  dispute:
+    path_segment:
+    - chargebacks
+    properties:
+      status: status
+      created_at: createdAt
+      id: id
+      reason: reason
+      amount: amountInCents
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/overflow-openapi-original.json#GET /api/v3/chargebacks
+    - openapi/_original/overflow-openapi-original.json#GET /api/v3/chargebacks/{chargebackId}

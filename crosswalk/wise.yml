@@ -1,0 +1,39 @@
+provider: wise
+apis_io: https://apis.io/providers/wise/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/wise-platform-openapi.yml#GET /v1/transfers/{transferId}/payments
+    - openapi/_original/wise-platform-openapi.yml#POST /v3/profiles/{profileId}/batch-payments/{batchGroupId}/payments
+    - openapi/_original/wise-platform-openapi.yml#POST /v3/profiles/{profileId}/transfers/{transferId}/payments
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      method: type
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/wise-platform-openapi.yml#POST /v1/settlements
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: createdAt
+      id: id
+      reason: reason
+      payment_id: transactionId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/wise-platform-openapi.yml#GET /v3/spend/profiles/{profileId}/disputes
+    - openapi/_original/wise-platform-openapi.yml#GET /v3/spend/profiles/{profileId}/disputes/{disputeId}

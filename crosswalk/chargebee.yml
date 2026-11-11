@@ -1,0 +1,104 @@
+provider: chargebee
+apis_io: https://apis.io/providers/chargebee/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment_intents
+    - payments
+    - charge
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      amount: amount
+      created_at: created_at
+      currency: currency_code
+      description: statement_descriptor
+      updated_at:
+      - modified_at
+      - updated_at
+      customer_id: customer_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/chargebee-openapi.json#GET /invoices/{invoice-id}/payments
+    - openapi/_original/chargebee-openapi.json#GET /payment_intents/{payment-intent-id}
+    - openapi/_original/chargebee-openapi.json#POST /invoices/charge
+    - openapi/_original/chargebee-openapi.json#POST /payment_intents
+    - openapi/_original/chargebee-openapi.json#POST /payment_intents/{payment-intent-id}
+  checkout_session:
+    path_segment:
+    - hosted_pages
+    properties:
+      id: id
+      status: state
+      created_at: created_at
+      expires_at: expires_at
+      mode: type
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/chargebee-openapi.json#GET /hosted_pages
+    - openapi/_original/chargebee-openapi.json#GET /hosted_pages/{hosted-page-id}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      currency: currency_code
+      payment_id: transaction
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/chargebee-openapi.json#POST /credit_notes/{credit-note-id}/refund
+    - openapi/_original/chargebee-openapi.json#POST /invoices/{invoice-id}/refund
+    - openapi/_original/chargebee-openapi.json#POST /transactions/{transaction-id}/refund
+  payment_method:
+    path_segment:
+    - payment_sources
+    properties:
+      id:
+      - id
+      - reference_id
+      type: type
+      created_at: created_at
+      status: status
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/chargebee-openapi.json#GET /payment_sources
+    - openapi/_original/chargebee-openapi.json#GET /payment_sources/{cust-payment-source-id}
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      created_at: created_at
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/chargebee-openapi.json#GET /customers
+    - openapi/_original/chargebee-openapi.json#GET /customers/{customer-id}
+    - openapi/_original/chargebee-openapi.json#POST /customers
+    - openapi/_original/chargebee-openapi.json#POST /customers/{customer-id}
+    - openapi/_original/chargebee-openapi.json#POST /exports/customers
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      created_at: created_at
+      id: id
+      reason: reason
+      amount: amount
+      updated_at: updated_at
+      payment_id: transaction_id
+      currency: currency_code
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/chargebee-openapi.json#GET /disputes
+    - openapi/_original/chargebee-openapi.json#GET /disputes/{dispute-id}

@@ -1,0 +1,17 @@
+provider: halliday
+apis_io: https://apis.io/providers/halliday/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: payment_id
+      status: status
+      created_at: created_at
+      updated_at: updated_at
+      customer_id: customer_id
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/halliday-openapi-original.yml#GET /payments

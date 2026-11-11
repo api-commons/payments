@@ -1,0 +1,12 @@
+provider: kriya
+apis_io: https://apis.io/providers/kriya/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - buyers
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/kriya-payments-openapi.yaml#POST /buyers

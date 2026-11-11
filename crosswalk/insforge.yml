@@ -1,0 +1,40 @@
+provider: insforge
+apis_io: https://apis.io/providers/insforge/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - sessions
+    - checkout-sessions
+    properties:
+      id:
+      - id
+      - checkoutSessionId
+      status:
+      - status
+      - paymentStatus
+      created_at: createdAt
+      customer_id: customerId
+      mode: mode
+      metadata: metadata
+      success_url: successUrl
+      updated_at: updatedAt
+      line_items: lineItems
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/insforge-auth-openapi.yaml#POST /api/auth/admin/sessions
+    - openapi/_original/insforge-auth-openapi.yaml#POST /api/auth/sessions
+    - openapi/_original/insforge-payments-openapi.yaml#POST /api/payments/stripe/{environment}/checkout-sessions
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: name
+      email: email
+      phone: phone
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/insforge-payments-openapi.yaml#GET /api/payments/razorpay/{environment}/customers
+    - openapi/_original/insforge-payments-openapi.yaml#GET /api/payments/stripe/{environment}/customers

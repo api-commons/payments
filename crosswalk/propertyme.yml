@@ -1,0 +1,18 @@
+provider: propertyme
+apis_io: https://apis.io/providers/propertyme/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - sales
+    properties:
+      id: Id
+      status: Status
+      created_at: CreatedOn
+      description: Description
+      customer_id: CustomerId
+      external_id: Reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/propertyme-openapi.json#GET /v1/lots/sales

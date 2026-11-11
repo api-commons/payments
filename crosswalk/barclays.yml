@@ -1,0 +1,20 @@
+provider: barclays
+apis_io: https://apis.io/providers/barclays/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorisations
+    - payments
+    - authorizations
+    properties:
+      status: status
+      amount: amount
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/barclays-bank-ireland-account-information-openapi.json#GET /consents/{consentId}/authorisations
+    - openapi/_original/barclays-bank-ireland-account-information-openapi.json#GET /consents/{consentId}/authorisations/{authorisationId}
+    - openapi/_original/barclays-bank-ireland-confirmation-of-funds-openapi.json#GET /consents/confirmation-of-funds/{consentId}/authorisations
+    - openapi/_original/barclays-bank-ireland-confirmation-of-funds-openapi.json#GET /consents/confirmation-of-funds/{consentId}/authorisations/{authorisationId}
+    - openapi/_original/barclays-payments-openapi.json#GET /cards/accounts/{extAccountId}/payments

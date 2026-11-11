@@ -1,0 +1,13 @@
+provider: vantiv
+apis_io: https://apis.io/providers/vantiv/
+context: payments
+generated: '2026-11-10'
+concepts:
+  dispute:
+    path_segment:
+    - chargebacks
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/vantiv-chargeback-openapi.yml#GET /chargebacks
+    - openapi/_original/vantiv-chargeback-openapi.yml#GET /chargebacks/{caseId}

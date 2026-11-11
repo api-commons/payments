@@ -1,0 +1,41 @@
+provider: connexpay
+apis_io: https://apis.io/providers/connexpay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - sales
+    properties:
+      id: guid
+      status: status
+      amount:
+      - amount
+      - Amount
+      customer_id:
+      - customerID
+      - CustomerID
+      - Customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/connexpay-sales-openapi.yml#POST /api/v1/sales
+  payout:
+    path_segment:
+    - payouts
+    - settlements
+    properties:
+      status: status
+      created_at: createdDate
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/connexpay-purchases-openapi.yml#POST /api/v1/Search/Settlements/
+    - openapi/_original/connexpay-push-to-card-openapi.yml#GET /api/v1/PushToCard/Payouts/{payoutGuid}
+    - openapi/_original/connexpay-push-to-card-openapi.yml#POST /api/v1/PushToCard/Payouts
+  dispute:
+    path_segment:
+    - chargeback
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/connexpay-purchases-openapi.yml#POST /api/v1/chargeback

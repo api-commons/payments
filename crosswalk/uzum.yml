@@ -1,0 +1,25 @@
+provider: uzum
+apis_io: https://apis.io/providers/uzum/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      id:
+      - payment_id
+      - transaction_id
+      status: payment_status
+      amount: amount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/uzum-fastpay-openapi.yaml#POST /api/apelsin-pay/merchant/v2/payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/uzum-checkout-openapi.yaml#POST /api/v1/acquiring/refund

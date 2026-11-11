@@ -1,0 +1,28 @@
+provider: till-payments
+apis_io: https://apis.io/providers/till-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: uuid
+      amount: amount
+      currency: currency
+      description: description
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/till-payments-direct-pci.yml#POST /transaction/{apiKey}/refund
+    - openapi/_original/till-payments-gateway.yml#POST /transaction/{apiKey}/refund
+  payout:
+    path_segment:
+    - payout
+    properties:
+      id: uuid
+      amount: amount
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/till-payments-direct-pci.yml#POST /transaction/{apiKey}/payout
+    - openapi/_original/till-payments-gateway.yml#POST /transaction/{apiKey}/payout

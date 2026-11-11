@@ -1,0 +1,17 @@
+provider: p2flux-api
+apis_io: https://apis.io/providers/p2flux-api/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    - payments
+    properties:
+      status: status
+      amount: amount
+      external_id: reference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/p2flux-api-openapi.json#POST /v1/charges
+    - openapi/_original/p2flux-api-openapi.json#POST /v1/payments

@@ -1,0 +1,37 @@
+provider: virto-commerce
+apis_io: https://apis.io/providers/virto-commerce/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status:
+      - paymentStatus
+      - status
+      amount: amount
+      created_at: createdDate
+      currency: currency
+      payment_method_id: paymentMethod
+      updated_at: modifiedDate
+      customer_id: customerId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/virto-commerce-cart-openapi.json#PATCH /api/carts/patch/{cartId}/payments/{paymentId}
+    - openapi/_original/virto-commerce-cart-openapi.json#POST /api/carts/{cartId}/payments
+    - openapi/_original/virto-commerce-orders-openapi.json#DELETE /api/order/payments
+    - openapi/_original/virto-commerce-orders-openapi.json#GET /api/order/payments/{id}
+    - openapi/_original/virto-commerce-orders-openapi.json#PATCH /api/order/payments/{id}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: transactionId
+      amount: amount
+      reason: reasonCode
+      payment_id: paymentId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/virto-commerce-orders-openapi.json#POST /api/order/payments/payment/refund

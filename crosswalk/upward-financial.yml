@@ -1,0 +1,28 @@
+provider: upward-financial
+apis_io: https://apis.io/providers/upward-financial/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      description: description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/upward-financial-openapi.json#GET /v2/bill-pay/bills/{external_id}/payments/
+    - openapi/_original/upward-financial-openapi.json#GET /v2/bill-pay/bills/{external_id}/payments/{bill_payment_id}/
+    - openapi/_original/upward-financial-openapi.json#POST /v2/bill-pay/bills/{external_id}/payments/
+  dispute:
+    path_segment:
+    - dispute
+    properties:
+      status: status
+      created_at: created_at
+      reason: reason
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/upward-financial-openapi.json#POST /v2/consumers/{consumer_id}/dispute/

@@ -1,0 +1,54 @@
+provider: xendit
+apis_io: https://apis.io/providers/xendit/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id:
+      - refund_id
+      - reference_id
+      amount: amount
+      status: status
+      created_at: created
+      currency: currency
+      reason: reason
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/xendit-openapi.yml#GET /refunds/{refund_id}
+    - openapi/_original/xendit-openapi.yml#POST /refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id:
+      - reference_id
+      - id
+      email: email
+      created_at: created
+      updated_at: updated
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/xendit-openapi.yml#GET /customers
+    - openapi/_original/xendit-openapi.yml#GET /customers/{customer_id}
+    - openapi/_original/xendit-openapi.yml#PATCH /customers/{customer_id}
+    - openapi/_original/xendit-openapi.yml#POST /customers
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id:
+      - id
+      - reference_id
+      status: status
+      amount: amount
+      created_at: created
+      currency: currency
+      updated_at: updated
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/xendit-openapi.yml#GET /v3/payouts/{payout_id}
+    - openapi/_original/xendit-openapi.yml#POST /v3/payouts

@@ -1,0 +1,56 @@
+provider: vtex
+apis_io: https://apis.io/providers/vtex/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - transactionId
+      - paymentId
+      status: status
+      created_at: createdAt
+      currency:
+      - currency
+      - currencyCode
+      payment_method_id: paymentMethod
+      description: description
+      updated_at: updatedAt
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/vtex-customer-credit-openapi-original.yml#POST /api/creditcontrol/accounts/{creditAccountId}/invoices/{invoiceId}/payments
+    - openapi/_original/vtex-payment-provider-protocol-openapi-original.yml#POST /payments
+    - openapi/_original/vtex-payments-gateway-openapi-original.yml#GET /api/pvt/transactions/{transactionId}/payments/{paymentId}
+    - openapi/_original/vtex-payments-gateway-openapi-original.yml#POST /api/pub/transactions/{transactionId}/payments
+    - openapi/_original/vtex-payments-gateway-openapi-original.yml#POST /api/pvt/transactions/{transactionId}/payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id:
+      - refundId
+      - transactionId
+      payment_id: paymentId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/vtex-customer-credit-openapi-original.yml#POST /api/creditcontrol/accounts/{creditAccountId}/transactions/{transactionId}/refunds
+    - openapi/_original/vtex-payment-provider-protocol-openapi-original.yml#POST /payments/{paymentId}/refunds
+  payout:
+    path_segment:
+    - settlements
+    - settlement
+    properties:
+      id:
+      - id
+      - transactionId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/vtex-customer-credit-openapi-original.yml#PUT /api/creditcontrol/accounts/{creditAccountId}/transactions/{transactionId}/settlement
+    - openapi/_original/vtex-gift-card-hub-openapi-original.yml#GET /api/giftcardproviders/{giftCardProviderId}/giftcards/{giftCardId}/transactions/{tId}/settlements
+    - openapi/_original/vtex-gift-card-hub-openapi-original.yml#POST /api/giftcardproviders/{giftCardProviderId}/giftcards/{giftCardId}/transactions/{tId}/settlements
+    - openapi/_original/vtex-gift-card-openapi-original.yml#GET /giftcards/{giftCardId}/transactions/{transactionId}/settlements
+    - openapi/_original/vtex-gift-card-openapi-original.yml#POST /giftcards/{giftCardId}/transactions/{transactionId}/settlements

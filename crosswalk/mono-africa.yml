@@ -1,0 +1,18 @@
+provider: mono-africa
+apis_io: https://apis.io/providers/mono-africa/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      amount: amount
+      created_at: created_at
+      currency: currency
+      customer_id: customer
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mono-africa-openapi.yml#GET /v2/payments

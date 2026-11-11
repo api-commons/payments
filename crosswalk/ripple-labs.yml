@@ -1,0 +1,28 @@
+provider: ripple-labs
+apis_io: https://apis.io/providers/ripple-labs/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    - payments
+    properties:
+      id:
+      - payment_id
+      - uuid
+      status: payment_status
+      amount: amount
+      created_at:
+      - createdAt
+      - created_at
+      currency: currency
+      payment_method_id: payment_method
+      updated_at: modified_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/ripple-labs-ripplenet-openapi-original.yml#GET /audit/payment/{id}
+    - openapi/_original/ripple-labs-ripplenet-openapi-original.yml#GET /payments
+    - openapi/_original/ripple-labs-ripplenet-openapi-original.yml#GET /payments/{payment_id}
+    - openapi/_original/ripple-labs-ripplenet-openapi-original.yml#GET /v4/orchestration/payment
+    - openapi/_original/ripple-labs-ripplenet-openapi-original.yml#GET /v4/orchestration/payment/{uniqueReferenceNumber}

@@ -1,0 +1,27 @@
+provider: jobox-ai
+apis_io: https://apis.io/providers/jobox-ai/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id: id
+      created_at: createdAt
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/jobox-ai-kili-openapi.json#GET /jobs/{job_id}/payment
+    - openapi/_original/jobox-ai-kili-openapi.json#POST /payments
+    - openapi/_original/jobox-ai-kili-openapi.json#PUT /payments
+    - openapi/_original/jobox-ai-kili-openapi.json#PUT /payments/{payment_id}
+    - openapi/_original/jobox-ai-kili-swagger-2019-05-07.json#GET /jobs/{job_id}/payment
+  dispute:
+    path_segment:
+    - disputes
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/jobox-ai-kili-openapi.json#GET /disputes/{dispute_id}
+    - openapi/_original/jobox-ai-kili-swagger-2019-05-07.json#GET /disputes/{dispute_id}

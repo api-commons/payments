@@ -1,0 +1,88 @@
+provider: stax
+apis_io: https://apis.io/providers/stax/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      id:
+      - id
+      - reference_id
+      created_at: created_at
+      currency: currency
+      payment_method_id:
+      - source
+      - payment_method_id
+      - payment_method
+      updated_at: updated_at
+      customer_id:
+      - customer_id
+      - customer
+      - customerId
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/stax-api-openapi.json#POST /charge
+    - openapi/_original/stax-api-openapi.json#POST /terminal/charge
+  checkout_session:
+    path_segment:
+    - payment-links
+    properties:
+      id: id
+      status: status
+      created_at: created_at
+      amount: amount
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/stax-api-openapi.json#DELETE /query/payment-links/{id}
+    - openapi/_original/stax-api-openapi.json#GET /query/payment-links
+    - openapi/_original/stax-api-openapi.json#GET /query/payment-links/{id}
+    - openapi/_original/stax-api-openapi.json#POST /query/payment-links
+    - openapi/_original/stax-api-openapi.json#PUT /query/payment-links/{id}
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id:
+      - id
+      - reference_id
+      - transactionId
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/stax-api-openapi.json#POST /terminal/refund
+    - openapi/_original/stax-api-openapi.json#POST /transaction/{id}/refund
+  customer:
+    path_segment:
+    - customer
+    properties:
+      id: id
+      email: email
+      created_at: created_at
+      phone: phone
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/stax-api-openapi.json#DELETE /customer/{id}
+    - openapi/_original/stax-api-openapi.json#GET /customer
+    - openapi/_original/stax-api-openapi.json#GET /customer/{id}
+    - openapi/_original/stax-api-openapi.json#POST /customer
+    - openapi/_original/stax-api-openapi.json#PUT /customer/{id}
+  dispute:
+    path_segment:
+    - disputes
+    - dispute
+    properties:
+      created_at: created_at
+      id: id
+      updated_at: updated_at
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/stax-api-openapi.json#DELETE /file/dispute/{evidenceFileId}
+    - openapi/_original/stax-api-openapi.json#GET /query/statement/v3/disputes
+    - openapi/_original/stax-api-openapi.json#GET /underwriting/disputes
+    - openapi/_original/stax-api-openapi.json#GET /underwriting/disputes/{merchantId}
+    - openapi/_original/stax-api-openapi.json#POST /file/dispute

@@ -1,0 +1,29 @@
+provider: six-group
+apis_io: https://apis.io/providers/six-group/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /cards/{cardToken}/authorizations
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /digitalcards/{dpan}/authorizations
+    - openapi/_original/six-group-debix-bank-api-v2-bank-to-six-openapi.yml#POST /digitalcards/{dpan}/authorizations
+  customer:
+    path_segment:
+    - customers
+    properties:
+      name: firstName
+      email: email
+      phone: phone
+      last_name: lastName
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#DELETE /click-to-pay/visa/customers/{customerId}
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#GET /click-to-pay/visa/customers/{customerId}
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /click-to-pay/visa/customers
+    - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#PUT /click-to-pay/visa/customers/{customerId}
+    - openapi/_original/six-group-debix-bank-api-v2-bank-to-six-openapi.yml#DELETE /click-to-pay/visa/customers/{customerId}

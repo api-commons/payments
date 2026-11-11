@@ -1,0 +1,20 @@
+provider: tweed
+apis_io: https://apis.io/providers/tweed/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/tweed-api-v2-openapi-original.json#GET /checkout/{id}
+  payout:
+    path_segment:
+    - payouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/tweed-api-v2-openapi-original.json#GET /v1/payouts
+    - openapi/_original/tweed-api-v2-openapi-original.json#GET /v1/payouts/{payoutId}

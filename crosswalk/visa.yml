@@ -1,0 +1,35 @@
+provider: visa
+apis_io: https://apis.io/providers/visa/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id: paymentId
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      customer_id: buyerId
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/b2b-virtual-account-payment-method.yml#POST /pop/v1/recipes/Payment
+    - openapi/_original/visa-b2b-connect.yml#GET /vba/v1/payments/{paymentId}
+    - openapi/_original/visa-b2b-connect.yml#POST /vba/v1/payments
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      id: transactionId
+      status: status
+      currency: currency
+      amount: amount
+      success_url: returnUrl
+      url: checkoutUrl
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/visa-click-to-pay.yml#GET /visasrci/v1/checkout/{checkoutId}
+    - openapi/_original/visa-click-to-pay.yml#POST /visasrci/v1/checkout

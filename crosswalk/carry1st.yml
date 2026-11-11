@@ -1,0 +1,17 @@
+provider: carry1st
+apis_io: https://apis.io/providers/carry1st/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: status
+      amount: amount
+      currency: currencyCode
+      metadata: metadata
+      external_id: reference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/carry1st-pay1st-gateway-openapi.yml#GET /api/pay1st/payments

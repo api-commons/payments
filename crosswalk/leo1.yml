@@ -1,0 +1,24 @@
+provider: leo1
+apis_io: https://apis.io/providers/leo1/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      status: status
+      description: remarks
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/leo1-leofees-openapi-original.json#DELETE /api/v1/refund/
+    - openapi/_original/leo1-leofees-openapi-original.json#GET /api/v1/refund/
+    - openapi/_original/leo1-leofees-openapi-original.json#POST /api/v1/refund/
+    - openapi/_original/leo1-leofees-openapi-original.json#PUT /api/v1/refund/
+  payout:
+    path_segment:
+    - settlement
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/leo1-leofees-openapi-original.json#POST /api/v1/institute/settlement

@@ -1,0 +1,19 @@
+provider: mono-co
+apis_io: https://apis.io/providers/mono-co/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      phone: phone
+      address: address
+      last_name: last_name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mono-co-openapi.yml#GET /v2/customers
+    - openapi/_original/mono-co-openapi.yml#POST /v2/customers

@@ -1,0 +1,64 @@
+provider: raiffeisen-ru
+apis_io: https://apis.io/providers/raiffeisen-ru/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/raiffeisen-ru-raif-pay-sbp-b2b-openapi.json#POST /api/sandbox/b2b/sbp/v1/qrs/{qrId}/payment
+    - openapi/_original/raiffeisen-ru-raif-pay-sbp-b2b-openapi.yml#POST /api/sandbox/b2b/sbp/v1/qrs/{qrId}/payment
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id:
+      - id
+      - refundId
+      - transactionId
+      amount: amount
+      status: status
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/raiffeisen-ru-raif-pay-fiscal-openapi.json#GET /fiscal/v1/receipts/refund/{receiptNumber}
+    - openapi/_original/raiffeisen-ru-raif-pay-fiscal-openapi.json#POST /fiscal/v1/receipts/refund
+    - openapi/_original/raiffeisen-ru-raif-pay-fiscal-openapi.json#PUT /fiscal/v1/receipts/refund/{receiptNumber}
+    - openapi/_original/raiffeisen-ru-raif-pay-fiscal-openapi.yml#GET /fiscal/v1/receipts/refund/{receiptNumber}
+    - openapi/_original/raiffeisen-ru-raif-pay-fiscal-openapi.yml#POST /fiscal/v1/receipts/refund
+  customer:
+    path_segment:
+    - buyers
+    properties:
+      id: id
+      name: fullName
+      created_at: createdAt
+      status: state
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/raiffeisen-ru-payment-control-openapi.yml#GET /v1/buyers
+    - openapi/_original/raiffeisen-ru-payment-control-openapi.yml#GET /v1/buyers/{buyerId}
+    - openapi/_original/raiffeisen-ru-payment-control-openapi.yml#POST /v1/buyers
+    - openapi/_original/raiffeisen-ru-payment-control-openapi_2.yml#GET /v1/buyers
+    - openapi/_original/raiffeisen-ru-payment-control-openapi_2.yml#GET /v1/buyers/{buyerId}
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: creationDate
+      currency: currency
+      method: payoutMethod
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /v1/payout-bundles/{id}/payouts
+    - openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /v2/payout-bundles/{id}/payouts
+    - openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /v3/payout-bundles/{id}/payouts
+    - openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#POST /v2/payouts
+    - openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#GET /v1/payout-bundles/{id}/payouts

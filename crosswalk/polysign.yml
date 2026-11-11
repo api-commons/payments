@@ -1,0 +1,13 @@
+provider: polysign
+apis_io: https://apis.io/providers/polysign/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payout:
+    path_segment:
+    - settlements
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/polysign-atomicnet-api-server-openapi.json#GET /v1/settlements/{settlement_id}
+    - openapi/_original/polysign-atomicnet-api-server-openapi.json#PUT /v1/settlements/

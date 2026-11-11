@@ -1,0 +1,29 @@
+provider: pagseguro
+apis_io: https://apis.io/providers/pagseguro/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pagseguro-openapi.yml#POST /orders/{order_id}/charges
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pagseguro-openapi.yml#GET /checkouts/{id}
+    - openapi/_original/pagseguro-openapi.yml#POST /checkouts
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pagseguro-openapi.yml#GET /refunds
+    - openapi/_original/pagseguro-openapi.yml#GET /refunds/{id}
+    - openapi/_original/pagseguro-openapi.yml#POST /refunds

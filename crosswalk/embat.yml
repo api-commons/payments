@@ -1,0 +1,24 @@
+provider: embat
+apis_io: https://apis.io/providers/embat/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - transactionId
+      - id
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      payment_method_id: paymentSource
+      updated_at: updatedAt
+      metadata: attributes
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/embat-openapi-original.json#DELETE /payments/{companyId}
+    - openapi/_original/embat-openapi-original.json#GET /payments/{companyId}
+    - openapi/_original/embat-openapi-original.json#PATCH /payments/{companyId}
+    - openapi/_original/embat-openapi-original.json#POST /payments/{companyId}

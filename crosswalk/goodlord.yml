@@ -1,0 +1,15 @@
+provider: goodlord
+apis_io: https://apis.io/providers/goodlord/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/goodlord-insurance-app-api-openapi.json#GET /api/v1/insurance_claims/{insuranceClaimId}/payments
+    - openapi/_original/goodlord-insurance-app-api-openapi.json#GET /api/v1/insurance_claims/{insuranceClaimId}/payments/{id}

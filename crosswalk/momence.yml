@@ -1,0 +1,36 @@
+provider: momence
+apis_io: https://apis.io/providers/momence/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - sales
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/momence-openapi.yml#GET /api/v2/host/sales
+  checkout_session:
+    path_segment:
+    - sessions
+    - checkout
+    properties:
+      id: id
+      created_at: createdAt
+      description: description
+      mode: type
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/momence-openapi.yml#DELETE /api/v2/member/sessions/{sessionBookingId}
+    - openapi/_original/momence-openapi.yml#GET /api/v2/host/members/{memberId}/sessions
+    - openapi/_original/momence-openapi.yml#GET /api/v2/host/sessions
+    - openapi/_original/momence-openapi.yml#GET /api/v2/host/sessions/{sessionId}
+    - openapi/_original/momence-openapi.yml#GET /api/v2/member/host/sessions
+  refund:
+    path_segment:
+    - credits
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/momence-openapi.yml#PUT /api/v2/host/members/{memberId}/bought-memberships/{boughtMembershipId}/credits

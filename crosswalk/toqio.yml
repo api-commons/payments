@@ -1,0 +1,14 @@
+provider: toqio
+apis_io: https://apis.io/providers/toqio/
+context: payments
+generated: '2026-11-10'
+concepts:
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/toqio-integration-hub-api-openapi.yml#GET /customers/{customerId}
+    - openapi/_original/toqio-integration-hub-api-openapi.yml#POST /customers

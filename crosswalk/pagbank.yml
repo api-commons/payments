@@ -1,0 +1,29 @@
+provider: pagbank
+apis_io: https://apis.io/providers/pagbank/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pagseguro-charges-api-openapi.yml#POST /orders/{order_id}/charges
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pagseguro-checkout-api-openapi.yml#GET /checkouts/{id}
+    - openapi/_original/pagseguro-checkout-api-openapi.yml#POST /checkouts
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/pagseguro-refunds-api-openapi.yml#GET /refunds
+    - openapi/_original/pagseguro-refunds-api-openapi.yml#GET /refunds/{id}
+    - openapi/_original/pagseguro-refunds-api-openapi.yml#POST /refunds

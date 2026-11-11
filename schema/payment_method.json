@@ -1,0 +1,98 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/payment_method.json",
+  "title": "Payment Method",
+  "description": "The common payment_method in Payments, distilled from 83 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.675,
+      "x-commons-providers": 56,
+      "x-commons-spellings": [
+        "id",
+        "paymentMethodId",
+        "payment_method_id",
+        "Id",
+        "reference_id",
+        "uuid",
+        "paymentMethodID",
+        "_id"
+      ]
+    },
+    "type": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.554,
+      "x-commons-providers": 46,
+      "x-commons-spellings": [
+        "type",
+        "payment_method_type",
+        "paymentMethodType",
+        "method",
+        "scheme"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.386,
+      "x-commons-providers": 32,
+      "x-commons-spellings": [
+        "created_at",
+        "createdAt",
+        "created_date",
+        "created",
+        "created_time",
+        "date_created",
+        "createdOn"
+      ],
+      "format": "date-time"
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.289,
+      "x-commons-providers": 24,
+      "x-commons-spellings": [
+        "status",
+        "state"
+      ]
+    },
+    "updated_at": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.229,
+      "x-commons-providers": 19,
+      "x-commons-spellings": [
+        "updated_at",
+        "updatedAt",
+        "modifiedAt"
+      ],
+      "format": "date-time"
+    },
+    "metadata": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.205,
+      "x-commons-providers": 17,
+      "x-commons-spellings": [
+        "metadata",
+        "attributes",
+        "additionalData"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "payments",
+    "concept": "payment_method",
+    "providers": 83,
+    "generated": "2026-11-10",
+    "version": "0.1.0-draft.20261110",
+    "status": "draft"
+  }
+}

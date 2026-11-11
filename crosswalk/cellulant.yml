@@ -1,0 +1,16 @@
+provider: cellulant
+apis_io: https://apis.io/providers/cellulant/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - payments
+    properties:
+      amount: amount
+      currency: currency_code
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/cellulant-checkout-api-openapi.yml#POST /v3/checkout-api/checkout-request/charge
+    - openapi/_original/cellulant-payouts-api-openapi.yml#POST /v1/global-api/payments

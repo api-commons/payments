@@ -1,0 +1,30 @@
+provider: weavr
+apis_io: https://apis.io/providers/weavr/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - payments
+    properties:
+      id: transactionId
+      status: state
+      payment_method_id: source
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/weavr-multi-backoffice-openapi-original.yml#POST /consumers/fees/charge
+    - openapi/_original/weavr-multi-backoffice-openapi-original.yml#POST /corporates/fees/charge
+    - openapi/_original/weavr-multi-backoffice-openapi-original.yml#POST /fees/charge
+    - openapi/_original/weavr-multi-openapi-original.yml#POST /consumers/fees/charge
+    - openapi/_original/weavr-multi-openapi-original.yml#POST /corporates/fees/charge
+  customer:
+    path_segment:
+    - buyers
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/weavr-payment-run-openapi-original.yml#GET /v1/buyers
+    - openapi/_original/weavr-payment-run-openapi-original.yml#PATCH /v1/buyers
+    - openapi/_original/weavr-payment-run-openapi-original.yml#POST /v1/buyers

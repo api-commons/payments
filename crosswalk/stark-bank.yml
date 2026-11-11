@@ -1,0 +1,12 @@
+provider: stark-bank
+apis_io: https://apis.io/providers/stark-bank/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/stark-bank-openapi-original.yml#GET /v2/invoice/{id}/payment

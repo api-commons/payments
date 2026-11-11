@@ -1,0 +1,32 @@
+provider: outdoorsy
+apis_io: https://apis.io/providers/outdoorsy/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/outdoorsy-openapi-original.json#GET /users/authorizations
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      phone: phone
+      status: state
+      last_name: last_name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/outdoorsy-openapi-original.json#GET /search/{user_id}/customers
+  payout:
+    path_segment:
+    - payout
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/outdoorsy-openapi-original.json#DELETE /bookings/{booking_id}/payout/{transaction_id}

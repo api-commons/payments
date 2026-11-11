@@ -1,0 +1,33 @@
+provider: airtm
+apis_io: https://apis.io/providers/airtm/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/airtm-enterprise-v1-openapi.json#GET bulk-payments/{bulkPaymentId}/payments
+  payout:
+    path_segment:
+    - payouts
+    - withdrawals
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at:
+      - created_at
+      - createdAt
+      updated_at:
+      - updated_at
+      - updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/airtm-enterprise-v1-openapi.json#POST payouts
+    - openapi/_original/airtm-enterprise-v2-openapi.json#DELETE /payouts/{id}
+    - openapi/_original/airtm-enterprise-v2-openapi.json#GET /payouts
+    - openapi/_original/airtm-enterprise-v2-openapi.json#GET /payouts/{id}
+    - openapi/_original/airtm-enterprise-v2-openapi.json#GET /withdrawals

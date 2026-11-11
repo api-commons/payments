@@ -1,0 +1,72 @@
+provider: sumup
+apis_io: https://apis.io/providers/sumup/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkouts
+    - checkout
+    properties:
+      id:
+      - id
+      - transaction_id
+      status: status
+      customer_id: customer_id
+      currency: currency
+      amount:
+      - amount
+      - total_amount
+      description: description
+      mode: payment_type
+      success_url: return_url
+      url: redirect_url
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/openapi.yaml#DELETE /v0.1/checkouts/{checkout_id}
+    - openapi/_original/openapi.yaml#GET /v0.1/checkouts
+    - openapi/_original/openapi.yaml#GET /v0.1/checkouts/{checkout_id}
+    - openapi/_original/openapi.yaml#POST /v0.1/checkouts
+    - openapi/_original/openapi.yaml#POST /v0.1/merchants/{merchant_code}/readers/{reader_id}/checkout
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/openapi.yaml#POST /v1.0/merchants/{merchant_code}/payments/{transaction_id}/refunds
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/openapi.yaml#GET /v0.1/merchants/{merchant_code}/payment-methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: customer_id
+      name: first_name
+      email: email
+      phone: phone
+      address: address
+      last_name: last_name
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/openapi.yaml#GET /v0.1/customers/{customer_id}
+    - openapi/_original/openapi.yaml#POST /v0.1/customers
+    - openapi/_original/openapi.yaml#PUT /v0.1/customers/{customer_id}
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+      method: type
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/openapi.yaml#GET /v1.0/merchants/{merchant_code}/payouts

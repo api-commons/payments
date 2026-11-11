@@ -1,0 +1,71 @@
+provider: coinflow
+apis_io: https://apis.io/providers/coinflow/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id:
+      - _id
+      - paymentId
+      status: status
+      created_at: createdAt
+      payment_method_id: source
+      updated_at: updatedAt
+      customer_id: customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#GET /merchant/payments
+    - openapi/_original/coinflow-openapi-original.json#GET /merchant/payments/{paymentId}
+    - openapi/_original/coinflow-openapi-original.json#GET /refunds/payment/{paymentId}
+  refund:
+    path_segment:
+    - credits
+    - refund
+    - refunds
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      reason: refundReason
+      payment_id: paymentId
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#GET /refunds
+    - openapi/_original/coinflow-openapi-original.json#POST /marketplace/link/purchase/credits
+    - openapi/_original/coinflow-openapi-original.json#PUT /merchant/payments/{paymentId}/refund
+  customer:
+    path_segment:
+    - customer
+    - customers
+    properties:
+      id: _id
+      email: email
+      created_at: createdAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#GET /merchant/customers
+    - openapi/_original/coinflow-openapi-original.json#POST /customer
+  payout:
+    path_segment:
+    - payout
+    properties:
+      amount: amount
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#POST /merchant/withdraws/payout
+  dispute:
+    path_segment:
+    - chargebacks
+    properties:
+      created_at: createdAt
+      reason: reasonCode
+      updated_at: updatedAt
+      payment_id: payment
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/coinflow-openapi-original.json#GET /merchant/chargebacks
+    - openapi/_original/coinflow-openapi-original.json#GET /merchant/chargebacks/{paymentId}

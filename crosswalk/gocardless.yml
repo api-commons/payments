@@ -1,0 +1,43 @@
+provider: gocardless
+apis_io: https://apis.io/providers/gocardless/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/gocardless-openapi.yml#GET /payments
+    - openapi/_original/gocardless-openapi.yml#GET /payments/{id}
+    - openapi/_original/gocardless-openapi.yml#POST /payments
+    - openapi/_original/gocardless-openapi.yml#PUT /payments/{id}
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/gocardless-openapi.yml#GET /refunds
+    - openapi/_original/gocardless-openapi.yml#GET /refunds/{id}
+    - openapi/_original/gocardless-openapi.yml#POST /refunds
+    - openapi/_original/gocardless-openapi.yml#PUT /refunds/{id}
+  customer:
+    path_segment:
+    - customers
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/gocardless-openapi.yml#GET /customers
+    - openapi/_original/gocardless-openapi.yml#GET /customers/{id}
+    - openapi/_original/gocardless-openapi.yml#POST /customers
+    - openapi/_original/gocardless-openapi.yml#PUT /customers/{id}
+  payout:
+    path_segment:
+    - payouts
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/gocardless-openapi.yml#GET /payouts
+    - openapi/_original/gocardless-openapi.yml#GET /payouts/{id}

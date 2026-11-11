@@ -1,0 +1,36 @@
+provider: primer
+apis_io: https://apis.io/providers/primer/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currencyCode
+      payment_method_id: paymentMethod
+      metadata: metadata
+      customer_id:
+      - customerId
+      - customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/primer-payments-openapi.yml#GET /payments
+    - openapi/_original/primer-payments-openapi.yml#GET /payments/{id}
+    - openapi/_original/primer-payments-openapi.yml#POST /payments
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      currency: currencyCode
+      reason: reason
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/primer-payments-openapi.yml#POST /payments/{id}/refund

@@ -1,0 +1,38 @@
+provider: podium
+apis_io: https://apis.io/providers/podium/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - payments
+    properties:
+      status: status
+      amount: amount
+      created_at: createdAt
+      payment_method_id: paymentMethodId
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/podium-payments-openapi-original.json#GET /v4/payments/{uid}
+    - openapi/_original/podium-payments-openapi-original.json#POST /v4/invoices/{uid}/charge
+    - openapi/_original/podium-payments-openapi.yml#GET /v4/payments/{uid}
+    - openapi/_original/podium-payments-openapi.yml#POST /v4/invoices/{uid}/charge
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      amount: amount
+      status: status
+      created_at: createdAt
+      reason: reason
+      description: note
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/podium-payments-openapi-original.json#GET /v4/refunds/{uid}
+    - openapi/_original/podium-payments-openapi-original.json#POST /v4/invoices/{uid}/refund
+    - openapi/_original/podium-payments-openapi-original.json#POST /v4/refunds
+    - openapi/_original/podium-payments-openapi.yml#GET /v4/refunds/{uid}
+    - openapi/_original/podium-payments-openapi.yml#POST /v4/invoices/{uid}/refund

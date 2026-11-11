@@ -1,0 +1,69 @@
+provider: paystack
+apis_io: https://apis.io/providers/paystack/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - charges
+    properties:
+      status: status
+      amount: amount
+      metadata: metadata
+      external_id: reference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/paystack-accept-payments-openapi.yml#GET /charge/{reference}
+    - openapi/_original/paystack-accept-payments-openapi.yml#POST /charge
+    - openapi/_original/paystack-openapi-original.yml#GET /bulkcharge/{code}/charges
+    - openapi/_original/paystack-openapi-original.yml#GET /charge/{reference}
+    - openapi/_original/paystack-openapi-original.yml#POST /charge
+  refund:
+    path_segment:
+    - refund
+    properties:
+      amount: amount
+      status: status
+      currency: currency
+      payment_id: transaction
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/paystack-openapi-original.yml#GET /refund
+    - openapi/_original/paystack-openapi-original.yml#GET /refund/{id}
+    - openapi/_original/paystack-openapi-original.yml#POST /refund
+    - openapi/_original/paystack-refunds-disputes-openapi.yml#GET /refund
+    - openapi/_original/paystack-refunds-disputes-openapi.yml#GET /refund/{id}
+  customer:
+    path_segment:
+    - customer
+    properties:
+      status: status
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/paystack-customers-openapi.yml#GET /customer
+    - openapi/_original/paystack-customers-openapi.yml#GET /customer/{code}
+    - openapi/_original/paystack-customers-openapi.yml#POST /customer
+    - openapi/_original/paystack-customers-openapi.yml#PUT /customer/{code}
+    - openapi/_original/paystack-openapi-original.yml#GET /customer
+  payout:
+    path_segment:
+    - settlement
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/paystack-openapi-original.yml#GET /settlement
+    - openapi/_original/paystack-settlements-openapi.yml#GET /settlement
+  dispute:
+    path_segment:
+    - dispute
+    properties:
+      status: status
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/paystack-openapi-original.yml#GET /dispute
+    - openapi/_original/paystack-openapi-original.yml#GET /dispute/{id}
+    - openapi/_original/paystack-openapi-original.yml#PUT /dispute/{id}
+    - openapi/_original/paystack-refunds-disputes-openapi.yml#GET /dispute
+    - openapi/_original/paystack-refunds-disputes-openapi.yml#GET /dispute/{id}

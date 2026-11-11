@@ -1,0 +1,23 @@
+provider: bitski
+apis_io: https://apis.io/providers/bitski/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: status
+      payment_method_id: paymentMethodId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/bitski-nft-service-openapi-original.json#PATCH /v1/orders/{order_id}/payments/{payment_id}
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/bitski-nft-service-openapi-original.json#GET /v1/users/{user_id}/payment-methods
+    - openapi/_original/bitski-nft-service-openapi-original.json#POST /v1/users/{user_id}/payment-methods

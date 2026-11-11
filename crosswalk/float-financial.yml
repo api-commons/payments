@@ -1,0 +1,18 @@
+provider: float-financial
+apis_io: https://apis.io/providers/float-financial/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/float-financial-openapi.json#GET /v1/payments
+    - openapi/_original/float-financial-openapi.json#GET /v1/payments/{payment_id}
+    - openapi/_original/float-financial-openapi.yml#GET /v1/payments
+    - openapi/_original/float-financial-openapi.yml#GET /v1/payments/{payment_id}

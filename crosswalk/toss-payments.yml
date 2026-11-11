@@ -1,0 +1,30 @@
+provider: toss-payments
+apis_io: https://apis.io/providers/toss-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: status
+      amount: totalAmount
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/toss-payments-openapi.yml#GET /v1/payments/{paymentKey}
+  payout:
+    path_segment:
+    - settlements
+    - payouts
+    properties:
+      id: id
+      status: status
+      amount: amount
+      method: method
+      destination: destination
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/toss-payments-openapi.yml#GET /v1/settlements
+    - openapi/_original/toss-payments-openapi.yml#POST /v1/settlements
+    - openapi/_original/toss-payments-openapi.yml#POST /v2/payouts

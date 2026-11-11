@@ -1,0 +1,52 @@
+provider: lean-technologies
+apis_io: https://apis.io/providers/lean-technologies/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - payment
+    properties:
+      id: id
+      status:
+      - status
+      - payment_status
+      amount: amount
+      created_at: created_at
+      updated_at: updated_at
+      customer_id: customer_id
+      external_id: reference
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/lean-technologies-ksa-payouts-openapi.yml#GET /payouts/v1/payments
+    - openapi/_original/lean-technologies-ksa-payouts-openapi.yml#POST /payouts/v1/payment
+    - openapi/_original/lean-technologies-payouts-extended-openapi.yml#GET /payouts/v1/payments
+    - openapi/_original/lean-technologies-payouts-extended-openapi.yml#POST /payouts/v1/payment
+    - openapi/_original/lean-technologies-payouts-openapi.yml#GET /payouts/v1/payments
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refund_id
+      amount: amount
+      status: status
+      created_at: created_at
+      currency: currency
+      reason: reason_code
+      payment_id: payment_id
+      description: description
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/lean-technologies-payouts-extended-openapi.yml#GET /payouts/refunds
+    - openapi/_original/lean-technologies-payouts-extended-openapi.yml#GET /payouts/refunds/{refund_id}
+    - openapi/_original/lean-technologies-payouts-extended-openapi.yml#POST /payouts/refunds
+    - openapi/_original/lean-technologies-refunds-openapi.yml#GET /payouts/refunds
+    - openapi/_original/lean-technologies-refunds-openapi.yml#POST /payouts/refunds
+  customer:
+    path_segment:
+    - customers
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/lean-technologies-ksa-reports-openapi.yml#POST /reports/v2/customers

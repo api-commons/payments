@@ -1,0 +1,601 @@
+openapi: 3.1.0
+info:
+  title: Payments (API Commons)
+  version: 0.1.0-draft.20261110
+  description: 'The common Payments interface, distilled from the harvested OpenAPI of 692 providers in the APIs.io
+    catalog. Not a product: no one serves this API. It is the shape the market already shares, measured, so that
+    providers, agents and integrators can map to one vocabulary. See profile.yml.'
+  license:
+    name: CC BY-NC-SA 4.0
+    url: https://creativecommons.org/licenses/by-nc-sa/4.0/
+paths:
+  /payments:
+    post:
+      operationId: createPayment
+      summary: Create a payment
+      tags:
+      - Payments
+      x-commons-tier: core
+      x-commons-share: 0.712
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id001
+                $ref: '#/components/schemas/Payment'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+    get:
+      operationId: listPayments
+      summary: List payments
+      tags:
+      - Payments
+      x-commons-tier: core
+      x-commons-share: 0.676
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id001
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /payments/{payment_id}:
+    parameters:
+    - $ref: '#/components/parameters/payment_id'
+    get:
+      operationId: getPayment
+      summary: Get a payment
+      tags:
+      - Payments
+      x-commons-tier: core
+      x-commons-share: 0.651
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+    patch:
+      operationId: updatePayment
+      summary: Update a payment
+      tags:
+      - Payments
+      x-commons-tier: extended
+      x-commons-share: 0.214
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id001
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id001
+  /checkout-sessions:
+    post:
+      operationId: createCheckoutSession
+      summary: Create a checkout session
+      tags:
+      - Checkout Sessions
+      x-commons-tier: core
+      x-commons-share: 0.866
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id002
+                $ref: '#/components/schemas/CheckoutSession'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+    get:
+      operationId: listCheckoutSessions
+      summary: List checkout sessions
+      tags:
+      - Checkout Sessions
+      x-commons-tier: extended
+      x-commons-share: 0.402
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id002
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /checkout-sessions/{checkout_session_id}:
+    parameters:
+    - $ref: '#/components/parameters/checkout_session_id'
+    get:
+      operationId: getCheckoutSession
+      summary: Get a checkout session
+      tags:
+      - Checkout Sessions
+      x-commons-tier: core
+      x-commons-share: 0.671
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+    patch:
+      operationId: updateCheckoutSession
+      summary: Update a checkout session
+      tags:
+      - Checkout Sessions
+      x-commons-tier: extended
+      x-commons-share: 0.28
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id002
+    delete:
+      operationId: deleteCheckoutSession
+      summary: Delete a checkout session
+      tags:
+      - Checkout Sessions
+      x-commons-tier: extended
+      x-commons-share: 0.232
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id002
+  /refunds:
+    post:
+      operationId: createRefund
+      summary: Create a refund
+      tags:
+      - Refunds
+      x-commons-tier: core
+      x-commons-share: 0.892
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id003
+                $ref: '#/components/schemas/Refund'
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id003
+    get:
+      operationId: listRefunds
+      summary: List refunds
+      tags:
+      - Refunds
+      x-commons-tier: extended
+      x-commons-share: 0.39
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id003
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+  /refunds/{refund_id}:
+    parameters:
+    - $ref: '#/components/parameters/refund_id'
+    get:
+      operationId: getRefund
+      summary: Get a refund
+      tags:
+      - Refunds
+      x-commons-tier: extended
+      x-commons-share: 0.399
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id003
+  /payment-methods:
+    get:
+      operationId: listPaymentMethods
+      summary: List payment methods
+      tags:
+      - Payment Methods
+      x-commons-tier: core
+      x-commons-share: 0.872
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id004
+                  $ref: '#/components/schemas/PaymentMethod'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createPaymentMethod
+      summary: Create a payment method
+      tags:
+      - Payment Methods
+      x-commons-tier: extended
+      x-commons-share: 0.453
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+  /payment-methods/{payment_method_id}:
+    parameters:
+    - $ref: '#/components/parameters/payment_method_id'
+    get:
+      operationId: getPaymentMethod
+      summary: Get a payment method
+      tags:
+      - Payment Methods
+      x-commons-tier: extended
+      x-commons-share: 0.407
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+    delete:
+      operationId: deletePaymentMethod
+      summary: Delete a payment method
+      tags:
+      - Payment Methods
+      x-commons-tier: extended
+      x-commons-share: 0.314
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+    patch:
+      operationId: updatePaymentMethod
+      summary: Update a payment method
+      tags:
+      - Payment Methods
+      x-commons-tier: extended
+      x-commons-share: 0.209
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
+  /customers/{customer_id}:
+    parameters:
+    - $ref: '#/components/parameters/customer_id'
+    get:
+      operationId: getCustomer
+      summary: Get a customer
+      tags:
+      - Customers
+      x-commons-tier: core
+      x-commons-share: 0.808
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id005
+                $ref: '#/components/schemas/Customer'
+    patch:
+      operationId: updateCustomer
+      summary: Update a customer
+      tags:
+      - Customers
+      x-commons-tier: core
+      x-commons-share: 0.569
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+    delete:
+      operationId: deleteCustomer
+      summary: Delete a customer
+      tags:
+      - Customers
+      x-commons-tier: extended
+      x-commons-share: 0.437
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+  /customers:
+    get:
+      operationId: listCustomers
+      summary: List customers
+      tags:
+      - Customers
+      x-commons-tier: core
+      x-commons-share: 0.796
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id005
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createCustomer
+      summary: Create a customer
+      tags:
+      - Customers
+      x-commons-tier: core
+      x-commons-share: 0.784
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id005
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id005
+  /payouts:
+    get:
+      operationId: listPayouts
+      summary: List payouts
+      tags:
+      - Payouts
+      x-commons-tier: core
+      x-commons-share: 0.628
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id006
+                  $ref: '#/components/schemas/Payout'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createPayout
+      summary: Create a payout
+      tags:
+      - Payouts
+      x-commons-tier: core
+      x-commons-share: 0.628
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id006
+  /payouts/{payout_id}:
+    parameters:
+    - $ref: '#/components/parameters/payout_id'
+    get:
+      operationId: getPayout
+      summary: Get a payout
+      tags:
+      - Payouts
+      x-commons-tier: core
+      x-commons-share: 0.595
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id006
+  /disputes:
+    get:
+      operationId: listDisputes
+      summary: List disputes
+      tags:
+      - Disputes
+      x-commons-tier: core
+      x-commons-share: 0.74
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: &id007
+                  $ref: '#/components/schemas/Dispute'
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createDispute
+      summary: Create a dispute
+      tags:
+      - Disputes
+      x-commons-tier: extended
+      x-commons-share: 0.351
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id007
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id007
+  /disputes/{dispute_id}:
+    parameters:
+    - $ref: '#/components/parameters/dispute_id'
+    get:
+      operationId: getDispute
+      summary: Get a dispute
+      tags:
+      - Disputes
+      x-commons-tier: core
+      x-commons-share: 0.636
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id007
+components:
+  schemas:
+    Payment:
+      $ref: ./schema/payment.json
+    CheckoutSession:
+      $ref: ./schema/checkout_session.json
+    Refund:
+      $ref: ./schema/refund.json
+    PaymentMethod:
+      $ref: ./schema/payment_method.json
+    Customer:
+      $ref: ./schema/customer.json
+    Payout:
+      $ref: ./schema/payout.json
+    Dispute:
+      $ref: ./schema/dispute.json
+  parameters:
+    payment_id:
+      name: payment_id
+      in: path
+      required: true
+      schema:
+        type: string
+    checkout_session_id:
+      name: checkout_session_id
+      in: path
+      required: true
+      schema:
+        type: string
+    refund_id:
+      name: refund_id
+      in: path
+      required: true
+      schema:
+        type: string
+    payment_method_id:
+      name: payment_method_id
+      in: path
+      required: true
+      schema:
+        type: string
+    customer_id:
+      name: customer_id
+      in: path
+      required: true
+      schema:
+        type: string
+    payout_id:
+      name: payout_id
+      in: path
+      required: true
+      schema:
+        type: string
+    dispute_id:
+      name: dispute_id
+      in: path
+      required: true
+      schema:
+        type: string

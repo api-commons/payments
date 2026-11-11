@@ -1,0 +1,45 @@
+provider: klarna
+apis_io: https://apis.io/providers/klarna/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - sessions
+    properties:
+      status: status
+      customer_id: customer
+      expires_at: expires_at
+      success_url: merchant_urls
+      updated_at: updated_at
+      url: redirect_url
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/hosted-payment-page-api-openapi.yml#DELETE /hpp/v1/sessions/{session_id}
+    - openapi/_original/hosted-payment-page-api-openapi.yml#GET /hpp/v1/sessions/{session_id}
+    - openapi/_original/hosted-payment-page-api-openapi.yml#POST /hpp/v1/sessions
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refund_id
+      description: description
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/order-management-api-openapi.yml#GET /ordermanagement/v1/orders/{order_id}/refunds/{refund_id}
+    - openapi/_original/order-management-api-openapi.yml#POST /ordermanagement/v1/orders/{order_id}/refunds
+  payout:
+    path_segment:
+    - payouts
+    - settlements
+    - payout
+    properties:
+      created_at: created_at
+      currency: currency_code
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/klarna-settlements-api-openapi.yml#GET /payouts
+    - openapi/_original/klarna-settlements-api-openapi.yml#GET /payouts/{payment_reference}
+    - openapi/_original/klarna-settlements-api-openapi.yml#GET /reports/payout
+    - openapi/_original/merchant-card-service-api-openapi.yml#GET /merchantcard/v3/settlements/{settlement_id}
+    - openapi/_original/merchant-card-service-api-openapi.yml#POST /merchantcard/v3/settlements

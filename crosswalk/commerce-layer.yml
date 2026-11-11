@@ -1,0 +1,58 @@
+provider: commerce-layer
+apis_io: https://apis.io/providers/commerce-layer/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /authorizations
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /authorizations/{authorizationId}
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /orders/{orderId}/authorizations
+    - openapi/_original/commerce-layer-core-api-openapi.json#PATCH /authorizations/{authorizationId}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /captures/{captureId}/refunds
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /orders/{orderId}/refunds
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /refunds
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /refunds/{refundId}
+    - openapi/_original/commerce-layer-core-api-openapi.json#PATCH /refunds/{refundId}
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      id: id
+      type: type
+      metadata: attributes
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/commerce-layer-core-api-openapi.json#DELETE /payment_methods/{paymentMethodId}
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /adyen_gateways/{adyenGatewayId}/payment_methods
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /axerve_gateways/{axerveGatewayId}/payment_methods
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /braintree_gateways/{braintreeGatewayId}/payment_methods
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /checkout_com_gateways/{checkoutComGatewayId}/payment_methods
+  customer:
+    path_segment:
+    - customer
+    - customers
+    properties:
+      id: id
+      metadata: attributes
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/commerce-layer-core-api-openapi.json#DELETE /customers/{customerId}
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /coupon_recipients/{couponRecipientId}/customer
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /customer_addresses/{customerAddressId}/customer
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /customer_groups/{customerGroupId}/customers
+    - openapi/_original/commerce-layer-core-api-openapi.json#GET /customer_password_resets/{customerPasswordResetId}/customer

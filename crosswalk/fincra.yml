@@ -1,0 +1,19 @@
+provider: fincra
+apis_io: https://apis.io/providers/fincra/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charges
+    properties:
+      status: status
+      amount: amount
+      currency: currency
+      description: description
+      customer_id: customer
+      external_id: reference
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fincra-openapi.yml#GET /checkout/charges/{reference}
+    - openapi/_original/fincra-openapi.yml#POST /checkout/charges

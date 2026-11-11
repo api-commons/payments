@@ -1,0 +1,89 @@
+# Payments
+
+The common payments vocabulary -- taking money, hosted checkout, refunds, stored payment
+methods, payouts and disputes -- distilled from the APIs that already exist. Part of
+[Schema Commons](https://github.com/api-commons/schema-commons), published by the
+[API Commons](https://apicommons.org).
+
+Built from the providers tagged Payments, Payment Gateway, Payment Processing, Card
+Payments, Online Payments, Merchant Services, Acquiring, Payment Orchestration, Checkout,
+Recurring, Embedded or Mobile Payments in [APIs.io](https://apis.io) that publish their own
+OpenAPI. Only harvested contracts count -- nothing API Evangelist generated. Every number
+below is a count of providers.
+
+## What the market already agrees on
+
+<!-- commons:summary -->
+| Concept | Expose it | Readable schema | Core properties (share) | Collection named |
+| --- | ---: | ---: | --- | --- |
+| payment | 281 | 264 | id 74%, status 68%, amount 62%, created_at 50% | payments 184, charges 44, payment 42, charge 28 |
+| checkout_session | 82 | 74 | id 73%, status 58% | checkout 29, checkouts 23, sessions 22, payment-links 16 |
+| refund | 213 | 200 | id 74%, amount 70%, status 62%, created_at 50% | refund 121, refunds 110, credits 15, reversals 12 |
+| payment_method | 86 | 83 | id 68%, type 55% | payment-methods 40, payment_methods 24, paymentmethods 13, sources 7 |
+| customer | 167 | 159 | id 84%, name 68%, email 66%, created_at 57% | customers 134, customer 31, buyers 8, payers 8 |
+| payout | 121 | 109 | id 66%, status 66%, amount 59%, created_at 50% | payouts 69, settlements 29, payout 17, settlement 11 |
+| dispute | 77 | 71 | status 68%, created_at 65%, id 65%, reason 65% | disputes 48, chargebacks 20, dispute 13, chargeback 7 |
+
+Cohort: 692 providers with harvested OpenAPI, 431 crosswalks. Of the providers exposing a payment: 71% create, 68% list, 65% fetch, 21% update, 10% delete. Generated 2026-11-10 by build.py.
+<!-- /commons:summary -->
+
+Shares are of the providers with a readable resource schema for that concept. The
+extended tier and the long tail of every concept are in [profile.yml](profile.yml).
+
+Across every money-moving concept the pattern repeats: `id`, `status` and `amount` are
+core, and `currency` sits just below (31-44%). Part of that gap is modelling -- 25 providers
+nest currency inside an amount object (`amount: {value, currency}`) rather than beside it --
+and the rest is providers that leave currency implicit in the account. The crosswalk
+records which side each provider is on.
+
+## Artifacts
+
+- [openapi.yml](openapi.yml) -- OpenAPI 3.1 of the shared operations. No one serves it; it
+  is the shape to map to. Lints clean against the
+  [naming ruleset](https://github.com/api-commons/schema-commons/blob/main/ruleset/schema-commons-naming.yaml).
+- [schema/](schema) -- JSON Schema 2020-12 per concept; each property carries
+  `x-commons-tier`, `x-commons-share`, `x-commons-providers` and the spellings seen.
+- [crosswalk/](crosswalk) -- one per provider, common name -> their name, with the harvested
+  spec and operations each mapping was read from. Stripe's payment is a `charge`; Square's
+  hosted checkout is a `payment-link`; Adyen's is a `session`.
+- [adopters.yml](adopters.yml) -- who exposes which concept, linked to their APIs.io page.
+- [concepts.yml](concepts.yml) -- the only hand-written input: concepts, path segments,
+  aliases, reviewed exclusions, merged duplicates and shared specifications.
+- [census/](census) -- the cohort and the raw census the profile is built from.
+
+## Decisions
+
+These are calls, not measurements, recorded so they can be revisited as the method matures.
+
+- **"Acquired" is not a cohort tag.** It marks acquired companies in the catalog, not card
+  acquiring. The API, AI, LLM and MCP "gateway" tags are not payment gateways either.
+- **A hosted checkout session lives here, not in commerce.** The commerce context found
+  `/checkout` to be a payment session almost everywhere and handed it over as
+  `checkout_session`, alongside payment links and hosted pages.
+- **`/sessions` is reviewed provider by provider.** Eight are hosted payment sessions (Citi,
+  FastSpring, Klarna, Komoju, Plug, Satispay, Versapay, Zuora); sixteen are login, 3-D
+  Secure, KYC, school-term or event sessions and are excluded with the reason in
+  [concepts.yml](concepts.yml).
+- **An issued card is not a payment method.** 104 providers matched only through `/cards`
+  or `/tokens` return `cvv`, `card_number` and an account -- card issuing, not a stored way to
+  pay. Those segments are dropped and card issuing is registered as its own context.
+- **`/transactions` is not a payment.** In this cohort it is as often a bank-ledger line or a
+  card-programme feed, and the path alone cannot tell them apart.
+- **A standard counts once.** Twenty-five UK banks republish the UK Open Banking
+  specification byte-for-byte. Each is an adopter with its own crosswalk, but the vocabulary
+  is measured once, under `shared_specs:`, because it was written once. (Their payment
+  initiation resources, `/domestic-payments`, are a different shape from a card payment and
+  do not match here -- a candidate for a payment-initiation concept.)
+- **One company counts once.** Duplicate catalog listings found by
+  `scripts/duplicates.py` (Finix, Billie, Mesh, Method and others) are merged under
+  `duplicates:`.
+
+## Rebuild
+
+```bash
+../schema-commons/scripts/run.sh .
+```
+
+## License
+
+Artifacts CC BY-NC-SA 4.0 ([LICENSE](LICENSE)); code Apache 2.0 ([LICENSE-CODE](LICENSE-CODE)).

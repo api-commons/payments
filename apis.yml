@@ -1,0 +1,63 @@
+aid: common-payments
+name: Payments
+type: Common
+description: 'The common Payments vocabulary, distilled from the harvested OpenAPI of 692 providers in APIs.io:
+  shared operations, JSON Schema per concept with measured adoption, and a crosswalk from the common names to each
+  provider''s own.'
+image: https://kinlane-productions.s3.amazonaws.com/apis-json/apis-json-logo.jpg
+tags:
+- Application Programming Interface
+- API
+- Payments
+- Payment Gateway
+- Payment Processing
+- Card Payments
+- Common Schema
+created: '2026-11-10'
+modified: '2026-11-10'
+url: https://raw.githubusercontent.com/api-commons/payments/main/apis.yml
+specificationVersion: '0.20'
+apis:
+- aid: common-payments:payments
+  name: Common Payments Interface
+  description: The Payments interface the market already shares, measured.
+  humanURL: https://github.com/api-commons/payments
+  tags:
+  - Payments
+  - Payment Gateway
+  properties:
+  - type: OpenAPI
+    url: https://raw.githubusercontent.com/api-commons/payments/main/openapi.yml
+  - type: Profile
+    url: https://raw.githubusercontent.com/api-commons/payments/main/profile.yml
+  - type: Adopters
+    url: https://raw.githubusercontent.com/api-commons/payments/main/adopters.yml
+  - type: Rules
+    url: https://raw.githubusercontent.com/api-commons/schema-commons/main/ruleset/schema-commons-naming.yaml
+  - type: JSONSchema
+    name: payment
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/payment.json
+  - type: JSONSchema
+    name: checkout_session
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/checkout_session.json
+  - type: JSONSchema
+    name: refund
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/refund.json
+  - type: JSONSchema
+    name: payment_method
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/payment_method.json
+  - type: JSONSchema
+    name: customer
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/customer.json
+  - type: JSONSchema
+    name: payout
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/payout.json
+  - type: JSONSchema
+    name: dispute
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/dispute.json
+common:
+- type: License
+  url: https://raw.githubusercontent.com/api-commons/payments/main/LICENSE
+maintainers:
+- FN: Kin Lane
+  email: kin@apievangelist.com

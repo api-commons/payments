@@ -1,0 +1,55 @@
+provider: cashfree
+apis_io: https://apis.io/providers/cashfree/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: payment_status
+      payment_method_id: payment_method
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/payments
+    - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/payments/{cf_payment_id}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: refund_id
+      created_at: created_at
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/refunds
+    - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/refunds/{refund_id}
+    - openapi/_original/openapi-payment-gateway.json#POST /orders/{order_id}/refunds
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/openapi-payment-gateway.json#POST /eligibility/payment_methods
+  payout:
+    path_segment:
+    - settlements
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/settlements
+    - openapi/_original/openapi-payment-gateway.json#POST /settlements
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      created_at: created_at
+      id: dispute_id
+      reason: reason_code
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/openapi-payment-gateway.json#GET /disputes/{dispute_id}
+    - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/disputes
+    - openapi/_original/openapi-payment-gateway.json#GET /payments/{cf_payment_id}/disputes

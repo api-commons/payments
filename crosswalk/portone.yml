@@ -1,0 +1,34 @@
+provider: portone
+apis_io: https://apis.io/providers/portone/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - id
+      - transactionId
+      status: status
+      amount: amount
+      currency: currency
+      updated_at: updatedAt
+      customer_id: customer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/portone-openapi.yml#GET /payments
+    - openapi/_original/portone-openapi.yml#GET /payments/{paymentId}
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      id: id
+      status: status
+      amount: amount
+      created_at: createdAt
+      currency: currency
+      method: method
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/portone-openapi.yml#GET /platform/payouts

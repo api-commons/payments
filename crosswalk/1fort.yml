@@ -1,0 +1,60 @@
+provider: 1fort
+apis_io: https://apis.io/providers/1fort/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: payment_status
+      created_at: created_at
+      payment_method_id: source
+      updated_at: updated_at
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/1fort-openapi-original.yml#GET /v2/ascend/payments
+    - openapi/_original/1fort-openapi-original.yml#GET /v2/ascend/payments/{id}
+    - openapi/_original/1fort-openapi-original.yml#GET /v2/billing/payments
+    - openapi/_original/1fort-openapi-original.yml#GET /v2/billing/payments/{id}
+    - openapi/_original/1fort-openapi-original.yml#PATCH /v2/billing/payments/{id}
+  checkout_session:
+    path_segment:
+    - checkout
+    properties:
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/1fort-openapi-original.yml#GET /v2/checkout/{id}
+    - openapi/_original/1fort-openapi.json#GET /v2/checkout/{id}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount: amount_cents
+      status: status
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/1fort-openapi-original.yml#GET /v2/billing/refunds
+    - openapi/_original/1fort-openapi-original.yml#GET /v2/billing/refunds/{id}
+    - openapi/_original/1fort-openapi.json#GET /v2/billing/refunds
+    - openapi/_original/1fort-openapi.json#GET /v2/billing/refunds/{id}
+  payout:
+    path_segment:
+    - payouts
+    - payout
+    properties:
+      id: id
+      status: status
+      destination: recipient
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/1fort-openapi-original.yml#GET /ascend/payouts
+    - openapi/_original/1fort-openapi-original.yml#GET /ascend/payouts/{id}
+    - openapi/_original/1fort-openapi-original.yml#POST /ascend/webhook/payout
+    - openapi/_original/1fort-openapi.json#GET /ascend/payouts
+    - openapi/_original/1fort-openapi.json#GET /ascend/payouts/{id}

@@ -1,0 +1,23 @@
+provider: apexxfintech
+apis_io: https://apis.io/providers/apexxfintech/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: _id
+      amount: amount
+      status: status
+      created_at: created_at
+      currency: currency
+      reason:
+      - reason
+      - reason_code
+      payment_id:
+      - transaction
+      - capture_id
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/apexxfintech-openapi.json#POST /api/refund/{transactionId}

@@ -1,0 +1,62 @@
+provider: blackbaud
+apis_io: https://apis.io/providers/blackbaud/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    - charges
+    properties:
+      id:
+      - id
+      - transaction_id
+      - payment_id
+      status: payment_status
+      amount:
+      - amount
+      - total_amount
+      payment_method_id: payment_method
+      description: description
+      metadata: custom_fields
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/blackbaud-altru-revenue-api-openapi.yml#DELETE /payments/{revenue_id}
+    - openapi/_original/blackbaud-altru-revenue-api-openapi.yml#GET /payments/{revenue_id}
+    - openapi/_original/blackbaud-altru-revenue-api-openapi.yml#PATCH /payments/{revenue_id}
+    - openapi/_original/blackbaud-altru-revenue-api-openapi.yml#POST /payments
+    - openapi/_original/blackbaud-billing-management-api-openapi.yml#POST /v1/batchimports/charges
+  refund:
+    path_segment:
+    - credits
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      reason: comment
+      description: description
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/blackbaud-billing-management-api-openapi.yml#POST /v1/batchimports/credits
+    - openapi/_original/blackbaud-grantmaking-api-openapi.yml#POST /api/v1/payments/refund
+    - openapi/_original/blackbaud-receivables-api-openapi.yml#GET /v1/credits
+    - openapi/_original/blackbaud-receivables-api-openapi.yml#GET /v1/credits/{id}
+    - openapi/_original/blackbaud-receivables-api-openapi.yml#GET /v1/refunds
+  payment_method:
+    path_segment:
+    - sources
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/blackbaud-communication-preference-api-openapi.yml#GET /v1/consent/sources
+  customer:
+    path_segment:
+    - buyers
+    properties:
+      id: id
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/blackbaud-accounts-payable-api-openapi.yml#GET /buyers

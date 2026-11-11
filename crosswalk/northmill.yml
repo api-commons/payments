@@ -1,0 +1,29 @@
+provider: northmill
+apis_io: https://apis.io/providers/northmill/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - paymentmethods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/northmill-flo-api-swagger.json#GET /v2/online/paymentmethods
+    - openapi/_original/northmill-flo-api-swagger.json#GET /v2/stores/{externalStoreId}/online/paymentmethods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: Id
+      name: Name
+      email: Email
+      phone: Mobile
+      address: Addresses
+      metadata: AdditionalData
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/northmill-flo-api-swagger.json#POST /v2/customers
+    - openapi/_original/northmill-flo-api-swagger.json#POST /v2/stores/{externalStoreId}/customers
+    - openapi/_original/northmill-flo-api-swagger.json#PUT /v2/customers
+    - openapi/_original/northmill-flo-api-swagger.json#PUT /v2/stores/{externalStoreId}/customers

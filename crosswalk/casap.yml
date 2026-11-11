@@ -1,0 +1,18 @@
+provider: casap
+apis_io: https://apis.io/providers/casap/
+context: payments
+generated: '2026-11-10'
+concepts:
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: status
+      id: uuid
+      reason:
+      - reason
+      - disputeReason
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/casap-openapi.json#GET /v1/disputes
+    - openapi/_original/casap-openapi.json#POST /v1/disputes

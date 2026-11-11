@@ -1,0 +1,72 @@
+provider: bigcommerce
+apis_io: https://apis.io/providers/bigcommerce/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      payment_method_id: payment_method_id
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/payment-processing-openapi-original.yml#POST /payments
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties:
+      id: id
+      created_at:
+      - created_time
+      - createdTime
+      updated_at:
+      - updated_time
+      - updatedTime
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/checkouts-openapi-original.yml#GET /checkouts/{checkoutId}
+    - openapi/_original/checkouts-openapi-original.yml#PUT /checkouts/{checkoutId}
+    - openapi/_original/storefront-checkouts-openapi-original.yml#GET /checkouts/{checkoutId}
+    - openapi/_original/storefront-checkouts-openapi-original.yml#PUT /checkouts/{checkoutId}
+  refund:
+    path_segment:
+    - refunds
+    properties:
+      id: id
+      amount:
+      - total_amount
+      - amount
+      created_at: created
+      reason: reason
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/orders-openapi-original.yml#GET /orders/payment_actions/refunds
+    - openapi/_original/orders-openapi-original.yml#GET /orders/payment_actions/refunds/{refund_id}
+    - openapi/_original/orders-openapi-original.yml#GET /orders/{order_id}/payment_actions/refunds
+    - openapi/_original/orders-openapi-original.yml#POST /orders/{order_id}/payment_actions/refunds
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name:
+      - first_name
+      - firstName
+      email: email
+      created_at: date_created
+      phone: phone
+      address: addresses
+      last_name:
+      - last_name
+      - lastName
+      updated_at: date_modified
+      metadata:
+      - attributes
+      - customFields
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/customers-openapi-original.yml#DELETE /customers
+    - openapi/_original/customers-openapi-original.yml#GET /customers
+    - openapi/_original/customers-openapi-original.yml#POST /customers
+    - openapi/_original/customers-openapi-original.yml#PUT /customers
+    - openapi/_original/storefront-customers-openapi-original.yml#POST /customers

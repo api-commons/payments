@@ -1,0 +1,13 @@
+provider: aeropay
+apis_io: https://apis.io/providers/aeropay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refunds
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/aeropay-v2-openapi.json#GET /v2/transaction/{transactionUUID}/refunds
+    - openapi/_original/aeropay-v2-openapi.yml#GET /v2/transaction/{transactionUUID}/refunds

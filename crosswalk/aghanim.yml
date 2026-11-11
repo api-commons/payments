@@ -1,0 +1,26 @@
+provider: aghanim
+apis_io: https://apis.io/providers/aghanim/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: payment_id
+      status: status
+      created_at: created_at
+      currency: currency
+      updated_at: modified_at
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/aghanim-openapi-original.json#GET /v1/payments
+  refund:
+    path_segment:
+    - refund
+    properties:
+      reason: reason
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/aghanim-openapi-original.json#POST /v1/orders/{order_id}/refund

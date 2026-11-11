@@ -1,0 +1,25 @@
+provider: visa-acceptance
+apis_io: https://apis.io/providers/visa-acceptance/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/visa-acceptance-payments-openapi.yml#POST /pts/v2/payments
+  refund:
+    path_segment:
+    - refunds
+    - reversals
+    properties:
+      id: id
+      status: status
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/visa-acceptance-payments-openapi.yml#POST /pts/v2/payments/{paymentId}/refunds
+    - openapi/_original/visa-acceptance-payments-openapi.yml#POST /pts/v2/payments/{paymentId}/reversals

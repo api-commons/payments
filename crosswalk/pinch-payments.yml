@@ -1,0 +1,89 @@
+provider: pinch-payments
+apis_io: https://apis.io/providers/pinch-payments/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      currency: currency
+      description: description
+      metadata: metadata
+      customer_id:
+      - payer
+      - payerId
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/pinch-payments-payments.yml#DELETE /payments/{id}
+    - openapi/_original/pinch-payments-payments.yml#GET /payments/{id}
+    - openapi/_original/pinch-payments-payments.yml#POST /payments
+  checkout_session:
+    path_segment:
+    - payment-links
+    properties:
+      id: id
+      customer_id: payer
+      currency: currency
+      amount:
+      - amount
+      - amountInCents
+      description: description
+      metadata: metadata
+      success_url: returnUrl
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/pinch-payments-payment-links.yml#DELETE /payment-links/{id}
+    - openapi/_original/pinch-payments-payment-links.yml#GET /payment-links
+    - openapi/_original/pinch-payments-payment-links.yml#GET /payment-links/{id}
+    - openapi/_original/pinch-payments-payment-links.yml#POST /payment-links
+  refund:
+    path_segment:
+    - refunds
+    - refund
+    properties:
+      id: id
+      amount: amount
+      status: status
+      currency: currency
+      reason: reason
+      payment_id: paymentId
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/pinch-payments-core.yml#GET /refund/{id}
+    - openapi/_original/pinch-payments-core.yml#GET /refunds
+    - openapi/_original/pinch-payments-core.yml#POST /refunds
+  payment_method:
+    path_segment:
+    - sources
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/pinch-payments-payers.yml#DELETE /payers/{id}/sources/{sourceId}
+    - openapi/_original/pinch-payments-payers.yml#POST /payers/{id}/sources
+  customer:
+    path_segment:
+    - payers
+    - payer
+    properties:
+      id: id
+      name:
+      - firstName
+      - fullName
+      email: emailAddress
+      status:
+      - state
+      - status
+      last_name: lastName
+      metadata: metadata
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/pinch-payments-payers.yml#DELETE /payers/{id}
+    - openapi/_original/pinch-payments-payers.yml#GET /payers
+    - openapi/_original/pinch-payments-payers.yml#GET /payers/{id}
+    - openapi/_original/pinch-payments-payers.yml#POST /payers
+    - openapi/_original/pinch-payments-payment-links.yml#GET /payment-links/payer/{payerId}

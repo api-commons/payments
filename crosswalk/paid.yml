@@ -1,0 +1,58 @@
+provider: paid
+apis_io: https://apis.io/providers/paid/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkouts
+    properties:
+      id: id
+      status: status
+      created_at: createdAt
+      customer_id: customerId
+      currency: currency
+      expires_at: expiresAt
+      metadata: metadata
+      success_url: successUrl
+      updated_at: updatedAt
+      line_items: products
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paid-v2.json#DELETE /checkouts/{id}
+    - openapi/_original/paid-v2.json#GET /checkouts/
+    - openapi/_original/paid-v2.json#GET /checkouts/{id}
+    - openapi/_original/paid-v2.json#POST /checkouts/
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+      created_at: createdAt
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paid-v1.json#DELETE /customers/external/{externalId}/payment-methods/{paymentMethodId}
+    - openapi/_original/paid-v1.json#GET /customers/external/{externalId}/payment-methods
+    - openapi/_original/paid-v1.json#POST /customers/external/{externalId}/payment-methods
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      email: email
+      created_at: createdAt
+      phone: phone
+      address: billingAddress
+      status: status
+      updated_at: updatedAt
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/paid-v1.json#DELETE /customers/{customerId}
+    - openapi/_original/paid-v1.json#GET /customers
+    - openapi/_original/paid-v1.json#GET /customers/{customerId}
+    - openapi/_original/paid-v1.json#POST /customers
+    - openapi/_original/paid-v1.json#PUT /customers/{customerId}

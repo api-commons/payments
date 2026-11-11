@@ -1,0 +1,16 @@
+provider: cariqa
+apis_io: https://apis.io/providers/cariqa/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: id
+      type: type
+      created_at: created_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/cariqa-openapi-original.yml#DELETE /api/v1/users/{user_id}/payment-methods/{pm}/
+    - openapi/_original/cariqa-openapi-original.yml#GET /api/v1/users/{user_id}/payment-methods/

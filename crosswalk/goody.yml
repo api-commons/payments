@@ -1,0 +1,13 @@
+provider: goody
+apis_io: https://apis.io/providers/goody/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment_method:
+    path_segment:
+    - payment_methods
+    properties:
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/goody-openapi.json#GET /v1/payment_methods

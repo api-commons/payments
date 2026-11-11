@@ -1,0 +1,39 @@
+provider: shop-ware
+apis_io: https://apis.io/providers/shop-ware/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    - payments
+    properties:
+      id: id
+      amount: amount_cents
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/shop-ware-v1-openapi-original.yml#GET /api/v1/partners/{partner_id}/authorizations
+    - openapi/_original/shop-ware-v1-openapi-original.yml#GET /api/v1/tenants/{tenant_id}/payments
+    - openapi/_original/shop-ware-v1-openapi-original.yml#GET /api/v1/tenants/{tenant_id}/payments/{id}
+    - openapi/_original/shop-ware-v2-openapi-original.yml#GET /api/v2/partners/{partner_id}/authorizations
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: first_name
+      email: email
+      created_at: created_at
+      phone: phone
+      address: address
+      status: state
+      last_name: last_name
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/shop-ware-v1-openapi-original.yml#GET /api/v1/tenants/{tenant_id}/customers
+    - openapi/_original/shop-ware-v1-openapi-original.yml#GET /api/v1/tenants/{tenant_id}/customers/{id}
+    - openapi/_original/shop-ware-v1-openapi-original.yml#POST /api/v1/tenants/{tenant_id}/customers
+    - openapi/_original/shop-ware-v1-openapi-original.yml#PUT /api/v1/tenants/{tenant_id}/customers/{id}

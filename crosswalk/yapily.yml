@@ -1,0 +1,20 @@
+provider: yapily
+apis_io: https://apis.io/providers/yapily/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: status
+      amount: amount
+      customer_id: payer
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/yapily-hosted-pages-api-openapi.yml#GET /hosted/vrp/consent-requests/{consentRequestId}/payments/{paymentId}
+    - openapi/_original/yapily-hosted-pages-api-openapi.yml#POST /hosted/vrp/consent-requests/{consentRequestId}/payments
+    - openapi/_original/yapily-platform-api-openapi.yml#GET /institutions/constraints/payments
+    - openapi/_original/yapily-vrp-api-openapi.yml#POST /variable-recurring-payments/payments

@@ -1,0 +1,16 @@
+provider: capitalist
+apis_io: https://apis.io/providers/capitalist/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      status: state
+      amount: amount
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/capitalist-integration-api-openapi.json#GET /v1/payment/{userRequestId}
+    - openapi/_original/capitalist-integration-api-openapi.json#POST /v1/payment

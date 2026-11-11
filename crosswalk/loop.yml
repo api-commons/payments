@@ -1,0 +1,14 @@
+provider: loop
+apis_io: https://apis.io/providers/loop/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      status: paymentStatus
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/loop-openapi-original.json#GET /v1/payments
+    - openapi/_original/loop-openapi-original.json#GET /v1/payments/{qid}

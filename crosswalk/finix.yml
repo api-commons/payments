@@ -1,0 +1,91 @@
+provider: finix
+apis_io: https://apis.io/providers/finix/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - authorizations
+    properties:
+      id: id
+      status: state
+      amount: amount
+      created_at: created_at
+      currency: currency
+      payment_method_id: source
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/finix-openapi-original.yml#GET /authorizations
+    - openapi/_original/finix-openapi-original.yml#GET /authorizations/{authorization_id}
+    - openapi/_original/finix-openapi-original.yml#POST /authorizations
+    - openapi/_original/finix-openapi-original.yml#PUT /authorizations/{authorization_id_void_to}
+    - openapi/_original/finix-openapi-original.yml#PUT /authorizations/{authorization_id}
+  refund:
+    path_segment:
+    - reversals
+    properties:
+      id: id
+      amount: amount
+      status: state
+      created_at: created_at
+      currency: currency
+      description: statement_descriptor
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/finix-openapi-original.yml#GET /transfers/{transfer_id}/reversals
+    - openapi/_original/finix-openapi-original.yml#POST /transfers/{transfer_id}/reversals
+    - openapi/_original/finix-payments-openapi-original.yml#GET /transfers/{transfer_id}/reversals
+    - openapi/_original/finix-payments-openapi-original.yml#POST /transfers/{transfer_id}/reversals
+  payment_method:
+    path_segment:
+    - payment_instruments
+    properties:
+      id: id
+      type: type
+      created_at: created_at
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/finix-openapi-original.yml#GET /payment_instruments
+    - openapi/_original/finix-openapi-original.yml#GET /payment_instruments/{payment_instrument_id_verify}
+    - openapi/_original/finix-openapi-original.yml#GET /payment_instruments/{payment_instrument_id}
+    - openapi/_original/finix-openapi-original.yml#POST /payment_instruments
+    - openapi/_original/finix-openapi-original.yml#PUT /payment_instruments/{payment_instrument_id}
+  payout:
+    path_segment:
+    - settlements
+    properties:
+      id: id
+      status: status
+      amount: total_amount
+      created_at: created_at
+      currency: currency
+      method: type
+      updated_at: updated_at
+      destination: destination
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/finix-openapi-original.yml#GET /settlements
+    - openapi/_original/finix-openapi-original.yml#GET /settlements/{settlement_id}
+    - openapi/_original/finix-openapi-original.yml#POST /identities/{identity_id}/settlements
+    - openapi/_original/finix-openapi-original.yml#PUT /settlements/{settlement_id}
+    - openapi/_original/finix-payments-openapi-original.yml#GET /settlements
+  dispute:
+    path_segment:
+    - disputes
+    properties:
+      status: state
+      created_at: created_at
+      id: id
+      reason: reason
+      amount: amount
+      updated_at: updated_at
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/finix-openapi-original.yml#GET /disputes
+    - openapi/_original/finix-openapi-original.yml#GET /disputes/{dispute_id}
+    - openapi/_original/finix-openapi-original.yml#PUT /disputes/{dispute_id}
+    - openapi/_original/finix-payments-openapi-original.yml#GET /disputes
+    - openapi/_original/finix-payments-openapi-original.yml#GET /disputes/{dispute_id}

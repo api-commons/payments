@@ -1,0 +1,15 @@
+provider: diebold
+apis_io: https://apis.io/providers/diebold/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id:
+      - transactionId
+      - referenceId
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/diebold-dn-payment-initiation-api-openapi.json#GET /{merchantId}/payments

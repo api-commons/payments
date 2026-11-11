@@ -1,0 +1,17 @@
+provider: etsy
+apis_io: https://apis.io/providers/etsy/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: payment_id
+      status: status
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/etsy-openapi-original.yml#GET /v3/application/shops/{shop_id}/payment-account/ledger-entries/payments
+    - openapi/_original/etsy-openapi-original.yml#GET /v3/application/shops/{shop_id}/payments
+    - openapi/_original/etsy-openapi-original.yml#GET /v3/application/shops/{shop_id}/receipts/{receipt_id}/payments

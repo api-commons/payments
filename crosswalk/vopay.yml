@@ -1,0 +1,39 @@
+provider: vopay
+apis_io: https://apis.io/providers/vopay/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - charge
+    - payment
+    properties:
+      id: TransactionID
+      status: Status
+      amount: Amount
+      currency: Currency
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/vopay-payment-api-reference.json#POST /v3/payment
+    - openapi/_original/vopay-payment-rails-api-reference.json#POST /apple-pay/charge
+    - openapi/_original/vopay-payment-rails-api-reference.json#POST /batch/credit-card/charge
+    - openapi/_original/vopay-payment-rails-api-reference.json#POST /credit-card/charge
+    - openapi/_original/vopay-payment-rails-api-reference.json#POST /google-pay/charge
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: TransactionID
+      created_at: Timestamp
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/vopay-payment-rails-api-reference.json#POST /fedwire/refund
+    - openapi/_original/vopay-transaction-management.json#POST /account/transactions/refund
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/vopay-client-accounts.json#GET /account/client-accounts/payment-methods
+    - openapi/_original/vopay-contact.json#GET /contacts/payment-methods

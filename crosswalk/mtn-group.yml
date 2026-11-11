@@ -1,0 +1,63 @@
+provider: mtn-group
+apis_io: https://apis.io/providers/mtn-group/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    - payments
+    properties:
+      id:
+      - transactionId
+      - id
+      status: status
+      amount:
+      - amount
+      - totalAmount
+      payment_method_id: paymentMethod
+      description: description
+      customer_id:
+      - customerId
+      - payer
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mtn-group-payments-v1.yml#POST /payments
+    - openapi/_original/mtn-group-tmf-payment-management-tmf676.yml#GET /payment
+    - openapi/_original/mtn-group-tmf-payment-management-tmf676.yml#GET /payment/{id}
+    - openapi/_original/mtn-group-tmf-payment-management-tmf676.yml#POST /payment
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: transactionId
+      amount: totalAmount
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/mtn-group-customer-billing-token-v1.yml#POST /bill/refund
+  customer:
+    path_segment:
+    - customers
+    - customer
+    properties:
+      id:
+      - transactionId
+      - customerId
+      - id
+      name:
+      - firstName
+      - name
+      email: email
+      phone: phoneNumber
+      status:
+      - status
+      - state
+      last_name: lastName
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mtn-group-advertising-v2.yml#POST /customers/{customerId}
+    - openapi/_original/mtn-group-customer-data-transfer-ng-prod.yml#POST /customers/{senderMsisdn}
+    - openapi/_original/mtn-group-customer-identification-v1.yml#GET /customer
+    - openapi/_original/mtn-group-customer-identification-v1.yml#POST /customer
+    - openapi/_original/mtn-group-customer-kyc-verification.yml#GET /customers

@@ -1,0 +1,24 @@
+provider: riskified
+apis_io: https://apis.io/providers/riskified/
+context: payments
+generated: '2026-11-10'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id: id
+      status: status
+      description: description
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/riskified-chargeback-guarantee-post-auth-openapi.yml#POST /api/refund
+  dispute:
+    path_segment:
+    - chargeback
+    properties:
+      status: status
+      id: id
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/riskified-chargeback-guarantee-post-auth-openapi.yml#POST /api/chargeback

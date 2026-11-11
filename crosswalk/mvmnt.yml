@@ -1,0 +1,44 @@
+provider: mvmnt
+apis_io: https://apis.io/providers/mvmnt/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      amount:
+      - amount
+      - totalAmount
+      created_at: createdAt
+      currency: currency
+      updated_at: updatedAt
+      customer_id:
+      - customer
+      - customerId
+      external_id: reference
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mvmnt-openapi-original.yml#DELETE /payments/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#GET /bills/{id}/payments
+    - openapi/_original/mvmnt-openapi-original.yml#GET /customers/{id}/payments
+    - openapi/_original/mvmnt-openapi-original.yml#GET /invoices/{id}/payments
+    - openapi/_original/mvmnt-openapi-original.yml#GET /payments/{id}
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      name: name
+      created_at: createdAt
+      phone: phoneNumber
+      address: billingAddress
+      status: status
+      updated_at: updatedAt
+    core_coverage: 0.75
+    evidence:
+    - openapi/_original/mvmnt-openapi-original.yml#DELETE /customers/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#GET /customers/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#PATCH /customers/{id}
+    - openapi/_original/mvmnt-openapi-original.yml#POST /customers

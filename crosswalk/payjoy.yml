@@ -1,0 +1,15 @@
+provider: payjoy
+apis_io: https://apis.io/providers/payjoy/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: transactionId
+      amount: amount
+      currency: currency
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/payjoy-partner-api-openapi.yml#POST /v2/payments

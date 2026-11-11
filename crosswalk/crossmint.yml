@@ -1,0 +1,30 @@
+provider: crossmint
+apis_io: https://apis.io/providers/crossmint/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payment
+    properties:
+      payment_method_id: paymentMethodId
+      metadata: metadata
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#POST /2022-06-09/orders/{orderId}/payment
+  payment_method:
+    path_segment:
+    - payment-methods
+    properties:
+      id: paymentMethodId
+      type: type
+      created_at: createdAt
+      status: status
+      updated_at: updatedAt
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/crossmint-openapi.yml#DELETE /2026-09-16/payment-methods/{paymentMethodId}
+    - openapi/_original/crossmint-openapi.yml#GET /2026-09-16/payment-methods
+    - openapi/_original/crossmint-openapi.yml#GET /2026-09-16/payment-methods/{paymentMethodId}
+    - openapi/_original/crossmint-openapi.yml#PATCH /2026-09-16/payment-methods/{paymentMethodId}
+    - openapi/_original/crossmint-openapi.yml#POST /2026-09-16/payment-methods
