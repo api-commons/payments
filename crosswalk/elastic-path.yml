@@ -53,6 +53,7 @@ concepts:
     - customers
     properties:
       id: id
+      type: type
     core_coverage: 0.25
     evidence:
     - openapi/_original/carts.yaml#DELETE /v2/carts/{cartID}/relationships/customers

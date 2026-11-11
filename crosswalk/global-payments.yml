@@ -8,7 +8,7 @@ concepts:
     - payment-methods
     properties:
       type: type
-    core_coverage: 0.5
+    core_coverage: 0.0
     evidence:
     - openapi/_original/global-payments-unified-payments-api-openapi.yml#GET /payment-methods
     - openapi/_original/global-payments-unified-payments-api-openapi.yml#POST /payment-methods

@@ -15,20 +15,20 @@ concepts:
       currency: currency
       amount: amount
       expires_at: expires_at
-      description: statement_descriptor
       mode:
       - type
       - intent
+      description: statement_descriptor
       metadata: metadata
       success_url: return_url
       updated_at: updated_at
     core_coverage: 1.0
     evidence:
     - openapi/_original/gr4vy-docs-v1-openapi.json#DELETE /auth/sessions
+    - openapi/_original/gr4vy-docs-v1-openapi.json#DELETE /checkout/sessions/{checkout_session_id}
+    - openapi/_original/gr4vy-docs-v1-openapi.json#GET /checkout/sessions/{checkout_session_id}
     - openapi/_original/gr4vy-docs-v1-openapi.json#GET /payment-links
     - openapi/_original/gr4vy-docs-v1-openapi.json#GET /payment-links/{payment_link_id}
-    - openapi/_original/gr4vy-docs-v1-openapi.json#POST /auth/sessions
-    - openapi/_original/gr4vy-docs-v1-openapi.json#POST /payment-links
   refund:
     path_segment:
     - refunds
@@ -77,6 +77,7 @@ concepts:
       name: display_name
       created_at: created_at
       updated_at: updated_at
+      type: type
     core_coverage: 0.75
     evidence:
     - openapi/_original/gr4vy-docs-v1-openapi.json#DELETE /buyers/{buyer_id}
@@ -89,10 +90,10 @@ concepts:
     - payouts
     - settlements
     properties:
+      status: status
       id:
       - id
       - transaction_id
-      status: status
       amount: amount
       created_at: created_at
       currency: currency

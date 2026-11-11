@@ -14,8 +14,12 @@ concepts:
   checkout_session:
     path_segment:
     - payment-links
+    - sessions
     properties:
-      status: status
+      id: transaction_id
+      status:
+      - payment_status
+      - status
       customer_id: customer
       amount: amount
       expires_at: expires_at
@@ -23,10 +27,12 @@ concepts:
       metadata: metadata
       success_url: success_url
       line_items: line_items
-    core_coverage: 0.5
+    core_coverage: 1.0
     evidence:
     - openapi/_original/teya-online-payments-openapi.yaml#GET /v1/payment-links/{payment_link_id}
+    - openapi/_original/teya-online-payments-openapi.yaml#GET /v2/checkout/sessions/{session_id}
     - openapi/_original/teya-online-payments-openapi.yaml#PATCH /v2/payment-links/{payment_link_id}
+    - openapi/_original/teya-online-payments-openapi.yaml#POST /v2/checkout/sessions
     - openapi/_original/teya-online-payments-openapi.yaml#POST /v2/payment-links
   refund:
     path_segment:

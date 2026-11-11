@@ -16,15 +16,15 @@ below is a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| payment | 282 | 265 | id 74%, status 68%, amount 62%, created_at 50% | payments 185, charges 44, payment 42, charge 28 |
-| checkout_session | 82 | 74 | id 73%, status 58% | checkout 29, checkouts 23, sessions 22, payment-links 16 |
+| payment | 289 | 271 | id 74%, status 68%, amount 62%, created_at 51% | payments 189, charges 46, payment 42, charge 31 |
+| checkout_session | 85 | 77 | id 74%, status 62% | checkout 29, sessions 27, checkouts 23, payment-links 16 |
 | refund | 214 | 201 | id 74%, amount 70%, status 62%, created_at 50% | refund 122, refunds 110, credits 15, reversals 12 |
-| payment_method | 102 | 98 | id 67%, type 50% | payment-methods 40, payment_methods 24, cards 20, paymentmethods 13 |
-| customer | 168 | 160 | id 84%, name 68%, email 66%, created_at 56% | customers 135, customer 31, buyers 8, payers 8 |
-| payout | 121 | 109 | id 66%, status 66%, amount 59%, created_at 50% | payouts 69, settlements 29, payout 17, settlement 11 |
-| dispute | 77 | 71 | status 68%, created_at 65%, id 65%, reason 65% | disputes 48, chargebacks 20, dispute 13, chargeback 7 |
+| payment_method | 103 | 99 | id 68% | payment-methods 41, payment_methods 24, cards 20, paymentmethods 13 |
+| customer | 170 | 162 | id 84%, name 68%, email 65%, created_at 56% | customers 137, customer 31, buyers 8, payers 8 |
+| payout | 122 | 110 | status 66%, id 66%, amount 59%, created_at 50% | payouts 70, settlements 29, payout 18, settlement 11 |
+| dispute | 77 | 71 | status 68%, created_at 65%, id 65%, reason 65% | disputes 48, chargebacks 20, dispute 14, chargeback 7 |
 
-Cohort: 692 providers with harvested OpenAPI, 431 crosswalks. Of the providers exposing a payment: 71% create, 67% list, 65% fetch, 21% update, 10% delete. Generated 2026-11-10 by build.py.
+Cohort: 692 providers with harvested OpenAPI, 436 crosswalks. Of the providers exposing a payment: 72% create, 67% list, 65% fetch, 22% update, 10% delete. Generated 2026-11-10 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

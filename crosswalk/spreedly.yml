@@ -24,7 +24,7 @@ concepts:
       - status
       brand: card_type
       updated_at: updated_at
-    core_coverage: 0.5
+    core_coverage: 0.0
     evidence:
     - openapi/_original/spreedly-api-v1.json#GET /payment_methods
     - openapi/_original/spreedly-api-v1.json#GET /payment_methods/{payment_method_token}

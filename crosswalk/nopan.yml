@@ -3,6 +3,16 @@ apis_io: https://apis.io/providers/nopan/
 context: payments
 generated: '2026-11-10'
 concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      id: transactionId
+      status: status
+      metadata: metadata
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/nopan-openapi-original.yml#POST /payments/charge
   refund:
     path_segment:
     - refund

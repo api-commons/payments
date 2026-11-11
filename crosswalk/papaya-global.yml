@@ -1,0 +1,19 @@
+provider: papaya-global
+apis_io: https://apis.io/providers/papaya-global/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      amount: amount
+      payment_method_id: source
+      description: description
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/papaya-global-workforce-payments-api.yml#GET /payments/payments
+    - openapi/_original/papaya-global-workforce-payments-api.yml#GET /payments/payments/{id}
+    - openapi/_original/papaya-global-workforce-payments-api.yml#POST /payments/payments
+    - openapi/_original/papaya-global-workforce-payments-api.yml#PUT /payments/payments/{id}

@@ -30,6 +30,7 @@ concepts:
       created_at: created
       updated_at: updated
       metadata: metadata
+      type: type
     core_coverage: 0.75
     evidence:
     - openapi/_original/xendit-openapi.yml#GET /customers
@@ -40,10 +41,10 @@ concepts:
     path_segment:
     - payouts
     properties:
+      status: status
       id:
       - id
       - reference_id
-      status: status
       amount: amount
       created_at: created
       currency: currency

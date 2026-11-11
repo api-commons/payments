@@ -16,7 +16,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.713
+      x-commons-share: 0.723
       responses:
         '200':
           description: OK
@@ -35,7 +35,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.674
+      x-commons-share: 0.671
       responses:
         '200':
           description: OK
@@ -62,7 +62,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.649
+      x-commons-share: 0.654
       responses:
         '200':
           description: OK
@@ -75,7 +75,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: extended
-      x-commons-share: 0.213
+      x-commons-share: 0.218
       responses:
         '200':
           description: OK
@@ -94,7 +94,7 @@ paths:
       tags:
       - Checkout Sessions
       x-commons-tier: core
-      x-commons-share: 0.866
+      x-commons-share: 0.871
       responses:
         '200':
           description: OK
@@ -113,7 +113,7 @@ paths:
       tags:
       - Checkout Sessions
       x-commons-tier: extended
-      x-commons-share: 0.402
+      x-commons-share: 0.4
       responses:
         '200':
           description: OK
@@ -140,7 +140,7 @@ paths:
       tags:
       - Checkout Sessions
       x-commons-tier: core
-      x-commons-share: 0.671
+      x-commons-share: 0.647
       responses:
         '200':
           description: OK
@@ -153,7 +153,7 @@ paths:
       tags:
       - Checkout Sessions
       x-commons-tier: extended
-      x-commons-share: 0.28
+      x-commons-share: 0.282
       responses:
         '200':
           description: OK
@@ -171,7 +171,7 @@ paths:
       tags:
       - Checkout Sessions
       x-commons-tier: extended
-      x-commons-share: 0.232
+      x-commons-share: 0.235
       responses:
         '200':
           description: OK
@@ -245,7 +245,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: core
-      x-commons-share: 0.853
+      x-commons-share: 0.845
       responses:
         '200':
           description: OK
@@ -270,7 +270,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: core
-      x-commons-share: 0.51
+      x-commons-share: 0.505
       responses:
         '200':
           description: OK
@@ -291,7 +291,7 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: extended
-      x-commons-share: 0.412
+      x-commons-share: 0.408
       responses:
         '200':
           description: OK
@@ -304,13 +304,31 @@ paths:
       tags:
       - Payment Methods
       x-commons-tier: extended
-      x-commons-share: 0.392
+      x-commons-share: 0.388
       responses:
         '200':
           description: OK
           content:
             application/json:
               schema: *id004
+    patch:
+      operationId: updatePaymentMethod
+      summary: Update a payment method
+      tags:
+      - Payment Methods
+      x-commons-tier: extended
+      x-commons-share: 0.204
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id004
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id004
   /customers/{customer_id}:
     parameters:
     - $ref: '#/components/parameters/customer_id'
@@ -320,7 +338,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.81
+      x-commons-share: 0.812
       responses:
         '200':
           description: OK
@@ -334,7 +352,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.571
+      x-commons-share: 0.565
       responses:
         '200':
           description: OK
@@ -352,7 +370,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: extended
-      x-commons-share: 0.44
+      x-commons-share: 0.435
       responses:
         '200':
           description: OK
@@ -366,7 +384,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.792
+      x-commons-share: 0.782
       responses:
         '200':
           description: OK
@@ -390,7 +408,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.786
+      x-commons-share: 0.782
       responses:
         '200':
           description: OK
@@ -409,7 +427,7 @@ paths:
       tags:
       - Payouts
       x-commons-tier: core
-      x-commons-share: 0.636
+      x-commons-share: 0.639
       responses:
         '200':
           description: OK
@@ -428,7 +446,7 @@ paths:
       tags:
       - Payouts
       x-commons-tier: core
-      x-commons-share: 0.628
+      x-commons-share: 0.631
       responses:
         '200':
           description: OK
@@ -455,7 +473,7 @@ paths:
       tags:
       - Payouts
       x-commons-tier: core
-      x-commons-share: 0.595
+      x-commons-share: 0.598
       responses:
         '200':
           description: OK

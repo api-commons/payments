@@ -17,3 +17,14 @@ concepts:
     evidence:
     - openapi/_original/fincra-openapi.yml#GET /checkout/charges/{reference}
     - openapi/_original/fincra-openapi.yml#POST /checkout/charges
+  payout:
+    path_segment:
+    - payouts
+    properties:
+      status: status
+      amount: amount
+      destination: beneficiary
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fincra-openapi.yml#GET /disbursements/payouts
+    - openapi/_original/fincra-openapi.yml#POST /disbursements/payouts

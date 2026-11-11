@@ -70,6 +70,7 @@ concepts:
       created_at: created_at
       status: status
       metadata: custom_fields
+      type: type
     core_coverage: 0.75
     evidence:
     - openapi/_original/solvimon-configuration-api-openapi.yml#DELETE /v{version}/customers/{resourceIdOrReference}

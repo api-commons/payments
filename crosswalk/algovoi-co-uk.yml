@@ -40,8 +40,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      id: payout_id
       status: status
+      id: payout_id
       amount: amount
       currency: currency
     core_coverage: 0.75

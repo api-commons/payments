@@ -48,6 +48,7 @@ concepts:
     properties:
       id: id
       metadata: attributes
+      type: type
     core_coverage: 0.25
     evidence:
     - openapi/_original/commerce-layer-core-api-openapi.json#DELETE /customers/{customerId}

@@ -37,8 +37,8 @@ concepts:
     path_segment:
     - withdrawals
     properties:
-      id: id
       status: status
+      id: id
       amount: amount
       created_at: created_at
       method: type

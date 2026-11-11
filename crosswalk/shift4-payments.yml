@@ -27,16 +27,23 @@ concepts:
   checkout_session:
     path_segment:
     - payment-links
+    - sessions
     properties:
       id: id
+      status: status
       created_at: created
+      customer_id: customer
       currency: currency
       amount: amount
       description: description
       metadata: metadata
-    core_coverage: 0.5
+      url: redirectUrl
+      line_items: lineItems
+    core_coverage: 1.0
     evidence:
+    - openapi/_original/shift4-api-openapi.yml#GET /checkout/sessions/{sessionId}
     - openapi/_original/shift4-api-openapi.yml#GET /payment-links/{linkId}
+    - openapi/_original/shift4-api-openapi.yml#POST /checkout/sessions
     - openapi/_original/shift4-api-openapi.yml#POST /payment-links
   refund:
     path_segment:
@@ -100,8 +107,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      id: id
       status: status
+      id: id
       amount: amount
       created_at: created
       currency: currency

@@ -37,8 +37,8 @@ concepts:
       customer_id: consumer
       amount: amount
       expires_at: expires
-      description: description
       mode: mode
+      description: description
       line_items: items
     core_coverage: 0.0
     evidence:
@@ -81,10 +81,10 @@ concepts:
     path_segment:
     - payouts
     properties:
+      status: status
       id:
       - payout_id
       - reference_id
-      status: status
       amount: amount
       currency: currency
     core_coverage: 0.75

@@ -42,8 +42,8 @@ concepts:
     path_segment:
     - settlements
     properties:
-      id: id
       status: status
+      id: id
       amount: amount
       currency: currency
     core_coverage: 0.75

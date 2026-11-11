@@ -58,7 +58,7 @@ concepts:
     - payment_methods
     properties:
       type: type
-    core_coverage: 0.5
+    core_coverage: 0.0
     evidence:
     - openapi/_original/komoju-openapi.yml#GET /payment_methods
   customer:

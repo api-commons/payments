@@ -37,8 +37,8 @@ concepts:
     path_segment:
     - disbursements
     properties:
-      id: id
       status: status
+      id: id
       amount: amount
       created_at: created_at
       currency: currency

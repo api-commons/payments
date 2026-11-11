@@ -243,6 +243,7 @@ adopters:
   crosswalk: crosswalk/belvo.yml
   concepts:
   - customer
+  - payment
 - provider: bigcommerce
   apis_io: https://apis.io/providers/bigcommerce/
   crosswalk: crosswalk/bigcommerce.yml
@@ -257,6 +258,11 @@ adopters:
   concepts:
   - customer
   - payment
+- provider: bilt
+  apis_io: https://apis.io/providers/bilt/
+  crosswalk: crosswalk/bilt.yml
+  concepts:
+  - checkout_session
 - provider: bitpay
   apis_io: https://apis.io/providers/bitpay/
   crosswalk: crosswalk/bitpay.yml
@@ -522,6 +528,7 @@ adopters:
   apis_io: https://apis.io/providers/clearbank/
   crosswalk: crosswalk/clearbank.yml
   concepts:
+  - customer
   - payment
 - provider: clickfunnels
   apis_io: https://apis.io/providers/clickfunnels/
@@ -835,6 +842,7 @@ adopters:
   apis_io: https://apis.io/providers/fabric-com/
   crosswalk: crosswalk/fabric-com.yml
   concepts:
+  - checkout_session
   - customer
   - payment
 - provider: falcon
@@ -863,6 +871,7 @@ adopters:
   apis_io: https://apis.io/providers/fawry/
   crosswalk: crosswalk/fawry.yml
   concepts:
+  - payment
   - refund
 - provider: fiat-republic
   apis_io: https://apis.io/providers/fiat-republic/
@@ -892,6 +901,7 @@ adopters:
   crosswalk: crosswalk/fincra.yml
   concepts:
   - payment
+  - payout
 - provider: finicity
   apis_io: https://apis.io/providers/finicity/
   crosswalk: crosswalk/finicity.yml
@@ -967,6 +977,11 @@ adopters:
   concepts:
   - payment
   - refund
+- provider: formance
+  apis_io: https://apis.io/providers/formance/
+  crosswalk: crosswalk/formance.yml
+  concepts:
+  - payment
 - provider: forter
   apis_io: https://apis.io/providers/forter/
   crosswalk: crosswalk/forter.yml
@@ -1346,6 +1361,7 @@ adopters:
   apis_io: https://apis.io/providers/lianlian-global/
   crosswalk: crosswalk/lianlian-global.yml
   concepts:
+  - checkout_session
   - customer
   - payment
   - payout
@@ -1594,10 +1610,16 @@ adopters:
   - checkout_session
   - payout
   - refund
+- provider: nestcoin
+  apis_io: https://apis.io/providers/nestcoin/
+  crosswalk: crosswalk/nestcoin.yml
+  concepts:
+  - payment_method
 - provider: nopan
   apis_io: https://apis.io/providers/nopan/
   crosswalk: crosswalk/nopan.yml
   concepts:
+  - payment
   - refund
 - provider: northmill
   apis_io: https://apis.io/providers/northmill/
@@ -1753,6 +1775,11 @@ adopters:
   concepts:
   - payment
   - refund
+- provider: papaya-global
+  apis_io: https://apis.io/providers/papaya-global/
+  crosswalk: crosswalk/papaya-global.yml
+  concepts:
+  - payment
 - provider: paxos
   apis_io: https://apis.io/providers/paxos/
   crosswalk: crosswalk/paxos.yml
@@ -1882,6 +1909,7 @@ adopters:
   apis_io: https://apis.io/providers/pismo/
   crosswalk: crosswalk/pismo.yml
   concepts:
+  - customer
   - payment
   - payment_method
 - provider: plug
@@ -2329,10 +2357,16 @@ adopters:
   concepts:
   - payment
   - refund
+- provider: switstack
+  apis_io: https://apis.io/providers/switstack/
+  crosswalk: crosswalk/switstack.yml
+  concepts:
+  - payment
 - provider: synchrony-financial
   apis_io: https://apis.io/providers/synchrony-financial/
   crosswalk: crosswalk/synchrony-financial.yml
   concepts:
+  - payment
   - refund
 - provider: synctera
   apis_io: https://apis.io/providers/synctera/

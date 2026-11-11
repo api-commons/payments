@@ -44,7 +44,7 @@ concepts:
     properties:
       type: type
       status: status
-    core_coverage: 0.5
+    core_coverage: 0.0
     evidence:
     - openapi/_original/monite-openapi-2023-09-01.json#GET /entities/{entity_id}/payment_methods
     - openapi/_original/monite-openapi-2023-09-01.json#PUT /entities/{entity_id}/payment_methods

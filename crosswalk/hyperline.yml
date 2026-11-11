@@ -31,6 +31,7 @@ concepts:
     properties:
       id: id
       name: name
+      type: type
     core_coverage: 0.5
     evidence:
     - openapi/_original/hyperline-openapi.yml#DELETE /customers/{id}

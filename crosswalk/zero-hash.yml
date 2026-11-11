@@ -37,8 +37,8 @@ concepts:
     - payouts
     - settlements
     properties:
-      id: payout_id
       status: status
+      id: payout_id
       created_at: created_at
       updated_at: updated_at
       destination: beneficiary

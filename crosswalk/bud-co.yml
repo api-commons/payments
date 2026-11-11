@@ -10,6 +10,7 @@ concepts:
     properties:
       id: customer_id
       created_at: created_at
+      type: type
     core_coverage: 0.5
     evidence:
     - openapi/_original/bud-platform-openapi.yml#DELETE /platform/v3/customers/{customer_id}

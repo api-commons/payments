@@ -15,10 +15,10 @@ concepts:
     - payouts
     - disbursements
     properties:
+      status: status
       id:
       - id
       - referenceId
-      status: status
       amount:
       - amount
       - totalAmount

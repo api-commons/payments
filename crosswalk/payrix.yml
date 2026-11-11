@@ -40,8 +40,8 @@ concepts:
     - payouts
     - disbursements
     properties:
-      id: id
       status: status
+      id: id
       amount: amount
       created_at: created
       currency: currency

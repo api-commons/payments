@@ -31,25 +31,32 @@ concepts:
     - openapi/_original/issuing-openapi-original.yml#GET /v1/issuing/authorizations
   checkout_session:
     path_segment:
-    - payment_links
     - sessions
+    - payment_links
     properties:
       id: id
+      status:
+      - payment_status
+      - status
       created_at: created
       customer_id: customer
       currency: currency
+      expires_at: expires_at
+      mode: mode
       metadata:
       - custom_fields
       - metadata
-      success_url: return_url
+      success_url:
+      - return_url
+      - success_url
       line_items: line_items
-    core_coverage: 0.5
+    core_coverage: 1.0
     evidence:
     - openapi/_original/billing-openapi-original.yml#POST /v1/billing_portal/sessions
+    - openapi/_original/checkout-openapi-original.yml#GET /v1/checkout/sessions
+    - openapi/_original/checkout-openapi-original.yml#GET /v1/checkout/sessions/{session}
+    - openapi/_original/checkout-openapi-original.yml#POST /v1/checkout/sessions
     - openapi/_original/financial-connections-openapi-original.yml#GET /v1/financial_connections/sessions/{session}
-    - openapi/_original/financial-connections-openapi-original.yml#POST /v1/financial_connections/sessions
-    - openapi/_original/payment-links-openapi-original.yml#GET /v1/payment_links
-    - openapi/_original/payment-links-openapi-original.yml#GET /v1/payment_links/{payment_link}
   refund:
     path_segment:
     - refunds
@@ -116,8 +123,8 @@ concepts:
     - payouts
     - settlements
     properties:
-      id: id
       status: status
+      id: id
       amount: amount
       created_at: created
       currency: currency

@@ -22,8 +22,8 @@ concepts:
     - payouts
     - settlements
     properties:
-      id: id
       status: status
+      id: id
       amount:
       - amount
       - totalAmount

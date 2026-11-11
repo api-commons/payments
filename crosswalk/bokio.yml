@@ -21,6 +21,7 @@ concepts:
       id: id
       name: name
       address: address
+      type: type
     core_coverage: 0.5
     evidence:
     - openapi/_original/bokio-company-api-openapi.yml#DELETE /companies/{companyId}/customers/{customerId}

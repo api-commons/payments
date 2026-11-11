@@ -15,6 +15,15 @@ concepts:
     - openapi/_original/fabric-cart-openapi.yml#DELETE /carts/{cartId}/payments/{id}
     - openapi/_original/fabric-cart-openapi.yml#PATCH /carts/{cartId}/payments/{id}
     - openapi/_original/fabric-cart-openapi.yml#POST /carts/{cartId}/payments
+  checkout_session:
+    path_segment:
+    - sessions
+    properties:
+      status: state
+      customer_id: customer
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/fabric-checkout-openapi.yml#POST /checkout/sessions
   customer:
     path_segment:
     - customers
@@ -28,6 +37,7 @@ concepts:
       status: status
       updated_at: updatedAt
       metadata: attributes
+      type: type
     core_coverage: 1.0
     evidence:
     - openapi/_original/fabric-cart-openapi.yml#GET /order-drafts/customer/{customerId}

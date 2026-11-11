@@ -6,7 +6,8 @@ concepts:
   customer:
     path_segment:
     - buyers
-    properties: {}
+    properties:
+      type: type
     core_coverage: 0.0
     evidence:
     - openapi/_original/kriya-payments-openapi.yaml#POST /buyers

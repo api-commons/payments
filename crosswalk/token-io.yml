@@ -49,8 +49,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      id: id
       status: status
+      id: id
       amount: amount
     core_coverage: 0.75
     evidence:

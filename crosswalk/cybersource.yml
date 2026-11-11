@@ -61,8 +61,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      id: id
       status: status
+      id: id
     core_coverage: 0.5
     evidence:
     - openapi/_original/openapi.json#POST /pts/v2/payouts

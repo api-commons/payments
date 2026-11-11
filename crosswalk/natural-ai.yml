@@ -23,6 +23,7 @@ concepts:
     properties:
       id: id
       metadata: attributes
+      type: type
     core_coverage: 0.25
     evidence:
     - openapi/_original/natural-ai-openapi-original.json#GET /customers

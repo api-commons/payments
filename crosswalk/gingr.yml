@@ -6,12 +6,14 @@ concepts:
   payment:
     path_segment:
     - charges
+    - charge
     properties:
       id: id
       metadata: attributes
     core_coverage: 0.25
     evidence:
     - openapi/_original/gingr-openapi.json#GET /v1/invoices/charges
+    - openapi/_original/gingr-openapi.json#POST /v1/payments/charge
   checkout_session:
     path_segment:
     - checkout

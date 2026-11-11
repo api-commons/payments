@@ -8,7 +8,7 @@ concepts:
     - payment-methods
     properties:
       type: type
-    core_coverage: 0.5
+    core_coverage: 0.0
     evidence:
     - openapi/_original/blockchain.com-pay-partner-api-openapi.yml#GET /v1/payment-methods
   payout:

@@ -10,8 +10,8 @@ concepts:
       status: status
       customer_id: consumer
       amount: total_amount
-      description: description
       mode: payment_type
+      description: description
       metadata: additional_data
       url: checkout_url
       line_items: items

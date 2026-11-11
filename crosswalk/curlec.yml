@@ -80,10 +80,10 @@ concepts:
     - payouts
     - settlements
     properties:
+      status: status
       id:
       - id
       - reference_id
-      status: status
       amount: amount
       created_at: created_at
       currency: currency

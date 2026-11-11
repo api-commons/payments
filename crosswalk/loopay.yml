@@ -8,8 +8,8 @@ concepts:
     - payouts
     - payout
     properties:
-      id: id
       status: state
+      id: id
       amount: Amount
       destination: bankAccount
     core_coverage: 0.75

@@ -955,6 +955,59 @@
      "openapi/_original/beeketing-shopbase-admin-swagger.json#POST /admin/balance/charge.json"
     ]
    },
+   "belvo": {
+    "segments": [
+     "payment-intents",
+     "charges"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "PATCH item",
+     "POST collection"
+    ],
+    "properties": {
+     "count": "integer",
+     "next": "string",
+     "previous": "string",
+     "id": "string",
+     "created_at": "string",
+     "updated_at": "string",
+     "created_by": "string",
+     "customer": "string",
+     "payment_intent": "string",
+     "status": "string",
+     "amount": "string",
+     "currency": "string",
+     "description": "string",
+     "statement_description": "string",
+     "beneficiary": "string",
+     "provider": "string",
+     "payment_method_type": "string",
+     "payment_method_details": "object",
+     "payment_method_information": "object",
+     "payer_information": null,
+     "transactions": "array",
+     "failure_code": "string",
+     "failure_message": "string",
+     "metadata": "object",
+     "external_id": "string",
+     "selected_payment_method_type": "string",
+     "allowed_payment_method_types": "array",
+     "charges": "array",
+     "last_error": null,
+     "next_step": null,
+     "confirm": "boolean"
+    },
+    "evidence": [
+     "openapi/_original/belvo-openapi.json#GET /payments/br/charges/",
+     "openapi/_original/belvo-openapi.json#GET /payments/br/charges/{charge_id}/",
+     "openapi/_original/belvo-openapi.json#GET /payments/br/payment-intents/",
+     "openapi/_original/belvo-openapi.json#GET /payments/br/payment-intents/{id}/",
+     "openapi/_original/belvo-openapi.json#PATCH /payments/br/payment-intents/{id}/",
+     "openapi/_original/belvo-openapi.json#POST /payments/br/payment-intents/"
+    ]
+   },
    "bigcommerce": {
     "segments": [
      "payments"
@@ -1433,20 +1486,38 @@
      "payment"
     ],
     "operations": [
+     "GET item",
      "POST collection"
     ],
     "properties": {
+     "id": null,
+     "ownerEntityID": null,
+     "paymentMethodID": null,
+     "programID": null,
+     "referenceID": null,
+     "sourceID": "string",
+     "paymentProductID": null,
+     "amount": null,
+     "ownerEntityType": "string",
+     "scopeID": null,
+     "scopeType": "string",
+     "sourceType": "string",
+     "subSourceType": "string",
+     "status": "string",
+     "subStatus": "string",
+     "transactionType": "string",
+     "deletedAt": null,
+     "isCancellable": "boolean",
+     "transactionID": "string",
+     "reconID": "string",
+     "createdAt": null,
      "acknowledgementID": "string",
      "paymentReferenceID": "string",
      "paymentAgreement": null,
-     "paymentMethodID": null,
-     "amount": null,
      "paymentType": "string",
      "source": "string",
      "acknowledgement": "object",
-     "sourceType": "string",
      "sourceId": "string",
-     "subSourceType": "string",
      "effectiveTime": null,
      "notes": "string",
      "user": "string",
@@ -1457,6 +1528,7 @@
      "tradeInPartnerPaymentDate": null
     },
     "evidence": [
+     "openapi/_original/bread-payments-openapi.json#GET /api/payments/payment/{referenceID}",
      "openapi/_original/bread-servicing-openapi.json#POST /api/servicing/payment-agreement/{id}/payment",
      "openapi/_original/bread-tradein-openapi.json#POST /api/tradein/payment"
     ]
@@ -2229,11 +2301,25 @@
      "POST collection"
     ],
     "properties": {
+     "instructionIdentification": "string",
+     "endToEndIdentification": "string",
+     "interBankSettlementAmount": "object",
+     "sourceAccount": "object",
+     "debtorAccount": "object",
+     "debtor": "object",
+     "creditorAccount": "object",
+     "creditor": "object",
+     "creditorAgent": "object",
+     "purpose": "string",
+     "categoryPurpose": "string",
+     "remittanceInformation": "object",
+     "intermediaryAgent1": "object",
      "batchId": "string",
      "currencyCode": "string",
      "transactions": "array"
     },
     "evidence": [
+     "openapi/_original/clearbank-cross-border-v4.json#POST /payments/cross-border-sterling/v4/payments",
      "openapi/_original/clearbank-mccy-payments-v1.json#DELETE /v1/mccy/payments/{batchId}",
      "openapi/_original/clearbank-mccy-payments-v1.json#POST /v1/mccy/payments"
     ]
@@ -3579,6 +3665,45 @@
      "openapi/_original/fat-zebra-gateway.json#POST /paypal/billing_agreements/{id}/charge"
     ]
    },
+   "fawry": {
+    "segments": [
+     "charge"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "type": "string",
+     "referenceNumber": "string",
+     "merchantRefNumber": "string",
+     "orderAmount": "number",
+     "paymentAmount": "number",
+     "fawryFees": "number",
+     "paymentMethod": "string",
+     "orderStatus": "string",
+     "paymentTime": "integer",
+     "customerMobile": "string",
+     "customerMail": "string",
+     "customerProfileId": "string",
+     "signature": "string",
+     "statusCode": "integer",
+     "statusDescription": "string",
+     "merchantCode": "string",
+     "merchantRefNum": "string",
+     "customerName": "string",
+     "customerEmail": "string",
+     "amount": "number",
+     "currencyCode": "string",
+     "paymentExpiry": "integer",
+     "description": "string",
+     "language": "string",
+     "chargeItems": "array",
+     "orderWebHookUrl": "string"
+    },
+    "evidence": [
+     "openapi/_original/fawrypay-server-api-openapi.yml#POST /ECommerceWeb/Fawry/payments/charge"
+    ]
+   },
    "fiat-republic": {
     "segments": [
      "payments",
@@ -3908,7 +4033,8 @@
    "fiserv": {
     "segments": [
      "payments",
-     "authorizations"
+     "authorizations",
+     "charges"
     ],
     "operations": [
      "POST collection"
@@ -3928,11 +4054,17 @@
      "approvalCode": "string",
      "cardNumber": "string",
      "merchantName": "string",
-     "merchantCategoryCode": "string"
+     "merchantCategoryCode": "string",
+     "gatewayResponse": "object",
+     "source": "object",
+     "transactionProcessingDetails": "object",
+     "paymentReceipt": "object",
+     "transactionDetails": "object"
     },
     "evidence": [
      "openapi/_original/fiserv-bankinghub-openapi.yml#POST /banking/payments",
-     "openapi/_original/fiserv-carddeveloper-openapi.yml#POST /v1/authorizations"
+     "openapi/_original/fiserv-carddeveloper-openapi.yml#POST /v1/authorizations",
+     "openapi/_original/fiserv-commercehub-openapi.yml#POST /payments/v1/charges"
     ]
    },
    "flipdish": {
@@ -4037,6 +4169,22 @@
      "openapi/_original/form3-payments.yml#POST /transaction/payments"
     ]
    },
+   "formance": {
+    "segments": [
+     "payments"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {},
+    "evidence": [
+     "openapi/_original/formance-openapi.yml#GET /api/payments/v1/payments",
+     "openapi/_original/formance-openapi.yml#GET /api/payments/v1/payments/{paymentId}",
+     "openapi/_original/formance-openapi.yml#POST /api/payments/v1/payments"
+    ]
+   },
    "fudo": {
     "segments": [
      "payments",
@@ -4118,10 +4266,12 @@
    },
    "gingr": {
     "segments": [
-     "charges"
+     "charges",
+     "charge"
     ],
     "operations": [
-     "GET collection"
+     "GET collection",
+     "POST collection"
     ],
     "properties": {
      "type": "string",
@@ -4129,7 +4279,8 @@
      "attributes": "object"
     },
     "evidence": [
-     "openapi/_original/gingr-openapi.json#GET /v1/invoices/charges"
+     "openapi/_original/gingr-openapi.json#GET /v1/invoices/charges",
+     "openapi/_original/gingr-openapi.json#POST /v1/payments/charge"
     ]
    },
    "gocardless": {
@@ -4771,7 +4922,8 @@
    },
    "jack-henry": {
     "segments": [
-     "payments"
+     "payments",
+     "authorizations"
     ],
     "operations": [
      "POST collection"
@@ -4784,11 +4936,32 @@
      "scheduledDate": "string",
      "status": "string",
      "memo": "string",
-     "recipientToken": "string"
+     "recipientToken": "string",
+     "deliveryMethod": "string",
+     "estimatedDeliveryDate": "string",
+     "payerAccountId": "string",
+     "dueDate": "string",
+     "approved": "boolean",
+     "responseCode": "string",
+     "authCode": "string",
+     "networkReference": "string",
+     "cardToken": "string",
+     "currency": "string",
+     "merchantId": "string",
+     "cvvProvided": "boolean",
+     "chosenRail": "string",
+     "downstreamId": "string",
+     "originatorAccountId": "string",
+     "beneficiary": "object",
+     "speed": "string",
+     "policyHints": "object"
     },
     "evidence": [
      "openapi/_original/banno-consumer-api-openapi.yml#POST /a/consumer/api/v0/users/{userId}/bill-pay/payments",
-     "openapi/_original/banno-consumer-api-openapi.yml#POST /a/consumer/api/v0/users/{userId}/zelle/payments"
+     "openapi/_original/banno-consumer-api-openapi.yml#POST /a/consumer/api/v0/users/{userId}/zelle/payments",
+     "openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/bill-pay/payments",
+     "openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/cards/authorizations",
+     "openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/orchestrator/payments"
     ]
    },
    "jobox-ai": {
@@ -4936,6 +5109,7 @@
      "openapi/_original/keap-v1-openapi.json#POST /rest/v1/orders/{orderId}/payments",
      "openapi/_original/keap-v2-openapi.json#GET /rest/v2/affiliates/{affiliate_id}/payments",
      "openapi/_original/keap-v2-openapi.json#GET /rest/v2/orders/{order_id}/payments",
+     "openapi/_original/keap-v2-openapi.json#GET /rest/v2/sales/payments",
      "openapi/_original/keap-v2-openapi.json#POST /rest/v2/orders/{order_id}/payments"
     ]
    },
@@ -6596,6 +6770,29 @@
      "openapi/_original/natural-ai-openapi-original.json#POST /payments"
     ]
    },
+   "nopan": {
+    "segments": [
+     "charge"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "transactionId": "string",
+     "processingAccountId": "string",
+     "clientTransactionId": "string",
+     "providerDetails": "object",
+     "metadata": "object",
+     "status": "string",
+     "statusInfo": "object",
+     "paymentDetails": "object",
+     "payerDetails": "object",
+     "requestContext": "object"
+    },
+    "evidence": [
+     "openapi/_original/nopan-openapi-original.yml#POST /payments/charge"
+    ]
+   },
    "novopayment": {
     "segments": [
      "payment"
@@ -7099,6 +7296,38 @@
      "openapi/_original/openapi.yml#PUT /payments/{id}"
     ]
    },
+   "papaya-global": {
+    "segments": [
+     "payments"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "POST collection",
+     "PUT item"
+    ],
+    "properties": {
+     "id": "string",
+     "correlation_id": "string",
+     "description": "string",
+     "purpose": "string",
+     "source": "object",
+     "target": "object",
+     "amount": "object",
+     "execution": "object",
+     "approved": "boolean",
+     "final": "boolean",
+     "attachments": "array",
+     "user_tags": "object",
+     "info": "object"
+    },
+    "evidence": [
+     "openapi/_original/papaya-global-workforce-payments-api.yml#GET /payments/payments",
+     "openapi/_original/papaya-global-workforce-payments-api.yml#GET /payments/payments/{id}",
+     "openapi/_original/papaya-global-workforce-payments-api.yml#POST /payments/payments",
+     "openapi/_original/papaya-global-workforce-payments-api.yml#PUT /payments/payments/{id}"
+    ]
+   },
    "paxos": {
     "segments": [
      "payments"
@@ -7214,10 +7443,12 @@
    },
    "paypal": {
     "segments": [
-     "payments"
+     "payments",
+     "authorizations"
     ],
     "operations": [
      "DELETE item",
+     "GET item",
      "POST collection"
     ],
     "properties": {
@@ -7227,11 +7458,25 @@
      "method": "string",
      "note": "string",
      "amount": "object",
-     "shipping_info": "object"
+     "shipping_info": "object",
+     "status": "string",
+     "status_details": "object",
+     "id": "string",
+     "invoice_id": "string",
+     "custom_id": "string",
+     "network_transaction_reference": "object",
+     "seller_protection": "object",
+     "expiration_time": "string",
+     "links": "array",
+     "create_time": "string",
+     "update_time": "string",
+     "supplementary_data": "object",
+     "payee": "object"
     },
     "evidence": [
      "openapi/_original/paypal-invoicing-openapi-original.yml#DELETE /v2/invoicing/invoices/{invoice_id}/payments/{transaction_id}",
-     "openapi/_original/paypal-invoicing-openapi-original.yml#POST /v2/invoicing/invoices/{invoice_id}/payments"
+     "openapi/_original/paypal-invoicing-openapi-original.yml#POST /v2/invoicing/invoices/{invoice_id}/payments",
+     "openapi/_original/paypal-payments-openapi-original.yml#GET /v2/payments/authorizations/{authorization_id}"
     ]
    },
    "paypay": {
@@ -9186,6 +9431,64 @@
      "openapi/_original/swell-backend-api-openapi.yml#POST /payments",
      "openapi/_original/swell-backend-api-openapi.yml#PUT /payments/{id}",
      "openapi/_original/swell-frontend-api-openapi.yml#GET /api/settings/payments"
+    ]
+   },
+   "switstack": {
+    "segments": [
+     "payments"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "PATCH item",
+     "POST collection",
+     "PUT item"
+    ],
+    "properties": {
+     "state": "string",
+     "outcome_status": "string",
+     "trd": null,
+     "authorization": null,
+     "completion": null,
+     "pin_block": null,
+     "id": "string",
+     "organization_id": "string",
+     "poi_id": "string",
+     "poi_config_id": "string",
+     "log_data_set_id": "string"
+    },
+    "evidence": [
+     "openapi/_original/switstack-switcloud-openapi.json#GET /api/payment/payments",
+     "openapi/_original/switstack-switcloud-openapi.json#GET /api/payment/payments/{id}",
+     "openapi/_original/switstack-switcloud-openapi.json#PATCH /api/payment/payments/{id}",
+     "openapi/_original/switstack-switcloud-openapi.json#POST /api/payment/payments",
+     "openapi/_original/switstack-switcloud-openapi.json#PUT /api/payment/payments/{id}",
+     "openapi/_original/switstack-switcloud-openapi.yml#GET /api/payment/payments",
+     "openapi/_original/switstack-switcloud-openapi.yml#GET /api/payment/payments/{id}",
+     "openapi/_original/switstack-switcloud-openapi.yml#PATCH /api/payment/payments/{id}",
+     "openapi/_original/switstack-switcloud-openapi.yml#POST /api/payment/payments",
+     "openapi/_original/switstack-switcloud-openapi.yml#PUT /api/payment/payments/{id}"
+    ]
+   },
+   "synchrony-financial": {
+    "segments": [
+     "payments"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "transactionId": "string",
+     "authorizationCode": "string",
+     "status": "string",
+     "amount": "number",
+     "accountNumber": "string",
+     "timestamp": "string",
+     "message": "string",
+     "merchantId": "string"
+    },
+    "evidence": [
+     "openapi/_original/synchrony-financial-credit-authorization-openapi.yml#POST /v1/authorizations/payments"
     ]
    },
    "synctera": {
@@ -11270,18 +11573,28 @@
   "checkout_session": {
    "1fort": {
     "segments": [
+     "sessions",
      "checkout"
     ],
     "operations": [
+     "GET collection",
      "GET item"
     ],
     "properties": {
+     "id": "string",
+     "status": "string",
+     "stripe_payment_intent_id": "string",
+     "total_amount_cents": "integer",
+     "payment_method_types": "object",
+     "applied_checkout_processing_fee_percent": "string",
+     "applied_ach_wire_processing_fee_percent": "string",
+     "created_at": "string",
+     "completed_at": "string",
      "short_id": "string",
      "financed": "object",
      "pay_in_full": "object",
      "broker": "object",
      "url": "string",
-     "status": "string",
      "invoice_doc": "object",
      "checkout_invoice_id": "string",
      "coverage_title": "string",
@@ -11289,7 +11602,11 @@
      "effective_date": "string"
     },
     "evidence": [
+     "openapi/_original/1fort-openapi-original.yml#GET /checkout/sessions",
+     "openapi/_original/1fort-openapi-original.yml#GET /checkout/sessions/{id}",
      "openapi/_original/1fort-openapi-original.yml#GET /v2/checkout/{id}",
+     "openapi/_original/1fort-openapi.json#GET /checkout/sessions",
+     "openapi/_original/1fort-openapi.json#GET /checkout/sessions/{id}",
      "openapi/_original/1fort-openapi.json#GET /v2/checkout/{id}"
     ]
    },
@@ -11758,6 +12075,29 @@
      "openapi/_original/checkouts-openapi-original.yml#PUT /checkouts/{checkoutId}",
      "openapi/_original/storefront-checkouts-openapi-original.yml#GET /checkouts/{checkoutId}",
      "openapi/_original/storefront-checkouts-openapi-original.yml#PUT /checkouts/{checkoutId}"
+    ]
+   },
+   "bilt": {
+    "segments": [
+     "checkout-sessions"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "sessionId": "string",
+     "mode": "string",
+     "status": "string",
+     "orderId": "string",
+     "amounts": "object",
+     "checkoutUrl": "string",
+     "expiresAt": "string",
+     "integratorCustomerId": "string",
+     "lineItems": "array",
+     "metadata": "object"
+    },
+    "evidence": [
+     "openapi/_original/checkout-sdk.yml#POST /partner/checkout/v1/checkout-sessions"
     ]
    },
    "blackbaud": {
@@ -12536,6 +12876,26 @@
      "openapi/_original/carts.yaml#POST /v2/carts/{cartID}/checkout"
     ]
    },
+   "fabric-com": {
+    "segments": [
+     "sessions"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "state": "string",
+     "orderId": "string",
+     "cartId": "string",
+     "customer": "object",
+     "payments": "array",
+     "tax": "object",
+     "orderMetadata": "object"
+    },
+    "evidence": [
+     "openapi/_original/fabric-checkout-openapi.yml#POST /checkout/sessions"
+    ]
+   },
    "fastspring": {
     "segments": [
      "sessions"
@@ -12646,10 +13006,12 @@
     ],
     "operations": [
      "DELETE collection",
+     "DELETE item",
      "GET collection",
      "GET item",
      "POST collection",
-     "PUT collection"
+     "PUT collection",
+     "PUT item"
     ],
     "properties": {
      "type": "string",
@@ -12659,16 +13021,21 @@
      "expires_in": "integer",
      "email_address": "string",
      "password": "string",
+     "id": "string",
+     "expires_at": "string",
+     "cart_items": "array",
+     "metadata": "object",
+     "airline": null,
+     "payment_method": "object",
+     "buyer": "object",
      "status": "string",
      "code": "string",
      "status_code": "number",
      "response_body": "object",
-     "id": "string",
      "amount": "integer",
      "currency": "string",
      "created_at": "string",
      "updated_at": "string",
-     "expires_at": "string",
      "external_identifier": "string",
      "statement_descriptor": "object",
      "locale": "string",
@@ -12682,12 +13049,12 @@
      "country": "string",
      "intent": "string",
      "return_url": "string",
-     "cart_items": "array",
-     "metadata": "object",
      "payment_source": "string",
-     "buyer": "object",
      "shipping_details": "object",
      "connection_options": "object",
+     "payment_service_id": null,
+     "is_subsequent_payment": null,
+     "merchant_initiated": null,
      "url": "string",
      "store": "boolean",
      "buyer_id": null,
@@ -12695,17 +13062,17 @@
     },
     "evidence": [
      "openapi/_original/gr4vy-docs-v1-openapi.json#DELETE /auth/sessions",
+     "openapi/_original/gr4vy-docs-v1-openapi.json#DELETE /checkout/sessions/{checkout_session_id}",
+     "openapi/_original/gr4vy-docs-v1-openapi.json#GET /checkout/sessions/{checkout_session_id}",
      "openapi/_original/gr4vy-docs-v1-openapi.json#GET /payment-links",
      "openapi/_original/gr4vy-docs-v1-openapi.json#GET /payment-links/{payment_link_id}",
      "openapi/_original/gr4vy-docs-v1-openapi.json#POST /auth/sessions",
+     "openapi/_original/gr4vy-docs-v1-openapi.json#POST /checkout/sessions",
      "openapi/_original/gr4vy-docs-v1-openapi.json#POST /payment-links",
      "openapi/_original/gr4vy-docs-v1-openapi.json#POST /payment-service-definitions/{payment_service_definition_id}/sessions",
      "openapi/_original/gr4vy-docs-v1-openapi.json#POST /payment-services/{payment_service_id}/sessions",
      "openapi/_original/gr4vy-docs-v1-openapi.json#PUT /auth/sessions",
-     "openapi/_original/gr4vy-docs-v1-openapi.yml#DELETE /auth/sessions",
-     "openapi/_original/gr4vy-docs-v1-openapi.yml#GET /payment-links",
-     "openapi/_original/gr4vy-docs-v1-openapi.yml#GET /payment-links/{payment_link_id}",
-     "openapi/_original/gr4vy-docs-v1-openapi.yml#POST /auth/sessions"
+     "openapi/_original/gr4vy-docs-v1-openapi.json#PUT /checkout/sessions/{checkout_session_id}"
     ]
    },
    "greenhelix-net": {
@@ -12977,6 +13344,41 @@
     "evidence": [
      "openapi/_original/komoju-openapi.yml#GET /sessions/{id}",
      "openapi/_original/komoju-openapi.yml#POST /sessions"
+    ]
+   },
+   "lianlian-global": {
+    "segments": [
+     "sessions"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "request_id": "string",
+     "amount": "string",
+     "currency": "string",
+     "status": null,
+     "payment_method": null,
+     "payment_currency": "string",
+     "payment_amount": "string",
+     "fx": "object",
+     "payment_time": "number",
+     "accounting_date": "string",
+     "metadata": "object",
+     "url": "string",
+     "create_time": "number",
+     "update_time": "number",
+     "business_type": "string",
+     "customer": "object",
+     "description": "string",
+     "expires_time": "number",
+     "product_info": "array",
+     "return_url": "string",
+     "additional_info": "object"
+    },
+    "evidence": [
+     "openapi/_original/lianlian-global-lppe-acceptpayment-openapi.yml#POST /accept_payments/checkout/sessions"
     ]
    },
    "lightspark": {
@@ -13802,7 +14204,8 @@
    },
    "shift4-payments": {
     "segments": [
-     "payment-links"
+     "payment-links",
+     "sessions"
     ],
     "operations": [
      "GET item",
@@ -13815,10 +14218,28 @@
      "currency": "string",
      "created": "integer",
      "description": "string",
-     "metadata": "object"
+     "metadata": "object",
+     "lastCharge": "string",
+     "paymentLink": "string",
+     "invoice": "string",
+     "customer": "string",
+     "clientSecret": "string",
+     "lineItems": "array",
+     "locale": "string",
+     "collectBillingAddress": "boolean",
+     "collectShippingAddress": "boolean",
+     "capture": "boolean",
+     "captchaRequired": "boolean",
+     "status": "string",
+     "allowSavedCards": "boolean",
+     "action": "string",
+     "redirectUrl": "string",
+     "vendorReference": "string"
     },
     "evidence": [
+     "openapi/_original/shift4-api-openapi.yml#GET /checkout/sessions/{sessionId}",
      "openapi/_original/shift4-api-openapi.yml#GET /payment-links/{linkId}",
+     "openapi/_original/shift4-api-openapi.yml#POST /checkout/sessions",
      "openapi/_original/shift4-api-openapi.yml#POST /payment-links"
     ]
    },
@@ -13996,8 +14417,8 @@
    },
    "stripe": {
     "segments": [
-     "payment_links",
-     "sessions"
+     "sessions",
+     "payment_links"
     ],
     "operations": [
      "GET collection",
@@ -14017,43 +14438,73 @@
      "on_behalf_of": "string",
      "return_url": "string",
      "url": "string",
+     "after_expiration": null,
+     "allow_promotion_codes": "boolean",
+     "amount_subtotal": "integer",
+     "amount_total": "integer",
+     "automatic_tax": null,
+     "billing_address_collection": "string",
+     "cancel_url": "string",
+     "client_reference_id": "string",
+     "client_secret": "string",
+     "consent": null,
+     "consent_collection": null,
+     "currency": "string",
+     "currency_conversion": null,
+     "custom_fields": "array",
+     "custom_text": null,
+     "customer_creation": "string",
+     "customer_details": null,
+     "customer_email": "string",
+     "expires_at": "integer",
+     "invoice": null,
+     "invoice_creation": null,
+     "line_items": "object",
+     "metadata": "object",
+     "mode": "string",
+     "payment_intent": null,
+     "payment_link": null,
+     "payment_method_collection": "string",
+     "payment_method_configuration_details": null,
+     "payment_method_options": null,
+     "payment_method_types": "array",
+     "payment_status": "string",
+     "phone_number_collection": null,
+     "recovered_from": "string",
+     "redirect_on_completion": "string",
+     "setup_intent": null,
+     "shipping_address_collection": null,
+     "shipping_cost": null,
+     "shipping_details": null,
+     "shipping_options": "array",
+     "status": "string",
+     "submit_type": "string",
+     "subscription": null,
+     "success_url": "string",
+     "tax_id_collection": null,
+     "total_details": null,
+     "ui_mode": "string",
      "account_holder": null,
      "accounts": "object",
-     "client_secret": "string",
      "filters": null,
      "permissions": "array",
      "prefetch": "array",
      "active": "boolean",
      "after_completion": null,
-     "allow_promotion_codes": "boolean",
      "application": null,
      "application_fee_amount": "integer",
      "application_fee_percent": "number",
-     "automatic_tax": null,
-     "billing_address_collection": "string",
-     "consent_collection": null,
-     "currency": "string",
-     "custom_fields": "array",
-     "custom_text": null,
-     "customer_creation": "string",
      "inactive_message": "string",
-     "invoice_creation": null,
-     "line_items": "object",
-     "metadata": "object",
      "payment_intent_data": null,
-     "payment_method_collection": "string",
-     "payment_method_types": "array",
-     "phone_number_collection": null,
      "restrictions": null,
-     "shipping_address_collection": null,
-     "shipping_options": "array",
-     "submit_type": "string",
      "subscription_data": null,
-     "tax_id_collection": null,
      "transfer_data": null
     },
     "evidence": [
      "openapi/_original/billing-openapi-original.yml#POST /v1/billing_portal/sessions",
+     "openapi/_original/checkout-openapi-original.yml#GET /v1/checkout/sessions",
+     "openapi/_original/checkout-openapi-original.yml#GET /v1/checkout/sessions/{session}",
+     "openapi/_original/checkout-openapi-original.yml#POST /v1/checkout/sessions",
      "openapi/_original/financial-connections-openapi-original.yml#GET /v1/financial_connections/sessions/{session}",
      "openapi/_original/financial-connections-openapi-original.yml#POST /v1/financial_connections/sessions",
      "openapi/_original/payment-links-openapi-original.yml#GET /v1/payment_links",
@@ -14250,7 +14701,8 @@
    },
    "teya": {
     "segments": [
-     "payment-links"
+     "payment-links",
+     "sessions"
     ],
     "operations": [
      "GET item",
@@ -14258,15 +14710,14 @@
      "POST collection"
     ],
     "properties": {
-     "payment_link": "string",
-     "payment_link_id": "string",
+     "session_id": "string",
+     "session_url": "string",
      "amount": "object",
      "billing_address": "object",
      "cancel_url": "string",
      "customer": "object",
      "customer_success_email": "string",
-     "delivery_info": "object",
-     "expires_at": "string",
+     "failure_url": "string",
      "language": "string",
      "line_items": "array",
      "merchant_reference": "string",
@@ -14276,15 +14727,32 @@
      "required_customer_fields": "array",
      "store_id": "string",
      "success_url": "string",
+     "type": "string",
+     "business_data": "object",
+     "dcc": "object",
+     "enabled_card_brands": "array",
+     "payment_link_id": "string",
+     "payment_link_type": "string",
+     "payment_status": "string",
+     "session_status": "string",
+     "logo_url": "string",
+     "checkout_custom_note": "string",
+     "privacy_policy_url": "string",
+     "terms_url": "string",
+     "transaction_id": "string",
+     "payment_link": "string",
+     "delivery_info": "object",
+     "expires_at": "string",
      "supported_card_brands": "array",
      "supported_payment_methods": "array",
      "transaction_type": "string",
-     "type": "string",
      "status": "string"
     },
     "evidence": [
      "openapi/_original/teya-online-payments-openapi.yaml#GET /v1/payment-links/{payment_link_id}",
+     "openapi/_original/teya-online-payments-openapi.yaml#GET /v2/checkout/sessions/{session_id}",
      "openapi/_original/teya-online-payments-openapi.yaml#PATCH /v2/payment-links/{payment_link_id}",
+     "openapi/_original/teya-online-payments-openapi.yaml#POST /v2/checkout/sessions",
      "openapi/_original/teya-online-payments-openapi.yaml#POST /v2/payment-links"
     ]
    },
@@ -23961,6 +24429,28 @@
      "openapi/_original/moov-openapi_2.yml#GET /accounts/{accountID}/payment-methods/{paymentMethodID}"
     ]
    },
+   "nestcoin": {
+    "segments": [
+     "payment-methods"
+    ],
+    "operations": [
+     "PUT item"
+    ],
+    "properties": {
+     "paymentMethodId": "string",
+     "userId": "string",
+     "paymentChannelId": "string",
+     "paymentChannelName": "string",
+     "paymentChannelType": "string",
+     "defaultCurrencyMap": "object",
+     "data": "object",
+     "isBeneficiary": "boolean",
+     "otp": "string"
+    },
+    "evidence": [
+     "openapi/_original/nestcoin-external-gateway-openapi-original.json#PUT /payment-methods/channels/payment-methods/{id}"
+    ]
+   },
    "northmill": {
     "segments": [
      "paymentmethods"
@@ -26324,6 +26814,29 @@
     },
     "evidence": [
      "openapi/_original/chariot-fdx-openapi-original.yml#GET /accounts/{id}/customers"
+    ]
+   },
+   "clearbank": {
+    "segments": [
+     "customers"
+    ],
+    "operations": [
+     "GET item"
+    ],
+    "properties": {
+     "id": "string",
+     "institutionId": "string",
+     "status": "string",
+     "type": "string",
+     "personalDetails": "object",
+     "kycAml": "object",
+     "taxDetails": "object",
+     "specialStatuses": "array",
+     "identityDocuments": "array",
+     "addresses": "object"
+    },
+    "evidence": [
+     "openapi/_original/clearbank-customers_v2_retail.json#GET /customers/v2/customers/{customerId}"
     ]
    },
    "cobot": {
@@ -29693,6 +30206,29 @@
      "openapi/_original/pinch-payments-payments.yml#GET /payments/payer/{id}"
     ]
    },
+   "pismo": {
+    "segments": [
+     "customers"
+    ],
+    "operations": [
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "integer",
+     "name": "string",
+     "document_number": "string",
+     "type": "string",
+     "status": "string",
+     "created_at": "string",
+     "birth_date": "string",
+     "email": "string"
+    },
+    "evidence": [
+     "openapi/_original/pismo-openapi.yml#GET /customers/v1/customers/{customerId}",
+     "openapi/_original/pismo-openapi.yml#POST /customers/v1/customers"
+    ]
+   },
    "plug": {
     "segments": [
      "customers"
@@ -32833,6 +33369,33 @@
      "openapi/_original/fat-zebra-gateway.json#GET /reports/payouts/{date}"
     ]
    },
+   "fincra": {
+    "segments": [
+     "payouts"
+    ],
+    "operations": [
+     "GET collection",
+     "POST collection"
+    ],
+    "properties": {
+     "reference": "string",
+     "customerReference": "string",
+     "status": "string",
+     "amount": "number",
+     "sourceCurrency": "string",
+     "destinationCurrency": "string",
+     "business": "string",
+     "description": "string",
+     "paymentDestination": "string",
+     "paymentScheme": "string",
+     "quoteReference": "string",
+     "beneficiary": "object"
+    },
+    "evidence": [
+     "openapi/_original/fincra-openapi.yml#GET /disbursements/payouts",
+     "openapi/_original/fincra-openapi.yml#POST /disbursements/payouts"
+    ]
+   },
    "finix": {
     "segments": [
      "settlements"
@@ -34290,7 +34853,9 @@
     ],
     "operations": [
      "GET collection",
-     "POST collection"
+     "GET item",
+     "POST collection",
+     "PUT item"
     ],
     "properties": {
      "id": "string",
@@ -34298,9 +34863,6 @@
      "currency": "string",
      "fiscal": "boolean",
      "payoutMethod": "string",
-     "currencyOperationCode": "string",
-     "agreementDate": "string",
-     "agreementNumber": "string",
      "payoutParams": "object",
      "incomeTypeCode": "string",
      "extra": "object",
@@ -34308,18 +34870,25 @@
      "creationDate": "string",
      "account": "string",
      "paymentDetails": "string",
+     "currencyOperationCode": "string",
+     "agreementDate": "string",
+     "agreementNumber": "string",
      "receiptLink": "string",
      "receiverPam": "string"
     },
     "evidence": [
+     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /payout/v1/payouts/{id}",
+     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /payout/v2/payouts/{id}",
      "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /v1/payout-bundles/{id}/payouts",
      "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /v2/payout-bundles/{id}/payouts",
      "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#GET /v3/payout-bundles/{id}/payouts",
+     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#POST /payout/v1/payouts",
      "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#POST /v2/payouts",
+     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.json#PUT /payout/v1/payouts/{id}",
+     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#GET /payout/v1/payouts/{id}",
+     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#GET /payout/v2/payouts/{id}",
      "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#GET /v1/payout-bundles/{id}/payouts",
-     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#GET /v2/payout-bundles/{id}/payouts",
-     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#GET /v3/payout-bundles/{id}/payouts",
-     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#POST /v2/payouts"
+     "openapi/_original/raiffeisen-ru-raif-pay-payouts-openapi.yml#GET /v2/payout-bundles/{id}/payouts"
     ]
    },
    "ravelin": {
@@ -34988,14 +35557,17 @@
    },
    "tweed": {
     "segments": [
-     "payouts"
+     "payouts",
+     "payout"
     ],
     "operations": [
+     "DELETE item",
      "GET collection",
      "GET item"
     ],
     "properties": {},
     "evidence": [
+     "openapi/_original/tweed-api-v2-openapi-original.json#DELETE /v1/payouts/payout/{payoutId}",
      "openapi/_original/tweed-api-v2-openapi-original.json#GET /v1/payouts",
      "openapi/_original/tweed-api-v2-openapi-original.json#GET /v1/payouts/{payoutId}"
     ]
@@ -35825,10 +36397,12 @@
    },
    "dlocal": {
     "segments": [
-     "chargebacks"
+     "chargebacks",
+     "dispute"
     ],
     "operations": [
-     "GET item"
+     "GET item",
+     "POST item"
     ],
     "properties": {
      "id": "string",
@@ -35840,10 +36414,13 @@
      "reason_code": "string",
      "reason_description": "string",
      "chargeback_stage": "string",
-     "arn": "string"
+     "arn": "string",
+     "filename": "string",
+     "content": "string"
     },
     "evidence": [
-     "openapi/_original/dlocal-payins-openapi.yml#GET /chargebacks/{chargeback_id}"
+     "openapi/_original/dlocal-payins-openapi.yml#GET /chargebacks/{chargeback_id}",
+     "openapi/_original/dlocal-payins-openapi.yml#POST /chargebacks/dispute/{chargeback_id}"
     ]
    },
    "dodo-payments": {
@@ -42825,6 +43402,7 @@
     "belvo",
     "bigcommerce",
     "bill",
+    "bilt",
     "bitpay",
     "bitski",
     "blackbaud",
@@ -43022,6 +43600,7 @@
     "narmi",
     "natural-ai",
     "neon-commerce",
+    "nestcoin",
     "nopan",
     "northmill",
     "novopayment",
@@ -43044,6 +43623,7 @@
     "pagopa",
     "paid",
     "paidy",
+    "papaya-global",
     "paxos",
     "payabli",
     "payfast",
@@ -43123,6 +43703,7 @@
     "sumup",
     "super-payments",
     "swell-io",
+    "switstack",
     "synchrony-financial",
     "synctera",
     "tabby",
@@ -43213,6 +43794,7 @@
     "bcb-group",
     "bigcommerce",
     "bill",
+    "bilt",
     "bitpay",
     "bitski",
     "blockchain.com",
@@ -43307,6 +43889,7 @@
     "nacha",
     "natural-ai",
     "neon-commerce",
+    "nestcoin",
     "nopan",
     "novopayment",
     "openpayments-io",
@@ -43533,6 +44116,7 @@
     "paddle",
     "pagarme",
     "paidy",
+    "papaya-global",
     "paxos",
     "payfast",
     "payjp",
@@ -43575,6 +44159,7 @@
     "stripe",
     "sumup",
     "swell-io",
+    "switstack",
     "synctera",
     "tabby",
     "tamara",

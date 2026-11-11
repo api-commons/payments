@@ -3,6 +3,17 @@ apis_io: https://apis.io/providers/fawry/
 context: payments
 generated: '2026-11-10'
 concepts:
+  payment:
+    path_segment:
+    - charge
+    properties:
+      amount: amount
+      currency: currencyCode
+      payment_method_id: paymentMethod
+      description: description
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/fawrypay-server-api-openapi.yml#POST /ECommerceWeb/Fawry/payments/charge
   refund:
     path_segment:
     - refund

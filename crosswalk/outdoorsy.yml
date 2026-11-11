@@ -20,7 +20,7 @@ concepts:
       last4: last_four
       customer_id: owner_id
       updated_at: updated
-    core_coverage: 0.5
+    core_coverage: 1.0
     evidence:
     - openapi/_original/outdoorsy-openapi-original.json#DELETE /users/{user_id}/cards/{card_id}
     - openapi/_original/outdoorsy-openapi-original.json#GET /users/{user_id}/cards

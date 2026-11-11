@@ -10,5 +10,17 @@ concepts:
       currency: currencyCode
     core_coverage: 0.0
     evidence:
+    - openapi/_original/clearbank-cross-border-v4.json#POST /payments/cross-border-sterling/v4/payments
     - openapi/_original/clearbank-mccy-payments-v1.json#DELETE /v1/mccy/payments/{batchId}
     - openapi/_original/clearbank-mccy-payments-v1.json#POST /v1/mccy/payments
+  customer:
+    path_segment:
+    - customers
+    properties:
+      id: id
+      address: addresses
+      status: status
+      type: type
+    core_coverage: 0.25
+    evidence:
+    - openapi/_original/clearbank-customers_v2_retail.json#GET /customers/v2/customers/{customerId}

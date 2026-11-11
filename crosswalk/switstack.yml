@@ -1,0 +1,18 @@
+provider: switstack
+apis_io: https://apis.io/providers/switstack/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties:
+      id: id
+      status: state
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/switstack-switcloud-openapi.json#GET /api/payment/payments
+    - openapi/_original/switstack-switcloud-openapi.json#GET /api/payment/payments/{id}
+    - openapi/_original/switstack-switcloud-openapi.json#PATCH /api/payment/payments/{id}
+    - openapi/_original/switstack-switcloud-openapi.json#POST /api/payment/payments
+    - openapi/_original/switstack-switcloud-openapi.json#PUT /api/payment/payments/{id}

@@ -33,8 +33,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      id: id
       status: status
+      id: id
       created_at: created_at
       currency: currency
       destination: beneficiary

@@ -1,0 +1,18 @@
+provider: bilt
+apis_io: https://apis.io/providers/bilt/
+context: payments
+generated: '2026-11-10'
+concepts:
+  checkout_session:
+    path_segment:
+    - checkout-sessions
+    properties:
+      status: status
+      expires_at: expiresAt
+      mode: mode
+      metadata: metadata
+      url: checkoutUrl
+      line_items: lineItems
+    core_coverage: 0.5
+    evidence:
+    - openapi/_original/checkout-sdk.yml#POST /partner/checkout/v1/checkout-sessions

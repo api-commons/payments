@@ -2,13 +2,25 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/payout.json",
   "title": "Payout",
-  "description": "The common payout in Payments, distilled from 109 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common payout in Payments, distilled from 110 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.664,
+      "x-commons-providers": 73,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "result",
+        "Status"
+      ]
+    },
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.661,
+      "x-commons-share": 0.655,
       "x-commons-providers": 72,
       "x-commons-spellings": [
         "id",
@@ -21,23 +33,11 @@
         "referenceId"
       ]
     },
-    "status": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.661,
-      "x-commons-providers": 72,
-      "x-commons-spellings": [
-        "status",
-        "state",
-        "result",
-        "Status"
-      ]
-    },
     "amount": {
       "type": "number",
       "x-commons-tier": "core",
-      "x-commons-share": 0.587,
-      "x-commons-providers": 64,
+      "x-commons-share": 0.591,
+      "x-commons-providers": 65,
       "x-commons-spellings": [
         "amount",
         "totalAmount",
@@ -49,7 +49,7 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.505,
+      "x-commons-share": 0.5,
       "x-commons-providers": 55,
       "x-commons-spellings": [
         "created_at",
@@ -66,7 +66,7 @@
     "currency": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.404,
+      "x-commons-share": 0.4,
       "x-commons-providers": 44,
       "x-commons-spellings": [
         "currency",
@@ -78,7 +78,7 @@
     "method": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.239,
+      "x-commons-share": 0.236,
       "x-commons-providers": 26,
       "x-commons-spellings": [
         "type",
@@ -91,7 +91,7 @@
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.229,
+      "x-commons-share": 0.227,
       "x-commons-providers": 25,
       "x-commons-spellings": [
         "updated_at",
@@ -106,12 +106,12 @@
     "destination": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.211,
-      "x-commons-providers": 23,
+      "x-commons-share": 0.218,
+      "x-commons-providers": 24,
       "x-commons-spellings": [
         "destination",
-        "recipient",
         "beneficiary",
+        "recipient",
         "bank_account",
         "BankAccountId",
         "destination_id",
@@ -126,7 +126,7 @@
   "x-commons": {
     "context": "payments",
     "concept": "payout",
-    "providers": 109,
+    "providers": 110,
     "generated": "2026-11-10",
     "version": "0.1.0-draft.20261110",
     "status": "draft"

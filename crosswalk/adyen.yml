@@ -32,8 +32,8 @@ concepts:
       status: status
       amount: amount
       expires_at: expiresAt
-      description: description
       mode: mode
+      description: description
       metadata:
       - metadata
       - additionalData

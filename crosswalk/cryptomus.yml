@@ -37,11 +37,11 @@ concepts:
     path_segment:
     - payout
     properties:
-      id: uuid
       status:
       - state
       - result
       - status
+      id: uuid
       amount: amount
       created_at: created_at
       currency: currency

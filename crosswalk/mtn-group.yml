@@ -54,6 +54,7 @@ concepts:
       - status
       - state
       last_name: lastName
+      type: type
     core_coverage: 0.75
     evidence:
     - openapi/_original/mtn-group-advertising-v2.yml#POST /customers/{customerId}

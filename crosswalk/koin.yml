@@ -20,8 +20,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      id: payout_id
       status: status
+      id: payout_id
     core_coverage: 0.5
     evidence:
     - openapi/_original/koin-payments-openapi.json#GET /v1/payment/payouts

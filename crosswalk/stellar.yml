@@ -31,6 +31,7 @@ concepts:
       address: address
       status: status
       last_name: last_name
+      type: type
     core_coverage: 0.75
     evidence:
     - openapi/_original/stellar-anchor-platform-callbacks-api.yml#DELETE /customer/{id}
@@ -40,8 +41,8 @@ concepts:
     path_segment:
     - disbursements
     properties:
-      id: id
       status: status
+      id: id
       amount: total_amount
       created_at: created_at
       updated_at: updated_at

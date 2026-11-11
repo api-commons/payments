@@ -26,8 +26,8 @@ concepts:
       customer_id: customer
       currency: currency
       amount: amount
-      description: description
       mode: mode
+      description: description
       url: link
       line_items: lineItems
     core_coverage: 0.5

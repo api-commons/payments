@@ -13,8 +13,10 @@ concepts:
   payout:
     path_segment:
     - payouts
+    - payout
     properties: {}
     core_coverage: null
     evidence:
+    - openapi/_original/tweed-api-v2-openapi-original.json#DELETE /v1/payouts/payout/{payoutId}
     - openapi/_original/tweed-api-v2-openapi-original.json#GET /v1/payouts
     - openapi/_original/tweed-api-v2-openapi-original.json#GET /v1/payouts/{payoutId}

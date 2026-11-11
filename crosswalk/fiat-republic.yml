@@ -31,6 +31,7 @@ concepts:
       created_at: createdAt
       updated_at: updatedAt
       metadata: metadata
+      type: type
     core_coverage: 0.75
     evidence:
     - openapi/_original/fiat-republic-republic-openapi.yml#GET /payers

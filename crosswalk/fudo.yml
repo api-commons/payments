@@ -33,6 +33,7 @@ concepts:
     properties:
       id: id
       metadata: attributes
+      type: type
     core_coverage: 0.25
     evidence:
     - openapi/_original/fudo-openapi-original.yml#DELETE /customers/{id}

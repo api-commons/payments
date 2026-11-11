@@ -1,0 +1,14 @@
+provider: formance
+apis_io: https://apis.io/providers/formance/
+context: payments
+generated: '2026-11-10'
+concepts:
+  payment:
+    path_segment:
+    - payments
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/formance-openapi.yml#GET /api/payments/v1/payments
+    - openapi/_original/formance-openapi.yml#GET /api/payments/v1/payments/{paymentId}
+    - openapi/_original/formance-openapi.yml#POST /api/payments/v1/payments

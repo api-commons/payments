@@ -6,15 +6,20 @@ concepts:
   payment:
     path_segment:
     - payments
+    - authorizations
     properties:
       id: id
       status: status
       amount: amount
+      currency: currency
       description: memo
     core_coverage: 0.75
     evidence:
     - openapi/_original/banno-consumer-api-openapi.yml#POST /a/consumer/api/v0/users/{userId}/bill-pay/payments
     - openapi/_original/banno-consumer-api-openapi.yml#POST /a/consumer/api/v0/users/{userId}/zelle/payments
+    - openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/bill-pay/payments
+    - openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/cards/authorizations
+    - openapi/_original/jack-henry-payments-openapi.yml#POST /payments/v1/orchestrator/payments
   refund:
     path_segment:
     - credits
@@ -34,7 +39,7 @@ concepts:
       status: status
       brand: cardType
       last4: last4
-    core_coverage: 0.5
+    core_coverage: 1.0
     evidence:
     - openapi/_original/banno-consumer-api-openapi.yml#GET /a/consumer/api/v0/users/{userId}/cards
   customer:
