@@ -1,7 +1,7 @@
 provider: leo1
 apis_io: https://apis.io/providers/leo1/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   refund:
     path_segment:

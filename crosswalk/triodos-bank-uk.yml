@@ -1,7 +1,7 @@
 provider: triodos-bank-uk
 apis_io: https://apis.io/providers/triodos-bank-uk/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   payment:
     path_segment:

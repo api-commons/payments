@@ -1,7 +1,7 @@
 provider: pin-payments
 apis_io: https://apis.io/providers/pin-payments/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   payment:
     path_segment:

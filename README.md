@@ -24,7 +24,7 @@ below is a count of providers.
 | payout | 122 | 110 | id 66%, status 66%, amount 64%, created_at 50% | payouts 70, settlements 29, payout 18, settlement 11 |
 | dispute | 77 | 71 | status 72%, created_at 68%, id 68%, reason 68% | disputes 48, chargebacks 20, dispute 14, chargeback 7 |
 
-Cohort: 692 providers with harvested OpenAPI, 436 crosswalks. Of the providers exposing a payment: 72% create, 67% list, 65% fetch, 22% update, 10% delete. Generated 2026-11-10 by build.py.
+Cohort: 692 providers with harvested OpenAPI, 436 crosswalks. Of the providers exposing a payment: 72% create, 67% list, 65% fetch, 22% update, 10% delete. Generated 2026-11-11 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

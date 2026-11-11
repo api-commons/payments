@@ -136,3 +136,11 @@ shared_specs:
                     coutts, cynergy-bank, hampden-and-co, investec, kroo, tandem-bank]
   natwest: [cashplus]
   nationwide-building-society: [weatherbys-bank]
+
+workflows:
+  - id: take-and-refund-a-payment
+    summary: Create a customer, take a payment, and refund it
+    steps:
+      - {op: createCustomer, id: customer}
+      - {op: createPayment, id: payment, link: {customer_id: "$steps.customer.outputs.id"}}
+      - {op: createRefund, id: refund, link: {payment_id: "$steps.payment.outputs.id"}}

@@ -1,7 +1,7 @@
 provider: algovoi-co-uk
 apis_io: https://apis.io/providers/algovoi-co-uk/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   checkout_session:
     path_segment:

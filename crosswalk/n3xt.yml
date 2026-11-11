@@ -1,7 +1,7 @@
 provider: n3xt
 apis_io: https://apis.io/providers/n3xt/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   payment:
     path_segment:

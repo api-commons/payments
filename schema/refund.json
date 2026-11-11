@@ -164,8 +164,8 @@
     "context": "payments",
     "concept": "refund",
     "providers": 201,
-    "generated": "2026-11-10",
-    "version": "0.1.0-draft.20261110",
+    "generated": "2026-11-11",
+    "version": "0.1.0-draft.20261111",
     "status": "draft"
   }
 }

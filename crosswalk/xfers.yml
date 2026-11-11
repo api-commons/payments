@@ -1,7 +1,7 @@
 provider: xfers
 apis_io: https://apis.io/providers/xfers/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   payment:
     path_segment:

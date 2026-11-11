@@ -1,7 +1,7 @@
 provider: total-system-services
 apis_io: https://apis.io/providers/total-system-services/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   refund:
     path_segment:

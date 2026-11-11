@@ -1,7 +1,7 @@
 provider: tweed
 apis_io: https://apis.io/providers/tweed/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   checkout_session:
     path_segment:

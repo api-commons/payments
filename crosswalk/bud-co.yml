@@ -1,7 +1,7 @@
 provider: bud-co
 apis_io: https://apis.io/providers/bud-co/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   customer:
     path_segment:

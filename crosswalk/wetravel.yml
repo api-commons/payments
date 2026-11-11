@@ -1,7 +1,7 @@
 provider: wetravel
 apis_io: https://apis.io/providers/wetravel/
 context: payments
-generated: '2026-11-10'
+generated: '2026-11-11'
 concepts:
   checkout_session:
     path_segment:
