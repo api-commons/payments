@@ -540,6 +540,66 @@ paths:
           content:
             application/json:
               schema: *id007
+  /mandates/{mandate_id}:
+    parameters:
+    - $ref: '#/components/parameters/mandate_id'
+    get:
+      operationId: getMandate
+      summary: Get a mandate
+      tags:
+      - Mandates
+      x-commons-tier: core
+      x-commons-share: 0.722
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: &id008
+                $ref: '#/components/schemas/Mandate'
+  /mandates:
+    get:
+      operationId: listMandates
+      summary: List mandates
+      tags:
+      - Mandates
+      x-commons-tier: core
+      x-commons-share: 0.667
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema:
+                type: array
+                items: *id008
+      parameters:
+      - name: limit
+        in: query
+        schema:
+          type: integer
+      - name: cursor
+        in: query
+        schema:
+          type: string
+    post:
+      operationId: createMandate
+      summary: Create a mandate
+      tags:
+      - Mandates
+      x-commons-tier: core
+      x-commons-share: 0.667
+      responses:
+        '200':
+          description: OK
+          content:
+            application/json:
+              schema: *id008
+      requestBody:
+        required: true
+        content:
+          application/json:
+            schema: *id008
 components:
   schemas:
     Payment:
@@ -556,6 +616,8 @@ components:
       $ref: ./schema/payout.json
     Dispute:
       $ref: ./schema/dispute.json
+    Mandate:
+      $ref: ./schema/mandate.json
   parameters:
     payment_id:
       name: payment_id
@@ -595,6 +657,12 @@ components:
         type: string
     dispute_id:
       name: dispute_id
+      in: path
+      required: true
+      schema:
+        type: string
+    mandate_id:
+      name: mandate_id
       in: path
       required: true
       schema:

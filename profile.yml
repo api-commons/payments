@@ -1538,3 +1538,138 @@ concepts:
     - closing_note
     - closing_reason
     - completed_at
+  mandate:
+    segments_seen:
+      mandates: 13
+      mandate: 5
+      direct_debits: 1
+    providers_exposing: 18
+    providers_with_readable_schema: 16
+    operations:
+    - operation: GET item
+      providers: 13
+      share: 0.722
+      tier: core
+    - operation: GET collection
+      providers: 12
+      share: 0.667
+      tier: core
+    - operation: POST collection
+      providers: 12
+      share: 0.667
+      tier: core
+    - operation: DELETE item
+      providers: 3
+      share: 0.167
+      tier: long-tail
+    - operation: UPDATE item
+      providers: 3
+      share: 0.167
+      tier: long-tail
+    - operation: POST item
+      providers: 1
+      share: 0.056
+      tier: long-tail
+    - operation: UPDATE collection
+      providers: 1
+      share: 0.056
+      tier: long-tail
+    properties:
+    - name: id
+      tier: core
+      providers: 13
+      share: 0.812
+      type: string
+      spellings:
+      - id
+      - mandateId
+      - reference_id
+      - Id
+    - name: status
+      tier: core
+      providers: 9
+      share: 0.562
+      type: string
+      spellings:
+      - status
+      - Status
+    - name: created_at
+      tier: core
+      providers: 8
+      share: 0.5
+      type: string
+      spellings:
+      - created_at
+      - created
+      - createdAt
+      - created_on
+      - CreationDate
+      - createdDate
+    - name: metadata
+      tier: extended
+      providers: 6
+      share: 0.375
+      type: object
+      spellings:
+      - metadata
+      - attributes
+    - name: reference
+      tier: extended
+      providers: 5
+      share: 0.312
+      type: string
+      spellings:
+      - reference
+      - mandateReference
+    - name: scheme
+      tier: extended
+      providers: 4
+      share: 0.25
+      type: string
+      spellings:
+      - scheme
+      - type
+      - Scheme
+      - MandateType
+    long_tail_count: 153
+    long_tail_sample:
+    - amount
+    - bank_account
+    - updated_at
+    - account_name
+    - account_number
+    - approved_at
+    - country_code
+    - end_date
+    - expires_at
+    - external_id
+    - frequency
+    - mandate_description
+    - revoked_at
+    - sender
+    - signed_at
+    - source
+    - start_date
+    - user
+    - version
+    - account_id
+    - active
+    - address
+    - address_given_on_mandate
+    - agent_id
+    - amount_rule
+    - amount_type
+    - approval_redirect
+    - asset
+    - attestation
+    - attesting_keys
+    - authentication_mode
+    - authorization_id
+    - authorized_at
+    - bank_reference
+    - bic
+    - bsb
+    - budget
+    - bulk_cancel_request_id
+    - bulk_create_request_id
+    - canceled_at

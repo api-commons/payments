@@ -21,3 +21,11 @@ concepts:
     core_coverage: 0.0
     evidence:
     - openapi/_original/scvd-store-openapi.json#GET /sources.json
+  mandate:
+    path_segment:
+    - mandate
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/scvd-store-openapi.json#GET /api/mandate/{mandate_id}
+    - openapi/_original/scvd-store-openapi.json#POST /api/mandate/{mandate_id}

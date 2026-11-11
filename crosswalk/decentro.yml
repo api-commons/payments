@@ -14,3 +14,11 @@ concepts:
     core_coverage: 0.75
     evidence:
     - openapi/_original/decentro-openapi.json#POST /v3/payments/upi/refund
+  mandate:
+    path_segment:
+    - mandate
+    properties:
+      id: reference_id
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/decentro-openapi.json#POST /v3/payments/enach/mandate

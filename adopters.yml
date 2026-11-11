@@ -96,6 +96,11 @@ adopters:
   crosswalk: crosswalk/alliance-data-systems.yml
   concepts:
   - refund
+- provider: allowance
+  apis_io: https://apis.io/providers/allowance/
+  crosswalk: crosswalk/allowance.yml
+  concepts:
+  - mandate
 - provider: amazon
   apis_io: https://apis.io/providers/amazon/
   crosswalk: crosswalk/amazon.yml
@@ -148,6 +153,11 @@ adopters:
   - payment_method
   - payout
   - refund
+- provider: atlar
+  apis_io: https://apis.io/providers/atlar/
+  crosswalk: crosswalk/atlar.yml
+  concepts:
+  - mandate
 - provider: atomadic-tech
   apis_io: https://apis.io/providers/atomadic-tech/
   crosswalk: crosswalk/atomadic-tech.yml
@@ -173,6 +183,7 @@ adopters:
   apis_io: https://apis.io/providers/aza-finance/
   crosswalk: crosswalk/aza-finance.yml
   concepts:
+  - mandate
   - payout
 - provider: azupay
   apis_io: https://apis.io/providers/azupay/
@@ -522,6 +533,7 @@ adopters:
   crosswalk: crosswalk/citi.yml
   concepts:
   - checkout_session
+  - mandate
   - payment
   - refund
 - provider: clearbank
@@ -558,6 +570,7 @@ adopters:
   concepts:
   - checkout_session
   - customer
+  - mandate
   - payment
   - payment_method
   - payout
@@ -714,6 +727,7 @@ adopters:
   apis_io: https://apis.io/providers/decentro/
   crosswalk: crosswalk/decentro.yml
   concepts:
+  - mandate
   - refund
 - provider: deutsche-bank
   apis_io: https://apis.io/providers/deutsche-bank/
@@ -795,6 +809,7 @@ adopters:
   crosswalk: crosswalk/eci-solutions.yml
   concepts:
   - customer
+  - mandate
   - payment
   - payment_method
   - refund
@@ -864,6 +879,7 @@ adopters:
   concepts:
   - customer
   - dispute
+  - mandate
   - payment
   - payout
   - refund
@@ -975,6 +991,7 @@ adopters:
   apis_io: https://apis.io/providers/form3/
   crosswalk: crosswalk/form3.yml
   concepts:
+  - mandate
   - payment
   - refund
 - provider: formance
@@ -1043,6 +1060,7 @@ adopters:
   crosswalk: crosswalk/gocardless.yml
   concepts:
   - customer
+  - mandate
   - payment
   - payout
   - refund
@@ -1350,6 +1368,7 @@ adopters:
   crosswalk: crosswalk/lemonway.yml
   concepts:
   - dispute
+  - mandate
   - refund
 - provider: leo1
   apis_io: https://apis.io/providers/leo1/
@@ -1423,6 +1442,7 @@ adopters:
   concepts:
   - checkout_session
   - dispute
+  - mandate
   - payment
   - payment_method
   - payout
@@ -1493,6 +1513,7 @@ adopters:
   concepts:
   - customer
   - dispute
+  - mandate
   - payment
   - payout
   - refund
@@ -1522,6 +1543,7 @@ adopters:
   apis_io: https://apis.io/providers/moniepoint/
   crosswalk: crosswalk/moniepoint.yml
   concepts:
+  - mandate
   - payment
   - payout
   - refund
@@ -2148,6 +2170,7 @@ adopters:
   apis_io: https://apis.io/providers/scvd-store/
   crosswalk: crosswalk/scvd-store.yml
   concepts:
+  - mandate
   - payment_method
   - refund
 - provider: sezzle
@@ -2429,6 +2452,7 @@ adopters:
   apis_io: https://apis.io/providers/the-bank-of-london/
   crosswalk: crosswalk/the-bank-of-london.yml
   concepts:
+  - mandate
   - payment
 - provider: theloopbreaker-com
   apis_io: https://apis.io/providers/theloopbreaker-com/
@@ -2493,6 +2517,7 @@ adopters:
   crosswalk: crosswalk/toqio.yml
   concepts:
   - customer
+  - mandate
   - payment_method
 - provider: toss-payments
   apis_io: https://apis.io/providers/toss-payments/
@@ -2541,6 +2566,7 @@ adopters:
   apis_io: https://apis.io/providers/truelayer/
   crosswalk: crosswalk/truelayer.yml
   concepts:
+  - mandate
   - payment
   - payout
   - refund

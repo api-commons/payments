@@ -95,3 +95,18 @@ concepts:
     - openapi/_original/coinbase-openapi.yml#GET /v2/disbursements
     - openapi/_original/coinbase-openapi.yml#GET /v2/disbursements/{disbursementId}
     - openapi/_original/coinbase-openapi.yml#POST /v2/disbursements
+  mandate:
+    path_segment:
+    - mandates
+    - mandate
+    properties:
+      id: mandateId
+      status: status
+      created_at: createdAt
+      metadata: metadata
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/coinbase-openapi.yml#GET /v2/mandates
+    - openapi/_original/coinbase-openapi.yml#GET /v2/mandates/{mandateId}
+    - openapi/_original/coinbase-openapi.yml#POST /v2/mandates
+    - openapi/_original/coinbase-openapi.yml#POST /v2/payment-sessions/{paymentSessionId}/authorizations/mandate

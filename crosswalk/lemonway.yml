@@ -22,3 +22,13 @@ concepts:
     core_coverage: 0.5
     evidence:
     - openapi/_original/lemonway-directkit-api-2-0-openapi.yml#GET /v2/disputes
+  mandate:
+    path_segment:
+    - mandate
+    properties:
+      id: id
+      status: status
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/lemonway-directkit-api-2-0-openapi.yml#GET /v2/moneyins/{accountid}/mandate
+    - openapi/_original/lemonway-directkit-api-2-0-openapi.yml#POST /v2/moneyins/sdd/mandate

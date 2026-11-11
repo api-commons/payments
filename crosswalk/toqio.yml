@@ -23,3 +23,11 @@ concepts:
     evidence:
     - openapi/_original/toqio-integration-hub-api-openapi.yml#GET /customers/{customerId}
     - openapi/_original/toqio-integration-hub-api-openapi.yml#POST /customers
+  mandate:
+    path_segment:
+    - mandates
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/toqio-integration-hub-api-openapi.yml#GET /accounts/{accountId}/mandates
+    - openapi/_original/toqio-integration-hub-api-openapi.yml#GET /customers/{customerId}/accounts/{accountId}/mandates/{mandateId}

@@ -1,0 +1,89 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/mandate.json",
+  "title": "Mandate",
+  "description": "The common mandate in Payments, distilled from 16 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "type": "object",
+  "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.812,
+      "x-commons-providers": 13,
+      "x-commons-spellings": [
+        "id",
+        "mandateId",
+        "reference_id",
+        "Id"
+      ]
+    },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.562,
+      "x-commons-providers": 9,
+      "x-commons-spellings": [
+        "status",
+        "Status"
+      ]
+    },
+    "created_at": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.5,
+      "x-commons-providers": 8,
+      "x-commons-spellings": [
+        "created_at",
+        "created",
+        "createdAt",
+        "created_on",
+        "CreationDate",
+        "createdDate"
+      ],
+      "format": "date-time"
+    },
+    "metadata": {
+      "type": "object",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.375,
+      "x-commons-providers": 6,
+      "x-commons-spellings": [
+        "metadata",
+        "attributes"
+      ]
+    },
+    "reference": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.312,
+      "x-commons-providers": 5,
+      "x-commons-spellings": [
+        "reference",
+        "mandateReference"
+      ]
+    },
+    "scheme": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.25,
+      "x-commons-providers": 4,
+      "x-commons-spellings": [
+        "scheme",
+        "type",
+        "Scheme",
+        "MandateType"
+      ]
+    }
+  },
+  "required": [
+    "id"
+  ],
+  "x-commons": {
+    "context": "payments",
+    "concept": "mandate",
+    "providers": 16,
+    "generated": "2026-11-11",
+    "version": "0.1.0-draft.20261111",
+    "status": "draft"
+  }
+}

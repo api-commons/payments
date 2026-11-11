@@ -27,3 +27,12 @@ concepts:
     evidence:
     - openapi/_original/monnify-disbursements-api-openapi.yml#POST /api/v2/disbursements/bulk
     - openapi/_original/monnify-settlements-api-openapi.yml#GET /api/v1/settlements
+  mandate:
+    path_segment:
+    - mandate
+    properties: {}
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/monnify-direct-debit-api-openapi.yml#DELETE /api/v1/direct-debit/mandate/{mandateCode}
+    - openapi/_original/monnify-direct-debit-api-openapi.yml#GET /api/v1/direct-debit/mandate/{mandateCode}
+    - openapi/_original/monnify-direct-debit-api-openapi.yml#POST /api/v1/direct-debit/mandate

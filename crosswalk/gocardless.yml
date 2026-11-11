@@ -41,3 +41,13 @@ concepts:
     evidence:
     - openapi/_original/gocardless-openapi.yml#GET /payouts
     - openapi/_original/gocardless-openapi.yml#GET /payouts/{id}
+  mandate:
+    path_segment:
+    - mandates
+    properties: {}
+    core_coverage: null
+    evidence:
+    - openapi/_original/gocardless-openapi.yml#GET /mandates
+    - openapi/_original/gocardless-openapi.yml#GET /mandates/{id}
+    - openapi/_original/gocardless-openapi.yml#POST /mandates
+    - openapi/_original/gocardless-openapi.yml#PUT /mandates/{id}

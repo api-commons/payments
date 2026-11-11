@@ -80,3 +80,20 @@ concepts:
     - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/payins/{PayInId}/disputes
     - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/disputes
     - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/wallets/{WalletId}/disputes
+  mandate:
+    path_segment:
+    - mandates
+    properties:
+      id: Id
+      status: Status
+      created_at: CreationDate
+      scheme:
+      - Scheme
+      - MandateType
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/mandates
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/mandates/{MandateId}
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/bankaccounts/{BankAccountId}/mandates
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/mandates
+    - openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/recipients/{RecipientId}/mandates

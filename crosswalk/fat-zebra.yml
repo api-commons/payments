@@ -76,3 +76,16 @@ concepts:
     - openapi/_original/fat-zebra-gateway.json#GET /disputes
     - openapi/_original/fat-zebra-gateway.json#GET /transactions/{transaction_fatzebra_id}/dispute
     - openapi/_original/fat-zebra-gateway.json#PATCH /chargebacks/{id}
+  mandate:
+    path_segment:
+    - direct_debits
+    properties:
+      metadata: metadata
+      reference: reference
+    core_coverage: 0.0
+    evidence:
+    - openapi/_original/fat-zebra-gateway.json#DELETE /direct_debits/{id}
+    - openapi/_original/fat-zebra-gateway.json#GET /direct_debits
+    - openapi/_original/fat-zebra-gateway.json#GET /direct_debits/{id_or_reference}
+    - openapi/_original/fat-zebra-gateway.json#POST /direct_debits
+    - openapi/_original/fat-zebra-gateway.json#PUT /direct_debits/{id}

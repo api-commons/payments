@@ -38722,6 +38722,548 @@
      "openapi/_original/zuora-v1-openapi.yml#POST /v1/gateway-settlement/payments/{payment-key}/chargeback"
     ]
    }
+  },
+  "mandate": {
+   "allowance": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "owner_id": "string",
+     "agent_id": "string",
+     "budget": "object",
+     "risk_controls": "object",
+     "status": "string",
+     "approved_at": [
+      "string",
+      "null"
+     ],
+     "created_at": "string",
+     "expires_at": [
+      "string",
+      "null"
+     ],
+     "metadata": "object",
+     "x-ap2-note": "string"
+    },
+    "evidence": [
+     "openapi/_original/allowance-openapi-original.json#GET /mandates/{id}",
+     "openapi/_original/allowance-openapi-original.json#POST /mandates"
+    ]
+   },
+   "atlar": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "items": null,
+     "nextToken": "string",
+     "token": "string",
+     "limit": "integer",
+     "id": "string",
+     "organizationId": "string",
+     "counterpartyId": "string",
+     "externalAccountId": "string",
+     "destinationAccountId": "string",
+     "connectionInstructionId": "string",
+     "source": "object",
+     "sourceHolder": "object",
+     "creditorReference": "string",
+     "scheme": "string",
+     "mandateReference": "string",
+     "signatureDate": "string",
+     "status": "string",
+     "externalId": "string",
+     "metadata": [
+      "object",
+      "null"
+     ],
+     "version": "integer",
+     "etag": "string",
+     "created": "string",
+     "updated": "string",
+     "active": "boolean"
+    },
+    "evidence": [
+     "openapi/_original/atlar-api-v2-openapi.yml#GET /payments/v2/mandates",
+     "openapi/_original/atlar-api-v2-openapi.yml#GET /payments/v2/mandates/{id}",
+     "openapi/_original/atlar-api-v2-openapi.yml#POST /payments/v2/mandates"
+    ]
+   },
+   "aza-finance": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET item"
+    ],
+    "properties": {
+     "id": "string",
+     "status": "string",
+     "type_id": "integer",
+     "reference": "string",
+     "signed_at": "string",
+     "created_at": "string",
+     "updated_at": "string"
+    },
+    "evidence": [
+     "openapi/_original/aza-finance-openapi-original.json#GET /mandates/{Mandate ID}"
+    ]
+   },
+   "citi": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "PATCH collection",
+     "POST collection"
+    ],
+    "properties": {
+     "mandate": "object",
+     "customer": "object",
+     "merchant": "object",
+     "sender": "object",
+     "reason_code": "string",
+     "id": "string",
+     "request_id": "string",
+     "country_code": "string",
+     "mandate_acceptance": "object",
+     "error_details": "array",
+     "mandate_details": "object",
+     "initiating_party": "object",
+     "debtor": "object",
+     "creditor": "object",
+     "ultimate": "object"
+    },
+    "evidence": [
+     "openapi/_original/DigitalPaymentsCollectionsv12.yaml#GET /digitalpayments/v1/payment-acceptance/mandates",
+     "openapi/_original/DigitalPaymentsCollectionsv12.yaml#PATCH /digitalpayments/v1/payment-acceptance/mandates",
+     "openapi/_original/DigitalPaymentsCollectionsv12.yaml#POST /digitalpayments/v1/payment-acceptance/mandates",
+     "openapi/_original/PayTo.yaml#GET /v1/mandates",
+     "openapi/_original/PayTo.yaml#POST /v1/mandates",
+     "openapi/_original/citi-digitalpaymentscollectionsv12-openapi.yaml#GET /digitalpayments/v1/payment-acceptance/mandates",
+     "openapi/_original/citi-digitalpaymentscollectionsv12-openapi.yaml#PATCH /digitalpayments/v1/payment-acceptance/mandates",
+     "openapi/_original/citi-digitalpaymentscollectionsv12-openapi.yaml#POST /digitalpayments/v1/payment-acceptance/mandates",
+     "openapi/_original/citi-payto-openapi.yaml#GET /v1/mandates",
+     "openapi/_original/citi-payto-openapi.yaml#POST /v1/mandates"
+    ]
+   },
+   "coinbase": {
+    "segments": [
+     "mandates",
+     "mandate"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "authorizationId": null,
+     "paymentSessionId": null,
+     "status": null,
+     "amount": "string",
+     "error": "object",
+     "message": "string",
+     "metadata": "object",
+     "externalReferenceId": null,
+     "customerDisplay": null,
+     "source": null,
+     "onchainTransactions": "array",
+     "createdAt": "string",
+     "updatedAt": "string",
+     "mandateId": null,
+     "asset": null,
+     "policy": null,
+     "expiresAt": "string",
+     "url": null,
+     "revocationUrl": null,
+     "approvalRedirect": null,
+     "revocationRedirect": null,
+     "approvedAt": "string",
+     "canceledAt": "string",
+     "revokedAt": "string",
+     "nextPageToken": "string"
+    },
+    "evidence": [
+     "openapi/_original/coinbase-openapi.yml#GET /v2/mandates",
+     "openapi/_original/coinbase-openapi.yml#GET /v2/mandates/{mandateId}",
+     "openapi/_original/coinbase-openapi.yml#POST /v2/mandates",
+     "openapi/_original/coinbase-openapi.yml#POST /v2/payment-sessions/{paymentSessionId}/authorizations/mandate"
+    ]
+   },
+   "decentro": {
+    "segments": [
+     "mandate"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "decentro_mandate_id": "string",
+     "mandate_status": "string",
+     "page_link": "string",
+     "reference_id": "string",
+     "consumer_urn": "string",
+     "user": "object",
+     "start_date": "string",
+     "end_date": "string",
+     "amount": "number",
+     "amount_rule": "string",
+     "category_code": "string",
+     "frequency": "string",
+     "redirection_url": "string",
+     "authentication_mode": "string",
+     "uistream": "string"
+    },
+    "evidence": [
+     "openapi/_original/decentro-openapi.json#POST /v3/payments/enach/mandate"
+    ]
+   },
+   "eci-solutions": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection"
+    ],
+    "properties": {
+     "id": "string",
+     "countryCode": "string",
+     "mandateName": "string",
+     "mandateDescription": "string",
+     "documentDownloadTypes": "array"
+    },
+    "evidence": [
+     "openapi/_original/eci-solutions-einvoice-openapi.json#GET /api/v1/mandates"
+    ]
+   },
+   "fat-zebra": {
+    "segments": [
+     "direct_debits"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "POST collection",
+     "PUT item"
+    ],
+    "properties": {
+     "successful": "boolean",
+     "response": "array",
+     "errors": "array",
+     "test": "boolean",
+     "records": "integer",
+     "total_records": "integer",
+     "page": "integer",
+     "total_pages": "integer",
+     "description": "string",
+     "amount": "number",
+     "bsb": "string",
+     "account_name": "string",
+     "account_number": "string",
+     "date": "string",
+     "reference": "string",
+     "metadata": "object",
+     "bank_account": "string"
+    },
+    "evidence": [
+     "openapi/_original/fat-zebra-gateway.json#DELETE /direct_debits/{id}",
+     "openapi/_original/fat-zebra-gateway.json#GET /direct_debits",
+     "openapi/_original/fat-zebra-gateway.json#GET /direct_debits/{id_or_reference}",
+     "openapi/_original/fat-zebra-gateway.json#POST /direct_debits",
+     "openapi/_original/fat-zebra-gateway.json#PUT /direct_debits/{id}"
+    ]
+   },
+   "form3": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "PATCH item",
+     "POST collection"
+    ],
+    "properties": {
+     "attributes": "object",
+     "created_on": "string",
+     "id": "string",
+     "modified_on": "string",
+     "organisation_id": "string",
+     "relationships": "object",
+     "type": "string",
+     "version": "integer"
+    },
+    "evidence": [
+     "openapi/_original/form3-payments.yml#GET /transaction/mandates",
+     "openapi/_original/form3-payments.yml#GET /transaction/mandates/{id}",
+     "openapi/_original/form3-payments.yml#PATCH /transaction/mandates/{id}",
+     "openapi/_original/form3-payments.yml#POST /transaction/mandates"
+    ]
+   },
+   "gocardless": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item",
+     "POST collection",
+     "PUT item"
+    ],
+    "properties": {},
+    "evidence": [
+     "openapi/_original/gocardless-openapi.yml#GET /mandates",
+     "openapi/_original/gocardless-openapi.yml#GET /mandates/{id}",
+     "openapi/_original/gocardless-openapi.yml#POST /mandates",
+     "openapi/_original/gocardless-openapi.yml#PUT /mandates/{id}"
+    ]
+   },
+   "lemonway": {
+    "segments": [
+     "mandate"
+    ],
+    "operations": [
+     "GET collection",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "integer",
+     "status": "integer",
+     "IBAN": "string",
+     "BIC": "string",
+     "holder": "string",
+     "UniqueMandateReference": "string",
+     "wallet": "string",
+     "bic": "string",
+     "iban": "string",
+     "isB2B": "boolean",
+     "isRecurring": "boolean",
+     "street": "string",
+     "postCode": "string",
+     "city": "string",
+     "country": "string",
+     "mandateLanguage": "string",
+     "rum": "string",
+     "signerFirstName": "string",
+     "signerLastName": "string"
+    },
+    "evidence": [
+     "openapi/_original/lemonway-directkit-api-2-0-openapi.yml#GET /v2/moneyins/{accountid}/mandate",
+     "openapi/_original/lemonway-directkit-api-2-0-openapi.yml#POST /v2/moneyins/sdd/mandate"
+    ]
+   },
+   "mangopay": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item"
+    ],
+    "properties": {
+     "Scheme": "string",
+     "RecipientId": "string",
+     "BankAccountId": "string",
+     "BankReference": "string",
+     "Culture": "string",
+     "DocumentURL": "string",
+     "ReturnURL": "string",
+     "RedirectURL": "string",
+     "Id": "string",
+     "CreationDate": "integer",
+     "Status": "string",
+     "UserId": "string",
+     "ExecutionType": "string",
+     "MandateType": "string",
+     "Tag": "string",
+     "ResultCode": "string",
+     "ResultMessage": "string"
+    },
+    "evidence": [
+     "openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/mandates",
+     "openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/mandates/{MandateId}",
+     "openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/bankaccounts/{BankAccountId}/mandates",
+     "openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/mandates",
+     "openapi/_original/mangopay-openapi.json#GET /v2.01/{ClientId}/users/{UserId}/recipients/{RecipientId}/mandates"
+    ]
+   },
+   "modulr": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "accountId": "string",
+     "reference": "string",
+     "externalReference": "string",
+     "createdDate": "string",
+     "status": "string",
+     "nextValidCollectionDate": "string",
+     "Name given on Mandate": "string",
+     "Address given on Mandate": "object",
+     "sortCode": "string",
+     "accountNumber": "string",
+     "payeeAccountBid": "string",
+     "bulkCreateRequestId": "string",
+     "bulkCancelRequestId": "string",
+     "name": "string",
+     "accountName": "string",
+     "address": "object",
+     "phone": "string",
+     "email": "string"
+    },
+    "evidence": [
+     "openapi/_original/modulr-api.json#GET /mandates",
+     "openapi/_original/modulr-api.json#POST /accounts/{accountId}/mandates"
+    ]
+   },
+   "moniepoint": {
+    "segments": [
+     "mandate"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "requestSuccessful": "boolean",
+     "responseMessage": "string",
+     "responseCode": "string",
+     "responseBody": "object",
+     "mandateDescription": "string",
+     "mandateAmount": "number",
+     "customerName": "string",
+     "customerEmail": "string",
+     "customerPhoneNumber": "string",
+     "customerAccountNumber": "string",
+     "customerBankCode": "string",
+     "startDate": "string",
+     "endDate": "string",
+     "frequency": "string",
+     "amountType": "string",
+     "debitReference": "string",
+     "contractCode": "string"
+    },
+    "evidence": [
+     "openapi/_original/monnify-direct-debit-api-openapi.yml#DELETE /api/v1/direct-debit/mandate/{mandateCode}",
+     "openapi/_original/monnify-direct-debit-api-openapi.yml#GET /api/v1/direct-debit/mandate/{mandateCode}",
+     "openapi/_original/monnify-direct-debit-api-openapi.yml#POST /api/v1/direct-debit/mandate"
+    ]
+   },
+   "scvd-store": {
+    "segments": [
+     "mandate"
+    ],
+    "operations": [
+     "GET item",
+     "POST item"
+    ],
+    "properties": {
+     "what_this_is": "string",
+     "mandate": "object",
+     "certificate": "string",
+     "how_to_verify": "array",
+     "cited_by": "string",
+     "recorded": "string",
+     "mandate_url": "string",
+     "attestation": "object",
+     "attesting_keys": "integer",
+     "what_this_does_not_say": "string",
+     "slots_left": "integer",
+     "public_key": "string",
+     "signature": "string",
+     "label": "string"
+    },
+    "evidence": [
+     "openapi/_original/scvd-store-openapi.json#GET /api/mandate/{mandate_id}",
+     "openapi/_original/scvd-store-openapi.json#POST /api/mandate/{mandate_id}"
+    ]
+   },
+   "the-bank-of-london": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item"
+    ],
+    "properties": {
+     "id": "string",
+     "type": "string",
+     "scheme": "string",
+     "reference": "string",
+     "sender": "object",
+     "recipient": "object",
+     "lastAmountPaid": "object",
+     "status": "object",
+     "cancellation": "object"
+    },
+    "evidence": [
+     "openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/mandates",
+     "openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/mandates/{mandateId}"
+    ]
+   },
+   "toqio": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "GET collection",
+     "GET item"
+    ],
+    "properties": {},
+    "evidence": [
+     "openapi/_original/toqio-integration-hub-api-openapi.yml#GET /accounts/{accountId}/mandates",
+     "openapi/_original/toqio-integration-hub-api-openapi.yml#GET /customers/{customerId}/accounts/{accountId}/mandates/{mandateId}"
+    ]
+   },
+   "truelayer": {
+    "segments": [
+     "mandates"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET item",
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "user": "object",
+     "resource_token": "string",
+     "status": "string",
+     "mandate": "object",
+     "currency": "string",
+     "constraints": "object",
+     "metadata": "object",
+     "created_at": "string",
+     "authorized_at": "string",
+     "revoked_at": "string"
+    },
+    "evidence": [
+     "openapi/_original/truelayer-payments-openapi.yml#DELETE /v3/mandates/{id}",
+     "openapi/_original/truelayer-payments-openapi.yml#GET /v3/mandates/{id}",
+     "openapi/_original/truelayer-payments-openapi.yml#POST /v3/mandates"
+    ]
+   }
   }
  },
  "naming": {
@@ -43828,12 +44370,14 @@
     "algbra",
     "algovoi-co-uk",
     "alliance-data-systems",
+    "allowance",
     "amcs-group",
     "ansa",
     "apexxfintech",
     "aqueduct",
     "asaas",
     "ascend",
+    "atlar",
     "atomadic-tech",
     "atrato",
     "augustus",
@@ -44233,6 +44777,7 @@
     "amcs-group",
     "ansa",
     "asaas",
+    "atlar",
     "atrato",
     "avaloq",
     "azupay",
@@ -44444,6 +44989,7 @@
     "agree-com",
     "airtm",
     "algovoi-co-uk",
+    "allowance",
     "apexxfintech",
     "ascend",
     "atomadic-tech",
@@ -44662,6 +45208,7 @@
     "layup-technologies",
     "lianlian-global",
     "lightspeed",
+    "modulr",
     "mtn-group",
     "openpayments-io",
     "ppro",
@@ -44699,6 +45246,7 @@
     "zuora"
    ],
    "kebab-case": [
+    "allowance",
     "brl",
     "griffin",
     "mtn-group"

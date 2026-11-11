@@ -95,6 +95,14 @@ concepts:
 
 # Reviewed by hand: every provider counted only through /sessions. Kept: hosted payment
 # sessions (Citi, FastSpring, Klarna, Komoju, Plug, Satispay, Versapay, Zuora).
+  mandate:
+    segments: [mandates, mandate, direct_debits, direct_debit, debit_authorizations, sepa_mandates, bacs_mandates]
+    aliases:
+      scheme: [type, mandate_type, debit_scheme, payment_scheme]
+      reference: [mandate_reference, mandate_id_reference, umr]
+      customer_id: [customer, debtor, payer_id]
+      bank_account: [bank_account_id, customer_bank_account, account, iban]
+      signed_at: [signature_date, date_of_signature, signed_date, accepted_at]
 exclude:
   checkout_session:
     basis-theory: /3ds/sessions are 3-D Secure authentication sessions

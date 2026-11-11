@@ -16,3 +16,17 @@ concepts:
     - openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/payments
     - openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/payments/{paymentId}
     - openapi/_original/the-bank-of-london-api-openapi.json#POST /v2/payments
+  mandate:
+    path_segment:
+    - mandates
+    properties:
+      id: id
+      status: status
+      reference: reference
+      scheme:
+      - type
+      - scheme
+    core_coverage: 0.667
+    evidence:
+    - openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/mandates
+    - openapi/_original/the-bank-of-london-api-openapi.json#GET /v2/mandates/{mandateId}

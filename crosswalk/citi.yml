@@ -42,3 +42,15 @@ concepts:
     - openapi/_original/DigitalPaymentsCollectionsv12.yaml#POST /digitalpayments/v1/payment-acceptance/refunds
     - openapi/_original/citi-digitalpaymentscollectionsv12-openapi.yaml#GET /digitalpayments/v1/payment-acceptance/refunds
     - openapi/_original/citi-digitalpaymentscollectionsv12-openapi.yaml#PATCH /digitalpayments/v1/payment-acceptance/refunds/{id}
+  mandate:
+    path_segment:
+    - mandates
+    properties:
+      id: id
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/DigitalPaymentsCollectionsv12.yaml#GET /digitalpayments/v1/payment-acceptance/mandates
+    - openapi/_original/DigitalPaymentsCollectionsv12.yaml#PATCH /digitalpayments/v1/payment-acceptance/mandates
+    - openapi/_original/DigitalPaymentsCollectionsv12.yaml#POST /digitalpayments/v1/payment-acceptance/mandates
+    - openapi/_original/PayTo.yaml#GET /v1/mandates
+    - openapi/_original/PayTo.yaml#POST /v1/mandates

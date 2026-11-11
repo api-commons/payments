@@ -57,6 +57,9 @@ apis:
   - type: JSONSchema
     name: dispute
     url: https://raw.githubusercontent.com/api-commons/payments/main/schema/dispute.json
+  - type: JSONSchema
+    name: mandate
+    url: https://raw.githubusercontent.com/api-commons/payments/main/schema/mandate.json
 common:
 - type: License
   url: https://raw.githubusercontent.com/api-commons/payments/main/LICENSE

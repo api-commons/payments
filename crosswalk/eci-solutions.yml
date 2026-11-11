@@ -57,3 +57,11 @@ concepts:
     - openapi/_original/eci-solutions-apar-commerce-openapi.json#GET /api/v1/customers/{id}
     - openapi/_original/eci-solutions-apar-commerce-openapi.json#PATCH /api/v1/customers/{id}
     - openapi/_original/eci-solutions-apar-commerce-openapi.json#POST /api/v1/customers
+  mandate:
+    path_segment:
+    - mandates
+    properties:
+      id: id
+    core_coverage: 0.333
+    evidence:
+    - openapi/_original/eci-solutions-einvoice-openapi.json#GET /api/v1/mandates
