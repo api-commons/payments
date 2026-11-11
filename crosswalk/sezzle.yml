@@ -24,13 +24,12 @@ concepts:
     path_segment:
     - customer
     properties:
-      id: uuid
       name: first_name
       email: email
       phone: phone
       address: billing_address
       last_name: last_name
-    core_coverage: 0.75
+    core_coverage: 0.5
     evidence:
     - openapi/_original/sezzle-v2-openapi.yaml#DELETE /customer/{customer_uuid}
     - openapi/_original/sezzle-v2-openapi.yaml#GET /customer

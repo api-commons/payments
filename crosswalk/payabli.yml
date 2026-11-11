@@ -30,12 +30,12 @@ concepts:
       phone:
       - Phone
       - phone
-      address:
-      - Address
-      - address
       status:
       - State
       - state
+      address:
+      - Address
+      - address
       updated_at: LastUpdated
     core_coverage: 0.75
     evidence:
@@ -47,15 +47,32 @@ concepts:
     path_segment:
     - settlements
     - payouts
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: Id
+      status:
+      - Status
+      - PaymentStatus
+      amount: TotalAmount
+      created_at: CreatedAt
+      method:
+      - Method
+      - Type
+      updated_at: LastUpdated
+    core_coverage: 1.0
     evidence:
     - openapi/_original/payabli-api-reference-openapi.json#GET /Query/payouts/{entry}
     - openapi/_original/payabli-api-reference-openapi.json#GET /Query/settlements/{entry}
   dispute:
     path_segment:
     - chargebacks
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      status: Status
+      created_at: CreatedAt
+      id: Id
+      reason:
+      - Reason
+      - ReasonCode
+      payment_id: Transaction
+    core_coverage: 1.0
     evidence:
     - openapi/_original/payabli-api-reference-openapi.json#GET /Query/chargebacks/{entry}

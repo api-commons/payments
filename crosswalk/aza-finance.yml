@@ -7,8 +7,8 @@ concepts:
     path_segment:
     - payout
     properties:
-      status: state
       id: id
+      status: state
       created_at: created_at
     core_coverage: 0.75
     evidence:

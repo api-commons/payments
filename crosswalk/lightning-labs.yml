@@ -9,7 +9,8 @@ concepts:
     - payment
     properties:
       status: status
-    core_coverage: 0.25
+      created_at: creation_date
+    core_coverage: 0.5
     evidence:
     - openapi/_original/lightning-labs-openapi.json#DELETE /v1/payment
     - openapi/_original/lightning-labs-openapi.json#DELETE /v1/payments

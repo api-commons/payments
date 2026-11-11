@@ -8,15 +8,21 @@ concepts:
     - payments
     - payment
     properties:
-      id: id
+      id:
+      - payment_id
+      - id
       status:
       - status
       - payment_status
       amount: amount
       created_at: created_at
+      currency: currency
+      description: description
       updated_at: updated_at
       customer_id: customer_id
-      external_id: reference
+      external_id:
+      - external_reference
+      - reference
     core_coverage: 1.0
     evidence:
     - openapi/_original/lean-technologies-ksa-payouts-openapi.yml#GET /payouts/v1/payments

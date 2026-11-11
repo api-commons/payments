@@ -20,7 +20,7 @@ concepts:
       created_at: createdAt
       mode: type
       description: description
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/momence-openapi.yml#DELETE /api/v2/member/sessions/{sessionBookingId}
     - openapi/_original/momence-openapi.yml#GET /api/v2/host/members/{memberId}/sessions

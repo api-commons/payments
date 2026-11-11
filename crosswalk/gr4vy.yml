@@ -12,8 +12,8 @@ concepts:
       status: status
       created_at: created_at
       customer_id: buyer
-      currency: currency
       amount: amount
+      currency: currency
       expires_at: expires_at
       mode:
       - type
@@ -90,10 +90,10 @@ concepts:
     - payouts
     - settlements
     properties:
-      status: status
       id:
       - id
       - transaction_id
+      status: status
       amount: amount
       created_at: created_at
       currency: currency
@@ -113,8 +113,8 @@ concepts:
       created_at: created_at
       id: id
       amount: amount
-      updated_at: updated_at
       payment_id: transaction_id
+      updated_at: updated_at
       currency: currency
     core_coverage: 0.5
     evidence:

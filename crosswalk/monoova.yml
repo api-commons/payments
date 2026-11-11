@@ -30,7 +30,7 @@ concepts:
     path_segment:
     - settlement
     properties:
-      status: status
+      id: transactionId
     core_coverage: 0.25
     evidence:
     - openapi/_original/monoova-payments.yml#GET /reports/v1/settlement/{date}

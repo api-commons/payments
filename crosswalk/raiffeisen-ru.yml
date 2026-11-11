@@ -36,9 +36,10 @@ concepts:
     properties:
       id: id
       name: fullName
+      email: email
       created_at: createdAt
       status: state
-    core_coverage: 0.75
+    core_coverage: 1.0
     evidence:
     - openapi/_original/raiffeisen-ru-payment-control-openapi.yml#GET /v1/buyers
     - openapi/_original/raiffeisen-ru-payment-control-openapi.yml#GET /v1/buyers/{buyerId}
@@ -49,8 +50,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      status: status
       id: id
+      status: status
       amount: amount
       created_at: creationDate
       currency: currency

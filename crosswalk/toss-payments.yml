@@ -18,8 +18,8 @@ concepts:
     - settlements
     - payouts
     properties:
-      status: status
       id: id
+      status: status
       amount: amount
       method: method
       destination: destination

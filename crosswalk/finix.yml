@@ -61,8 +61,8 @@ concepts:
     path_segment:
     - settlements
     properties:
-      status: status
       id: id
+      status: status
       amount: total_amount
       created_at: created_at
       currency: currency

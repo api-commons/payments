@@ -28,8 +28,8 @@ concepts:
       - transaction_id
       name: first_name
       email: email_address
-      address: address
       status: status
+      address: address
       last_name: last_name
       type: type
     core_coverage: 0.75
@@ -41,8 +41,8 @@ concepts:
     path_segment:
     - disbursements
     properties:
-      status: status
       id: id
+      status: status
       amount: total_amount
       created_at: created_at
       updated_at: updated_at

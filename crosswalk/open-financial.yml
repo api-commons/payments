@@ -19,7 +19,10 @@ concepts:
   refund:
     path_segment:
     - refund
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: refund_id
+      amount: amount
+      payment_id: payment_id
+    core_coverage: 0.5
     evidence:
     - openapi/_original/open-financial-1-openapi.yml#POST /refund/batch

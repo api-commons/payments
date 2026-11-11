@@ -7,9 +7,8 @@ concepts:
     path_segment:
     - payment
     properties:
-      id: id
-      status: payment_status
-    core_coverage: 0.5
+      payment_method_id: payment_source
+    core_coverage: 0.0
     evidence:
     - openapi/_original/treez-dispensary-openapi.json#POST /{dispensary}/invoice/payment
     - openapi/_original/treez-dispensary.json#POST /{dispensary}/invoice/payment
@@ -21,8 +20,8 @@ concepts:
       name: first_name
       email: email
       phone: phone
-      address: addresses
       status: status
+      address: addresses
       last_name: last_name
     core_coverage: 0.75
     evidence:

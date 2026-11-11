@@ -7,8 +7,11 @@ concepts:
     path_segment:
     - payments
     properties:
-      id: id
+      id:
+      - id
+      - transactionID
       status: status
+      currency: currency
     core_coverage: 0.5
     evidence:
     - openapi/_original/openapi.json#GET /rbs/v1/subscriptions/{id}/payments
@@ -22,6 +25,7 @@ concepts:
     properties:
       id: id
       status: status
+      created_at: createdDate
     core_coverage: 1.0
     evidence:
     - openapi/_original/openapi.json#GET /ipl/v2/payment-links
@@ -61,8 +65,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      status: status
       id: id
+      status: status
     core_coverage: 0.5
     evidence:
     - openapi/_original/openapi.json#POST /pts/v2/payouts

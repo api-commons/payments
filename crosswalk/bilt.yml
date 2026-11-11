@@ -8,11 +8,11 @@ concepts:
     - checkout-sessions
     properties:
       status: status
+      amount: amountCents
+      currency: currency
       expires_at: expiresAt
       mode: mode
-      metadata: metadata
       url: checkoutUrl
-      line_items: lineItems
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/checkout-sdk.yml#POST /partner/checkout/v1/checkout-sessions

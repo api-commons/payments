@@ -20,8 +20,11 @@ concepts:
   refund:
     path_segment:
     - refunds
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      amount: Amount
+      reason: RefundReason
+      payment_id: PaymentId
+    core_coverage: 0.25
     evidence:
     - openapi/_original/worldline-open-banking-payment-initiation-3.15.0.yaml#POST /refunds
   customer:

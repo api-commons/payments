@@ -8,8 +8,8 @@ concepts:
     - refunds
     properties:
       amount: amount
-      reason: reason
-      metadata: metadata
+      currency: currency
+      description: description
     core_coverage: 0.25
     evidence:
     - openapi/_original/processout-openapi.json#POST /invoices/{invoice_id}/refunds

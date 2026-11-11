@@ -18,9 +18,10 @@ concepts:
     - refunds
     properties:
       id: refund_id
+      amount: amount
       created_at: created_at
       metadata: metadata
-    core_coverage: 0.5
+    core_coverage: 0.75
     evidence:
     - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/refunds
     - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/refunds/{refund_id}

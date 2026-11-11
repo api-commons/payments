@@ -24,13 +24,13 @@ concepts:
       status: status
       created_at: createdOn
       customer_id: customer
-      currency: currency
       amount: amount
+      currency: currency
       mode: mode
       description: description
       url: link
       line_items: lineItems
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/moov-api-openapi.yml#DELETE /accounts/{accountID}/payment-links/{paymentLinkCode}
     - openapi/_original/moov-api-openapi.yml#GET /accounts/{accountID}/payment-links

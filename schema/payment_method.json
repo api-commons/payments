@@ -8,14 +8,14 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.677,
-      "x-commons-providers": 67,
+      "x-commons-share": 0.687,
+      "x-commons-providers": 68,
       "x-commons-spellings": [
         "id",
         "paymentMethodId",
         "reference_id",
-        "payment_method_id",
         "Id",
+        "payment_method_id",
         "uuid",
         "paymentMethodID",
         "_id"
@@ -23,9 +23,9 @@
     },
     "type": {
       "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.495,
-      "x-commons-providers": 49,
+      "x-commons-tier": "core",
+      "x-commons-share": 0.505,
+      "x-commons-providers": 50,
       "x-commons-spellings": [
         "type",
         "payment_method_type",
@@ -54,8 +54,8 @@
     "status": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.273,
-      "x-commons-providers": 27,
+      "x-commons-share": 0.283,
+      "x-commons-providers": 28,
       "x-commons-spellings": [
         "status",
         "state"

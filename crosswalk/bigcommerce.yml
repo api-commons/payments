@@ -22,7 +22,7 @@ concepts:
       updated_at:
       - updated_time
       - updatedTime
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/checkouts-openapi-original.yml#GET /checkouts/{checkoutId}
     - openapi/_original/checkouts-openapi-original.yml#PUT /checkouts/{checkoutId}

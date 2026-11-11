@@ -6,8 +6,10 @@ concepts:
   payment_method:
     path_segment:
     - payment-methods
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      type: type
+      status: status
+    core_coverage: 0.5
     evidence:
     - openapi/_original/cadana-embedded-payments-openapi.yaml#GET /v1/payment-methods
   payout:
@@ -15,10 +17,10 @@ concepts:
     - payouts
     - disbursements
     properties:
-      status: status
       id:
       - id
       - referenceId
+      status: status
       amount:
       - amount
       - totalAmount

@@ -22,9 +22,10 @@ concepts:
       name:
       - first_name
       - display_name
+      created_at: created_at
       address: address
       last_name: last_name
-    core_coverage: 0.5
+    core_coverage: 0.75
     evidence:
     - openapi/_original/lorum-openapi-original.json#GET /v1/customers
     - openapi/_original/lorum-openapi-original.json#GET /v1/customers/{customer_id}

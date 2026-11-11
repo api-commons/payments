@@ -8,10 +8,10 @@ concepts:
     - payment-links
     properties:
       id: id
-      currency: currency
       amount: amount_cents
+      currency: currency
       description: description
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/paymob-accept-api-openapi.yml#POST /api/ecommerce/payment-links
   refund:

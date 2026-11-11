@@ -16,13 +16,13 @@ below is a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| payment | 289 | 271 | id 74%, status 68%, amount 62%, created_at 51% | payments 189, charges 46, payment 42, charge 31 |
-| checkout_session | 85 | 77 | id 74%, status 62% | checkout 29, sessions 27, checkouts 23, payment-links 16 |
-| refund | 214 | 201 | id 74%, amount 70%, status 62%, created_at 50% | refund 122, refunds 110, credits 15, reversals 12 |
-| payment_method | 103 | 99 | id 68% | payment-methods 41, payment_methods 24, cards 20, paymentmethods 13 |
-| customer | 170 | 162 | id 84%, name 68%, email 65%, created_at 56% | customers 137, customer 31, buyers 8, payers 8 |
-| payout | 122 | 110 | status 66%, id 66%, amount 59%, created_at 50% | payouts 70, settlements 29, payout 18, settlement 11 |
-| dispute | 77 | 71 | status 68%, created_at 65%, id 65%, reason 65% | disputes 48, chargebacks 20, dispute 14, chargeback 7 |
+| payment | 289 | 271 | id 75%, status 69%, amount 62%, created_at 52% | payments 189, charges 46, payment 42, charge 31 |
+| checkout_session | 85 | 77 | id 78%, status 65%, created_at 51% | checkout 29, sessions 27, checkouts 23, payment-links 16 |
+| refund | 214 | 201 | id 75%, amount 73%, status 63%, created_at 51% | refund 122, refunds 110, credits 15, reversals 12 |
+| payment_method | 103 | 99 | id 69%, type 50% | payment-methods 41, payment_methods 24, cards 20, paymentmethods 13 |
+| customer | 170 | 162 | id 83%, name 68%, email 66%, created_at 57% | customers 137, customer 31, buyers 8, payers 8 |
+| payout | 122 | 110 | id 66%, status 66%, amount 64%, created_at 50% | payouts 70, settlements 29, payout 18, settlement 11 |
+| dispute | 77 | 71 | status 72%, created_at 68%, id 68%, reason 68% | disputes 48, chargebacks 20, dispute 14, chargeback 7 |
 
 Cohort: 692 providers with harvested OpenAPI, 436 crosswalks. Of the providers exposing a payment: 72% create, 67% list, 65% fetch, 22% update, 10% delete. Generated 2026-11-10 by build.py.
 <!-- /commons:summary -->
@@ -71,7 +71,7 @@ These are calls, not measurements, recorded so they can be revisited as the meth
   Pin, Shift4) is a stored way to pay. The segment is now qualified --
   `cards@customers|...` here, `cards!customers|...` in
   [card issuing](https://github.com/api-commons/card-issuing) -- and payment methods went
-  from 86 providers to 101. `/tokens` is still not used.
+  from 86 providers to 103. `/tokens` is still not used.
 - **`/transactions` is not a payment.** In this cohort it is as often a bank-ledger line or a
   card-programme feed, and the path alone cannot tell them apart.
 - **A standard counts once.** Twenty-five UK banks republish the UK Open Banking

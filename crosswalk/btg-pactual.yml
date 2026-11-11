@@ -41,7 +41,7 @@ concepts:
     - settlements
     properties:
       status: status
-      id: id
+      amount: amount
     core_coverage: 0.5
     evidence:
     - openapi/_original/btg-pactual-fidc-payment-openapi.yml#GET /fidc-loan/v1/settlement/{settlementId}

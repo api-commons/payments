@@ -20,8 +20,10 @@ concepts:
     - sessions
     properties:
       status: state
-      customer_id: customer
-    core_coverage: 0.5
+      amount: amount
+      currency: currency
+      metadata: attributes
+    core_coverage: 0.333
     evidence:
     - openapi/_original/fabric-checkout-openapi.yml#POST /checkout/sessions
   customer:

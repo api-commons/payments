@@ -18,7 +18,7 @@ concepts:
     properties:
       id: id
       brand: cardBrand
-    core_coverage: 1.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/bitski-nft-service-openapi-original.json#GET /v1/users/{user_id}/payment-methods
     - openapi/_original/bitski-nft-service-openapi-original.json#POST /v1/users/{user_id}/payment-methods

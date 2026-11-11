@@ -13,7 +13,7 @@ concepts:
       description: note
       metadata: attributes
       url: link
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/fipto-customer-api-openapi.json#GET /companies/{company_id}/payment-links
     - openapi/_original/fipto-customer-api-openapi.json#GET /companies/{company_id}/payment-links/{payment_link_id}

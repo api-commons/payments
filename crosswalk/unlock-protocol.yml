@@ -10,7 +10,7 @@ concepts:
       id: id
       created_at: createdAt
       updated_at: updatedAt
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/unlock-protocol-locksmith-openapi.yml#DELETE /v2/checkout/{id}
     - openapi/_original/unlock-protocol-locksmith-openapi.yml#GET /v2/checkout/{id}

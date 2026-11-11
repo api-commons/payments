@@ -42,8 +42,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      status: status
       id: id
+      status: status
       created_at: created_at
       updated_at: updated_at
     core_coverage: 0.75

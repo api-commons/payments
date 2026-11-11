@@ -27,11 +27,9 @@ concepts:
     properties:
       status: status
       created_at: created_at
-      customer_id: customer
-      metadata: metadata
-      success_url: return_url
+      amount: amount
       url: checkout_url
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/dodo-payments-openapi.yml#GET /checkouts/{session_id}
     - openapi/_original/dodo-payments-openapi.yml#POST /checkouts
@@ -70,8 +68,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      status: status
       id: payout_id
+      status: status
       amount: amount
       created_at: created_at
       currency: currency

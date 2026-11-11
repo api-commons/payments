@@ -9,13 +9,13 @@ concepts:
     properties:
       id: id
       status: status
-      currency: currency
       amount: amount
+      currency: currency
       expires_at: expires_at
       metadata: metadata
       success_url: success_url
       line_items: products
-    core_coverage: 1.0
+    core_coverage: 0.667
     evidence:
     - openapi/_original/polar-sh-openapi.yml#GET /checkouts/
     - openapi/_original/polar-sh-openapi.yml#GET /checkouts/{id}

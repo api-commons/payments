@@ -27,14 +27,14 @@ concepts:
     properties:
       id: id
       customer_id: payer
-      currency: currency
       amount:
       - amount
       - amountInCents
+      currency: currency
       description: description
       metadata: metadata
       success_url: returnUrl
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/pinch-payments-payment-links.yml#DELETE /payment-links/{id}
     - openapi/_original/pinch-payments-payment-links.yml#GET /payment-links
@@ -61,7 +61,7 @@ concepts:
     - sources
     properties:
       id: id
-    core_coverage: 1.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/pinch-payments-payers.yml#DELETE /payers/{id}/sources/{sourceId}
     - openapi/_original/pinch-payments-payers.yml#POST /payers/{id}/sources

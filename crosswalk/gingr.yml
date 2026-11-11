@@ -21,7 +21,7 @@ concepts:
       id: id
       mode: type
       metadata: attributes
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/gingr-openapi.json#POST /v1/bookings/{bookingId}/checkout
   refund:

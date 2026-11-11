@@ -46,7 +46,7 @@ concepts:
       id: payment_method_id
       status: status
       customer_id: customer_id
-    core_coverage: 1.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/ordway-rest-api-openapi.yml#GET /customers/{id}/payment_methods
   customer:

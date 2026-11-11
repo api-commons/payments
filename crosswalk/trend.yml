@@ -18,7 +18,7 @@ concepts:
       metadata: metadata
       success_url: success_url
       line_items: line_items
-    core_coverage: 1.0
+    core_coverage: 0.667
     evidence:
     - openapi/_original/trend-api-openapi.yml#POST /payment/stripe/checkout/{productId}
     - openapi/_original/trend-openapi-original.json#POST /payment/stripe/checkout/{productId}

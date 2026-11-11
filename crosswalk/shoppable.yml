@@ -6,7 +6,8 @@ concepts:
   checkout_session:
     path_segment:
     - checkout
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: id
+    core_coverage: 0.333
     evidence:
     - openapi/_original/shoppable-cloud-openapi-original.yml#POST /v6/checkout

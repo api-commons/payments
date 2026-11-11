@@ -35,8 +35,8 @@ concepts:
       id: id
       status: status
       created_at: createdAt
-      currency: currency
       amount: amount
+      currency: currency
       description:
       - description
       - statementDescriptor

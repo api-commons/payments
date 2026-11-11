@@ -29,8 +29,8 @@ concepts:
       status: status
       created_at: created_at
       customer_id: customer
-      currency: currency
       amount: amount
+      currency: currency
       expires_at: expires_at
       mode: mode
       metadata: metadata
@@ -58,7 +58,7 @@ concepts:
     - payment_methods
     properties:
       type: type
-    core_coverage: 0.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/komoju-openapi.yml#GET /payment_methods
   customer:

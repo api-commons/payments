@@ -7,9 +7,8 @@ concepts:
     path_segment:
     - authorisations
     - payments
-    properties:
-      id: paymentId
-    core_coverage: 0.25
+    properties: {}
+    core_coverage: 0.0
     evidence:
     - openapi/_original/openpayments-io-openapi.yml#GET /iso/payments/{paymentId}
     - openapi/_original/openpayments-io-openapi.yml#GET /psd2/consent/v1/consents/{consentId}/authorisations

@@ -6,8 +6,11 @@ concepts:
   payment:
     path_segment:
     - authorizations
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: id
+      amount: amount
+      payment_method_id: cardId
+    core_coverage: 0.5
     evidence:
     - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /cards/{cardToken}/authorizations
     - openapi/_original/six-group-debix-bank-api-cardtoken-v2-bank-to-six-openapi.yml#POST /digitalcards/{dpan}/authorizations

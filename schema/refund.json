@@ -8,13 +8,13 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.736,
-      "x-commons-providers": 148,
+      "x-commons-share": 0.751,
+      "x-commons-providers": 151,
       "x-commons-spellings": [
         "id",
         "refundId",
-        "transactionId",
         "refund_id",
+        "transactionId",
         "transaction_id",
         "reference_id",
         "uuid",
@@ -24,12 +24,12 @@
     "amount": {
       "type": "number",
       "x-commons-tier": "core",
-      "x-commons-share": 0.697,
-      "x-commons-providers": 140,
+      "x-commons-share": 0.731,
+      "x-commons-providers": 147,
       "x-commons-spellings": [
         "amount",
-        "totalAmount",
         "total_amount",
+        "totalAmount",
         "amount_cents",
         "Amount",
         "amountInCents",
@@ -39,8 +39,8 @@
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.622,
-      "x-commons-providers": 125,
+      "x-commons-share": 0.627,
+      "x-commons-providers": 126,
       "x-commons-spellings": [
         "status",
         "state",
@@ -52,8 +52,8 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.502,
-      "x-commons-providers": 101,
+      "x-commons-share": 0.507,
+      "x-commons-providers": 102,
       "x-commons-spellings": [
         "created_at",
         "createdAt",
@@ -69,8 +69,8 @@
     "currency": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.383,
-      "x-commons-providers": 77,
+      "x-commons-share": 0.398,
+      "x-commons-providers": 80,
       "x-commons-spellings": [
         "currency",
         "currency_code",
@@ -82,8 +82,8 @@
     "reason": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.318,
-      "x-commons-providers": 64,
+      "x-commons-share": 0.323,
+      "x-commons-providers": 65,
       "x-commons-spellings": [
         "reason",
         "refundReason",
@@ -96,8 +96,8 @@
     "payment_id": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.279,
-      "x-commons-providers": 56,
+      "x-commons-share": 0.294,
+      "x-commons-providers": 59,
       "x-commons-spellings": [
         "payment_id",
         "paymentId",
@@ -106,14 +106,14 @@
         "originalTransactionId",
         "charge",
         "chargeId",
-        "charge_id"
+        "capture_id"
       ]
     },
     "description": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.229,
-      "x-commons-providers": 46,
+      "x-commons-share": 0.234,
+      "x-commons-providers": 47,
       "x-commons-spellings": [
         "description",
         "note",
@@ -143,8 +143,8 @@
     "metadata": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.209,
-      "x-commons-providers": 42,
+      "x-commons-share": 0.204,
+      "x-commons-providers": 41,
       "x-commons-spellings": [
         "metadata",
         "attributes",

@@ -21,8 +21,10 @@ concepts:
     path_segment:
     - checkout
     properties:
+      status: status
+      created_at: createdAt
       mode: type
-    core_coverage: 0.0
+    core_coverage: 0.667
     evidence:
     - openapi/_original/bancomat-flowpay-api-v1-openapi.json#DELETE /{tenantID}/checkout/{code}
     - openapi/_original/bancomat-flowpay-api-v1-openapi.json#POST /{tenantID}/checkout

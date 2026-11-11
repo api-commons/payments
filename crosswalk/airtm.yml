@@ -6,8 +6,12 @@ concepts:
   payment:
     path_segment:
     - payments
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      status: status
+      amount: amount
+      currency: currency
+      description: note
+    core_coverage: 0.5
     evidence:
     - openapi/_original/airtm-enterprise-v1-openapi.json#GET bulk-payments/{bulkPaymentId}/payments
   payout:
@@ -15,8 +19,8 @@ concepts:
     - payouts
     - withdrawals
     properties:
-      status: status
       id: id
+      status: status
       amount: amount
       created_at:
       - created_at

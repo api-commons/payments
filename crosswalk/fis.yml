@@ -35,7 +35,9 @@ concepts:
       amount: totalAmount
       status: status
       currency: currency
-      description: memo
+      description:
+      - memo
+      - description
     core_coverage: 0.75
     evidence:
     - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /refunds
@@ -60,10 +62,10 @@ concepts:
       id: id
       email: emailAddress
       phone: phone
+      status: status
       address:
       - addresses
       - billingAddress
-      status: status
     core_coverage: 0.5
     evidence:
     - openapi/_original/fis-accounting-data-as-a-service-openapi.json#GET /customers

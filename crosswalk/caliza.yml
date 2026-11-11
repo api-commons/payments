@@ -18,7 +18,8 @@ concepts:
   payout:
     path_segment:
     - payouts
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      amount: amount
+    core_coverage: 0.25
     evidence:
     - openapi/_original/caliza-api-documentation-reference-openapi.yml#POST /v1/transactions/payouts

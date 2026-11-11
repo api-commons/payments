@@ -8,6 +8,6 @@ concepts:
     - paymentmethods
     properties:
       id: Id
-    core_coverage: 1.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/brushfire-openapi.json#GET /events/{eventId}/paymentmethods

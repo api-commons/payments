@@ -54,8 +54,8 @@ concepts:
     - payouts
     - payout
     properties:
-      status: status
       id: id
+      status: status
       destination: recipient
     core_coverage: 0.5
     evidence:

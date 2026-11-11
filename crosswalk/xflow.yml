@@ -34,8 +34,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      status: status
       id: id
+      status: status
       amount: amount
       created_at: created
       currency: currency

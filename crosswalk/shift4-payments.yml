@@ -33,8 +33,8 @@ concepts:
       status: status
       created_at: created
       customer_id: customer
-      currency: currency
       amount: amount
+      currency: currency
       description: description
       metadata: metadata
       url: redirectUrl
@@ -107,8 +107,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      status: status
       id: id
+      status: status
       amount: amount
       created_at: created
       currency: currency
@@ -127,8 +127,8 @@ concepts:
       id: id
       reason: reason
       amount: amount
-      updated_at: updated
       payment_id: charge
+      updated_at: updated
       currency: currency
     core_coverage: 1.0
     evidence:

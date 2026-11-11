@@ -7,9 +7,10 @@ concepts:
     path_segment:
     - settlements
     properties:
-      status: state
       id: id
-    core_coverage: 0.5
+      status: state
+      amount: amount
+    core_coverage: 0.75
     evidence:
     - openapi/_original/ledger-enterprise-vault-openapi-original.yml#GET /settlements
     - openapi/_original/ledger-enterprise-vault-openapi-original.yml#GET /settlements/{settlement_id}

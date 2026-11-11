@@ -92,8 +92,8 @@ concepts:
     - settlements
     - payouts
     properties:
-      status: status
       id: transactionId
+      status: status
       amount: amount
       created_at: createdAt
       currency: currency

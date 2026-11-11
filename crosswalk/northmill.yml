@@ -6,8 +6,9 @@ concepts:
   payment_method:
     path_segment:
     - paymentmethods
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: Id
+    core_coverage: 0.5
     evidence:
     - openapi/_original/northmill-flo-api-swagger.json#GET /v2/online/paymentmethods
     - openapi/_original/northmill-flo-api-swagger.json#GET /v2/stores/{externalStoreId}/online/paymentmethods

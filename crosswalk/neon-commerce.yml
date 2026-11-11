@@ -9,12 +9,12 @@ concepts:
     properties:
       id: id
       status: status
-      currency: currency
       amount: totalAmount
+      currency: currency
       success_url: successUrl
       url: redirectUrl
       line_items: items
-    core_coverage: 1.0
+    core_coverage: 0.667
     evidence:
     - openapi/_original/neon-commerce-checkout-openapi.yml#GET /checkout/{checkoutId}
     - openapi/_original/neon-commerce-checkout-openapi.yml#POST /checkout

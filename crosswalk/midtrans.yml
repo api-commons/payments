@@ -15,9 +15,9 @@ concepts:
     path_segment:
     - payment-links
     properties:
-      expires_at: expiry
+      id: id
       url: payment_url
-    core_coverage: 0.0
+    core_coverage: 0.333
     evidence:
     - openapi/_original/midtrans-openapi.yml#DELETE /v1/payment-links/{order_id}
     - openapi/_original/midtrans-openapi.yml#GET /v1/payment-links/{order_id}

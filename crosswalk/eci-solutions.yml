@@ -45,11 +45,11 @@ concepts:
       - emailAddress
       - email
       phone: phone
+      status: Result
       address:
       - address
       - addresses
       - billingAddress
-      status: Result
     core_coverage: 0.75
     evidence:
     - openapi/_original/eci-solutions-apar-commerce-openapi.json#DELETE /api/v1/customers/{id}

@@ -11,6 +11,6 @@ concepts:
       created_at: created_on
       currency: currency
       line_items: items
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/tickitto-openapi-original.json#POST /api/basket/checkout

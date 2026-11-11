@@ -23,13 +23,13 @@ concepts:
     - payment-links
     properties:
       status: status
-      currency: currency
       amount: amount
+      currency: currency
       expires_at: expiresAt
       description: description
       success_url: returnUrl
       url: redirectUrl
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/interswitch-payment-gateway-api-openapi.yml#POST /paymentgateway/api/v1/hosted-fields/sessions
     - openapi/_original/interswitch-payment-gateway-api-openapi.yml#POST /paymentgateway/api/v1/payment-links

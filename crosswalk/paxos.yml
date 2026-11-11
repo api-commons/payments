@@ -6,7 +6,14 @@ concepts:
   payment:
     path_segment:
     - payments
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: id
+      status: payment_status
+      created_at: created_at
+      payment_method_id: payment_source
+      description: description
+      metadata: metadata
+      customer_id: customer_id
+    core_coverage: 0.75
     evidence:
     - openapi/_original/paxos-v2-openapi-original.json#GET /statements/payments

@@ -40,7 +40,7 @@ concepts:
       success_url: returnUrl
       updated_at: updatedAt
       line_items: lineItems
-    core_coverage: 1.0
+    core_coverage: 0.667
     evidence:
     - openapi/_original/adyen-checkout-api-openapi.yml#GET /paymentLinks/{linkId}
     - openapi/_original/adyen-checkout-api-openapi.yml#GET /sessions/{sessionId}

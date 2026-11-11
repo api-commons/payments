@@ -8,11 +8,13 @@ concepts:
     - payouts
     - payout
     properties:
-      status: state
       id: id
+      status: state
       amount: Amount
+      created_at: createdAt
+      updated_at: updatedAt
       destination: bankAccount
-    core_coverage: 0.75
+    core_coverage: 1.0
     evidence:
     - openapi/_original/loopay-openapi-original.json#GET /affiliates/payouts
     - openapi/_original/loopay-openapi-original.json#GET /payout/{id}

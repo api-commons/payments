@@ -31,10 +31,12 @@ concepts:
       name: firstName
       email: email
       phone: phone
+      status:
+      - status
+      - state
       address:
       - address
       - addresses
-      status: status
       last_name: lastName
     core_coverage: 0.75
     evidence:

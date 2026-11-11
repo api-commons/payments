@@ -11,8 +11,8 @@ concepts:
       name: name
       email: email
       phone: phone
-      address: address
       status: status
+      address: address
     core_coverage: 0.75
     evidence:
     - openapi/_original/slash-openapi-original.json#GET /customer

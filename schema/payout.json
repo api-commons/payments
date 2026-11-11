@@ -5,6 +5,22 @@
   "description": "The common payout in Payments, distilled from 110 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
+    "id": {
+      "type": "string",
+      "x-commons-tier": "core",
+      "x-commons-share": 0.664,
+      "x-commons-providers": 73,
+      "x-commons-spellings": [
+        "id",
+        "payout_id",
+        "transaction_id",
+        "reference_id",
+        "payoutId",
+        "transactionId",
+        "uuid",
+        "Id"
+      ]
+    },
     "status": {
       "type": "string",
       "x-commons-tier": "core",
@@ -13,37 +29,23 @@
       "x-commons-spellings": [
         "status",
         "state",
+        "Status",
         "result",
-        "Status"
-      ]
-    },
-    "id": {
-      "type": "string",
-      "x-commons-tier": "core",
-      "x-commons-share": 0.655,
-      "x-commons-providers": 72,
-      "x-commons-spellings": [
-        "id",
-        "payout_id",
-        "transaction_id",
-        "reference_id",
-        "payoutId",
-        "uuid",
-        "transactionId",
-        "referenceId"
+        "PaymentStatus"
       ]
     },
     "amount": {
       "type": "number",
       "x-commons-tier": "core",
-      "x-commons-share": 0.591,
-      "x-commons-providers": 65,
+      "x-commons-share": 0.645,
+      "x-commons-providers": 71,
       "x-commons-spellings": [
         "amount",
         "totalAmount",
         "total_amount",
         "Amount",
-        "amount_in_cents"
+        "amount_in_cents",
+        "TotalAmount"
       ]
     },
     "created_at": {
@@ -78,26 +80,28 @@
     "method": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.236,
-      "x-commons-providers": 26,
+      "x-commons-share": 0.255,
+      "x-commons-providers": 28,
       "x-commons-spellings": [
         "type",
         "method",
-        "rail",
         "Type",
+        "rail",
+        "Method",
         "payoutMethod"
       ]
     },
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.227,
-      "x-commons-providers": 25,
+      "x-commons-share": 0.245,
+      "x-commons-providers": 27,
       "x-commons-spellings": [
         "updated_at",
         "updatedAt",
         "updated_date",
         "updateTime",
+        "LastUpdated",
         "lastModified",
         "updated"
       ],

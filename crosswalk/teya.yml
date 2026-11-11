@@ -27,7 +27,7 @@ concepts:
       metadata: metadata
       success_url: success_url
       line_items: line_items
-    core_coverage: 1.0
+    core_coverage: 0.667
     evidence:
     - openapi/_original/teya-online-payments-openapi.yaml#GET /v1/payment-links/{payment_link_id}
     - openapi/_original/teya-online-payments-openapi.yaml#GET /v2/checkout/sessions/{session_id}

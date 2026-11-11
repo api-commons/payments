@@ -9,12 +9,12 @@ concepts:
     properties:
       id: id
       customer_id: customer
-      currency: currency_code
       amount: amount
+      currency: currency_code
       expires_at: expiry_time
       success_url: return_url
       line_items: line_items
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/checkout-api.json#POST /v2/checkout
   refund:

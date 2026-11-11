@@ -9,7 +9,7 @@ concepts:
     properties:
       id: referenceId
       customer_id: buyer
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/rye-checkout-intents-openapi-original.yml#POST /api/v1/betas/checkout-sessions
   refund:

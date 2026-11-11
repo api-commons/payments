@@ -10,13 +10,13 @@ concepts:
     properties:
       id: id
       created_at: created_at
-      currency: currency
       amount: amount
+      currency: currency
       expires_at: expires_at
       url:
       - checkout_url
       - redirect_url
-    core_coverage: 0.5
+    core_coverage: 0.667
     evidence:
     - openapi/_original/algovoi-co-uk-gateway-openapi.json#POST /suite-store/checkout
     - openapi/_original/algovoi-co-uk-gateway-openapi.json#POST /v1/payment-links
@@ -40,8 +40,8 @@ concepts:
     path_segment:
     - payouts
     properties:
-      status: status
       id: payout_id
+      status: status
       amount: amount
       currency: currency
     core_coverage: 0.75

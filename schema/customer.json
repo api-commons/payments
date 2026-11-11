@@ -8,8 +8,8 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.84,
-      "x-commons-providers": 136,
+      "x-commons-share": 0.833,
+      "x-commons-providers": 135,
       "x-commons-spellings": [
         "id",
         "customerId",
@@ -17,8 +17,8 @@
         "reference_id",
         "Id",
         "_id",
-        "uuid",
-        "GUID"
+        "GUID",
+        "referenceId"
       ]
     },
     "name": {
@@ -40,8 +40,8 @@
     "email": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.654,
-      "x-commons-providers": 106,
+      "x-commons-share": 0.66,
+      "x-commons-providers": 107,
       "x-commons-spellings": [
         "email",
         "emailAddress",
@@ -54,8 +54,8 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.562,
-      "x-commons-providers": 91,
+      "x-commons-share": 0.568,
+      "x-commons-providers": 92,
       "x-commons-spellings": [
         "created_at",
         "createdAt",
@@ -83,6 +83,20 @@
         "Phone"
       ]
     },
+    "status": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.364,
+      "x-commons-providers": 59,
+      "x-commons-spellings": [
+        "status",
+        "state",
+        "Result",
+        "Status",
+        "result",
+        "State"
+      ]
+    },
     "address": {
       "type": "object",
       "x-commons-tier": "extended",
@@ -95,20 +109,6 @@
         "billing_address",
         "Addresses",
         "Address"
-      ]
-    },
-    "status": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.358,
-      "x-commons-providers": 58,
-      "x-commons-spellings": [
-        "status",
-        "state",
-        "Result",
-        "Status",
-        "result",
-        "State"
       ]
     },
     "last_name": {

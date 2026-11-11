@@ -7,12 +7,16 @@ concepts:
     path_segment:
     - payments
     properties:
-      id: transaction_id
+      id:
+      - payment_id
+      - reference_id
+      - transaction_id
       status: status
       amount: amount
       created_at: created_at
       currency: currency
       description: description
+      updated_at: updated_at
     core_coverage: 1.0
     evidence:
     - openapi/_original/zero-hash-api-openapi.json#GET /payments
@@ -37,12 +41,13 @@ concepts:
     - payouts
     - settlements
     properties:
-      status: status
       id: payout_id
+      status: status
+      amount: amount
       created_at: created_at
       updated_at: updated_at
       destination: beneficiary
-    core_coverage: 0.75
+    core_coverage: 1.0
     evidence:
     - openapi/_original/zero-hash-api-openapi.json#GET /payments/settlements
     - openapi/_original/zero-hash-api-openapi.json#GET /payouts

@@ -25,11 +25,11 @@ concepts:
     properties:
       id: transactionId
       status: status
-      currency: currency
       amount: amount
+      currency: currency
       success_url: returnUrl
       url: checkoutUrl
-    core_coverage: 1.0
+    core_coverage: 0.667
     evidence:
     - openapi/_original/visa-click-to-pay.yml#GET /visasrci/v1/checkout/{checkoutId}
     - openapi/_original/visa-click-to-pay.yml#POST /visasrci/v1/checkout

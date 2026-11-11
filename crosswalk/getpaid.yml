@@ -29,8 +29,8 @@ concepts:
       status: status
       created_at: created_at
       customer_id: buyer
-      currency: currency
       amount: amount
+      currency: currency
       expires_at: expires_at
       description: description
       updated_at: updated_at

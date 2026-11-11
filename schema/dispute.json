@@ -8,8 +8,8 @@
     "status": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.676,
-      "x-commons-providers": 48,
+      "x-commons-share": 0.718,
+      "x-commons-providers": 51,
       "x-commons-spellings": [
         "status",
         "state",
@@ -19,8 +19,8 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.648,
-      "x-commons-providers": 46,
+      "x-commons-share": 0.676,
+      "x-commons-providers": 48,
       "x-commons-spellings": [
         "created_at",
         "createdAt",
@@ -36,8 +36,8 @@
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.648,
-      "x-commons-providers": 46,
+      "x-commons-share": 0.676,
+      "x-commons-providers": 48,
       "x-commons-spellings": [
         "id",
         "dispute_id",
@@ -52,22 +52,24 @@
     "reason": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.648,
-      "x-commons-providers": 46,
+      "x-commons-share": 0.676,
+      "x-commons-providers": 48,
       "x-commons-spellings": [
         "reason",
         "reason_code",
         "reasonCode",
         "disputeReason",
         "DisputeReason",
-        "category"
+        "category",
+        "Reason",
+        "ReasonCode"
       ]
     },
     "amount": {
       "type": "integer",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.465,
-      "x-commons-providers": 33,
+      "x-commons-share": 0.479,
+      "x-commons-providers": 34,
       "x-commons-spellings": [
         "amount",
         "amountInCents",
@@ -75,11 +77,27 @@
         "Amount"
       ]
     },
+    "payment_id": {
+      "type": "string",
+      "x-commons-tier": "extended",
+      "x-commons-share": 0.394,
+      "x-commons-providers": 28,
+      "x-commons-spellings": [
+        "transactionId",
+        "payment_id",
+        "transaction_id",
+        "payment",
+        "paymentId",
+        "charge",
+        "charge_id",
+        "chargeId"
+      ]
+    },
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.38,
-      "x-commons-providers": 27,
+      "x-commons-share": 0.394,
+      "x-commons-providers": 28,
       "x-commons-spellings": [
         "updated_at",
         "updatedAt",
@@ -90,22 +108,6 @@
         "updatedDate"
       ],
       "format": "date-time"
-    },
-    "payment_id": {
-      "type": "string",
-      "x-commons-tier": "extended",
-      "x-commons-share": 0.366,
-      "x-commons-providers": 26,
-      "x-commons-spellings": [
-        "transactionId",
-        "payment_id",
-        "payment",
-        "transaction_id",
-        "charge",
-        "paymentId",
-        "charge_id",
-        "chargeId"
-      ]
     },
     "currency": {
       "type": "string",

@@ -7,12 +7,13 @@ concepts:
     path_segment:
     - payments
     properties:
+      id: id
       status: status
       amount: amount
       created_at: createdAt
       currency: currency
       payment_method_id: paymentMethod
-    core_coverage: 0.75
+    core_coverage: 1.0
     evidence:
     - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/bancontact/v1/transactions/{transactionId}/payments
     - openapi/_original/cm-com-payments-online-payments-v1-27-22-openapi.yml#GET /paymentmethods/idealqr/v1/transactions/{transactionId}/payments
@@ -27,8 +28,8 @@ concepts:
       status: status
       created_at: createdAt
       customer_id: consumer
-      currency: currency
       amount: amount
+      currency: currency
       expires_at: expiresAt
       description: description
       success_url: returnUrl
@@ -73,7 +74,7 @@ concepts:
     - payment-methods
     properties:
       id: uuid
-    core_coverage: 1.0
+    core_coverage: 0.5
     evidence:
     - openapi/_original/cm-com-live-event-ticketing-v1-openapi.yml#GET /events/{event_id}/payment-methods
     - openapi/_original/cm-com-live-ga-partner-v1-openapi.yml#GET /events/{event_uuid}/paymentmethods
@@ -87,10 +88,10 @@ concepts:
       id: id
       reason: reason
       amount: amount
-      updated_at: updated
       payment_id:
       - transactionId
       - paymentId
+      updated_at: updated
       currency: currency
     core_coverage: 1.0
     evidence:

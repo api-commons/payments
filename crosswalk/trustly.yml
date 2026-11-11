@@ -63,10 +63,10 @@ concepts:
       status: status
       created_at: createdAt
       amount: amount
-      updated_at: updatedAt
       payment_id:
       - transactionId
       - payment
+      updated_at: updatedAt
       currency: currency
     core_coverage: 0.5
     evidence:

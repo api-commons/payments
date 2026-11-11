@@ -7,8 +7,9 @@ concepts:
     path_segment:
     - payments
     properties:
-      currency: currencyCode
-    core_coverage: 0.0
+      amount: amount
+      external_id: reference
+    core_coverage: 0.25
     evidence:
     - openapi/_original/clearbank-cross-border-v4.json#POST /payments/cross-border-sterling/v4/payments
     - openapi/_original/clearbank-mccy-payments-v1.json#DELETE /v1/mccy/payments/{batchId}
@@ -18,8 +19,8 @@ concepts:
     - customers
     properties:
       id: id
-      address: addresses
       status: status
+      address: addresses
       type: type
     core_coverage: 0.25
     evidence:

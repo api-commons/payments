@@ -50,9 +50,7 @@ concepts:
       - name
       email: email
       phone: phoneNumber
-      status:
-      - status
-      - state
+      status: status
       last_name: lastName
       type: type
     core_coverage: 0.75

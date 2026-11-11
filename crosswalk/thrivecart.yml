@@ -13,7 +13,8 @@ concepts:
   customer:
     path_segment:
     - customer
-    properties: {}
+    properties:
+      status: status
     core_coverage: 0.0
     evidence:
     - openapi/_original/thrivecart-api-openapi.yml#POST /customer

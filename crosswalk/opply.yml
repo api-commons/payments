@@ -6,8 +6,10 @@ concepts:
   payment:
     path_segment:
     - payments
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: uuid
+      currency: currency
+    core_coverage: 0.25
     evidence:
     - openapi/_original/opply-openapi-original.yml#GET /api/v1/app-orders/brand/payments/
   refund:

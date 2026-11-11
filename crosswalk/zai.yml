@@ -62,10 +62,10 @@ concepts:
     path_segment:
     - disbursements
     properties:
-      status: state
       id:
       - id
       - reference_id
+      status: state
       amount: amount
       created_at: created_at
       currency: currency

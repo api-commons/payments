@@ -63,8 +63,8 @@ concepts:
     properties:
       created_at: createdAt
       reason: reasonCode
-      updated_at: updatedAt
       payment_id: payment
+      updated_at: updatedAt
     core_coverage: 0.5
     evidence:
     - openapi/_original/coinflow-openapi-original.json#GET /merchant/chargebacks

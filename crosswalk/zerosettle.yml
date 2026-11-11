@@ -23,6 +23,6 @@ concepts:
       id:
       - checkout_session_id
       - transaction_id
-    core_coverage: 0.5
+    core_coverage: 0.333
     evidence:
     - openapi/_original/zerosettle-openapi.json#POST /iap/checkout-sessions

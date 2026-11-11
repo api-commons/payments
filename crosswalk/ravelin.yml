@@ -11,7 +11,7 @@ concepts:
       customer_id:
       - customerId
       - customer
-    core_coverage: 0.0
+    core_coverage: 0.333
     evidence:
     - openapi/_original/ravelin-merchant-api-openapi.yml#POST /v2/checkout
   refund:

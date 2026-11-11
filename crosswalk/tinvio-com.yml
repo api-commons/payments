@@ -28,7 +28,8 @@ concepts:
     path_segment:
     - credits
     - refunds
-    properties: {}
+    properties:
+      currency: currency
     core_coverage: 0.0
     evidence:
     - openapi/_original/tinvio-com-openapi-original.yaml#DELETE /api/v1/bills/{resourceId}/credits/{creditsAppliedResourceId}
