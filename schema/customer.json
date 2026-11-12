@@ -2,14 +2,14 @@
   "$schema": "https://json-schema.org/draft/2020-12/schema",
   "$id": "https://raw.githubusercontent.com/api-commons/payments/main/schema/customer.json",
   "title": "Customer",
-  "description": "The common customer in Payments, distilled from 162 providers' own OpenAPI. Each property records the share of them that declare it.",
+  "description": "The common customer in Payments, distilled from 163 providers' own OpenAPI. Each property records the share of them that declare it.",
   "type": "object",
   "properties": {
     "id": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.833,
-      "x-commons-providers": 135,
+      "x-commons-share": 0.834,
+      "x-commons-providers": 136,
       "x-commons-spellings": [
         "id",
         "customerId",
@@ -24,8 +24,8 @@
     "name": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.679,
-      "x-commons-providers": 110,
+      "x-commons-share": 0.681,
+      "x-commons-providers": 111,
       "x-commons-spellings": [
         "name",
         "first_name",
@@ -40,8 +40,8 @@
     "email": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.66,
-      "x-commons-providers": 107,
+      "x-commons-share": 0.663,
+      "x-commons-providers": 108,
       "x-commons-spellings": [
         "email",
         "emailAddress",
@@ -54,8 +54,8 @@
     "created_at": {
       "type": "string",
       "x-commons-tier": "core",
-      "x-commons-share": 0.568,
-      "x-commons-providers": 92,
+      "x-commons-share": 0.571,
+      "x-commons-providers": 93,
       "x-commons-spellings": [
         "created_at",
         "createdAt",
@@ -71,8 +71,8 @@
     "phone": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.488,
-      "x-commons-providers": 79,
+      "x-commons-share": 0.491,
+      "x-commons-providers": 80,
       "x-commons-spellings": [
         "phone",
         "phone_number",
@@ -86,8 +86,8 @@
     "status": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.364,
-      "x-commons-providers": 59,
+      "x-commons-share": 0.368,
+      "x-commons-providers": 60,
       "x-commons-spellings": [
         "status",
         "state",
@@ -100,8 +100,8 @@
     "address": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.358,
-      "x-commons-providers": 58,
+      "x-commons-share": 0.362,
+      "x-commons-providers": 59,
       "x-commons-spellings": [
         "address",
         "addresses",
@@ -114,8 +114,8 @@
     "last_name": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.321,
-      "x-commons-providers": 52,
+      "x-commons-share": 0.325,
+      "x-commons-providers": 53,
       "x-commons-spellings": [
         "last_name",
         "lastName"
@@ -124,8 +124,8 @@
     "updated_at": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.315,
-      "x-commons-providers": 51,
+      "x-commons-share": 0.319,
+      "x-commons-providers": 52,
       "x-commons-spellings": [
         "updated_at",
         "updatedAt",
@@ -141,7 +141,7 @@
     "metadata": {
       "type": "object",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.253,
+      "x-commons-share": 0.252,
       "x-commons-providers": 41,
       "x-commons-spellings": [
         "metadata",
@@ -157,7 +157,7 @@
     "type": {
       "type": "string",
       "x-commons-tier": "extended",
-      "x-commons-share": 0.204,
+      "x-commons-share": 0.202,
       "x-commons-providers": 33,
       "x-commons-spellings": [
         "type"
@@ -170,9 +170,9 @@
   "x-commons": {
     "context": "payments",
     "concept": "customer",
-    "providers": 162,
-    "generated": "2026-11-11",
-    "version": "0.1.0-draft.20261111",
+    "providers": 163,
+    "generated": "2026-11-12",
+    "version": "0.1.0-draft.20261112",
     "status": "draft"
   }
 }

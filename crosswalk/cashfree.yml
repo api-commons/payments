@@ -1,7 +1,7 @@
 provider: cashfree
 apis_io: https://apis.io/providers/cashfree/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -9,6 +9,7 @@ concepts:
     properties:
       status: payment_status
       payment_method_id: payment_method
+      order_id: order_id
     core_coverage: 0.25
     evidence:
     - openapi/_original/openapi-payment-gateway.json#GET /orders/{order_id}/payments

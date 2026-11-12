@@ -1,7 +1,7 @@
 openapi: 3.1.0
 info:
   title: Payments (API Commons)
-  version: 0.1.0-draft.20261111
+  version: 0.1.0-draft.20261112
   description: 'The common Payments interface, distilled from the harvested OpenAPI of 692 providers in the APIs.io
     catalog. Not a product: no one serves this API. It is the shape the market already shares, measured, so that
     providers, agents and integrators can map to one vocabulary. See profile.yml.'
@@ -16,7 +16,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.723
+      x-commons-share: 0.724
       responses:
         '200':
           description: OK
@@ -35,7 +35,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.671
+      x-commons-share: 0.669
       responses:
         '200':
           description: OK
@@ -62,7 +62,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: core
-      x-commons-share: 0.654
+      x-commons-share: 0.655
       responses:
         '200':
           description: OK
@@ -75,7 +75,7 @@ paths:
       tags:
       - Payments
       x-commons-tier: extended
-      x-commons-share: 0.218
+      x-commons-share: 0.221
       responses:
         '200':
           description: OK
@@ -185,7 +185,7 @@ paths:
       tags:
       - Refunds
       x-commons-tier: core
-      x-commons-share: 0.893
+      x-commons-share: 0.894
       responses:
         '200':
           description: OK
@@ -204,7 +204,7 @@ paths:
       tags:
       - Refunds
       x-commons-tier: extended
-      x-commons-share: 0.388
+      x-commons-share: 0.384
       responses:
         '200':
           description: OK
@@ -231,7 +231,7 @@ paths:
       tags:
       - Refunds
       x-commons-tier: extended
-      x-commons-share: 0.397
+      x-commons-share: 0.394
       responses:
         '200':
           description: OK
@@ -338,7 +338,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.812
+      x-commons-share: 0.813
       responses:
         '200':
           description: OK
@@ -352,7 +352,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.565
+      x-commons-share: 0.567
       responses:
         '200':
           description: OK
@@ -370,7 +370,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: extended
-      x-commons-share: 0.435
+      x-commons-share: 0.439
       responses:
         '200':
           description: OK
@@ -384,7 +384,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.782
+      x-commons-share: 0.784
       responses:
         '200':
           description: OK
@@ -408,7 +408,7 @@ paths:
       tags:
       - Customers
       x-commons-tier: core
-      x-commons-share: 0.782
+      x-commons-share: 0.784
       responses:
         '200':
           description: OK

@@ -1,5 +1,5 @@
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 adopters:
 - provider: 1fort
   apis_io: https://apis.io/providers/1fort/
@@ -1461,6 +1461,13 @@ adopters:
   concepts:
   - payment
   - refund
+- provider: maxio
+  apis_io: https://apis.io/providers/maxio/
+  crosswalk: crosswalk/maxio.yml
+  concepts:
+  - customer
+  - payment
+  - refund
 - provider: mercado-pago
   apis_io: https://apis.io/providers/mercado-pago/
   crosswalk: crosswalk/mercado-pago.yml
@@ -2079,6 +2086,11 @@ adopters:
   - customer
   - payment
   - payment_method
+  - refund
+- provider: recurly
+  apis_io: https://apis.io/providers/recurly/
+  crosswalk: crosswalk/recurly.yml
+  concepts:
   - refund
 - provider: remitian
   apis_io: https://apis.io/providers/remitian/

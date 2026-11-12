@@ -1,7 +1,7 @@
 provider: dlocal
 apis_io: https://apis.io/providers/dlocal/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -15,6 +15,7 @@ concepts:
       payment_method_id: payment_method_id
       description: description
       customer_id: payer
+      order_id: order_id
     core_coverage: 1.0
     evidence:
     - openapi/_original/dlocal-payins-openapi.yml#GET /payments/{payment_id}

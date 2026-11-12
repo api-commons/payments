@@ -1,7 +1,7 @@
 provider: omise
 apis_io: https://apis.io/providers/omise/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -16,6 +16,7 @@ concepts:
       description: description
       metadata: metadata
       customer_id: customer
+      order_id: order
     core_coverage: 1.0
     evidence:
     - openapi/_original/omise-openapi.yml#GET /charges

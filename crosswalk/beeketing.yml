@@ -1,13 +1,14 @@
 provider: beeketing
 apis_io: https://apis.io/providers/beeketing/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
     - charge
     properties:
       amount: amount
+      order_id: order_id
     core_coverage: 0.25
     evidence:
     - openapi/_original/beeketing-shopbase-admin-openapi.json#POST /admin/balance/charge.json

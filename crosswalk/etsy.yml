@@ -1,7 +1,7 @@
 provider: etsy
 apis_io: https://apis.io/providers/etsy/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:

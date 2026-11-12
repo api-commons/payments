@@ -1,7 +1,7 @@
 provider: payt
 apis_io: https://apis.io/providers/payt/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -12,6 +12,7 @@ concepts:
       payment_method_id: payment_method
       description: description
       updated_at: updated_at
+      order_id: invoice_id
     core_coverage: 0.5
     evidence:
     - openapi/_original/payt-openapi-original.json#GET /v1/payments

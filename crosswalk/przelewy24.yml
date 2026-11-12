@@ -1,13 +1,14 @@
 provider: przelewy24
 apis_io: https://apis.io/providers/przelewy24/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
     - charge
     properties:
       payment_method_id: token
+      order_id: orderId
     core_coverage: 0.0
     evidence:
     - openapi/_original/openapi-extended.yml#POST /api/v1/card/charge

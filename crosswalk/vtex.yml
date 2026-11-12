@@ -1,7 +1,7 @@
 provider: vtex
 apis_io: https://apis.io/providers/vtex/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -20,6 +20,7 @@ concepts:
       description: description
       updated_at: updatedAt
       external_id: reference
+      order_id: orderId
     core_coverage: 0.75
     evidence:
     - openapi/_original/vtex-customer-credit-openapi-original.yml#POST /api/creditcontrol/accounts/{creditAccountId}/invoices/{invoiceId}/payments

@@ -1,7 +1,7 @@
 provider: veem
 apis_io: https://apis.io/providers/veem/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -11,6 +11,7 @@ concepts:
       status: status
       amount: amount
       payment_method_id: paymentMethod
+      order_id: invoiceId
     core_coverage: 0.75
     evidence:
     - openapi/_original/veem-api-openapi.yml#GET /veem/v1.2/payments/{paymentId}

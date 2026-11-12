@@ -1,7 +1,7 @@
 provider: now-payments
 apis_io: https://apis.io/providers/now-payments/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -11,6 +11,7 @@ concepts:
       status: payment_status
       created_at: created_at
       updated_at: updated_at
+      order_id: order_id
     core_coverage: 0.75
     evidence:
     - openapi/_original/openapi.yml#GET /payment

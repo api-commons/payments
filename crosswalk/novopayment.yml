@@ -1,18 +1,22 @@
 provider: novopayment
 apis_io: https://apis.io/providers/novopayment/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
+    - payments
     - payment
-    properties: {}
-    core_coverage: 0.0
+    properties:
+      id: transactionId
+      status: status
+    core_coverage: 0.5
     evidence:
     - openapi/_original/novopayment-merchant-presented-qr-openapi.yml#POST /notifications/payment
     - openapi/_original/novopayment-merchant-presented-qr.yaml#POST /notifications/payment
     - openapi/_original/novopayment-onboarding-openapi.yml#POST /payment
     - openapi/_original/novopayment-onboarding.yaml#POST /payment
+    - openapi/_original/novopayment-payment-authorizer-openapi.yml#GET /payments/{referenceCode}
   payment_method:
     path_segment:
     - cards

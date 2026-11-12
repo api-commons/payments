@@ -226,12 +226,6 @@
   ]
  },
  {
-  "slug": "amazon-payment-cryptography",
-  "specs": [
-   "openapi/_original/amazon-payment-cryptography-openapi.yml"
-  ]
- },
- {
   "slug": "amcs-group",
   "specs": [
    "openapi/_original/amcs-group-core-openapi-original.json",
@@ -2616,12 +2610,6 @@
   ]
  },
  {
-  "slug": "google-wallet",
-  "specs": [
-   "openapi/_original/openapi.yml"
-  ]
- },
- {
   "slug": "gov-uk-pay",
   "specs": [
    "openapi/_original/openapi.json"
@@ -3722,6 +3710,14 @@
   ]
  },
  {
+  "slug": "maxio",
+  "specs": [
+   "openapi/_original/maxio-advanced-billing-openapi.yml",
+   "openapi/_original/maxio-advanced-billing-openapi31json.json",
+   "openapi/_original/maxio-advanced-billing-openapi3json.json"
+  ]
+ },
+ {
   "slug": "memo-bank",
   "specs": [
    "openapi/_original/memo-bank-marketplace-api-openapi.yml",
@@ -4256,6 +4252,7 @@
    "openapi/_original/novopayment-compliance.yaml",
    "openapi/_original/novopayment-customers-openapi.yml",
    "openapi/_original/novopayment-customers.yaml",
+   "openapi/_original/novopayment-exchange-rates.yaml",
    "openapi/_original/novopayment-issuer-tokenization-openapi.yml",
    "openapi/_original/novopayment-issuer-tokenization.yaml",
    "openapi/_original/novopayment-mastercard-issuer-tokenization-openapi.yml",
@@ -5379,6 +5376,23 @@
   "slug": "recharge-payments",
   "specs": [
    "openapi/_original/recharge-payments-openapi.yml"
+  ]
+ },
+ {
+  "slug": "recurly",
+  "specs": [
+   "openapi/_original/recurly-commerce-api.json",
+   "openapi/_original/recurly-commerce-openapi.yml",
+   "openapi/_original/recurly-engage-custom-rendering-api.yaml",
+   "openapi/_original/recurly-engage-openapi.yml",
+   "openapi/_original/recurly-openapi.yml",
+   "openapi/_original/recurly-recover-api.yaml",
+   "openapi/_original/recurly-recover-openapi.yml",
+   "openapi/_original/recurly-revrec-api.json",
+   "openapi/_original/recurly-revrec-openapi.yml",
+   "openapi/_original/recurly-v2-v2.29-api.yaml",
+   "openapi/_original/recurly-v3-v2019-10-10-api.yaml",
+   "openapi/_original/recurly-v3-v2021-02-25-api.yaml"
   ]
  },
  {

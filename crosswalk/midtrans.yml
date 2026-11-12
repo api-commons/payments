@@ -1,13 +1,14 @@
 provider: midtrans
 apis_io: https://apis.io/providers/midtrans/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
     - charge
     properties:
       id: transaction_id
+      order_id: order_id
     core_coverage: 0.25
     evidence:
     - openapi/_original/midtrans-openapi.yml#POST /v2/charge

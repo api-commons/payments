@@ -1,7 +1,7 @@
 provider: primer
 apis_io: https://apis.io/providers/primer/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -16,6 +16,9 @@ concepts:
       customer_id:
       - customerId
       - customer
+      order_id:
+      - orderId
+      - order
     core_coverage: 0.75
     evidence:
     - openapi/_original/primer-payments-openapi.yml#GET /payments

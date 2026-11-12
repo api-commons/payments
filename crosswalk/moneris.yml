@@ -1,7 +1,7 @@
 provider: moneris
 apis_io: https://apis.io/providers/moneris/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -17,6 +17,7 @@ concepts:
       - customerId
       - customerReference
       external_id: idempotencyKey
+      order_id: orderId
     core_coverage: 1.0
     evidence:
     - openapi/_original/moneris-unified-api-openapi.json#GET /payments

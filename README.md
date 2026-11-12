@@ -16,16 +16,16 @@ below is a count of providers.
 <!-- commons:summary -->
 | Concept | Expose it | Readable schema | Core properties (share) | Collection named |
 | --- | ---: | ---: | --- | --- |
-| payment | 289 | 271 | id 75%, status 69%, amount 62%, created_at 52% | payments 189, charges 46, payment 42, charge 31 |
+| payment | 290 | 272 | id 76%, status 69%, amount 62%, created_at 52% | payments 191, charges 46, payment 42, charge 31 |
 | checkout_session | 85 | 77 | id 78%, status 65%, created_at 51% | checkout 29, sessions 27, checkouts 23, payment-links 16 |
-| refund | 214 | 201 | id 75%, amount 73%, status 63%, created_at 51% | refund 122, refunds 110, credits 15, reversals 12 |
+| refund | 216 | 203 | id 75%, amount 73%, status 63%, created_at 51% | refund 123, refunds 111, credits 15, reversals 12 |
 | payment_method | 103 | 99 | id 69%, type 50% | payment-methods 41, payment_methods 24, cards 20, paymentmethods 13 |
-| customer | 170 | 162 | id 83%, name 68%, email 66%, created_at 57% | customers 137, customer 31, buyers 8, payers 8 |
+| customer | 171 | 163 | id 83%, name 68%, email 66%, created_at 57% | customers 138, customer 31, buyers 8, payers 8 |
 | payout | 122 | 110 | id 66%, status 66%, amount 64%, created_at 50% | payouts 70, settlements 29, payout 18, settlement 11 |
 | dispute | 77 | 71 | status 72%, created_at 68%, id 68%, reason 68% | disputes 48, chargebacks 20, dispute 14, chargeback 7 |
 | mandate | 18 | 16 | id 81%, status 56%, created_at 50% | mandates 13, mandate 5, direct_debits 1 |
 
-Cohort: 692 providers with harvested OpenAPI, 438 crosswalks. Of the providers exposing a payment: 72% create, 67% list, 65% fetch, 22% update, 10% delete. Generated 2026-11-11 by build.py.
+Cohort: 692 providers with harvested OpenAPI, 440 crosswalks. Of the providers exposing a payment: 72% create, 67% list, 66% fetch, 22% update, 10% delete. Generated 2026-11-12 by build.py.
 <!-- /commons:summary -->
 
 Shares are of the providers with a readable resource schema for that concept. The

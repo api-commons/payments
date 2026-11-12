@@ -1,7 +1,7 @@
 provider: toss-payments
 apis_io: https://apis.io/providers/toss-payments/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -10,6 +10,7 @@ concepts:
       status: status
       amount: totalAmount
       currency: currency
+      order_id: orderId
     core_coverage: 0.5
     evidence:
     - openapi/_original/toss-payments-openapi.yml#GET /v1/payments/{paymentKey}

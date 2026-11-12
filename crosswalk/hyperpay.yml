@@ -1,7 +1,7 @@
 provider: hyperpay
 apis_io: https://apis.io/providers/hyperpay/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:

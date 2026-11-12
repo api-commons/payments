@@ -1,7 +1,7 @@
 provider: mono-co
 apis_io: https://apis.io/providers/mono-co/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   customer:
     path_segment:

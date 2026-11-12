@@ -1,7 +1,7 @@
 provider: cacheflow
 apis_io: https://apis.io/providers/cacheflow/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -15,6 +15,7 @@ concepts:
       updated_at: updatedAt
       metadata: additionalData
       external_id: externalId
+      order_id: invoiceId
     core_coverage: 0.75
     evidence:
     - openapi/_original/cacheflow-api-openapi.yml#GET /api/latest/data/contracts/{id}/payments

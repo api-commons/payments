@@ -1,7 +1,7 @@
 provider: plug
 apis_io: https://apis.io/providers/plug/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -21,6 +21,7 @@ concepts:
       - statementDescriptor
       updated_at: updatedAt
       customer_id: customerId
+      order_id: orderId
     core_coverage: 1.0
     evidence:
     - openapi/_original/plug-openapi-original.yml#GET /v1/charges

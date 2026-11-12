@@ -1,7 +1,7 @@
 provider: debitura
 apis_io: https://apis.io/providers/debitura/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -12,6 +12,7 @@ concepts:
       - paymentId
       created_at: dateCreated
       currency: currency
+      order_id: invoice
     core_coverage: 0.5
     evidence:
     - openapi/_original/debitura-collection-partner-api.json#DELETE /cases/{id}/payments/{paymentId}

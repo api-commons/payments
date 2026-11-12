@@ -1,7 +1,7 @@
 provider: adyen
 apis_io: https://apis.io/providers/adyen/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -18,6 +18,7 @@ concepts:
       - merchantReference
       - orderReference
       - reference
+      order_id: order
     core_coverage: 0.25
     evidence:
     - openapi/_original/adyen-checkout-api-openapi.yml#POST /payments

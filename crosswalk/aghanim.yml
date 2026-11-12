@@ -1,7 +1,7 @@
 provider: aghanim
 apis_io: https://apis.io/providers/aghanim/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -13,6 +13,7 @@ concepts:
       currency: currency
       updated_at: modified_at
       metadata: metadata
+      order_id: order_id
     core_coverage: 0.75
     evidence:
     - openapi/_original/aghanim-openapi-original.json#GET /v1/payments

@@ -1,7 +1,7 @@
 provider: iugu
 apis_io: https://apis.io/providers/iugu/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -11,6 +11,9 @@ concepts:
       customer_id:
       - customer_id
       - payer
+      order_id:
+      - invoice_id
+      - order_id
     core_coverage: 0.0
     evidence:
     - openapi/_original/iugu-tokens-e-cobran-a-direta-openapi.yml#POST /charge

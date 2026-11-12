@@ -1,7 +1,7 @@
 provider: housecall-pro
 apis_io: https://apis.io/providers/housecall-pro/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -11,6 +11,7 @@ concepts:
       status: status
       amount: amount
       payment_method_id: payment_method
+      order_id: invoice_id
     core_coverage: 0.75
     evidence:
     - openapi/_original/housecall-pro-public-api-openapi.yml#GET /invoices/{invoice_id}/payments

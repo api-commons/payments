@@ -1,7 +1,7 @@
 provider: xfers
 apis_io: https://apis.io/providers/xfers/
 context: payments
-generated: '2026-11-11'
+generated: '2026-11-12'
 concepts:
   payment:
     path_segment:
@@ -17,6 +17,7 @@ concepts:
       description: description
       metadata: meta_data
       customer_id: customer
+      order_id: order_id
     core_coverage: 0.75
     evidence:
     - openapi/_original/xfers-indonesia-openapi.json#GET /v3/charges

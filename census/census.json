@@ -1,23 +1,6 @@
 {
  "cohort_size": 692,
- "unreadable": [
-  {
-   "spec": "novopayment/openapi/_original/novopayment-issuer-tokenization-openapi.yml",
-   "error": "while scanning a block scalar"
-  },
-  {
-   "spec": "novopayment/openapi/_original/novopayment-issuer-tokenization.yaml",
-   "error": "while scanning a block scalar"
-  },
-  {
-   "spec": "novopayment/openapi/_original/novopayment-payment-authorizer-openapi.yml",
-   "error": "while scanning a block scalar"
-  },
-  {
-   "spec": "novopayment/openapi/_original/novopayment-payment-authorizer.yaml",
-   "error": "while scanning a block scalar"
-  }
- ],
+ "unreadable": [],
  "concepts": {
   "payment": {
    "1fort": {
@@ -5918,6 +5901,118 @@
      "openapi/_original/mastercard-donate-api-openapi.yml#POST /payments"
     ]
    },
+   "maxio": {
+    "segments": [
+     "payments"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "id": "integer",
+     "uid": "string",
+     "site_id": "integer",
+     "customer_id": "integer",
+     "subscription_id": "integer",
+     "number": "string",
+     "sequence_number": "integer",
+     "transaction_time": "string",
+     "created_at": "string",
+     "updated_at": "string",
+     "issue_date": "string",
+     "due_date": "string",
+     "paid_date": [
+      "string",
+      "null"
+     ],
+     "status": null,
+     "role": "string",
+     "parent_invoice_id": [
+      "integer",
+      "null"
+     ],
+     "collection_method": null,
+     "payment_instructions": "string",
+     "currency": "string",
+     "consolidation_level": null,
+     "parent_invoice_uid": [
+      "string",
+      "null"
+     ],
+     "subscription_group_id": [
+      "integer",
+      "null"
+     ],
+     "parent_invoice_number": [
+      "integer",
+      "null"
+     ],
+     "group_primary_subscription_id": [
+      "integer",
+      "null"
+     ],
+     "product_name": "string",
+     "product_family_name": "string",
+     "seller": null,
+     "customer": null,
+     "payer": "object",
+     "recipient_emails": "array",
+     "net_terms": "integer",
+     "memo": "string",
+     "billing_address": null,
+     "shipping_address": null,
+     "subtotal_amount": "string",
+     "discount_amount": "string",
+     "tax_amount": "string",
+     "total_amount": "string",
+     "credit_amount": "string",
+     "debit_amount": "string",
+     "refund_amount": "string",
+     "paid_amount": "string",
+     "due_amount": "string",
+     "line_items": "array",
+     "discounts": "array",
+     "taxes": "array",
+     "credits": "array",
+     "debits": "array",
+     "refunds": "array",
+     "payments": "array",
+     "custom_fields": "array",
+     "display_settings": "object",
+     "avatax_details": "object",
+     "public_url": "string",
+     "previous_balance_data": "object",
+     "public_url_expires_on": "string",
+     "branding_theme_id": [
+      "integer",
+      "null"
+     ],
+     "payment": "object",
+     "type": null,
+     "invoice_uid": "string",
+     "application_uid": "string",
+     "applied_amount": "string",
+     "details": "string",
+     "method": null,
+     "amount": null,
+     "received_on": "string",
+     "applications": "array",
+     "invoice_id": "string",
+     "payment_details": "string",
+     "payment_method": null
+    },
+    "evidence": [
+     "openapi/_original/maxio-advanced-billing-openapi.yml#POST /invoices/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi.yml#POST /invoices/{uid}/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi.yml#POST /subscriptions/{subscription_id}/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#POST /invoices/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#POST /invoices/{uid}/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#POST /subscriptions/{subscription_id}/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi3json.json#POST /invoices/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi3json.json#POST /invoices/{uid}/payments.json",
+     "openapi/_original/maxio-advanced-billing-openapi3json.json#POST /subscriptions/{subscription_id}/payments.json"
+    ]
+   },
    "mercado-pago": {
     "segments": [
      "payments"
@@ -6914,9 +7009,12 @@
    },
    "novopayment": {
     "segments": [
+     "payments",
      "payment"
     ],
     "operations": [
+     "GET item",
+     "PATCH item",
      "POST collection"
     ],
     "properties": {
@@ -6937,13 +7035,28 @@
      "expirationDate": "string",
      "cardHolderName": "string",
      "securityCode": "string",
-     "emailAddress": "string"
+     "emailAddress": "string",
+     "authCode": "string",
+     "transactionId": "string",
+     "referenceCode": "string",
+     "status": "string",
+     "codeDeclined": "string",
+     "cardToken": "string",
+     "merchant": "object",
+     "transaction": "object",
+     "relatedTransaction": "object"
     },
     "evidence": [
      "openapi/_original/novopayment-merchant-presented-qr-openapi.yml#POST /notifications/payment",
      "openapi/_original/novopayment-merchant-presented-qr.yaml#POST /notifications/payment",
      "openapi/_original/novopayment-onboarding-openapi.yml#POST /payment",
-     "openapi/_original/novopayment-onboarding.yaml#POST /payment"
+     "openapi/_original/novopayment-onboarding.yaml#POST /payment",
+     "openapi/_original/novopayment-payment-authorizer-openapi.yml#GET /payments/{referenceCode}",
+     "openapi/_original/novopayment-payment-authorizer-openapi.yml#PATCH /payments/{transactionId}",
+     "openapi/_original/novopayment-payment-authorizer-openapi.yml#POST /payments",
+     "openapi/_original/novopayment-payment-authorizer.yaml#GET /payments/{referenceCode}",
+     "openapi/_original/novopayment-payment-authorizer.yaml#PATCH /payments/{transactionId}",
+     "openapi/_original/novopayment-payment-authorizer.yaml#POST /payments"
     ]
    },
    "now-payments": {
@@ -18904,6 +19017,112 @@
      "openapi/_original/mastercard-account-to-account-commerce-for-creditor-service-providers-openapi.yml#POST /payment-requests/{payment_request_lifecycle_id}/refunds"
     ]
    },
+   "maxio": {
+    "segments": [
+     "refunds"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "id": "integer",
+     "uid": "string",
+     "site_id": "integer",
+     "customer_id": "integer",
+     "subscription_id": "integer",
+     "number": "string",
+     "sequence_number": "integer",
+     "transaction_time": "string",
+     "created_at": "string",
+     "updated_at": "string",
+     "issue_date": "string",
+     "due_date": "string",
+     "paid_date": [
+      "string",
+      "null"
+     ],
+     "status": null,
+     "role": "string",
+     "parent_invoice_id": [
+      "integer",
+      "null"
+     ],
+     "collection_method": null,
+     "payment_instructions": "string",
+     "currency": "string",
+     "consolidation_level": null,
+     "parent_invoice_uid": [
+      "string",
+      "null"
+     ],
+     "subscription_group_id": [
+      "integer",
+      "null"
+     ],
+     "parent_invoice_number": [
+      "integer",
+      "null"
+     ],
+     "group_primary_subscription_id": [
+      "integer",
+      "null"
+     ],
+     "product_name": "string",
+     "product_family_name": "string",
+     "seller": null,
+     "customer": null,
+     "payer": "object",
+     "recipient_emails": "array",
+     "net_terms": "integer",
+     "memo": "string",
+     "billing_address": null,
+     "shipping_address": null,
+     "subtotal_amount": "string",
+     "discount_amount": "string",
+     "tax_amount": "string",
+     "total_amount": "string",
+     "credit_amount": "string",
+     "debit_amount": "string",
+     "refund_amount": "string",
+     "paid_amount": "string",
+     "due_amount": "string",
+     "line_items": "array",
+     "discounts": "array",
+     "taxes": "array",
+     "credits": "array",
+     "debits": "array",
+     "refunds": "array",
+     "payments": "array",
+     "custom_fields": "array",
+     "display_settings": "object",
+     "avatax_details": "object",
+     "public_url": "string",
+     "previous_balance_data": "object",
+     "public_url_expires_on": "string",
+     "branding_theme_id": [
+      "integer",
+      "null"
+     ],
+     "amount": "string",
+     "payment_id": "integer",
+     "external": "boolean",
+     "apply_credit": "boolean",
+     "void_invoice": "boolean",
+     "amount_in_cents": "integer",
+     "remaining_amount_in_cents": "integer",
+     "refunded_amount_in_cents": "integer",
+     "details": "string",
+     "payment_type": null
+    },
+    "evidence": [
+     "openapi/_original/maxio-advanced-billing-openapi.yml#POST /invoices/{uid}/refunds.json",
+     "openapi/_original/maxio-advanced-billing-openapi.yml#POST /subscriptions/{subscription_id}/prepayments/{prepayment_id}/refunds.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#POST /invoices/{uid}/refunds.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#POST /subscriptions/{subscription_id}/prepayments/{prepayment_id}/refunds.json",
+     "openapi/_original/maxio-advanced-billing-openapi3json.json#POST /invoices/{uid}/refunds.json",
+     "openapi/_original/maxio-advanced-billing-openapi3json.json#POST /subscriptions/{subscription_id}/prepayments/{prepayment_id}/refunds.json"
+    ]
+   },
    "mercado-pago": {
     "segments": [
      "refunds",
@@ -20605,6 +20824,77 @@
     "properties": {},
     "evidence": [
      "openapi/_original/recharge-payments-openapi.yml#POST /charges/{id}/refund"
+    ]
+   },
+   "recurly": {
+    "segments": [
+     "refund"
+    ],
+    "operations": [
+     "POST collection"
+    ],
+    "properties": {
+     "id": "string",
+     "uuid": "string",
+     "object": "string",
+     "type": "string",
+     "origin": "string",
+     "state": "string",
+     "account": "object",
+     "billing_info_id": "string",
+     "subscription_ids": "array",
+     "previous_invoice_id": "string",
+     "number": "string",
+     "collection_method": "string",
+     "po_number": "string",
+     "net_terms": "integer",
+     "net_terms_type": "string",
+     "address": "object",
+     "shipping_address": "object",
+     "currency": "string",
+     "discount": "number",
+     "coupon_redemptions": "array",
+     "subtotal": "number",
+     "subtotal_after_discount": "number",
+     "tax": "number",
+     "reference_only_currency_conversion": "object",
+     "total": "number",
+     "refundable_amount": "number",
+     "paid": "number",
+     "balance": "number",
+     "tax_info": "object",
+     "used_tax_service": "boolean",
+     "vat_number": "string",
+     "vat_reverse_charge_notes": "string",
+     "terms_and_conditions": "string",
+     "customer_notes": "string",
+     "line_items": "array",
+     "has_more_line_items": "boolean",
+     "transactions": "array",
+     "credit_payments": "array",
+     "created_at": "string",
+     "updated_at": "string",
+     "due_at": "string",
+     "closed_at": "string",
+     "dunning_campaign_id": "string",
+     "dunning_events_sent": "integer",
+     "final_dunning_event": "boolean",
+     "business_entity_id": "string",
+     "custom_fields": "array",
+     "amount": "number",
+     "percentage": "integer",
+     "refund_method": "string",
+     "credit_customer_notes": "string",
+     "external_refund": "object",
+     "quantity": "integer",
+     "quantity_decimal": "string",
+     "prorate": "boolean"
+    },
+    "evidence": [
+     "openapi/_original/recurly-openapi.yml#POST /invoices/{invoice_id}/refund",
+     "openapi/_original/recurly-v2-v2.29-api.yaml#POST /invoices/{invoice_number}/refund",
+     "openapi/_original/recurly-v3-v2019-10-10-api.yaml#POST /sites/{site_id}/invoices/{invoice_id}/refund",
+     "openapi/_original/recurly-v3-v2021-02-25-api.yaml#POST /invoices/{invoice_id}/refund"
     ]
    },
    "revolut": {
@@ -29134,6 +29424,151 @@
      "openapi/_original/lorum-openapi-original.json#GET /v1/customers",
      "openapi/_original/lorum-openapi-original.json#GET /v1/customers/{customer_id}",
      "openapi/_original/lorum-openapi-original.json#PATCH /v1/customers/{customer_id}"
+    ]
+   },
+   "maxio": {
+    "segments": [
+     "customers"
+    ],
+    "operations": [
+     "DELETE item",
+     "GET collection",
+     "GET item",
+     "POST collection",
+     "PUT item"
+    ],
+    "properties": {
+     "first_name": "string",
+     "last_name": "string",
+     "email": "string",
+     "cc_emails": [
+      "string",
+      "null"
+     ],
+     "organization": [
+      "string",
+      "null"
+     ],
+     "reference": [
+      "string",
+      "null"
+     ],
+     "id": "integer",
+     "created_at": "string",
+     "updated_at": "string",
+     "address": [
+      "string",
+      "null"
+     ],
+     "address_2": [
+      "string",
+      "null"
+     ],
+     "city": [
+      "string",
+      "null"
+     ],
+     "state": [
+      "string",
+      "null"
+     ],
+     "state_name": [
+      "string",
+      "null"
+     ],
+     "zip": [
+      "string",
+      "null"
+     ],
+     "country": [
+      "string",
+      "null"
+     ],
+     "country_name": [
+      "string",
+      "null"
+     ],
+     "phone": [
+      "string",
+      "null"
+     ],
+     "verified": [
+      "boolean",
+      "null"
+     ],
+     "portal_customer_created_at": [
+      "string",
+      "null"
+     ],
+     "portal_invite_last_sent_at": [
+      "string",
+      "null"
+     ],
+     "portal_invite_last_accepted_at": [
+      "string",
+      "null"
+     ],
+     "tax_exempt": "boolean",
+     "surcharging": "boolean",
+     "vat_number": [
+      "string",
+      "null"
+     ],
+     "vat_country": [
+      "string",
+      "null"
+     ],
+     "entity_identifier_kind": null,
+     "entity_identifier_value": [
+      "string",
+      "null"
+     ],
+     "parent_id": [
+      "integer",
+      "null"
+     ],
+     "locale": [
+      "string",
+      "null"
+     ],
+     "default_subscription_group_uid": [
+      "string",
+      "null"
+     ],
+     "salesforce_id": [
+      "string",
+      "null"
+     ],
+     "tax_exempt_reason": [
+      "string",
+      "null"
+     ],
+     "default_auto_renewal_profile_id": [
+      "integer",
+      "null"
+     ],
+     "maxioid": [
+      "string",
+      "null"
+     ],
+     "branding_theme_id": [
+      "integer",
+      "null"
+     ]
+    },
+    "evidence": [
+     "openapi/_original/maxio-advanced-billing-openapi.yml#DELETE /customers/{id}.json",
+     "openapi/_original/maxio-advanced-billing-openapi.yml#GET /customers.json",
+     "openapi/_original/maxio-advanced-billing-openapi.yml#GET /customers/{id}.json",
+     "openapi/_original/maxio-advanced-billing-openapi.yml#POST /customers.json",
+     "openapi/_original/maxio-advanced-billing-openapi.yml#PUT /customers/{id}.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#DELETE /customers/{id}.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#GET /customers.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#GET /customers/{id}.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#POST /customers.json",
+     "openapi/_original/maxio-advanced-billing-openapi31json.json#PUT /customers/{id}.json",
+     "openapi/_original/maxio-advanced-billing-openapi3json.json#DELETE /customers/{id}.json",
+     "openapi/_original/maxio-advanced-billing-openapi3json.json#GET /customers.json"
     ]
    },
    "mercado-pago": {
@@ -39514,7 +39949,6 @@
     "goodlord",
     "goodstack",
     "goody",
-    "google-wallet",
     "gov-uk-pay",
     "gr4vy",
     "grapes-finance",
@@ -39615,6 +40049,7 @@
     "mastercard",
     "mastercard-gateway-api",
     "mavrck",
+    "maxio",
     "memo-bank",
     "mercado-pago",
     "mercoa",
@@ -39753,6 +40188,7 @@
     "ready2order",
     "receeve",
     "recharge-payments",
+    "recurly",
     "reloadly",
     "remitian",
     "rentahuman",
@@ -40480,6 +40916,7 @@
     "lithic-com",
     "mamo",
     "mavrck",
+    "maxio",
     "memo-bank",
     "mercado-pago",
     "method-financial",
@@ -40515,6 +40952,7 @@
     "ready2order",
     "receeve",
     "recharge-payments",
+    "recurly",
     "rentberry",
     "resolve",
     "ripple-labs",
@@ -40631,7 +41069,6 @@
     "fiserv",
     "flipdish",
     "gerencianet",
-    "google-wallet",
     "groupe-bpce",
     "hipay",
     "indiegogo",
@@ -40663,6 +41100,7 @@
     "nacha",
     "nopan",
     "northmill",
+    "novopayment",
     "okra-africa",
     "ontraport",
     "optum",
@@ -40680,6 +41118,7 @@
     "paywithmybank",
     "przelewy24",
     "ready2order",
+    "recurly",
     "revelator",
     "safello",
     "shoppable",
@@ -40727,7 +41166,6 @@
     "agicap",
     "airtm",
     "algovoi-co-uk",
-    "amazon-payment-cryptography",
     "amcs-group",
     "apexxfintech",
     "astrada",
@@ -40811,6 +41249,7 @@
     "przelewy24",
     "raiffeisen-ru",
     "ravelin",
+    "recurly",
     "rentberry",
     "ripple-labs",
     "safello",
@@ -41165,6 +41604,7 @@
     "marubox",
     "mastercard",
     "mavrck",
+    "maxio",
     "memo-bank",
     "mercado-pago",
     "mercury",
@@ -41264,6 +41704,7 @@
     "ready2order",
     "receeve",
     "recharge-payments",
+    "recurly",
     "reloadly",
     "remitian",
     "rentahuman",
@@ -41524,7 +41965,6 @@
     "gofundme",
     "goodlord",
     "goodstack",
-    "google-wallet",
     "groupe-bpce",
     "hampden-and-co",
     "helcim",
@@ -41636,6 +42076,7 @@
     "raiffeisen-ru",
     "ready2order",
     "receeve",
+    "recurly",
     "reloadly",
     "remitian",
     "rentahuman",
@@ -41880,6 +42321,7 @@
     "marqeta",
     "mastercard",
     "mavrck",
+    "maxio",
     "memo-bank",
     "mercado-pago",
     "method-financial",
@@ -41929,6 +42371,7 @@
     "reachware-inc",
     "ready2order",
     "recharge-payments",
+    "recurly",
     "resolve",
     "revolut",
     "ripple-labs",
@@ -42060,6 +42503,7 @@
     "lightning-labs",
     "lightspeed",
     "mavrck",
+    "maxio",
     "method-financial",
     "methodfi",
     "modern-treasury",
@@ -42116,7 +42560,6 @@
    "PascalCase": [
     "123formbuilder",
     "agicap",
-    "amazon-payment-cryptography",
     "amcs-group",
     "bancomat",
     "citi",
@@ -42356,6 +42799,7 @@
     "ready2order",
     "receeve",
     "recharge-payments",
+    "recurly",
     "remitian",
     "rentahuman",
     "rentberry",
@@ -42550,6 +42994,7 @@
     "mangopay",
     "mastercard",
     "mavrck",
+    "maxio",
     "memo-bank",
     "method-financial",
     "methodfi",
@@ -42595,6 +43040,7 @@
     "raiffeisen-ru",
     "ready2order",
     "receeve",
+    "recurly",
     "reloadly",
     "rentberry",
     "resolve",
@@ -42965,6 +43411,7 @@
     "payt",
     "podium",
     "primer",
+    "recurly",
     "revolut",
     "scvd-store",
     "shop-ware",
@@ -43079,6 +43526,7 @@
     "lootrush",
     "mamo",
     "mangopay",
+    "maxio",
     "modern-treasury",
     "mtn-group",
     "narmi",
@@ -43087,6 +43535,7 @@
     "payt",
     "pin-payments",
     "r2",
+    "recurly",
     "runa",
     "shop-ware",
     "shoplazza",
@@ -43285,7 +43734,6 @@
     "paystack"
    ],
    "max_results": [
-    "amazon-payment-cryptography",
     "blackbaud",
     "moov",
     "mtn-group"
@@ -43499,6 +43947,7 @@
     "mastercard",
     "mastercard-gateway-api",
     "mavrck",
+    "maxio",
     "memo-bank",
     "mercado-pago",
     "mercury",
@@ -43580,6 +44029,7 @@
     "razorpay",
     "ready2order",
     "recharge-payments",
+    "recurly",
     "reloadly",
     "rentahuman",
     "rentberry",
@@ -43810,7 +44260,6 @@
     "gofundme",
     "goodlord",
     "goodstack",
-    "google-wallet",
     "gov-uk-pay",
     "grapes-finance",
     "groupe-bpce",
@@ -44141,6 +44590,7 @@
     "mamo",
     "marqeta",
     "mastercard",
+    "maxio",
     "mercado-pago",
     "method-financial",
     "methodfi",
@@ -44181,6 +44631,7 @@
     "r2",
     "raiffeisen-ru",
     "rainforest",
+    "recurly",
     "rentberry",
     "resolve",
     "revolut",
@@ -44570,6 +45021,7 @@
     "mangopay",
     "marqeta",
     "mastercard",
+    "maxio",
     "mercado-pago",
     "metalend",
     "method-financial",
@@ -44659,6 +45111,7 @@
     "ready2order",
     "receeve",
     "recharge-payments",
+    "recurly",
     "remitian",
     "rentberry",
     "resolve",
@@ -45093,6 +45546,7 @@
     "mamo",
     "mangopay",
     "marqeta",
+    "maxio",
     "mercado-pago",
     "method-financial",
     "methodfi",
@@ -45138,6 +45592,7 @@
     "reachware-inc",
     "ready2order",
     "recharge-payments",
+    "recurly",
     "resolve",
     "revolut",
     "ripple-labs",
