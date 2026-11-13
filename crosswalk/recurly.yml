@@ -1,0 +1,24 @@
+provider: recurly
+apis_io: https://apis.io/providers/recurly/
+context: payments
+generated: '2026-11-12'
+concepts:
+  refund:
+    path_segment:
+    - refund
+    properties:
+      id:
+      - id
+      - uuid
+      amount: amount
+      status: state
+      created_at: created_at
+      currency: currency
+      updated_at: updated_at
+      metadata: custom_fields
+    core_coverage: 1.0
+    evidence:
+    - openapi/_original/recurly-openapi.yml#POST /invoices/{invoice_id}/refund
+    - openapi/_original/recurly-v2-v2.29-api.yaml#POST /invoices/{invoice_number}/refund
+    - openapi/_original/recurly-v3-v2019-10-10-api.yaml#POST /sites/{site_id}/invoices/{invoice_id}/refund
+    - openapi/_original/recurly-v3-v2021-02-25-api.yaml#POST /invoices/{invoice_id}/refund
